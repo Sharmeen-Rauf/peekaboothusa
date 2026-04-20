@@ -92,7 +92,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="flex justify-center"
         >
-          <Button size="md" variant="primary" className="w-full sm:w-auto text-base group px-10 py-6">
+          <Button size="md" variant="primary" className="w-full sm:w-auto text-base group px-8 py-3 md:px-10 md:py-4">
             Get Quote
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
