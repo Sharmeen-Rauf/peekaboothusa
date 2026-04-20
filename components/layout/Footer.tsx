@@ -75,10 +75,6 @@ export default function Footer() {
 
         </div>
 
-        {/* Disclaimer */}
-        <p className="text-[10px] md:text-[11px] text-white/40 text-center max-w-6xl leading-relaxed font-medium px-4 mb-12 md:mb-20">
-          Disclaimer: All images, content, and branding are the sole property of Peekabooth USA. Any third-party company names, brand names, or trademarks displayed on this website are the property of their respective owners. We respect the privacy of our clients; some event photos may be exemplary to protect client privacy. Therefore, we are not responsible for any resemblance with any other material on the web. The actual designs, functionality, and content may differ from the displayed exemplary projects.
-        </p>
 
         {/* Giant Glowing Text */}
         <div className="w-full text-center select-none overflow-hidden flex justify-center mb-6">
