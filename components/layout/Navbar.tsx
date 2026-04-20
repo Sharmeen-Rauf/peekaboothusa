@@ -41,9 +41,7 @@ export default function Navbar() {
             <img 
               src="/PeekABooth-LOGO-2025-600x212.png" 
               alt="Peekabooth USA Logo" 
-              className={`h-8 md:h-10 w-auto object-contain transition-all duration-300 ${
-                isScrolled ? 'brightness-0 invert' : 'brightness-0 invert'
-              }`}
+              className="h-8 md:h-10 w-auto object-contain transition-all duration-300"
               title="Change 'invert' to make it black if needed"
             />
           </Link>
