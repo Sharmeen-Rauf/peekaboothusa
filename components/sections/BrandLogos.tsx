@@ -2,8 +2,20 @@
 
 import { motion } from "framer-motion";
 
-const brands = [
-  "VOGUE", "FORBES", "GQ", "VANITY FAIR", "ELLE", "HARPER'S BAZAAR", "WIRED",
+const brandLogos = [
+  "/cocacolaone.png",
+  "/two.png",
+  "/three.png",
+  "/four.png",
+  "/five.png",
+  "/six.png",
+  "/seven.png",
+  "/eight.png",
+  "/nine.png",
+  "/tenth.png",
+  "/eleven.png",
+  "/twelve.png",
+  "/thirteen.png"
 ];
 
 export default function BrandLogos() {
@@ -13,22 +25,27 @@ export default function BrandLogos() {
       <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
       
       <div className="container mx-auto px-6 mb-8 text-center">
-        <p className="text-sm font-medium tracking-widest text-white/40 uppercase">Trusted by industry leaders</p>
+        <p className="text-sm font-medium tracking-widest text-white/40 uppercase">Proud Photo Booth Partner For Top Brands</p>
       </div>
 
       <div className="flex whitespace-nowrap">
         <motion.div 
-          className="flex items-center gap-24 px-12"
+          className="flex items-center gap-16 md:gap-24 px-12"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 40, ease: "linear", repeat: Infinity }}
+          transition={{ duration: 60, ease: "linear", repeat: Infinity }}
         >
           {/* Double array to ensure seamless looping */}
-          {[...brands, ...brands, ...brands].map((brand, i) => (
+          {[...brandLogos, ...brandLogos].map((src, i) => (
             <div 
               key={i}
-              className="text-2xl md:text-4xl font-black tracking-tighter text-white/20 hover:text-white transition-colors duration-500 cursor-default"
+              className="relative w-32 md:w-40 h-20 opacity-50 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0 flex-shrink-0 flex items-center justify-center"
             >
-              {brand}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src={src} 
+                alt={`Brand partner ${i}`}
+                className="max-w-full max-h-full object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-all duration-300"
+              />
             </div>
           ))}
         </motion.div>
