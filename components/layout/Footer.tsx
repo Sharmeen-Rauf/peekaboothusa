@@ -22,7 +22,7 @@ export default function Footer() {
         </Link>
 
         {/* Heading */}
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white text-center mb-16 tracking-tight drop-shadow-lg leading-tight">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white text-center mb-16 tracking-tight drop-shadow-lg leading-tight">
           Your Premium Photo Booth <br className="hidden md:block" /> Partner
         </h2>
 

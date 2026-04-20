@@ -23,7 +23,7 @@ export default function LocationsMap() {
           transition={{ duration: 0.8 }}
           className="text-center flex flex-col items-center"
         >
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-8 tracking-tight max-w-4xl leading-tight drop-shadow-2xl">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 tracking-tight max-w-4xl leading-tight drop-shadow-2xl">
             Premium Photo Booth Rentals <br className="hidden md:block" /> Across the United States
           </h2>
           
