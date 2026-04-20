@@ -22,11 +22,11 @@ export default function WhyChooseUs() {
               Why Choose Us
             </h3>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-8 leading-[1.1]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
               For Your Photo Booth <br className="hidden md:block"/> Experience
             </h2>
             
-            <div className="space-y-6 text-base md:text-lg text-white/70 leading-relaxed max-w-xl">
+            <div className="space-y-4 text-sm md:text-base text-white/70 leading-relaxed max-w-xl">
               <p>
                 We go beyond just taking pictures — we deliver unforgettable moments. With modern booth options, high-quality prints, instant digital sharing, fun props, and unbeatable customer service, we make every event stand out.
               </p>
