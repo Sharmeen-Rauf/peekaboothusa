@@ -1,79 +1,85 @@
+"use client";
+
 import Link from "next/link";
-import { Instagram, Facebook, Twitter, MapPin, Mail, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, Star } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/10 bg-black/50 backdrop-blur-lg pt-20 pb-10 overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-brand-neon/50 to-transparent"></div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded-full bg-brand-neon flex items-center justify-center text-white font-bold text-xl">
-                P
-              </div>
-              <span className="font-bold text-2xl tracking-tight">
-                Peekabooth<span className="text-brand-neon">USA</span>
-              </span>
-            </Link>
-            <p className="text-white/60 max-w-md mb-8">
-              Elevating events with premium, immersive photo booth experiences. 
-              We blend cutting-edge technology with high-end aesthetics to create 
-              unforgettable memories.
-            </p>
-            <div className="flex gap-4">
-              {[Instagram, Facebook, Twitter].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-white/10 hover:text-brand-neon transition-colors duration-300"
-                >
-                  <Icon size={18} />
-                </a>
-              ))}
-            </div>
+    <footer className="relative bg-black pt-24 pb-12 overflow-hidden border-t border-white/5">
+      {/* Top subtle glow behind logo */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-neon/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col items-center">
+        
+        {/* Logo */}
+        <Link href="/" className="mb-6 relative z-10 hover:scale-105 transition-transform duration-300">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src="/PeekABooth-LOGO-2025-600x212.png" 
+            alt="Peekabooth USA" 
+            className="h-16 md:h-20 lg:h-24 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+          />
+        </Link>
+
+        {/* Heading */}
+        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white text-center mb-16 tracking-tight drop-shadow-lg leading-tight">
+          Your Premium Photo Booth <br className="hidden md:block" /> Partner
+        </h2>
+
+        {/* Links & Socials Grid/Row */}
+        <div className="w-full max-w-6xl border border-white/10 rounded-xl overflow-hidden flex flex-col lg:flex-row items-stretch justify-center bg-[#0a0a0a] mb-12 shadow-2xl">
+          
+          <Link href="#" className="flex items-center justify-center px-8 py-5 md:py-6 text-white/80 hover:text-white hover:bg-white/5 transition-colors border-b lg:border-b-0 lg:border-r border-white/10 w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
+            Privacy Policy
+          </Link>
+
+          {/* Social Icons Row */}
+          <div className="flex flex-1 flex-wrap md:flex-nowrap items-stretch justify-center border-b lg:border-b-0 lg:border-r border-white/10 w-full lg:w-auto">
+            
+            <a href="#" className="flex-1 flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-[#1877F2] hover:bg-white/5 transition-colors border-r border-b md:border-b-0 border-white/10 min-w-[60px]">
+              <Facebook className="w-5 h-5" />
+            </a>
+            
+            <a href="#" className="flex-1 flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-[#E4405F] hover:bg-white/5 transition-colors border-r border-b md:border-b-0 border-white/10 min-w-[60px]">
+              <Instagram className="w-5 h-5" />
+            </a>
+            
+            <a href="#" className="flex-1 flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-brand-neon hover:bg-white/5 transition-colors border-r border-b md:border-b-0 border-white/10 min-w-[60px]">
+              {/* TikTok SVG */}
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></svg>
+            </a>
+            
+            <a href="#" className="flex-[2] flex items-center justify-center gap-2 p-4 md:p-6 text-white/50 hover:text-[#00B67A] hover:bg-white/5 transition-colors border-r border-b md:border-b-0 border-white/10 min-w-[120px]">
+              <Star className="w-5 h-5 fill-current" />
+              <span className="font-bold text-sm tracking-wide">Trustpilot</span>
+            </a>
+            
+            <a href="#" className="flex-1 flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-[#0A66C2] hover:bg-white/5 transition-colors border-r border-white/10 min-w-[60px]">
+              <Linkedin className="w-5 h-5" />
+            </a>
+            
+            <a href="#" className="flex-1 flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-[#FF0000] hover:bg-white/5 transition-colors border-r border-white/10 min-w-[60px]">
+              <Youtube className="w-5 h-5" />
+            </a>
+            
+            <a href="#" className="flex-1 flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-white hover:bg-white/5 transition-colors min-w-[60px]">
+              {/* X (Twitter) SVG */}
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+            </a>
+            
           </div>
 
-          <div>
-            <h4 className="font-semibold text-lg mb-6">Quick Links</h4>
-            <ul className="space-y-4">
-              {["Packages", "Gallery", "Corporate Events", "Weddings", "FAQ"].map((link) => (
-                <li key={link}>
-                  <Link href="#" className="text-white/60 hover:text-white transition-colors">
-                    {link}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <Link href="#" className="flex items-center justify-center px-8 py-5 md:py-6 text-white/80 hover:text-white hover:bg-white/5 transition-colors w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
+            Terms &amp; Conditions
+          </Link>
 
-          <div>
-            <h4 className="font-semibold text-lg mb-6">Contact</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-white/60">
-                <MapPin size={18} className="text-brand-neon shrink-0 mt-1" />
-                <span>Los Angeles, CA<br/>Serving Southern California</span>
-              </li>
-              <li className="flex items-center gap-3 text-white/60">
-                <Phone size={18} className="text-brand-neon shrink-0" />
-                <span>(555) 123-4567</span>
-              </li>
-              <li className="flex items-center gap-3 text-white/60">
-                <Mail size={18} className="text-brand-neon shrink-0" />
-                <span>hello@peekaboothusa.com</span>
-              </li>
-            </ul>
-          </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-white/40 text-sm">
-          <p>© {new Date().getFullYear()} Peekabooth USA. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
-          </div>
-        </div>
+        {/* Disclaimer */}
+        <p className="text-[10px] md:text-[11px] text-white/40 text-center max-w-6xl leading-relaxed font-medium px-4">
+          Disclaimer: All images, content, and branding are the sole property of Peekabooth USA. Any third-party company names, brand names, or trademarks displayed on this website are the property of their respective owners. We respect the privacy of our clients; some event photos may be exemplary to protect client privacy. Therefore, we are not responsible for any resemblance with any other material on the web. The actual designs, functionality, and content may differ from the displayed exemplary projects. {new Date().getFullYear()} © Peekabooth USA. All rights reserved.
+        </p>
+
       </div>
     </footer>
   );

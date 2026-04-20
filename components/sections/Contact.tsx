@@ -25,11 +25,11 @@ export default function Contact() {
                 <NotebookPen className="w-6 h-6 text-brand-neon" />
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-[1.15]">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 leading-[1.15]">
                 We&apos;d love to hear <br className="hidden sm:block" /> about your event.
               </h2>
               
-              <p className="text-white/60 text-lg mb-16 max-w-md">
+              <p className="text-white/60 text-sm md:text-base mb-12 max-w-md leading-relaxed">
                 Tell us about your event, and we&apos;ll map out the perfect premium photo booth experience for you.
               </p>
 

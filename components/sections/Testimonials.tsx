@@ -53,11 +53,11 @@ export default function Testimonials() {
         {/* Header Section */}
         <div className="flex flex-col items-center justify-center text-center mb-16">
           <span className="text-brand-neon font-bold tracking-wide mb-4 text-sm md:text-base">Our Testimonials</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
             Our success, echoed <br /> by <span className="text-white/50">our Clients</span>
           </h2>
           <div className="flex flex-col items-center gap-2">
-            <span className="text-3xl font-bold text-white">5.00</span>
+            <span className="text-2xl font-bold text-white">5.00</span>
             <span className="text-white/50 text-sm">57 reviews</span>
             <div className="flex gap-1 text-brand-neon">
               <Star className="w-4 h-4 fill-current" />
