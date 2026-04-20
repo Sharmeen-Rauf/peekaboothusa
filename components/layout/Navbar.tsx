@@ -43,7 +43,7 @@ export default function Navbar() {
             <img 
               src="/PeekABooth-LOGO-2025-600x212.png" 
               alt="Peekabooth USA Logo" 
-              className="h-10 md:h-14 lg:h-16 w-auto object-contain transition-all duration-300"
+              className="h-12 md:h-16 lg:h-20 w-auto object-contain transition-all duration-300"
               title="Change 'invert' to make it black if needed"
             />
           </Link>
@@ -67,15 +67,15 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-6">
             <div className="flex items-center gap-4 border-r border-white/20 pr-6">
               <a href="#" className="text-white hover:text-brand-neon transition-transform hover:scale-110">
-                <Facebook size={22} />
+                <Facebook size={18} />
               </a>
               <a href="#" className="text-white hover:text-brand-neon transition-transform hover:scale-110">
-                <Instagram size={22} />
+                <Instagram size={18} />
               </a>
             </div>
             <div className="flex flex-col justify-center text-left">
               <span className="text-xs font-semibold text-white/80 tracking-wide mb-0.5">Call Us Today -</span>
-              <a href="tel:1-800-709-8579" className="text-brand-neon font-black text-lg hover:text-brand-glow transition-colors tracking-wide">
+              <a href="tel:1-800-709-8579" className="text-brand-neon font-black text-base hover:text-brand-glow transition-colors tracking-wide">
                 1-800-709-8579
               </a>
             </div>
@@ -114,16 +114,16 @@ export default function Navbar() {
         <div className="mt-8 flex flex-col items-center gap-6">
           <div className="flex flex-col text-center leading-tight">
             <span className="text-sm font-medium text-white/80 mb-1">Call Us Today -</span>
-            <a href="tel:1-800-709-8579" className="text-brand-neon font-bold text-xl">
+            <a href="tel:1-800-709-8579" className="text-brand-neon font-bold text-lg">
               1-800-709-8579
             </a>
           </div>
           <div className="flex items-center gap-6">
             <a href="#" className="text-white hover:text-brand-neon transition-colors">
-              <Facebook size={24} />
+              <Facebook size={20} />
             </a>
             <a href="#" className="text-white hover:text-brand-neon transition-colors">
-              <Instagram size={24} />
+              <Instagram size={20} />
             </a>
           </div>
         </div>
