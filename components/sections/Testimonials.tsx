@@ -1,80 +1,151 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { GlassCard } from "@/components/ui/GlassCard";
-import { Star } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 
-const testimonials = [
+const initialTestimonials = [
   {
-    name: "Sarah & James",
-    role: "Wedding Client",
+    id: 1,
+    name: "Olivia James",
+    avatar: "https://i.pravatar.cc/150?u=olivia",
     text: "The Glam Booth was an absolute hit at our wedding! The black and white filter made everyone look flawless, and our guests haven't stopped talking about it.",
   },
   {
-    name: "Michael Chen",
-    role: "Corporate Event Planner",
-    text: "Peekabooth elevated our annual gala. The 360 booth was the centerpiece of the night, and their team was professional, prompt, and energetic.",
+    id: 2,
+    name: "Daniel Lee",
+    avatar: "https://i.pravatar.cc/150?u=daniel",
+    text: "Peekabooth elevated our annual corporate gala. The 360 booth was the centerpiece of the night, and their team was professional and energetic.",
   },
   {
-    name: "Jessica Alba",
-    role: "Birthday Party",
+    id: 3,
+    name: "Emily Tran",
+    avatar: "https://i.pravatar.cc/150?u=emily",
     text: "I hired them for my 30th birthday and it was the best decision. The custom props matched my theme perfectly and the attendant was so much fun!",
   },
 ];
 
 export default function Testimonials() {
-  return (
-    <section id="testimonials" className="py-24 relative overflow-hidden bg-surface">
-      {/* Decorative blurred background */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-brand-neon/10 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <SectionHeader 
-          title="Client Love" 
-          subtitle="Don't just take our word for it. Here's what our clients have to say."
-        />
+  const [items, setItems] = useState(initialTestimonials);
 
-        <div className="flex overflow-x-auto pb-12 -mx-6 px-6 snap-x snap-mandatory hide-scrollbar gap-6">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.2 }}
-              className="min-w-[85vw] md:min-w-[400px] snap-center"
-            >
-              <GlassCard className="h-full flex flex-col justify-between p-8">
-                <div>
-                  <div className="flex gap-1 mb-6">
-                    {[...Array(5)].map((_, j) => (
-                      <Star key={j} className="w-5 h-5 fill-brand-neon text-brand-neon" />
-                    ))}
-                  </div>
-                  <p className="text-lg md:text-xl text-white/90 italic mb-8 leading-relaxed">
-                    &quot;{t.text}&quot;
-                  </p>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-neon to-brand-glow flex items-center justify-center text-white font-bold text-lg">
-                    {t.name[0]}
-                  </div>
-                  <div>
-                    <h4 className="font-bold">{t.name}</h4>
-                    <p className="text-sm text-white/50">{t.role}</p>
-                  </div>
-                </div>
-              </GlassCard>
-            </motion.div>
-          ))}
+  const next = () => {
+    setItems((prev) => {
+      const newItems = [...prev];
+      const first = newItems.shift();
+      if (first) newItems.push(first);
+      return newItems;
+    });
+  };
+
+  const prev = () => {
+    setItems((prev) => {
+      const newItems = [...prev];
+      const last = newItems.pop();
+      if (last) newItems.unshift(last);
+      return newItems;
+    });
+  };
+
+  return (
+    <section id="testimonials" className="py-24 relative bg-black overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        
+        {/* Header Section */}
+        <div className="flex flex-col items-center justify-center text-center mb-16">
+          <span className="text-brand-neon font-bold tracking-wide mb-4 text-sm md:text-base">Our Testimonials</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 tracking-tight">
+            Our success, echoed <br /> by <span className="text-white/50">our Clients</span>
+          </h2>
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-3xl font-bold text-white">5.00</span>
+            <span className="text-white/50 text-sm">57 reviews</span>
+            <div className="flex gap-1 text-brand-neon">
+              <Star className="w-4 h-4 fill-current" />
+              <Star className="w-4 h-4 fill-current" />
+              <Star className="w-4 h-4 fill-current" />
+              <Star className="w-4 h-4 fill-current" />
+              <Star className="w-4 h-4 fill-current" />
+            </div>
+          </div>
         </div>
+
+        {/* Carousel Section */}
+        <div className="relative flex items-center justify-center w-full max-w-6xl mx-auto h-[450px] mb-12">
+          
+          {/* Left Arrow */}
+          <button 
+            onClick={prev} 
+            className="absolute left-0 md:left-4 z-30 w-12 h-12 rounded-full border border-brand-neon flex items-center justify-center text-brand-neon hover:bg-brand-neon/10 transition-colors hidden md:flex"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          
+          {/* Right Arrow */}
+          <button 
+            onClick={next} 
+            className="absolute right-0 md:right-4 z-30 w-12 h-12 rounded-full border border-brand-neon flex items-center justify-center text-brand-neon hover:bg-brand-neon/10 transition-colors hidden md:flex"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
+          {/* Cards */}
+          <div className="relative w-full h-full flex items-center justify-center">
+            <AnimatePresence>
+              {items.map((item, index) => {
+                const isCenter = index === 1;
+                const isLeft = index === 0;
+                const isRight = index === 2;
+
+                let xOffset = 0;
+                if (isLeft) xOffset = -300;
+                if (isRight) xOffset = 300;
+
+                return (
+                  <motion.div
+                    key={item.id}
+                    layout
+                    initial={false}
+                    animate={{
+                      x: xOffset,
+                      scale: isCenter ? 1 : 0.85,
+                      opacity: isCenter ? 1 : 0.4,
+                      zIndex: isCenter ? 20 : 10,
+                    }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className={`absolute w-full max-w-[340px] md:max-w-[400px] p-8 md:p-10 rounded-2xl flex flex-col items-center text-center ${
+                      isCenter 
+                        ? "bg-white/5 border border-white/20 backdrop-blur-xl shadow-2xl" 
+                        : "bg-[#111] border border-white/5"
+                    }`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={item.avatar} alt={item.name} className="w-16 h-16 rounded-full mb-4 object-cover border border-white/20" />
+                    <h4 className="text-white font-bold mb-4">{item.name}</h4>
+                    <p className="text-sm text-white/70 mb-8 leading-relaxed h-[100px] overflow-hidden">
+                      {item.text}
+                    </p>
+                    <div className="flex gap-1 text-brand-neon mt-auto">
+                      <Star className="w-4 h-4 fill-current" />
+                      <Star className="w-4 h-4 fill-current" />
+                      <Star className="w-4 h-4 fill-current" />
+                      <Star className="w-4 h-4 fill-current" />
+                      <Star className="w-4 h-4 fill-current" />
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="flex justify-center">
+          <button className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#222] border border-white/10 px-6 py-3 rounded-full text-white text-sm font-medium transition-colors group">
+            See more testimonials <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
+
       </div>
-      
-      <style dangerouslySetInnerHTML={{__html: `
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      `}} />
     </section>
   );
 }
