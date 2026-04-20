@@ -71,7 +71,7 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.2, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]"
         >
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon">
@@ -84,7 +84,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.2, delay: 2.0, ease: [0.16, 1, 0.3, 1] }}
           className="text-base md:text-lg text-white/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed"
         >
           Trusted by hundreds of happy clients for delivering fun, stylish, and unforgettable photo booth experiences.
@@ -93,7 +93,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.2, delay: 2.2, ease: [0.16, 1, 0.3, 1] }}
           className="flex justify-center"
         >
           <Button size="md" variant="primary" className="w-full sm:w-auto text-base group px-8 py-3 md:px-10 md:py-4">
@@ -107,7 +107,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
+        transition={{ delay: 3.0, duration: 1.5 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
         <span className="text-xs uppercase tracking-widest text-white/40">Scroll</span>

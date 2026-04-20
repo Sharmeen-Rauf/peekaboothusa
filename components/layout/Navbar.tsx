@@ -114,25 +114,40 @@ export default function Navbar() {
 
       {/* Mobile Nav Overlay */}
       <motion.div
-        initial={false}
-        animate={isMobileOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: "-100%" }}
-        transition={{ duration: 0.3 }}
+        initial="hidden"
+        animate={isMobileOpen ? "show" : "hidden"}
+        variants={{
+          hidden: { opacity: 0, y: "-100%", transition: { duration: 0.3 } },
+          show: { 
+            opacity: 1, 
+            y: 0, 
+            transition: { 
+              duration: 0.4,
+              staggerChildren: 0.1,
+              delayChildren: 0.2
+            } 
+          }
+        }}
         className="absolute top-0 left-0 w-full h-screen bg-black/98 backdrop-blur-2xl z-40 flex flex-col items-center justify-center gap-8 lg:hidden pointer-events-none"
         style={{ pointerEvents: isMobileOpen ? "auto" : "none" }}
       >
         {navLinks.map((link) => (
-          <Link
-            key={link.name}
-            href={link.href}
-            onClick={() => setIsMobileOpen(false)}
-            className="text-xl md:text-2xl font-bold tracking-widest text-white hover:text-brand-neon transition-colors flex items-center gap-2 uppercase"
-          >
-            {link.name}
-            {link.hasDropdown && <ChevronDown size={20} />}
-          </Link>
+          <motion.div key={link.name} variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}>
+            <Link
+              href={link.href}
+              onClick={() => setIsMobileOpen(false)}
+              className="text-xl md:text-2xl font-bold tracking-widest text-white hover:text-brand-neon transition-colors flex items-center gap-2 uppercase"
+            >
+              {link.name}
+              {link.hasDropdown && <ChevronDown size={20} />}
+            </Link>
+          </motion.div>
         ))}
         
-        <div className="mt-12 flex flex-col items-center gap-6">
+        <motion.div 
+          variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}
+          className="mt-12 flex flex-col items-center gap-6"
+        >
           <div className="flex flex-col text-center leading-tight">
             <span className="text-sm font-medium text-white/60 mb-2 uppercase tracking-widest">Call Us Today</span>
             <a href="tel:1-800-709-8579" className="text-brand-neon font-bold text-2xl tracking-wide">
@@ -150,7 +165,7 @@ export default function Navbar() {
                <Youtube size={18} />
              </a>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </header>
   );
