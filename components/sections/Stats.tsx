@@ -4,10 +4,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 const stats = [
-  { prefix: "", value: 596, suffix: "", label: "Happy Customers" },
   { prefix: "", value: 1890, suffix: "+", label: "Events Hosted" },
-  { prefix: "", value: 250, suffix: "", label: "Finished Projects" },
-  { prefix: "0", value: 4, suffix: "+", label: "Awards Winning" },
+  { prefix: "", value: 102, suffix: "k+", label: "Pictures Taken" },
+  { prefix: "", value: 10, suffix: "M+", label: "Reached Online" },
+  { prefix: "", value: 14, suffix: "+", label: "Years Experience" },
 ];
 
 function Counter({ from, to, duration = 2 }: { from: number; to: number; duration?: number }) {
@@ -51,8 +51,8 @@ export default function Stats() {
           transition={{ duration: 0.6 }}
           className="max-w-5xl mx-auto rounded-[3rem] bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] relative overflow-hidden py-10 px-8 shadow-2xl border border-white/5"
         >
-          {/* Bottom Red Glow Line */}
-          <div className="absolute bottom-0 left-[5%] right-[5%] h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_-5px_30px_rgba(255,0,0,0.6)]"></div>
+          {/* Bottom Neon Glow Line */}
+          <div className="absolute bottom-0 left-[5%] right-[5%] h-[2px] bg-gradient-to-r from-transparent via-brand-neon to-transparent shadow-[0_-5px_30px_rgba(247,54,168,0.6)]"></div>
           
           {/* Top Subtle Highlight */}
           <div className="absolute top-0 left-[20%] right-[20%] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
