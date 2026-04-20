@@ -1,15 +1,17 @@
+import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
-import BrandLogos from "@/components/sections/BrandLogos";
-import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import Services from "@/components/sections/Services";
-import AvailabilityChecker from "@/components/sections/AvailabilityChecker";
-import Events from "@/components/sections/Events";
-import Stats from "@/components/sections/Stats";
-import Gallery from "@/components/sections/Gallery";
-import Testimonials from "@/components/sections/Testimonials";
-import Location from "@/components/sections/Location";
-import Contact from "@/components/sections/Contact";
-import LocationsMap from "@/components/sections/LocationsMap";
+
+// Dynamic imports for below-the-fold components
+const Stats = dynamic(() => import("@/components/sections/Stats"));
+const BrandLogos = dynamic(() => import("@/components/sections/BrandLogos"));
+const WhyChooseUs = dynamic(() => import("@/components/sections/WhyChooseUs"));
+const Services = dynamic(() => import("@/components/sections/Services"));
+const AvailabilityChecker = dynamic(() => import("@/components/sections/AvailabilityChecker"));
+const Events = dynamic(() => import("@/components/sections/Events"));
+const Gallery = dynamic(() => import("@/components/sections/Gallery"));
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
+const Contact = dynamic(() => import("@/components/sections/Contact"));
+const LocationsMap = dynamic(() => import("@/components/sections/LocationsMap"));
 
 export default function Home() {
   return (

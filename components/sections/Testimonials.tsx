@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const initialTestimonials = [
   {
@@ -118,8 +119,7 @@ export default function Testimonials() {
                         : "bg-[#111] border border-white/5"
                     }`}
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={item.avatar} alt={item.name} className="w-16 h-16 rounded-full mb-4 object-cover border border-white/20" />
+                    <Image src={item.avatar} alt={item.name} width={64} height={64} className="rounded-full mb-4 object-cover border border-white/20" />
                     <h4 className="text-white font-bold mb-4">{item.name}</h4>
                     <p className="text-sm text-white/70 mb-8 leading-relaxed h-[100px] overflow-hidden">
                       {item.text}

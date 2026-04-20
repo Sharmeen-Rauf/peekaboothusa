@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import Image from "next/image";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -21,11 +22,14 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
+          <Image 
             src="/wedding-photo-booth-rental-usa.png" 
             alt="Wedding Photo Booth"
-            className="w-full h-full object-cover opacity-40"
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            className="object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-background"></div>
         </div>

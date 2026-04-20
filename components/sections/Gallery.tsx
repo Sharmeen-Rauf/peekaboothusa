@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Instagram } from "lucide-react";
+import Image from "next/image";
 
 const images = [
   "/gallery-1.png",
@@ -40,11 +41,12 @@ export default function Gallery() {
               transition={{ delay: i * 0.1 }}
               className="relative rounded-xl overflow-hidden group aspect-square md:aspect-auto md:h-80"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
+              <Image 
                 src={src} 
                 alt={`Gallery image ${i + 1}`} 
-                className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-brand-neon/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 
 const services = [
   {
@@ -56,11 +57,12 @@ export default function Services() {
               <div className="w-full lg:w-1/2 relative group">
                 <div className="absolute inset-0 bg-brand-neon rounded-2xl rotate-2 group-hover:rotate-3 transition-transform duration-500 opacity-20 blur-lg"></div>
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/10 glass-panel">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
+                  <Image 
                     src={service.image} 
                     alt={service.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 </div>

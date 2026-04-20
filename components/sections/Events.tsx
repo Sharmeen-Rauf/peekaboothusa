@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import Image from "next/image";
 
 const eventTypes = [
   { name: "Luxury Weddings", image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop", span: "md:col-span-2 md:row-span-2" },
@@ -29,11 +30,12 @@ export default function Events() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`relative rounded-2xl overflow-hidden group cursor-pointer ${event.span}`}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
+              <Image 
                 src={event.image} 
                 alt={event.name} 
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-80"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-80"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
               

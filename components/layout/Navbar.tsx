@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { Menu, X, Facebook, Instagram, ChevronDown, Phone, Mail, Youtube } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { name: "HOME", href: "/" },
@@ -76,10 +77,11 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="relative z-10 flex items-center hover:scale-105 transition-transform duration-300">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
+              <Image 
                 src="/PeekABooth-LOGO-2025-600x212.png" 
                 alt="Peekabooth USA Logo" 
+                width={300}
+                height={106}
                 className="h-9 md:h-12 lg:h-14 w-auto object-contain transition-all duration-300"
               />
             </Link>

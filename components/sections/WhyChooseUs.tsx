@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function WhyChooseUs() {
   return (
@@ -55,11 +56,11 @@ export default function WhyChooseUs() {
               {/* Subtle hover glow */}
               <div className="absolute inset-0 bg-brand-neon/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none mix-blend-overlay"></div>
               
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
+              <Image 
                 src="/premium-photobooth.png" 
                 alt="Premium Photo Booth Experience" 
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
             </div>
           </motion.div>

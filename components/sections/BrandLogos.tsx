@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const brandLogos = [
   "/cocacolaone.png",
@@ -40,11 +41,12 @@ export default function BrandLogos() {
               key={i}
               className="relative w-32 md:w-40 h-20 flex-shrink-0 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-500"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
+              <Image 
                 src={src} 
                 alt={`Brand partner ${i}`}
-                className="max-w-full max-h-full object-contain"
+                fill
+                sizes="160px"
+                className="object-contain"
               />
             </div>
           ))}
