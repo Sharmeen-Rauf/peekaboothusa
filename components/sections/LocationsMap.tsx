@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function LocationsMap() {
   return (
-    <section className="relative py-32 md:py-48 bg-black overflow-hidden border-t border-white/5">
+    <section className="relative py-20 md:py-28 bg-black overflow-hidden border-t border-white/5">
       {/* Background Map Image */}
       <div 
         className="absolute inset-0 z-0 opacity-60 mix-blend-screen pointer-events-none bg-center bg-no-repeat"

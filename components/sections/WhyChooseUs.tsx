@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 md:py-32 relative bg-surface overflow-hidden">
+    <section className="py-16 md:py-20 relative bg-surface overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           

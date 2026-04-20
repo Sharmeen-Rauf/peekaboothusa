@@ -9,7 +9,7 @@ export default function AvailabilityChecker() {
   const [location, setLocation] = useState("");
 
   return (
-    <section className="py-16 md:py-24 relative">
+    <section className="py-12 md:py-16 relative">
       <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-6xl">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

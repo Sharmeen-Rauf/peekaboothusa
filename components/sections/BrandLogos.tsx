@@ -20,7 +20,7 @@ const brandLogos = [
 
 export default function BrandLogos() {
   return (
-    <section className="py-20 border-y border-white/5 bg-black/20 overflow-hidden relative">
+    <section className="py-12 border-y border-white/5 bg-black/20 overflow-hidden relative">
       <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
       <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
       

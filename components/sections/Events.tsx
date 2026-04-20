@@ -12,7 +12,7 @@ const eventTypes = [
 
 export default function Events() {
   return (
-    <section className="py-24 relative bg-black">
+    <section className="py-16 md:py-20 relative bg-black">
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeader 
           title="Perfect For Every Occasion" 

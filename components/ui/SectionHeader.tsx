@@ -18,7 +18,7 @@ export const SectionHeader = ({ title, subtitle, align = "center", className }: 
   };
 
   return (
-    <div className={cn("mb-16 md:mb-24 max-w-3xl", alignClass[align], className)}>
+    <div className={cn("mb-10 md:mb-14 max-w-3xl", alignClass[align], className)}>
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

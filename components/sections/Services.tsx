@@ -33,7 +33,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 relative overflow-hidden bg-black">
+    <section id="services" className="py-16 md:py-20 relative overflow-hidden bg-black">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-neon/5 to-transparent pointer-events-none"></div>
       
       <div className="container mx-auto px-6 relative z-10">

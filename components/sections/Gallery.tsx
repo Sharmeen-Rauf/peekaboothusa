@@ -12,7 +12,7 @@ const images = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-24 relative">
+    <section id="gallery" className="py-16 md:py-20 relative">
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <SectionHeader 

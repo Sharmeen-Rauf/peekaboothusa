@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, ArrowRight, NotebookPen } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 relative bg-black">
+    <section id="contact" className="py-16 md:py-20 relative bg-black">
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           
