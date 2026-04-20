@@ -12,6 +12,7 @@ const Gallery = dynamic(() => import("@/components/sections/Gallery"));
 const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
 const Contact = dynamic(() => import("@/components/sections/Contact"));
 const LocationsMap = dynamic(() => import("@/components/sections/LocationsMap"));
+const VirtualBooth = dynamic(() => import("@/components/sections/VirtualBooth"));
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <BrandLogos />
       <WhyChooseUs />
       <Services />
+      <VirtualBooth />
       <AvailabilityChecker />
       <Events />
       <Gallery />
