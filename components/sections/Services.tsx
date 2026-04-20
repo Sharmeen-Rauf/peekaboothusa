@@ -23,6 +23,12 @@ const services = [
     image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop",
     features: ["Mobile Setup", "GIFs & Boomerangs", "Text to Phone", "High Energy"],
   },
+  {
+    title: "Magazine Photo Booth Box",
+    description: "Book our magazine photo booth for your next event. Includes custom frame, personalized headings, and much more.",
+    image: "/magazine-booth.png",
+    features: ["Life-Sized Box", "Custom Headings", "Instant Prints", "Red Carpet Vibe"],
+  },
 ];
 
 export default function Services() {
