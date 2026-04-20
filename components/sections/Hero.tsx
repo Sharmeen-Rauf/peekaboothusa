@@ -90,21 +90,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center justify-center gap-4"
+          className="flex justify-center"
         >
-          <Button size="lg" variant="primary" className="w-full sm:w-auto text-lg group">
+          <Button size="md" variant="primary" className="w-full sm:w-auto text-base group px-10 py-6">
             Get Quote
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-2">
-            <Button size="md" variant="glass" className="w-full sm:w-auto">
-              Check Availability
-            </Button>
-            <Button size="md" variant="glass" className="w-full sm:w-auto">
-              View Packages
-            </Button>
-          </div>
         </motion.div>
       </motion.div>
       
