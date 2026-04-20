@@ -9,6 +9,7 @@ import Gallery from "@/components/sections/Gallery";
 import Testimonials from "@/components/sections/Testimonials";
 import Location from "@/components/sections/Location";
 import Contact from "@/components/sections/Contact";
+import LocationsMap from "@/components/sections/LocationsMap";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Gallery />
       <Testimonials />
       <Contact />
+      <LocationsMap />
     </>
   );
 }
