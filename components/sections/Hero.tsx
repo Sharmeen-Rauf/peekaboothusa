@@ -19,6 +19,17 @@ export default function Hero() {
     <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src="/wedding-photo-booth-rental-usa.png" 
+            alt="Wedding Photo Booth"
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-background"></div>
+        </div>
+
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-neon/20 rounded-full blur-[120px] mix-blend-screen animate-pulse-slow"></div>
         <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-blue-500/20 rounded-full blur-[150px] mix-blend-screen animate-pulse-slow" style={{ animationDelay: "2s" }}></div>
         
