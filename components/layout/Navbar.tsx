@@ -7,12 +7,12 @@ import { Menu, X, Facebook, Instagram, ChevronDown } from "lucide-react";
 import Link from "next/link";
 
 const navLinks = [
-  { name: "HOME", href: "/" },
-  { name: "PHOTO BOOTHS", href: "#services", hasDropdown: true },
-  { name: "GALLERY", href: "#gallery" },
-  { name: "CONTACT", href: "#contact" },
-  { name: "CORPORATE", href: "#corporate" },
-  { name: "GET QUOTE", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Photo Booths", href: "#services", hasDropdown: true },
+  { name: "Gallery", href: "#gallery" },
+  { name: "Contact", href: "#contact" },
+  { name: "Corporate", href: "#corporate" },
+  { name: "Get Quote", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -54,7 +54,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-bold tracking-widest text-white hover:text-brand-neon transition-colors relative group flex items-center gap-1 uppercase"
+                className="text-sm font-bold tracking-wide text-white hover:text-brand-neon transition-colors relative group flex items-center gap-1"
               >
                 {link.name}
                 {link.hasDropdown && <ChevronDown size={14} className="mt-0.5" />}
@@ -74,7 +74,7 @@ export default function Navbar() {
               </a>
             </div>
             <div className="flex flex-col justify-center text-left">
-              <span className="text-xs font-semibold text-white/80 tracking-wider uppercase mb-0.5">Call Us Today -</span>
+              <span className="text-xs font-semibold text-white/80 tracking-wide mb-0.5">Call Us Today -</span>
               <a href="tel:1-800-709-8579" className="text-brand-neon font-black text-lg hover:text-brand-glow transition-colors tracking-wide">
                 1-800-709-8579
               </a>
