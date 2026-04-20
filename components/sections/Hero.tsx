@@ -62,49 +62,49 @@ export default function Hero() {
         style={{ y, opacity }}
         className="container mx-auto px-6 relative z-10 text-center"
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-block mb-6 px-4 py-1.5 rounded-full glass border-brand-neon/30 text-brand-glow text-sm font-medium tracking-wide"
-        >
-          Redefining Event Photography
-        </motion.div>
+
         
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-[1.1]"
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]"
         >
-          Capture the <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon">
-            Extraordinary.
-          </span>
+            #1 Rated
+          </span>{" "}
+          Photo Booth <br className="hidden md:block" />
+          Rental Company!
         </motion.h1>
         
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="text-xl md:text-2xl text-white/60 mb-12 max-w-2xl mx-auto font-light"
+          className="text-base md:text-lg text-white/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed"
         >
-          Premium photo booth experiences for luxury weddings, corporate galas, and exclusive parties.
+          Trusted by hundreds of happy clients for delivering fun, stylish, and unforgettable photo booth experiences.
         </motion.p>
         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6"
+          className="flex flex-col items-center justify-center gap-4"
         >
           <Button size="lg" variant="primary" className="w-full sm:w-auto text-lg group">
-            Check Availability
+            Get Quote
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button size="lg" variant="glass" className="w-full sm:w-auto text-lg">
-            View Packages
-          </Button>
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-2">
+            <Button size="md" variant="glass" className="w-full sm:w-auto">
+              Check Availability
+            </Button>
+            <Button size="md" variant="glass" className="w-full sm:w-auto">
+              View Packages
+            </Button>
+          </div>
         </motion.div>
       </motion.div>
       
