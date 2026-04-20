@@ -43,18 +43,18 @@ export default function Navbar() {
             <img 
               src="/PeekABooth-LOGO-2025-600x212.png" 
               alt="Peekabooth USA Logo" 
-              className="h-8 md:h-10 w-auto object-contain transition-all duration-300"
+              className="h-10 md:h-14 lg:h-16 w-auto object-contain transition-all duration-300"
               title="Change 'invert' to make it black if needed"
             />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-xs xl:text-sm font-bold text-white hover:text-brand-neon transition-colors relative group flex items-center gap-1"
+                className="text-sm font-bold tracking-widest text-white hover:text-brand-neon transition-colors relative group flex items-center gap-1 uppercase"
               >
                 {link.name}
                 {link.hasDropdown && <ChevronDown size={14} className="mt-0.5" />}
@@ -64,18 +64,18 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop Right Side */}
-          <div className="hidden md:flex items-center gap-4 xl:gap-6">
-            <div className="flex items-center gap-3">
-              <a href="#" className="text-white hover:text-brand-neon transition-colors">
-                <Facebook size={18} />
+          <div className="hidden lg:flex items-center gap-6">
+            <div className="flex items-center gap-4 border-r border-white/20 pr-6">
+              <a href="#" className="text-white hover:text-brand-neon transition-transform hover:scale-110">
+                <Facebook size={22} />
               </a>
-              <a href="#" className="text-white hover:text-brand-neon transition-colors">
-                <Instagram size={18} />
+              <a href="#" className="text-white hover:text-brand-neon transition-transform hover:scale-110">
+                <Instagram size={22} />
               </a>
             </div>
-            <div className="flex flex-col text-right leading-tight">
-              <span className="text-[10px] xl:text-xs font-medium text-white">Call Us Today -</span>
-              <a href="tel:1-800-709-8579" className="text-brand-neon font-bold text-sm xl:text-base hover:text-brand-glow transition-colors">
+            <div className="flex flex-col justify-center text-left">
+              <span className="text-xs font-semibold text-white/80 tracking-wider uppercase mb-0.5">Call Us Today -</span>
+              <a href="tel:1-800-709-8579" className="text-brand-neon font-black text-lg hover:text-brand-glow transition-colors tracking-wide">
                 1-800-709-8579
               </a>
             </div>
