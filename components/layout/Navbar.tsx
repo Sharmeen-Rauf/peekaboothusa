@@ -3,14 +3,16 @@
 import { useState, useEffect } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Facebook, Instagram, ChevronDown } from "lucide-react";
 import Link from "next/link";
 
 const navLinks = [
-  { name: "Services", href: "#services" },
-  { name: "Gallery", href: "#gallery" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "Contact", href: "#contact" },
+  { name: "HOME", href: "/" },
+  { name: "PHOTO BOOTHS", href: "#services", hasDropdown: true },
+  { name: "GALLERY", href: "#gallery" },
+  { name: "CONTACT", href: "#contact" },
+  { name: "CORPORATE", href: "#corporate" },
+  { name: "GET QUOTE", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -47,24 +49,36 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-white/70 hover:text-white transition-colors relative group"
+                className="text-xs xl:text-sm font-bold text-white hover:text-brand-neon transition-colors relative group flex items-center gap-1"
               >
                 {link.name}
+                {link.hasDropdown && <ChevronDown size={14} className="mt-0.5" />}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-neon transition-all duration-300 group-hover:w-full rounded-full"></span>
               </Link>
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <Button size="sm" variant="primary">
-              Book Now
-            </Button>
+          {/* Desktop Right Side */}
+          <div className="hidden md:flex items-center gap-4 xl:gap-6">
+            <div className="flex items-center gap-3">
+              <a href="#" className="text-white hover:text-brand-neon transition-colors">
+                <Facebook size={18} />
+              </a>
+              <a href="#" className="text-white hover:text-brand-neon transition-colors">
+                <Instagram size={18} />
+              </a>
+            </div>
+            <div className="flex flex-col text-right leading-tight">
+              <span className="text-[10px] xl:text-xs font-medium text-white">Call Us Today -</span>
+              <a href="tel:1-800-709-8579" className="text-brand-neon font-bold text-sm xl:text-base hover:text-brand-glow transition-colors">
+                1-800-709-8579
+              </a>
+            </div>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -90,14 +104,29 @@ export default function Navbar() {
             key={link.name}
             href={link.href}
             onClick={() => setIsMobileOpen(false)}
-            className="text-2xl font-bold text-white hover:text-brand-neon transition-colors"
+            className="text-2xl font-bold text-white hover:text-brand-neon transition-colors flex items-center gap-2"
           >
             {link.name}
+            {link.hasDropdown && <ChevronDown size={20} />}
           </Link>
         ))}
-        <Button size="lg" className="mt-4" onClick={() => setIsMobileOpen(false)}>
-          Book Now
-        </Button>
+        
+        <div className="mt-8 flex flex-col items-center gap-6">
+          <div className="flex flex-col text-center leading-tight">
+            <span className="text-sm font-medium text-white/80 mb-1">Call Us Today -</span>
+            <a href="tel:1-800-709-8579" className="text-brand-neon font-bold text-xl">
+              1-800-709-8579
+            </a>
+          </div>
+          <div className="flex items-center gap-6">
+            <a href="#" className="text-white hover:text-brand-neon transition-colors">
+              <Facebook size={24} />
+            </a>
+            <a href="#" className="text-white hover:text-brand-neon transition-colors">
+              <Instagram size={24} />
+            </a>
+          </div>
+        </div>
       </motion.div>
     </motion.header>
   );
