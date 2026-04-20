@@ -4,10 +4,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 const stats = [
-  { value: 500, suffix: "+", label: "Events Completed" },
-  { value: 100, suffix: "k+", label: "Photos Captured" },
-  { value: 5, suffix: " Stars", label: "Client Rating" },
-  { value: 10, suffix: "+", label: "Years Experience" },
+  { prefix: "", value: 596, suffix: "", label: "Happy Customers" },
+  { prefix: "", value: 1890, suffix: "+", label: "Events Hosted" },
+  { prefix: "", value: 250, suffix: "", label: "Finished Projects" },
+  { prefix: "0", value: 4, suffix: "+", label: "Awards Winning" },
 ];
 
 function Counter({ from, to, duration = 2 }: { from: number; to: number; duration?: number }) {
@@ -34,33 +34,45 @@ function Counter({ from, to, duration = 2 }: { from: number; to: number; duratio
     window.requestAnimationFrame(step);
   }, [inView, from, to, duration]);
 
-  return <span ref={ref}>{count}</span>;
+  // Add comma formatting for thousands
+  const formattedCount = count >= 1000 ? count.toLocaleString() : count;
+
+  return <span ref={ref}>{formattedCount}</span>;
 }
 
 export default function Stats() {
   return (
-    <section className="py-20 relative bg-surface border-y border-white/5">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-neon/10 via-transparent to-transparent"></div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-            >
-              <div className="text-4xl md:text-5xl lg:text-6xl font-black mb-2 text-glow">
-                <Counter from={0} to={stat.value} />{stat.suffix}
+    <section className="relative z-20 pb-16 pt-12 md:-mt-10">
+      <div className="container mx-auto px-4 md:px-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto rounded-[3rem] bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] relative overflow-hidden py-10 px-8 shadow-2xl border border-white/5"
+        >
+          {/* Bottom Red Glow Line */}
+          <div className="absolute bottom-0 left-[5%] right-[5%] h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_-5px_30px_rgba(255,0,0,0.6)]"></div>
+          
+          {/* Top Subtle Highlight */}
+          <div className="absolute top-0 left-[20%] right-[20%] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
+            {stats.map((stat, i) => (
+              <div
+                key={i}
+                className="flex flex-col items-center justify-center"
+              >
+                <div className="text-3xl md:text-4xl font-bold mb-2 text-white">
+                  {stat.prefix}<Counter from={0} to={stat.value} />{stat.suffix}
+                </div>
+                <div className="text-white/70 font-medium text-xs md:text-sm tracking-wide">
+                  {stat.label}
+                </div>
               </div>
-              <div className="text-white/60 font-medium tracking-wide uppercase text-sm">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
