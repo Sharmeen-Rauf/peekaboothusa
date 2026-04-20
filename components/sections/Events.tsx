@@ -5,9 +5,9 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const eventTypes = [
   { name: "Luxury Weddings", image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop", span: "md:col-span-2 md:row-span-2" },
-  { name: "Corporate Galas", image: "https://images.unsplash.com/photo-1505362892188-75c1a84f3eb8?q=80&w=800&auto=format&fit=crop", span: "md:col-span-1 md:row-span-1" },
+  { name: "Corporate Galas", image: "/corporate-gala.png", span: "md:col-span-1 md:row-span-1" },
   { name: "Brand Activations", image: "https://images.unsplash.com/photo-1558008258-3256797b43f3?q=80&w=800&auto=format&fit=crop", span: "md:col-span-1 md:row-span-1" },
-  { name: "Private Parties", image: "https://images.unsplash.com/photo-1533174000228-52264c703b0c?q=80&w=800&auto=format&fit=crop", span: "md:col-span-2 md:row-span-1" },
+  { name: "Private Parties", image: "/private-party.png", span: "md:col-span-2 md:row-span-1" },
 ];
 
 export default function Events() {
