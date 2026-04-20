@@ -5,12 +5,9 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Instagram } from "lucide-react";
 
 const images = [
-  "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1533174000228-52264c703b0c?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1558008258-3256797b43f3?q=80&w=800&auto=format&fit=crop",
+  "/gallery-1.png",
+  "/gallery-2.png",
+  "/gallery-3.png",
 ];
 
 export default function Gallery() {
@@ -33,7 +30,7 @@ export default function Gallery() {
           </a>
         </div>
 
-        <div className="columns-2 md:columns-3 gap-4 space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {images.map((src, i) => (
             <motion.div
               key={i}
@@ -41,7 +38,7 @@ export default function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="relative rounded-xl overflow-hidden group break-inside-avoid"
+              className="relative rounded-xl overflow-hidden group aspect-square md:aspect-auto md:h-80"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 

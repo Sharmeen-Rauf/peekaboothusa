@@ -22,7 +22,6 @@ export default function Home() {
       <Events />
       <Gallery />
       <Testimonials />
-      <Location />
       <Contact />
     </>
   );
