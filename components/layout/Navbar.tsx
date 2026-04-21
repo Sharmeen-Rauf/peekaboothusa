@@ -1,10 +1,37 @@
 "use client";
 
 import { useState } from "react";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
-import { Menu, X, Facebook, Instagram, ChevronDown, Phone, Mail, Youtube } from "lucide-react";
+import { motion, useMotionValueEvent, useScroll, AnimatePresence } from "framer-motion";
+import { Menu, X, Facebook, Instagram, ChevronDown, Phone, Mail, Youtube, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+
+const boothDropdown = [
+  {
+    name: "Open Air Photo Booth",
+    href: "/open-air-photo-booth-rental",
+    desc: "Sleek, modern, open-concept booth for any event.",
+    image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=400&auto=format&fit=crop",
+  },
+  {
+    name: "360° Photo Booth",
+    href: "/360-photo-booth-rental",
+    desc: "Viral slow-motion 360° video experience.",
+    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=400&auto=format&fit=crop",
+  },
+  {
+    name: "Vogue Magazine Box",
+    href: "/vogue-magazine-photo-booth-box",
+    desc: "Life-size magazine cover — the ultimate showstopper.",
+    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400&auto=format&fit=crop",
+  },
+  {
+    name: "Digital Photo Booth",
+    href: "/digital-photo-booth-rental",
+    desc: "Instant GIFs, boomerangs & digital delivery.",
+    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=400&auto=format&fit=crop",
+  },
+];
 
 const navLinks = [
   { name: "HOME", href: "/" },
@@ -17,6 +44,8 @@ const navLinks = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isMobileBoothOpen, setIsMobileBoothOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -32,7 +61,6 @@ export default function Navbar() {
         }`}
       >
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center h-full">
-          {/* Top Bar Left: Contact Info */}
           <div className="flex items-center gap-6 text-[11px] md:text-xs text-white/80 font-medium tracking-wide">
             <a href="tel:1-800-709-8579" className="flex items-center gap-2 hover:text-brand-neon transition-colors">
               <Phone size={12} className="text-brand-neon" />
@@ -43,8 +71,6 @@ export default function Navbar() {
               hello@peekaboothusa.com
             </a>
           </div>
-
-          {/* Top Bar Right: Socials & CTA */}
           <div className="flex items-center h-full">
             <div className="flex items-center gap-2 mr-4">
               <a href="#" className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-brand-neon text-white flex items-center justify-center hover:bg-white hover:text-brand-neon transition-colors">
@@ -89,15 +115,101 @@ export default function Navbar() {
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
               {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-xs xl:text-sm font-bold tracking-widest text-white hover:text-brand-neon transition-colors flex items-center gap-1 group relative py-2"
-                >
-                  {link.name}
-                  {link.hasDropdown && <ChevronDown size={14} className="mt-0.5 group-hover:rotate-180 transition-transform duration-300" />}
-                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-neon transition-all duration-300 group-hover:w-full"></span>
-                </Link>
+                link.hasDropdown ? (
+                  <div
+                    key={link.name}
+                    className="relative"
+                    onMouseEnter={() => setDropdownOpen(true)}
+                    onMouseLeave={() => setDropdownOpen(false)}
+                  >
+                    <button className="text-xs xl:text-sm font-bold tracking-widest text-white hover:text-brand-neon transition-colors flex items-center gap-1 group relative py-2">
+                      {link.name}
+                      <ChevronDown 
+                        size={14} 
+                        className={`mt-0.5 transition-transform duration-300 ${dropdownOpen ? "rotate-180 text-brand-neon" : ""}`} 
+                      />
+                      <span className={`absolute bottom-0 left-0 h-[2px] bg-brand-neon transition-all duration-300 ${dropdownOpen ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+                    </button>
+
+                    {/* Mega Dropdown */}
+                    <AnimatePresence>
+                      {dropdownOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 10, scale: 0.98 }}
+                          transition={{ duration: 0.2, ease: "easeOut" }}
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[680px] bg-[#0a0a0a] border border-white/10 rounded-[1.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.8)] overflow-hidden z-50"
+                        >
+                          {/* Header */}
+                          <div className="px-6 py-4 border-b border-white/5 flex items-center justify-between">
+                            <div>
+                              <h3 className="text-white font-extrabold text-sm tracking-wide">Our Photo Booths</h3>
+                              <p className="text-white/40 text-xs mt-0.5">Premium experiences for every occasion</p>
+                            </div>
+                            <Link 
+                              href="/#services"
+                              className="text-brand-neon text-xs font-bold flex items-center gap-1 hover:gap-2 transition-all"
+                            >
+                              View All <ArrowRight className="w-3 h-3" />
+                            </Link>
+                          </div>
+
+                          {/* Grid of booth options */}
+                          <div className="grid grid-cols-2 gap-px bg-white/5 p-px">
+                            {boothDropdown.map((booth) => (
+                              <Link
+                                key={booth.name}
+                                href={booth.href}
+                                className="group flex items-center gap-4 p-5 bg-[#0a0a0a] hover:bg-white/5 transition-all"
+                                onClick={() => setDropdownOpen(false)}
+                              >
+                                <div className="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 border border-white/10 group-hover:border-brand-neon/40 transition-colors">
+                                  <Image
+                                    src={booth.image}
+                                    alt={booth.name}
+                                    fill
+                                    sizes="64px"
+                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                  />
+                                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <h4 className="text-white font-bold text-sm group-hover:text-brand-neon transition-colors leading-tight mb-1">
+                                    {booth.name}
+                                  </h4>
+                                  <p className="text-white/50 text-xs leading-relaxed line-clamp-2">{booth.desc}</p>
+                                </div>
+                                <ArrowRight className="w-4 h-4 text-white/20 group-hover:text-brand-neon group-hover:translate-x-1 transition-all shrink-0" />
+                              </Link>
+                            ))}
+                          </div>
+
+                          {/* Footer CTA */}
+                          <div className="px-6 py-4 border-t border-white/5 bg-brand-neon/5 flex items-center justify-between">
+                            <p className="text-white/50 text-xs">Not sure which booth is right for you?</p>
+                            <Link 
+                              href="/#contact"
+                              onClick={() => setDropdownOpen(false)}
+                              className="text-xs font-bold bg-brand-neon hover:bg-brand-glow text-white px-4 py-2 rounded-full transition-colors shadow-[0_0_15px_rgba(247,54,168,0.3)]"
+                            >
+                              Get a Free Consultation
+                            </Link>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-xs xl:text-sm font-bold tracking-widest text-white hover:text-brand-neon transition-colors flex items-center gap-1 group relative py-2"
+                  >
+                    {link.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-neon transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                )
               ))}
             </nav>
 
@@ -123,30 +235,72 @@ export default function Navbar() {
             y: 0, 
             transition: { 
               duration: 0.4,
-              staggerChildren: 0.1,
+              staggerChildren: 0.08,
               delayChildren: 0.2
             } 
           }
         }}
-        className="absolute top-0 left-0 w-full h-screen bg-black/98 backdrop-blur-2xl z-40 flex flex-col items-center justify-center gap-8 lg:hidden pointer-events-none"
+        className="absolute top-0 left-0 w-full h-screen bg-black/98 backdrop-blur-2xl z-40 flex flex-col overflow-y-auto pt-28 pb-12 px-8 lg:hidden"
         style={{ pointerEvents: isMobileOpen ? "auto" : "none" }}
       >
         {navLinks.map((link) => (
-          <motion.div key={link.name} variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}>
-            <Link
-              href={link.href}
-              onClick={() => setIsMobileOpen(false)}
-              className="text-xl md:text-2xl font-bold tracking-widest text-white hover:text-brand-neon transition-colors flex items-center gap-2 uppercase"
-            >
-              {link.name}
-              {link.hasDropdown && <ChevronDown size={20} />}
-            </Link>
+          <motion.div 
+            key={link.name} 
+            variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}
+            className="border-b border-white/5"
+          >
+            {link.hasDropdown ? (
+              <div>
+                <button
+                  onClick={() => setIsMobileBoothOpen(!isMobileBoothOpen)}
+                  className="w-full text-left py-5 text-xl font-bold tracking-widest text-white hover:text-brand-neon transition-colors flex items-center justify-between uppercase"
+                >
+                  {link.name}
+                  <ChevronDown size={20} className={`transition-transform duration-300 ${isMobileBoothOpen ? "rotate-180 text-brand-neon" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {isMobileBoothOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pb-4 pl-4 flex flex-col gap-1">
+                        {boothDropdown.map((booth) => (
+                          <Link
+                            key={booth.name}
+                            href={booth.href}
+                            onClick={() => { setIsMobileOpen(false); setIsMobileBoothOpen(false); }}
+                            className="flex items-center gap-3 py-3 px-3 rounded-xl hover:bg-white/5 transition-colors group"
+                          >
+                            <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-white/10 shrink-0">
+                              <Image src={booth.image} alt={booth.name} fill sizes="40px" className="object-cover" />
+                            </div>
+                            <span className="text-white/70 group-hover:text-white font-semibold text-sm transition-colors">{booth.name}</span>
+                            <ArrowRight className="w-4 h-4 text-white/20 group-hover:text-brand-neon ml-auto transition-colors" />
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ) : (
+              <Link
+                href={link.href}
+                onClick={() => setIsMobileOpen(false)}
+                className="block py-5 text-xl font-bold tracking-widest text-white hover:text-brand-neon transition-colors uppercase"
+              >
+                {link.name}
+              </Link>
+            )}
           </motion.div>
         ))}
         
         <motion.div 
           variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}
-          className="mt-12 flex flex-col items-center gap-6"
+          className="mt-10 flex flex-col items-center gap-6"
         >
           <div className="flex flex-col text-center leading-tight">
             <span className="text-sm font-medium text-white/60 mb-2 uppercase tracking-widest">Call Us Today</span>
