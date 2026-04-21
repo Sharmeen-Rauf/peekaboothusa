@@ -85,35 +85,35 @@ function Scene1Hero() {
       {/* Content */}
       <motion.div className="relative z-20 text-center px-6 max-w-5xl mx-auto" style={{ opacity, y }}>
         <motion.p
-          initial={{ opacity: 0, letterSpacing: "0.2em" }}
-          animate={{ opacity: 1, letterSpacing: "0.5em" }}
-          transition={{ duration: 1.5, delay: 0.3 }}
-          className="text-brand-neon text-xs font-bold uppercase mb-6 tracking-[0.5em]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-4"
         >
-          Peekabooth USA Presents
+          360° Photo Booth Rental
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black tracking-tighter leading-none mb-2">
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/40">360</span>
-            <span className="text-brand-neon">°</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon">
+              #1 Rated 360°
+            </span>{" "}
+            Photo Booth<br className="hidden md:block" />
+            Rental Company!
           </h1>
-          <h2 className="text-2xl md:text-4xl font-light tracking-[0.3em] text-white/70 uppercase mb-8">
-            Photo Booth
-          </h2>
         </motion.div>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="text-white/50 text-base md:text-lg max-w-xl mx-auto mb-10 font-light leading-relaxed italic"
+          transition={{ duration: 1.2, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="text-base md:text-lg text-white/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed"
         >
-          "Every event has a moment worth capturing"
+          The most viral moment at any event. Step onto the platform and let the 360° arm spin for breathtaking slow-motion video content.
         </motion.p>
 
         <motion.div
