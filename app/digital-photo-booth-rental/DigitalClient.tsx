@@ -26,10 +26,10 @@ const pricing = [
 ];
 
 const videos = [
-  "/2-20230924-200635.mp4",
-  "/2-20230924-203326.mp4",
-  "/18-20231212-205121.mp4",
-  "/5-20240426-215944.mp4",
+  "/gif-photo-booth-rental-philadelphia.mp4",
+  "/gif-photo-booth-rental-los-angeles.mp4",
+  "/gif-photo-booth-rental-houston.mp4",
+  "/GIF-photo-booth-rental-chicago.mp4",
 ];
 
 const gallery = [

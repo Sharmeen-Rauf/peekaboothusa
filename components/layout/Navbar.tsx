@@ -36,7 +36,7 @@ const boothDropdown = [
 const navLinks = [
   { name: "HOME", href: "/" },
   { name: "PHOTO BOOTHS", href: "#services", hasDropdown: true },
-  { name: "GALLERY", href: "#gallery" },
+  { name: "GALLERY", href: "/gallery" },
   { name: "CORPORATE", href: "#corporate" },
   { name: "CONTACT US", href: "#contact" },
 ];
