@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import Contact from "@/components/sections/Contact";
-import { ArrowRight, Phone, Check, RotateCcw, Zap, Share2, Music } from "lucide-react";
+import { ArrowRight, Phone, Check, RotateCcw, Zap, Share2, Music, Plus, Minus } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -43,22 +44,22 @@ function Scene1Hero() {
         style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat", backgroundSize: "128px" }}
       />
 
-      {/* Background with parallax */}
+      {/* Background with parallax + real image */}
       <motion.div className="absolute inset-0 z-0" style={{ scale }}>
-        <div className="absolute inset-0 bg-black" />
-        {/* Cinematic gradient lights */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/60 to-black" />
+        <Image
+          src="/photo-booth-rental-360-cover.png"
+          alt="360 Photo Booth Rental"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black" />
         <motion.div
           className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full"
           style={{ background: "radial-gradient(circle, rgba(247,54,168,0.15) 0%, transparent 70%)" }}
           animate={{ scale: [1, 1.1, 1], opacity: [0.6, 1, 0.6] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/4 w-[400px] h-[400px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(100,100,255,0.1) 0%, transparent 70%)" }}
-          animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.8, 0.4] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
       </motion.div>
 
@@ -454,6 +455,219 @@ function Scene6CTA() {
   );
 }
 
+// ── VIDEO SHOWCASE ─────────────────────────────────────────────────────────
+const videos = [
+  "/360-photo-booth-rental-edison-nj.mp4",
+  "/360-photo-booth-rental-los-angeles.mp4",
+  "/360-photo-booth-rental-houston-sugar-land-tx.mp4",
+  "/360-photo-booth-rental-neward-de.mp4",
+];
+
+function SceneVideos() {
+  return (
+    <section className="py-16 md:py-20 bg-[#050505] border-t border-white/5 overflow-hidden">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <motion.div
+          initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}
+          className="text-center mb-10"
+        >
+          <motion.p variants={fadeUp} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Real Events</motion.p>
+          <motion.h2 variants={fadeUp} className="text-2xl md:text-3xl font-extrabold tracking-tight mb-3">See the 360° Experience in Action</motion.h2>
+          <motion.p variants={fadeUp} className="text-white/50 text-sm max-w-xl mx-auto leading-relaxed">
+            Watch real 360° booth moments from events we&apos;ve powered across the country.
+          </motion.p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {videos.map((src, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="relative rounded-2xl overflow-hidden group aspect-[9/16] bg-[#0a0a0a] border border-white/8 hover:border-brand-neon/40 transition-all"
+            >
+              <video
+                src={src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 border border-transparent group-hover:border-brand-neon/30 rounded-2xl transition-colors duration-300" />
+              <div className="absolute bottom-3 left-3">
+                <div className="w-2 h-2 rounded-full bg-brand-neon shadow-[0_0_6px_rgba(247,54,168,1)] animate-pulse" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── ABOUT / DESCRIPTION ────────────────────────────────────────────────────
+function SceneAbout() {
+  return (
+    <section className="py-16 md:py-20 bg-black border-t border-white/5">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">What It Is</p>
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight leading-tight mb-5">
+              Elevate Your Event with a{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-glow">
+                360° Photo Booth Experience
+              </span>
+            </h2>
+            <p className="text-white/60 text-sm leading-relaxed mb-8">
+              A 360 photo booth rental offers a fun, interactive experience where guests stand on a platform while a camera spins around them to capture stunning slow-motion videos from every angle. Features typically include customizable video overlays, instant sharing via text or email, LED lighting, music integration, and branded backdrops — perfect for weddings, corporate events, and parties looking to wow guests with next-level content.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="#contact"
+                className="inline-flex items-center justify-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group"
+              >
+                Get A Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <a
+                href="tel:1-800-709-8579"
+                className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-brand-neon/40 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all hover:bg-brand-neon/5"
+              >
+                <Phone className="w-4 h-4" /> +1-800-709-8579
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="grid grid-cols-2 gap-4"
+          >
+            {[
+              { val: "500+", label: "Events Powered", icon: "🎉" },
+              { val: "50+", label: "Cities Nationwide", icon: "📍" },
+              { val: "100%", label: "Satisfaction Rate", icon: "⭐" },
+              { val: "24/7", label: "Customer Support", icon: "💬" },
+            ].map((s) => (
+              <div key={s.label} className="bg-[#0a0a0a] border border-white/10 hover:border-brand-neon/30 rounded-2xl p-6 text-center transition-all group">
+                <div className="text-3xl mb-2">{s.icon}</div>
+                <p className="text-2xl font-extrabold text-white group-hover:text-brand-neon transition-colors mb-1">{s.val}</p>
+                <p className="text-white/40 text-xs tracking-wide">{s.label}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── FAQ ────────────────────────────────────────────────────────────────────
+const faqs360 = [
+  {
+    q: "How Much Deposit is Needed?",
+    a: "We require a $150 deposit to secure your booking. The remaining balance is due 7 days before your event. We accept all major credit cards and PayPal.",
+  },
+  {
+    q: "How Much Space is Needed?",
+    a: "The 360° photo booth platform requires a minimum area of 10ft x 10ft with at least 8ft of ceiling clearance. We recommend a flat, hard surface for the best experience.",
+  },
+  {
+    q: "Does Peek-A-Booth Have Insurance?",
+    a: "Yes! Peek-A-Booth is fully insured with general liability coverage. We can provide a Certificate of Insurance (COI) upon request, which many venues require.",
+  },
+  {
+    q: "Can I Book Online?",
+    a: "Absolutely! Submit a quote request through our contact form below, or call us at 1-800-709-8579. We'll confirm your date and send a booking agreement within 24 hours.",
+  },
+  {
+    q: "How Do I Pick My Template?",
+    a: "After booking, our design team will reach out to discuss your event theme, colors, and any overlay text or branding you'd like. We'll send you a proof for approval before your event.",
+  },
+];
+
+function SceneFAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  return (
+    <section className="py-16 md:py-20 bg-[#050505] border-t border-white/5">
+      <div className="container mx-auto px-6 max-w-4xl">
+        <motion.div
+          initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}
+          className="text-center mb-10"
+        >
+          <motion.p variants={fadeUp} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Support</motion.p>
+          <motion.h2 variants={fadeUp} className="text-2xl md:text-3xl font-extrabold tracking-tight mb-3">Frequently Asked Questions</motion.h2>
+          <motion.p variants={fadeUp} className="text-white/50 text-sm max-w-xl mx-auto leading-relaxed">
+            Find quick answers to the most common questions about our 360 photo booth rentals, from setup details to customization options and everything in between.
+          </motion.p>
+        </motion.div>
+
+        <div className="space-y-3">
+          {faqs360.map((faq, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                  isOpen ? "border-brand-neon/40 bg-brand-neon/5" : "border-white/10 bg-[#0a0a0a] hover:border-white/20"
+                }`}
+              >
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  className="w-full flex items-center justify-between px-6 py-5 text-left group"
+                >
+                  <span className={`font-semibold text-sm md:text-base transition-colors ${
+                    isOpen ? "text-brand-neon" : "text-white group-hover:text-brand-neon"
+                  }`}>
+                    {faq.q}
+                  </span>
+                  <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center ml-4 transition-all ${
+                    isOpen ? "bg-brand-neon text-white shadow-[0_0_10px_rgba(247,54,168,0.4)]" : "bg-white/10 text-white/60 group-hover:bg-white/20"
+                  }`}>
+                    {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                  </div>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <p className="px-6 pb-6 text-white/60 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        {faq.a}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── ROOT EXPORT ────────────────────────────────────────────────────────────
 export default function ThreeSixtyClient() {
   return (
     <div className="bg-black text-white">
@@ -461,8 +675,11 @@ export default function ThreeSixtyClient() {
       <Scene2Story />
       <Scene3Features />
       <Scene4Countdown />
+      <SceneVideos />
+      <SceneAbout />
       <Scene5Pricing />
       <Scene6CTA />
+      <SceneFAQ />
       <Contact />
     </div>
   );
