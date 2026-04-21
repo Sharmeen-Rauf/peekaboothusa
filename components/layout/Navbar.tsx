@@ -33,11 +33,18 @@ const boothDropdown = [
   },
 ];
 
+const eventsDropdown = [
+  { name: "Corporate Events", href: "#contact",  desc: "Premium booths for brand activations & galas." },
+  { name: "Weddings",         href: "#contact",  desc: "Elegant setups for your perfect day." },
+  { name: "Birthdays",        href: "#contact",  desc: "Fun-packed booths for any age celebration." },
+  { name: "Parties",          href: "#contact",  desc: "Energise any gathering with a photo booth." },
+];
+
 const navLinks = [
   { name: "HOME", href: "/" },
   { name: "PHOTO BOOTHS", href: "#services", hasDropdown: true },
   { name: "GALLERY", href: "/gallery" },
-  { name: "CORPORATE", href: "#corporate" },
+  { name: "EVENTS", href: "#events", hasEventsDropdown: true },
   { name: "CONTACT US", href: "#contact" },
 ];
 
@@ -45,7 +52,9 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isMobileBoothOpen, setIsMobileBoothOpen] = useState(false);
+  const [isMobileEventsOpen, setIsMobileEventsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [eventsOpen, setEventsOpen] = useState(false);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -124,31 +133,52 @@ export default function Navbar() {
                   >
                     <button className="text-xs xl:text-sm font-bold tracking-widest text-white hover:text-brand-neon transition-colors flex items-center gap-1 group relative py-2">
                       {link.name}
-                      <ChevronDown 
-                        size={14} 
-                        className={`mt-0.5 transition-transform duration-300 ${dropdownOpen ? "rotate-180 text-brand-neon" : ""}`} 
-                      />
+                      <ChevronDown size={14} className={`mt-0.5 transition-transform duration-300 ${dropdownOpen ? "rotate-180 text-brand-neon" : ""}`} />
                       <span className={`absolute bottom-0 left-0 h-[2px] bg-brand-neon transition-all duration-300 ${dropdownOpen ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                     </button>
-
-                    {/* Clean Minimal Dropdown */}
                     <AnimatePresence>
                       {dropdownOpen && (
                         <motion.div
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 8 }}
+                          initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }}
                           transition={{ duration: 0.18, ease: "easeOut" }}
                           className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-[#0d0d0d] border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden z-50 py-2"
                         >
                           {boothDropdown.map((booth, i) => (
-                            <Link
-                              key={booth.name}
-                              href={booth.href}
-                              onClick={() => setDropdownOpen(false)}
+                            <Link key={booth.name} href={booth.href} onClick={() => setDropdownOpen(false)}
                               className={`flex items-center justify-between px-5 py-3.5 text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-all group ${i !== boothDropdown.length - 1 ? "border-b border-white/5" : ""}`}
                             >
                               <span className="group-hover:text-brand-neon transition-colors tracking-wide">{booth.name}</span>
+                              <ArrowRight className="w-3.5 h-3.5 text-white/20 group-hover:text-brand-neon group-hover:translate-x-0.5 transition-all" />
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : link.hasEventsDropdown ? (
+                  <div
+                    key={link.name}
+                    className="relative"
+                    onMouseEnter={() => setEventsOpen(true)}
+                    onMouseLeave={() => setEventsOpen(false)}
+                  >
+                    <button className="text-xs xl:text-sm font-bold tracking-widest text-white hover:text-brand-neon transition-colors flex items-center gap-1 group relative py-2">
+                      {link.name}
+                      <ChevronDown size={14} className={`mt-0.5 transition-transform duration-300 ${eventsOpen ? "rotate-180 text-brand-neon" : ""}`} />
+                      <span className={`absolute bottom-0 left-0 h-[2px] bg-brand-neon transition-all duration-300 ${eventsOpen ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+                    </button>
+                    <AnimatePresence>
+                      {eventsOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }}
+                          transition={{ duration: 0.18, ease: "easeOut" }}
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-[#0d0d0d] border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden z-50 py-2"
+                        >
+                          {eventsDropdown.map((ev, i) => (
+                            <Link key={ev.name} href={ev.href} onClick={() => setEventsOpen(false)}
+                              className={`flex items-center justify-between px-5 py-3.5 text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-all group ${i !== eventsDropdown.length - 1 ? "border-b border-white/5" : ""}`}
+                            >
+                              <span className="group-hover:text-brand-neon transition-colors tracking-wide">{ev.name}</span>
                               <ArrowRight className="w-3.5 h-3.5 text-white/20 group-hover:text-brand-neon group-hover:translate-x-0.5 transition-all" />
                             </Link>
                           ))}
@@ -200,8 +230,8 @@ export default function Navbar() {
         style={{ pointerEvents: isMobileOpen ? "auto" : "none" }}
       >
         {navLinks.map((link) => (
-          <motion.div 
-            key={link.name} 
+          <motion.div
+            key={link.name}
             variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}
             className="border-b border-white/5"
           >
@@ -216,17 +246,10 @@ export default function Navbar() {
                 </button>
                 <AnimatePresence>
                   {isMobileBoothOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden"
-                    >
+                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
                       <div className="pb-4 pl-4 flex flex-col gap-1">
                         {boothDropdown.map((booth) => (
-                          <Link
-                            key={booth.name}
-                            href={booth.href}
+                          <Link key={booth.name} href={booth.href}
                             onClick={() => { setIsMobileOpen(false); setIsMobileBoothOpen(false); }}
                             className="flex items-center gap-3 py-3 px-3 rounded-xl hover:bg-white/5 transition-colors group"
                           >
@@ -235,6 +258,33 @@ export default function Navbar() {
                             </div>
                             <span className="text-white/70 group-hover:text-white font-semibold text-sm transition-colors">{booth.name}</span>
                             <ArrowRight className="w-4 h-4 text-white/20 group-hover:text-brand-neon ml-auto transition-colors" />
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ) : link.hasEventsDropdown ? (
+              <div>
+                <button
+                  onClick={() => setIsMobileEventsOpen(!isMobileEventsOpen)}
+                  className="w-full text-left py-5 text-xl font-bold tracking-widest text-white hover:text-brand-neon transition-colors flex items-center justify-between uppercase"
+                >
+                  {link.name}
+                  <ChevronDown size={20} className={`transition-transform duration-300 ${isMobileEventsOpen ? "rotate-180 text-brand-neon" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {isMobileEventsOpen && (
+                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+                      <div className="pb-4 pl-4 flex flex-col gap-1">
+                        {eventsDropdown.map((ev) => (
+                          <Link key={ev.name} href={ev.href}
+                            onClick={() => { setIsMobileOpen(false); setIsMobileEventsOpen(false); }}
+                            className="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-white/5 transition-colors group"
+                          >
+                            <span className="text-white/70 group-hover:text-brand-neon font-semibold text-sm transition-colors">{ev.name}</span>
+                            <ArrowRight className="w-4 h-4 text-white/20 group-hover:text-brand-neon transition-colors" />
                           </Link>
                         ))}
                       </div>
