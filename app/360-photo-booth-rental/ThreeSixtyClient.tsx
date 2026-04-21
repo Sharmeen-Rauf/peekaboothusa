@@ -157,7 +157,7 @@ function Scene2Story() {
   const op = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
   return (
-    <section ref={ref} className="relative py-32 overflow-hidden bg-black">
+    <section ref={ref} className="relative py-16 md:py-20 overflow-hidden bg-black">
       {/* Cinematic horizontal line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-neon/30 to-transparent" />
 
@@ -230,7 +230,7 @@ function Scene2Story() {
 
 function Scene3Features() {
   return (
-    <section className="py-28 bg-[#030303] relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-[#050505] border-y border-white/5 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none" />
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-10"
@@ -283,7 +283,7 @@ function Scene3Features() {
 
 function Scene4Countdown() {
   return (
-    <section className="py-28 bg-black relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-black border-t border-white/5 relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
 
       <div className="container mx-auto px-6 max-w-6xl">
@@ -341,7 +341,7 @@ function Scene4Countdown() {
 
 function Scene5Pricing() {
   return (
-    <section id="pricing" className="py-28 bg-[#030303] relative overflow-hidden">
+    <section id="pricing" className="py-16 md:py-20 bg-[#050505] border-t border-white/5 relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-neon/20 to-transparent" />
 
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -407,7 +407,7 @@ function Scene5Pricing() {
 
 function Scene6CTA() {
   return (
-    <section className="relative py-40 overflow-hidden bg-black">
+    <section className="relative py-16 md:py-20 overflow-hidden bg-black border-t border-white/5">
       {/* Cinematic atmosphere */}
       <div className="absolute inset-0">
         <motion.div
