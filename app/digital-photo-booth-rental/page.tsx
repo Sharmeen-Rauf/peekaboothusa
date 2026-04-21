@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, Phone } from "lucide-react";
+import Contact from "@/components/sections/Contact";
+import AvailabilityChecker from "@/components/sections/AvailabilityChecker";
 
 export const metadata: Metadata = {
   title: "Digital Photo Booth Rental | Peekabooth USA",
@@ -20,38 +22,42 @@ const features = [
 export default function DigitalBoothPage() {
   return (
     <main className="min-h-screen bg-black text-white pt-24 md:pt-32">
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+      {/* Hero */}
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop"
             alt="Digital Photo Booth"
             fill
             priority
-            className="object-cover opacity-30"
+            className="object-cover opacity-40"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
         </div>
-        <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        <div className="container mx-auto px-6 max-w-6xl relative z-10 py-20">
           <p className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-4">Photo Booths</p>
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6">
-            Digital<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-glow">Photo Booth</span>
+            Digital<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-glow">Photo Booth</span>
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
             The modern, paper-free photo booth experience. Instant digital photos, GIFs, and videos delivered straight to your guests' phones.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link href="/#contact" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.4)]">
-              Book Now <ArrowRight className="w-4 h-4" />
+            <Link href="#contact" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.4)]">
+              Get A Quote <ArrowRight className="w-4 h-4" />
             </Link>
             <a href="tel:1-800-709-8579" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-sm transition-all backdrop-blur-sm">
-              <Phone className="w-4 h-4" /> Call Us
+              <Phone className="w-4 h-4" /> +1-800-709-8579
             </a>
           </div>
         </div>
       </section>
 
-      <section className="py-20 md:py-28">
+      {/* Features */}
+      <section className="py-20 md:py-28 bg-black">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -69,9 +75,6 @@ export default function DigitalBoothPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/#contact" className="inline-flex items-center gap-2 mt-10 bg-white text-black px-8 py-4 rounded-full font-bold text-sm hover:bg-gray-100 transition-all">
-                Get a Free Quote <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
             <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden">
               <Image
@@ -86,6 +89,12 @@ export default function DigitalBoothPage() {
           </div>
         </div>
       </section>
+
+      {/* Availability Checker */}
+      <AvailabilityChecker />
+
+      {/* Contact Form */}
+      <Contact />
     </main>
   );
 }
