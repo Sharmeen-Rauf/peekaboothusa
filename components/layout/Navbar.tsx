@@ -43,8 +43,8 @@ const eventsDropdown = [
 const navLinks = [
   { name: "HOME", href: "/" },
   { name: "PHOTO BOOTHS", href: "#services", hasDropdown: true },
-  { name: "GALLERY", href: "/gallery" },
   { name: "EVENTS", href: "#events", hasEventsDropdown: true },
+  { name: "BRAND/CORPORATE", href: "/brand-corporate" },
   { name: "CONTACT US", href: "#contact" },
 ];
 
@@ -141,7 +141,7 @@ export default function Navbar() {
                         <motion.div
                           initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }}
                           transition={{ duration: 0.18, ease: "easeOut" }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-[#0d0d0d] border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden z-50 py-2"
+                          className="absolute top-full left-0 mt-3 w-72 bg-[#0d0d0d] border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden z-50 py-2"
                         >
                           {boothDropdown.map((booth, i) => (
                             <Link key={booth.name} href={booth.href} onClick={() => setDropdownOpen(false)}
@@ -172,7 +172,7 @@ export default function Navbar() {
                         <motion.div
                           initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }}
                           transition={{ duration: 0.18, ease: "easeOut" }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-[#0d0d0d] border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden z-50 py-2"
+                          className="absolute top-full left-0 mt-3 w-64 bg-[#0d0d0d] border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden z-50 py-2"
                         >
                           {eventsDropdown.map((ev, i) => (
                             <Link key={ev.name} href={ev.href} onClick={() => setEventsOpen(false)}
