@@ -65,7 +65,7 @@ export default function OpenAirPage() {
     <main className="min-h-screen bg-black text-white">
 
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop"
@@ -75,42 +75,37 @@ export default function OpenAirPage() {
             className="object-cover opacity-40"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" />
         </div>
-        <div className="container mx-auto px-6 max-w-6xl relative z-10 pt-40 pb-24">
-          <p className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-5">Open Air Photo Booth</p>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6 max-w-3xl">
-            Open Air Photo Booth<br />
+        <div className="container mx-auto px-6 max-w-3xl relative z-10 pt-32 pb-20 text-center">
+          <p className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-4">Open Air Photo Booth</p>
+          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-5">
+            Open Air Photo Booth{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-glow">Rental With Prints</span>
           </h1>
-          <p className="text-white/70 text-base md:text-lg max-w-xl mb-10 leading-relaxed font-light">
+          <p className="text-white/70 text-sm md:text-base max-w-lg mx-auto mb-8 leading-relaxed font-light">
             The perfect open air photo booth rental to add with instant prints, and much more.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="#contact"
-              className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.4)] hover:shadow-[0_0_50px_rgba(247,54,168,0.6)] group"
+              className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group"
             >
               Get A Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
               href="tel:1-800-709-8579"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-sm transition-all backdrop-blur-sm"
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all backdrop-blur-sm"
             >
               <Phone className="w-4 h-4" /> +1-800-709-8579
             </a>
           </div>
         </div>
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-          <span className="text-[10px] uppercase tracking-widest text-white/60">Scroll</span>
-          <div className="w-px h-10 bg-gradient-to-b from-white/40 to-transparent animate-pulse"></div>
-        </div>
       </section>
 
       {/* ── ABOUT / CLASSIC FUN ── */}
-      <section className="py-24 md:py-32 bg-black">
+      <section className="py-16 md:py-20 bg-black">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             {/* Image side */}
@@ -133,11 +128,11 @@ export default function OpenAirPage() {
             </div>
             {/* Text side */}
             <div>
-              <p className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-4">Why Open Air</p>
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight leading-tight">
+              <p className="text-brand-neon text-xs font-bold tracking-[0.3em] uppercase mb-3">Why Open Air</p>
+              <h2 className="text-2xl md:text-3xl font-extrabold mb-5 tracking-tight leading-tight">
                 Classic Fun with Our Open Air Photo Booth Rentals
               </h2>
-              <p className="text-white/60 text-base leading-relaxed mb-10">
+              <p className="text-white/60 text-sm leading-relaxed mb-8">
                 An open air photo booth rental offers a spacious setup that's perfect for group shots and striking poses. With a high-quality camera, fun props, customizable backdrops, and instant prints, guests can take home lasting memories. It's ideal for weddings, parties, and corporate events where style meets classic photo booth charm.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -156,12 +151,12 @@ export default function OpenAirPage() {
       </section>
 
       {/* ── PRICING ── */}
-      <section id="pricing" className="py-24 md:py-32 bg-[#050505] border-y border-white/5">
+      <section id="pricing" className="py-16 md:py-20 bg-[#050505] border-y border-white/5">
         <div className="container mx-auto px-6 max-w-6xl">
-          <div className="text-center mb-16">
-            <p className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-4">All Inclusive</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Open Air Photo Booth Rental</h2>
-            <p className="text-white/50 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+          <div className="text-center mb-12">
+            <p className="text-brand-neon text-xs font-bold tracking-[0.3em] uppercase mb-3">All Inclusive</p>
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight mb-3">Open Air Photo Booth Rental</h2>
+            <p className="text-white/50 text-sm max-w-2xl mx-auto leading-relaxed">
               Peek-A-Booth's open air photo booths come packed with features like instant sharing, customizable templates, filters, virtual props, and green screens.
             </p>
           </div>
@@ -212,7 +207,7 @@ export default function OpenAirPage() {
       </section>
 
       {/* ── NEED MORE HOURS BANNER ── */}
-      <section className="py-16 md:py-20 bg-black">
+      <section className="py-10 md:py-12 bg-black">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="relative bg-[#0a0a0a] border border-white/10 rounded-[2rem] px-8 md:px-14 py-10 md:py-14 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="absolute inset-0 bg-gradient-to-r from-brand-neon/5 via-transparent to-transparent pointer-events-none" />
@@ -234,13 +229,13 @@ export default function OpenAirPage() {
       </section>
 
       {/* ── RESERVE YOUR DATE ── */}
-      <section id="reserve" className="py-24 md:py-32 bg-[#050505] border-t border-white/5">
+      <section id="reserve" className="py-16 md:py-20 bg-[#050505] border-t border-white/5">
         <div className="container mx-auto px-6 max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-4">Book Your Event</p>
-              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-6 leading-tight">Reserve Your Date</h2>
-              <p className="text-white/60 text-base leading-relaxed mb-10">
+              <p className="text-brand-neon text-xs font-bold tracking-[0.3em] uppercase mb-3">Book Your Event</p>
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight mb-4 leading-tight">Reserve Your Date</h2>
+              <p className="text-white/60 text-sm leading-relaxed mb-8">
                 Choose Peek-A-Booth for open air photo booth rentals, exceptional service, and nationwide coverage. With customizable backdrops, unlimited prints, and fun props, our booths create unforgettable memories for any event!
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -278,12 +273,12 @@ export default function OpenAirPage() {
       </section>
 
       {/* ── HIGHLIGHTS GALLERY ── */}
-      <section className="py-24 md:py-32 bg-black border-t border-white/5">
+      <section className="py-16 md:py-20 bg-black border-t border-white/5">
         <div className="container mx-auto px-6 max-w-6xl">
-          <div className="text-center mb-16">
-            <p className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-4">Event Clips</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Photo Booth Rental With Prints Highlights</h2>
-            <p className="text-white/50 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+          <div className="text-center mb-10">
+            <p className="text-brand-neon text-xs font-bold tracking-[0.3em] uppercase mb-3">Event Clips</p>
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight mb-3">Photo Booth Rental With Prints Highlights</h2>
+            <p className="text-white/50 text-sm max-w-2xl mx-auto leading-relaxed">
               Take a look at past event clips to see how our open air photo booth brings guests together with fun props, instant prints, and picture-perfect memories everyone loves.
             </p>
           </div>
@@ -320,12 +315,12 @@ export default function OpenAirPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-24 md:py-32 bg-[#050505] border-t border-white/5">
+      <section className="py-16 md:py-20 bg-[#050505] border-t border-white/5">
         <div className="container mx-auto px-6 max-w-4xl">
-          <div className="text-center mb-16">
-            <p className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-4">Support</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Frequently Asked Questions</h2>
-            <p className="text-white/50 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+          <div className="text-center mb-10">
+            <p className="text-brand-neon text-xs font-bold tracking-[0.3em] uppercase mb-3">Support</p>
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight mb-3">Frequently Asked Questions</h2>
+            <p className="text-white/50 text-sm max-w-xl mx-auto leading-relaxed">
               Find quick answers to the most common questions about our open air photo booth rentals.
             </p>
           </div>
