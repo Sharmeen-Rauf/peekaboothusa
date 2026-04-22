@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Contact from "@/components/sections/Contact";
-import { X, ChevronLeft, ChevronRight, ArrowRight, Star, MapPin } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, ArrowRight, Star, MapPin, Phone } from "lucide-react";
 
 /* ─── DATA ────────────────────────────────────────────────────────────────── */
 
