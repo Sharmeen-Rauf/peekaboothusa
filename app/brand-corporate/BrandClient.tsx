@@ -22,28 +22,28 @@ const collectionOptions = [
   {
     title: "Photo Booth Rental With Prints",
     desc: "Our open-air booth delivers unlimited prints, branded templates, premium backdrops, and pro lighting to create memorable moments at any corporate event.",
-    image: "/open-air-photo-booth-rental-usa.png",
+    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop",
     icon: Camera,
     link: "/open-air-photo-booth-rental"
   },
   {
     title: "360 Booth Rental With Videos",
     desc: "Capture slow-motion videos with branded overlays, music integration, and instant sharing to deliver a high-energy experience your guests will love.",
-    image: "/photo-booth-rental-360-cover.png",
+    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop",
     icon: Video,
     link: "/360-photo-booth-rental"
   },
   {
     title: "Digital Photo Booth With GIF's",
     desc: "Create branded GIFs, boomerangs, and still shots with instant sharing to keep guests engaged and your brand visible long after the event ends.",
-    image: "/gallery-2.png",
+    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop",
     icon: MonitorSmartphone,
     link: "/digital-photo-booth-rental"
   },
   {
     title: "Magazine Photo Booth Box",
     desc: "Guests pose inside a life-sized magazine cover for high-impact branded event photos that create buzz, fun, and lasting memories at corporate events.",
-    image: "/magazine-booth.png",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
     icon: Star,
     link: "/vogue-magazine-photo-booth-box"
   }
@@ -98,7 +98,7 @@ export default function BrandClient() {
       {/* ── HERO ── */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <Image src="/corporate-gala.png" alt="Corporate Photo Booth Event" fill priority sizes="100vw" className="object-cover opacity-30" />
+          <Image src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2000&auto=format&fit=crop" alt="Corporate Photo Booth Event" fill priority sizes="100vw" className="object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black" />
           <motion.div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(247,54,168,0.15) 0%, transparent 70%)" }}
@@ -166,13 +166,13 @@ export default function BrandClient() {
             <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="relative h-[500px] w-full">
               {/* Main Image */}
               <div className="absolute top-0 right-0 w-[80%] h-[80%] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(247,54,168,0.1)] z-10">
-                <Image src="/afterlogofourimage.png" alt="Corporate Activation" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+                <Image src="https://images.unsplash.com/photo-1561489413-985b06da5bee?q=80&w=800&auto=format&fit=crop" alt="Corporate Activation" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
                 <div className="absolute inset-0 bg-brand-neon/10 mix-blend-overlay" />
               </div>
               
               {/* Overlapping Image */}
               <div className="absolute bottom-0 left-0 w-[60%] h-[60%] rounded-[2rem] overflow-hidden border-4 border-[#050505] shadow-2xl z-20 transform -translate-y-4 translate-x-4">
-                <Image src="/gallery-1.png" alt="Engaged Guests" fill sizes="(max-width: 768px) 100vw, 30vw" className="object-cover" />
+                <Image src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop" alt="Engaged Guests" fill sizes="(max-width: 768px) 100vw, 30vw" className="object-cover" />
               </div>
               
               {/* Floating Stat card */}
@@ -257,7 +257,7 @@ export default function BrandClient() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10">
-              <Image src="/corporate-gala.png" alt="Corporate Event Team" fill className="object-cover" />
+              <Image src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop" alt="Corporate Event Team" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-neon/20 to-transparent mix-blend-overlay" />
             </motion.div>
           </div>

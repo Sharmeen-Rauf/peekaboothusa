@@ -22,7 +22,7 @@ const boothOptions = [
     title: "ORIGINAL BOOTH",
     desc: "The original selfie booth experience — perfect for capturing groups of all sizes!",
     features: ["High-quality photos & unlimited prints", "Instant digital sharing & live gallery", "A choice of 50+ backdrops and more"],
-    image: "/open-air-photo-booth-rental-usa.png",
+    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop",
     icon: Camera,
     link: "/open-air-photo-booth-rental"
   },
@@ -30,7 +30,7 @@ const boothOptions = [
     title: "Selfie Station",
     desc: "Self-operated digital photobooth with fully customized experience.",
     features: ["Unlimited digital experience", "Data collection, analytics", "Instant Digital Sharing and more"],
-    image: "/gallery-1.png",
+    image: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop",
     icon: MonitorSmartphone,
     link: "/digital-photo-booth-rental"
   },
@@ -38,7 +38,7 @@ const boothOptions = [
     title: "360 BOOTH",
     desc: "Impress your guests with 360 unique video booth experience.",
     features: ["Unlimited 360 videos", "Music, effects and design overlays", "Instant digital sharing and more"],
-    image: "/photo-booth-rental-360-cover.png",
+    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop",
     icon: Video,
     link: "/360-photo-booth-rental"
   },
@@ -46,7 +46,7 @@ const boothOptions = [
     title: "GLAM BOOTH",
     desc: "The modern photo booth experience – featuring the iconic Kardashian-style filter.",
     features: ["All original booth features", "Beauty filter + black and white effect", "Premium white backdrop"],
-    image: "/private-party.png",
+    image: "https://images.unsplash.com/photo-1505934333218-8fe21ff88269?q=80&w=800&auto=format&fit=crop",
     icon: Sparkles,
     link: "#contact" // Fallback since there isn't a dedicated glam booth page yet
   }
@@ -66,8 +66,7 @@ const galleryImages = [
   "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=800&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1530103862676-de8892bc952f?q=80&w=800&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1511556820780-d912e42b4980?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1478146896981-b80fe463b330?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1522158637959-30385a09e01a?q=80&w=800&auto=format&fit=crop"
+  "https://images.unsplash.com/photo-1478146896981-b80fe463b330?q=80&w=800&auto=format&fit=crop"
 ];
 
 const caseStudies = [
@@ -104,7 +103,7 @@ export default function PartiesClient() {
       {/* ── HERO ── */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <Image src="/private-party.png" alt="Party Photo Booth Event" fill priority sizes="100vw" className="object-cover opacity-30" />
+          <Image src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2000&auto=format&fit=crop" alt="Party Photo Booth Event" fill priority sizes="100vw" className="object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black" />
           <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(247,54,168,0.15) 0%, transparent 70%)" }}
@@ -166,13 +165,13 @@ export default function PartiesClient() {
             <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="relative h-[500px] w-full">
               {/* Main Image */}
               <div className="absolute top-0 right-0 w-[80%] h-[80%] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(247,54,168,0.1)] z-10">
-                <Image src="/gallery-2.png" alt="Party Photo Booth" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+                <Image src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop" alt="Party Photo Booth" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
                 <div className="absolute inset-0 bg-brand-neon/10 mix-blend-overlay" />
               </div>
               
               {/* Overlapping Image */}
               <div className="absolute bottom-0 left-0 w-[60%] h-[60%] rounded-[2rem] overflow-hidden border-4 border-[#050505] shadow-2xl z-20 transform -translate-y-4 translate-x-4">
-                <Image src="/gallery-1.png" alt="Guests Having Fun" fill sizes="(max-width: 768px) 100vw, 30vw" className="object-cover" />
+                <Image src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop" alt="Guests Having Fun" fill sizes="(max-width: 768px) 100vw, 30vw" className="object-cover" />
               </div>
               
               {/* Floating Stat card */}
@@ -265,8 +264,7 @@ export default function PartiesClient() {
               // Create dynamic spanning for a bento feel
               let spanClass = "col-span-1 row-span-1";
               if (i === 0) spanClass = "col-span-2 row-span-2";
-              if (i === 4) spanClass = "col-span-2 row-span-1";
-              if (i === 7) spanClass = "col-span-2 row-span-2";
+              if (i === 4) spanClass = "col-span-2 row-span-2";
               
               return (
                 <motion.div key={i} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.05 }} className={`relative rounded-2xl overflow-hidden group cursor-pointer aspect-square ${spanClass}`}>
