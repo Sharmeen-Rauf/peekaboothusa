@@ -123,7 +123,7 @@ function Scene1Hero() {
           transition={{ duration: 1, delay: 1.6 }}
           className="flex flex-wrap gap-4 justify-center"
         >
-          <Link href="#contact" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_40px_rgba(247,54,168,0.5)] hover:shadow-[0_0_60px_rgba(247,54,168,0.7)] group">
+          <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_40px_rgba(247,54,168,0.5)] hover:shadow-[0_0_60px_rgba(247,54,168,0.7)] group">
             Book Your 360 Experience <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           <a href="tel:1-800-709-8579" className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-sm transition-all backdrop-blur-sm">
@@ -389,7 +389,7 @@ function Scene5Pricing() {
                 ))}
               </ul>
               <Link
-                href="#contact"
+                href="/get-a-quote"
                 className={`w-full flex items-center justify-center gap-2 py-4 rounded-full font-bold text-sm transition-all ${
                   plan.popular
                     ? "bg-brand-neon hover:bg-brand-glow text-white shadow-[0_0_30px_rgba(247,54,168,0.4)]"
@@ -437,7 +437,7 @@ function Scene6CTA() {
           </motion.p>
           <motion.div variants={fadeUp} className="flex flex-wrap gap-5 justify-center">
             <Link
-              href="#contact"
+              href="/get-a-quote"
               className="inline-flex items-center gap-3 bg-brand-neon hover:bg-brand-glow text-white px-10 py-5 rounded-full font-extrabold text-base transition-all shadow-[0_0_50px_rgba(247,54,168,0.5)] hover:shadow-[0_0_80px_rgba(247,54,168,0.8)] group"
             >
               Book Your Booth <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -533,7 +533,7 @@ function SceneAbout() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="#contact"
+                href="/get-a-quote"
                 className="inline-flex items-center justify-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group"
               >
                 Get A Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

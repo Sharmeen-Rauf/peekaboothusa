@@ -82,7 +82,7 @@ export default function DigitalClient() {
             Get fun, unforgettable GIFs and pictures with our digital photo booth! Instant sharing, custom overlays, and zero wait time.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="flex flex-wrap gap-4 justify-center">
-            <Link href="#contact" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
+            <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
               Get A Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a href="tel:1-800-709-8579" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all backdrop-blur-sm">
@@ -186,7 +186,7 @@ export default function DigitalClient() {
                     </li>
                   ))}
                 </ul>
-                <Link href="#contact" className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-full font-bold text-sm transition-all ${plan.popular ? "bg-brand-neon hover:bg-brand-glow text-white shadow-[0_0_20px_rgba(247,54,168,0.4)]" : "bg-white/10 hover:bg-white/20 border border-white/20 text-white"}`}>
+                <Link href="/get-a-quote" className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-full font-bold text-sm transition-all ${plan.popular ? "bg-brand-neon hover:bg-brand-glow text-white shadow-[0_0_20px_rgba(247,54,168,0.4)]" : "bg-white/10 hover:bg-white/20 border border-white/20 text-white"}`}>
                   Book Now <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
@@ -219,7 +219,7 @@ export default function DigitalClient() {
                 Choose Peek-A-Booth for modern digital photo booth rentals, exceptional customer service, and nationwide availability. With features like GIFs, green screens, and instant sharing, our booths bring unforgettable fun to your event!
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="#contact" className="inline-flex items-center justify-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group">
+                <Link href="/get-a-quote" className="inline-flex items-center justify-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group">
                   Check Availability <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a href="tel:1-800-709-8579" className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-brand-neon/50 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all hover:bg-brand-neon/10">

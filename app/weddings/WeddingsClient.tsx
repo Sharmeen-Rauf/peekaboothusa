@@ -136,7 +136,7 @@ export default function WeddingsClient() {
             Rent the original selfie booth for your wedding! With elegant backdrops, beautiful print designs, and high-quality photos, it adds extra fun for your guests to remember—making your special day even more special!
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="flex flex-wrap gap-4 justify-center">
-            <Link href="#contact" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
+            <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
               Get a Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link href="#video" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-sm transition-all backdrop-blur-sm group">
@@ -174,7 +174,7 @@ export default function WeddingsClient() {
               <p className="text-white/70 text-base md:text-lg leading-relaxed mb-6">
                 Whether your party is in the city or at a vineyard, Selfie Booth Co. brings the celebration to life with a one-of-a-kind interactive experience. For cocktail hours, receptions, or any other special gathering, this luxury photo booth creates experiences guests will remember and cherish forever.
               </p>
-              <Link href="#contact" className="inline-flex items-center gap-2 text-brand-neon font-bold uppercase tracking-widest text-sm hover:text-white transition-colors group">
+              <Link href="/get-a-quote" className="inline-flex items-center gap-2 text-brand-neon font-bold uppercase tracking-widest text-sm hover:text-white transition-colors group">
                 Reserve your date <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
@@ -197,7 +197,7 @@ export default function WeddingsClient() {
               <p className="text-white/70 text-base md:text-lg leading-relaxed mb-8">
                 The perfect engagement to your wedding, our sleek photo booth equipment is the ultimate way to make your guests feel like VIPs. Send photos, gifs, or boomerangs instantly to your phone and pump up the fun with themed props perfect for all ages.
               </p>
-              <Link href="#contact" className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#222] border border-white/10 text-white px-8 py-4 rounded-full font-bold text-sm transition-all group">
+              <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#222] border border-white/10 text-white px-8 py-4 rounded-full font-bold text-sm transition-all group">
                 Get a Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
@@ -218,7 +218,7 @@ export default function WeddingsClient() {
               <p className="text-white/70 text-base md:text-lg leading-relaxed mb-8">
                 Design a template that fits with your wedding’s style. Choose from our pre-set templates, or create something entirely new. Either way, you’ll be able to create an instant print that guests will love from their experience with your photo booth!
               </p>
-              <Link href="#contact" className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#222] border border-white/10 text-white px-8 py-4 rounded-full font-bold text-sm transition-all group">
+              <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#222] border border-white/10 text-white px-8 py-4 rounded-full font-bold text-sm transition-all group">
                 Get a Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
@@ -243,7 +243,7 @@ export default function WeddingsClient() {
             <p className="text-white/70 text-base md:text-lg leading-relaxed mb-10 max-w-3xl mx-auto">
               Introducing the one-of-a-kind ‘Kardashian-style’ photo booth, featuring a skin-smoothing effect available in B&W or Color. Indulge in our luxurious skin smooth filter, designed to reduce fine lines and wrinkles while enhancing your skin’s overall appearance. Experience a soft, airbrushed quality that ensures stunning photos from every angle.
             </p>
-            <Link href="#contact" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
+            <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
               Explore Glam Booth <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>

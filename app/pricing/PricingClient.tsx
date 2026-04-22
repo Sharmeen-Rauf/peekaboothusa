@@ -333,7 +333,7 @@ export default function PricingClient() {
                     </div>
 
                     <Link 
-                      href="#contact" 
+                      href="/get-a-quote" 
                       className="inline-flex items-center justify-center w-full gap-2 py-4 rounded-full font-bold text-sm tracking-widest transition-all bg-transparent border border-white/20 text-white hover:bg-white/5 mt-auto group"
                     >
                       Book Now <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

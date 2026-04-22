@@ -74,7 +74,7 @@ export default function MagazineClient() {
             Ever dreamed of being on the cover of a magazine? Now you can. Our life-size Vogue-style booth is fully customized with your event name, theme, and fun headlines.
           </motion.p>
           <motion.div initial={{ opacity:0,y:20 }} animate={{ opacity:1,y:0 }} transition={{ duration:0.8,delay:0.9 }} className="flex flex-wrap gap-4 justify-center">
-            <Link href="#contact" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group">
+            <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group">
               Get A Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a href="tel:1-800-709-8579" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all backdrop-blur-sm">
@@ -139,7 +139,7 @@ export default function MagazineClient() {
               <p className="text-white/60 text-sm leading-relaxed mb-8">
                 We serve Chicago, Los Angeles, Houston, Atlanta, New York City, Philadelphia, New Jersey, Delaware, Baltimore and more. Now booking Vogue Magazine Photo Booth Rentals for all event types.
               </p>
-              <Link href="#contact" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group">
+              <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group">
                 Check Availability <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
@@ -180,7 +180,7 @@ export default function MagazineClient() {
                     </li>
                   ))}
                 </ul>
-                <Link href="#contact" className={`w-full flex items-center justify-center gap-2 py-3 rounded-full font-bold text-sm transition-all ${plan.popular ? "bg-brand-neon hover:bg-brand-glow text-white shadow-[0_0_20px_rgba(247,54,168,0.4)]" : "bg-white/10 hover:bg-white/20 border border-white/20 text-white"}`}>
+                <Link href="/get-a-quote" className={`w-full flex items-center justify-center gap-2 py-3 rounded-full font-bold text-sm transition-all ${plan.popular ? "bg-brand-neon hover:bg-brand-glow text-white shadow-[0_0_20px_rgba(247,54,168,0.4)]" : "bg-white/10 hover:bg-white/20 border border-white/20 text-white"}`}>
                   Book Now <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
@@ -213,7 +213,7 @@ export default function MagazineClient() {
                 Ready to book the Vogue Magazine Box Photo Booth for your upcoming event? Peek-A-Booth delivers a one-of-a-kind photo experience that turns guests into cover stars. Whether it&apos;s a wedding, birthday party, or branded event, our booth adds instant energy and personality. Check availability now and let&apos;s make your event unforgettable.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="#contact" className="inline-flex items-center justify-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group">
+                <Link href="/get-a-quote" className="inline-flex items-center justify-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group">
                   Check Availability <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a href="tel:1-800-709-8579" className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-brand-neon/50 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all hover:bg-brand-neon/10">

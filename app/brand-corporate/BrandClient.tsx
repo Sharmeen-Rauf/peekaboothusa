@@ -120,7 +120,7 @@ export default function BrandClient() {
             Elevate your brand activations with our original booth, digital selfie station, or 360 video booth. Each option offers customizable branding features to showcase your brand and engage your audience.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="flex flex-wrap gap-4 justify-center">
-            <Link href="#contact" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
+            <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
               Get a Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link href="#video" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-sm transition-all backdrop-blur-sm group">
@@ -227,7 +227,7 @@ export default function BrandClient() {
                   <h3 className="text-xl md:text-2xl font-extrabold mb-4 leading-tight group-hover:text-brand-neon transition-colors duration-300">{booth.title}</h3>
                   <p className="text-white/60 mb-8 text-sm leading-relaxed flex-grow">{booth.desc}</p>
                   
-                  <Link href={`${booth.link}#pricing`} className="inline-flex items-center justify-center w-full gap-2 py-4 rounded-full font-bold text-sm tracking-widest uppercase transition-all border border-brand-neon/30 text-brand-neon hover:bg-brand-neon hover:text-white shadow-[0_0_20px_rgba(247,54,168,0)] hover:shadow-[0_0_20px_rgba(247,54,168,0.4)] group/btn">
+                  <Link href="/pricing" className="inline-flex items-center justify-center w-full gap-2 py-4 rounded-full font-bold text-sm tracking-widest uppercase transition-all border border-brand-neon/30 text-brand-neon hover:bg-brand-neon hover:text-white shadow-[0_0_20px_rgba(247,54,168,0)] hover:shadow-[0_0_20px_rgba(247,54,168,0.4)] group/btn">
                     View Pricing <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </div>

@@ -86,7 +86,7 @@ export default function Navbar() {
               </a>
             </div>
             <a 
-              href="#contact" 
+              href="/get-a-quote" 
               className="h-full px-4 md:px-6 bg-brand-neon flex items-center justify-center text-[10px] md:text-xs font-bold text-white hover:bg-white hover:text-brand-neon transition-colors tracking-widest uppercase"
             >
               Get A Quote

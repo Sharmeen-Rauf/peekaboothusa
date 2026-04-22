@@ -89,7 +89,7 @@ export default function OpenAirPage() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
-              href="#contact"
+              href="/get-a-quote"
               className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group"
             >
               Get A Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -191,7 +191,7 @@ export default function OpenAirPage() {
                   ))}
                 </ul>
                 <Link
-                  href="#contact"
+                  href="/get-a-quote"
                   className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-full font-bold text-sm transition-all ${
                     plan.popular
                       ? "bg-brand-neon hover:bg-brand-glow text-white shadow-[0_0_20px_rgba(247,54,168,0.4)]"
@@ -240,7 +240,7 @@ export default function OpenAirPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="#contact"
+                  href="/get-a-quote"
                   className="inline-flex items-center justify-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.4)] group"
                 >
                   Check Availability <Calendar className="w-4 h-4 group-hover:scale-110 transition-transform" />
@@ -305,7 +305,7 @@ export default function OpenAirPage() {
 
           <div className="flex justify-center">
             <Link
-              href="#contact"
+              href="/get-a-quote"
               className="inline-flex items-center gap-2 bg-white text-black hover:bg-brand-neon hover:text-white px-10 py-4 rounded-full font-extrabold text-sm transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(247,54,168,0.4)] group"
             >
               Get Started <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
