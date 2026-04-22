@@ -40,7 +40,7 @@ const navLinks = [
   { name: "PHOTO BOOTHS", href: "#services", hasDropdown: true },
   { name: "EVENTS", href: "/events" },
   { name: "BRAND/CORPORATE", href: "/brand-corporate" },
-  { name: "CONTACT US", href: "#contact" },
+  { name: "PRICING", href: "/pricing" },
 ];
 
 export default function Navbar() {
