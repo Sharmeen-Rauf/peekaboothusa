@@ -60,27 +60,26 @@ const reasons = [
 ];
 
 const galleryImages = [
-  "/gallery-1.png",
-  "/gallery-2.png",
-  "/premium-photobooth.png",
-  "/private-party.png",
-  "/afterlogofourimage.png",
-  "/corporate-gala.png",
-  "/wedding-photo-booth-rental-usa.png",
-  "/vogue-magazine-photo-booth.png",
-  "/chicago-three.png"
+  "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1530103862676-de8892bc952f?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1511556820780-d912e42b4980?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1478146896981-b80fe463b330?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1522158637959-30385a09e01a?q=80&w=800&auto=format&fit=crop"
 ];
 
 const caseStudies = [
-  { brand: "GRAND OPENING", type: "Original Booth" },
-  { brand: "Holiday Party", type: "Glam Booth" },
-  { brand: "Baby Shower", type: "Original Booth" },
-  { brand: "Party", type: "Selfie Station" },
-  { brand: "Crew Party", type: "Original Booth" },
-  { brand: "Lauren Tetef’s Camp", type: "Selfie Station" },
-  { brand: "Graduation Party", type: "Original Booth" },
-  { brand: "Eva Longoria Foundation", type: "Original Booth" },
-  { brand: "Montalban Party", type: "Glam Booth" }
+  { brand: "GRAND OPENING", type: "Original Booth", image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop" },
+  { brand: "Holiday Party", type: "Glam Booth", image: "https://images.unsplash.com/photo-1496337589254-7e19d01cec44?q=80&w=800&auto=format&fit=crop" },
+  { brand: "Baby Shower", type: "Original Booth", image: "https://images.unsplash.com/photo-1519671482749-fd098f3ec29a?q=80&w=800&auto=format&fit=crop" },
+  { brand: "Party", type: "Selfie Station", image: "https://images.unsplash.com/photo-1533174000273-d1c8f85f8384?q=80&w=800&auto=format&fit=crop" },
+  { brand: "Crew Party", type: "Original Booth", image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop" },
+  { brand: "Lauren Tetef’s Camp", type: "Selfie Station", image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800&auto=format&fit=crop" },
+  { brand: "Graduation Party", type: "Original Booth", image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800&auto=format&fit=crop" },
+  { brand: "Eva Longoria Foundation", type: "Original Booth", image: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=800&auto=format&fit=crop" },
+  { brand: "Montalban Party", type: "Glam Booth", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop" }
 ];
 
 const faqs = [
@@ -297,12 +296,15 @@ export default function PartiesClient() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {caseStudies.map((study, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group relative bg-black border border-white/10 hover:border-brand-neon/40 rounded-[2rem] p-8 overflow-hidden flex flex-col items-center justify-center text-center h-40 transition-all shadow-[0_0_0_rgba(247,54,168,0)] hover:shadow-[0_0_30px_rgba(247,54,168,0.15)] cursor-pointer">
-                <div className="absolute inset-0 bg-gradient-to-tr from-brand-neon/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <h3 className="text-xl md:text-2xl font-extrabold text-white mb-2 relative z-10 group-hover:scale-105 transition-transform duration-300">{study.brand}</h3>
-                <p className="text-brand-neon text-[10px] md:text-xs font-bold tracking-widest uppercase relative z-10">{study.type}</p>
-                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ArrowRight className="w-4 h-4 text-brand-neon" />
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group relative border border-white/10 hover:border-brand-neon/40 rounded-[2rem] overflow-hidden flex flex-col items-center justify-center text-center h-48 transition-all shadow-[0_0_0_rgba(247,54,168,0)] hover:shadow-[0_0_30px_rgba(247,54,168,0.15)] cursor-pointer">
+                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-10" />
+                <Image src={study.image} alt={study.brand} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover scale-100 group-hover:scale-110 transition-transform duration-700 z-0 opacity-50 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
+                
+                <h3 className="text-xl md:text-2xl font-extrabold text-white mb-2 relative z-20 group-hover:scale-105 group-hover:text-brand-neon transition-all duration-300">{study.brand}</h3>
+                <p className="text-brand-neon text-[10px] md:text-xs font-bold tracking-widest uppercase relative z-20 bg-black/50 px-3 py-1 rounded-full border border-brand-neon/30 backdrop-blur-md">{study.type}</p>
+                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                  <ArrowRight className="w-5 h-5 text-brand-neon" />
                 </div>
               </motion.div>
             ))}
