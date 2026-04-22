@@ -37,7 +37,7 @@ const eventsDropdown = [
   { name: "Corporate Events", href: "#contact",  desc: "Premium booths for brand activations & galas." },
   { name: "Weddings",         href: "#contact",  desc: "Elegant setups for your perfect day." },
   { name: "Birthdays",        href: "#contact",  desc: "Fun-packed booths for any age celebration." },
-  { name: "Parties",          href: "#contact",  desc: "Energise any gathering with a photo booth." },
+  { name: "Parties",          href: "/parties",  desc: "Energise any gathering with a photo booth." },
 ];
 
 const navLinks = [
