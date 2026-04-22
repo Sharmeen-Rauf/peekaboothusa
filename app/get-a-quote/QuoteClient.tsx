@@ -400,7 +400,11 @@ export default function QuoteClient() {
                         <input required type="email" name="email" value={details.email} onChange={handleDetailChange} placeholder="Email Address *" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon focus:bg-white/10 transition-colors" />
                       </div>
                       <div className="relative group">
-                        <input required type="tel" name="phone" value={details.phone} onChange={handleDetailChange} placeholder="Phone Number *" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon focus:bg-white/10 transition-colors" />
+                        <input required type="tel" name="phone" value={details.phone} onChange={handleDetailChange} 
+                          placeholder="Phone Number (+92... or 03...) *" 
+                          pattern="^(\+92|0)[3][0-9]{9}$"
+                          title="Please enter a valid Pakistani mobile number (e.g., 03001234567 or +923001234567)"
+                          className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon focus:bg-white/10 transition-colors" />
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
