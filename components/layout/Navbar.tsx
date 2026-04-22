@@ -33,16 +33,12 @@ const boothDropdown = [
   },
 ];
 
-const eventsDropdown = [
-  { name: "Weddings",         href: "/weddings", desc: "Elegant setups for your perfect day." },
-  { name: "Birthdays",        href: "#contact",  desc: "Fun-packed booths for any age celebration." },
-  { name: "Parties",          href: "/parties",  desc: "Energise any gathering with a photo booth." },
-];
+
 
 const navLinks = [
   { name: "HOME", href: "/" },
   { name: "PHOTO BOOTHS", href: "#services", hasDropdown: true },
-  { name: "EVENTS", href: "#events", hasEventsDropdown: true },
+  { name: "EVENTS", href: "/events" },
   { name: "BRAND/CORPORATE", href: "/brand-corporate" },
   { name: "CONTACT US", href: "#contact" },
 ];
@@ -51,9 +47,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isMobileBoothOpen, setIsMobileBoothOpen] = useState(false);
-  const [isMobileEventsOpen, setIsMobileEventsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [eventsOpen, setEventsOpen] = useState(false);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -154,37 +148,7 @@ export default function Navbar() {
                       )}
                     </AnimatePresence>
                   </div>
-                ) : link.hasEventsDropdown ? (
-                  <div
-                    key={link.name}
-                    className="relative"
-                    onMouseEnter={() => setEventsOpen(true)}
-                    onMouseLeave={() => setEventsOpen(false)}
-                  >
-                    <button className="text-xs xl:text-sm font-bold tracking-widest text-white hover:text-brand-neon transition-colors flex items-center gap-1 group relative py-2">
-                      {link.name}
-                      <ChevronDown size={14} className={`mt-0.5 transition-transform duration-300 ${eventsOpen ? "rotate-180 text-brand-neon" : ""}`} />
-                      <span className={`absolute bottom-0 left-0 h-[2px] bg-brand-neon transition-all duration-300 ${eventsOpen ? "w-full" : "w-0 group-hover:w-full"}`}></span>
-                    </button>
-                    <AnimatePresence>
-                      {eventsOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }}
-                          transition={{ duration: 0.18, ease: "easeOut" }}
-                          className="absolute top-full left-0 mt-3 w-64 bg-[#0d0d0d] border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden z-50 py-2"
-                        >
-                          {eventsDropdown.map((ev, i) => (
-                            <Link key={ev.name} href={ev.href} onClick={() => setEventsOpen(false)}
-                              className={`flex items-center justify-between px-5 py-3.5 text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-all group ${i !== eventsDropdown.length - 1 ? "border-b border-white/5" : ""}`}
-                            >
-                              <span className="group-hover:text-brand-neon transition-colors tracking-wide">{ev.name}</span>
-                              <ArrowRight className="w-3.5 h-3.5 text-white/20 group-hover:text-brand-neon group-hover:translate-x-0.5 transition-all" />
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
+
                 ) : (
                   <Link
                     key={link.name}
@@ -264,33 +228,7 @@ export default function Navbar() {
                   )}
                 </AnimatePresence>
               </div>
-            ) : link.hasEventsDropdown ? (
-              <div>
-                <button
-                  onClick={() => setIsMobileEventsOpen(!isMobileEventsOpen)}
-                  className="w-full text-left py-5 text-xl font-bold tracking-widest text-white hover:text-brand-neon transition-colors flex items-center justify-between uppercase"
-                >
-                  {link.name}
-                  <ChevronDown size={20} className={`transition-transform duration-300 ${isMobileEventsOpen ? "rotate-180 text-brand-neon" : ""}`} />
-                </button>
-                <AnimatePresence>
-                  {isMobileEventsOpen && (
-                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-                      <div className="pb-4 pl-4 flex flex-col gap-1">
-                        {eventsDropdown.map((ev) => (
-                          <Link key={ev.name} href={ev.href}
-                            onClick={() => { setIsMobileOpen(false); setIsMobileEventsOpen(false); }}
-                            className="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-white/5 transition-colors group"
-                          >
-                            <span className="text-white/70 group-hover:text-brand-neon font-semibold text-sm transition-colors">{ev.name}</span>
-                            <ArrowRight className="w-4 h-4 text-white/20 group-hover:text-brand-neon transition-colors" />
-                          </Link>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+
             ) : (
               <Link
                 href={link.href}
