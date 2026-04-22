@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Loader from "@/components/ui/Loader";
+import FloatingWidgets from "@/components/ui/FloatingWidgets";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <main className="flex-grow flex flex-col relative z-10">
           {children}
         </main>
+        <FloatingWidgets />
         <Footer />
       </body>
     </html>
