@@ -71,6 +71,12 @@ export default function Footer() {
             
           </div>
 
+          <Link href="/portal" className="flex items-center justify-center px-8 py-5 md:py-6 text-white/80 hover:text-brand-neon hover:bg-white/5 transition-colors border-b lg:border-b-0 lg:border-r border-white/10 w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
+            Client Portal
+          </Link>
+          <Link href="/admin" className="flex items-center justify-center px-8 py-5 md:py-6 text-white/80 hover:text-brand-neon hover:bg-white/5 transition-colors border-b lg:border-b-0 lg:border-r border-white/10 w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
+            Admin Panel
+          </Link>
           <Link href="#" className="flex items-center justify-center px-8 py-5 md:py-6 text-white/80 hover:text-white hover:bg-white/5 transition-colors w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
             Terms &amp; Conditions
           </Link>
