@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Contact from "@/components/sections/Contact";
 import BrandLogos from "@/components/sections/BrandLogos";
+import Testimonials from "@/components/sections/Testimonials";
 import { ArrowRight, Play, Check, ShieldCheck, MapPin, Award, Star, Quote, Plus, Minus, Camera, Video, MonitorSmartphone } from "lucide-react";
 
 /* ─── DATA ────────────────────────────────────────────────────────────────── */
@@ -53,19 +54,6 @@ const reasons = [
   { icon: MapPin, title: "Multi-Event & Location Coverage", desc: "Whether you have multiple events in a day or a single event spanning multiple locations, we’ve got you covered." },
   { icon: ShieldCheck, title: "Insured & Secured", desc: "Our Selfie Booths come with a “No Oops” guarantee. If there’s a mishap, we’ve got it covered 100%." },
   { icon: Award, title: "7+ years of experience", desc: "We partner with leading brands to guarantee the highest quality of services." }
-];
-
-const testimonials = [
-  {
-    name: "Mellisa Watson",
-    role: "Brand Manager",
-    text: "We recently featured the Selfie Station at our brand activation event, and it was a massive success! The Selfie Station became the go-to attraction, giving our guests a high-quality, interactive experience that showcased our brand in a fresh, engaging way. Perfect for creating a memorable, interactive experience!"
-  },
-  {
-    name: "Olivia Mendson",
-    role: "Brand Manager",
-    text: "Using the Selfie Station at our event was a total game-changer! Our guests couldn’t get enough of it. It felt like having our own little glam station, with photos that capture every detail beautifully. It brought a stylish, high-energy vibe that had everyone lining up for their turn! It added an unforgettable, luxe touch to our event!"
-  }
 ];
 
 const caseStudies = [
@@ -297,58 +285,34 @@ export default function BrandClient() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ── */}
-      <section className="py-20 md:py-32 bg-black border-t border-white/5 relative overflow-hidden">
+      {/* ── EXPLORE EVENTS ── */}
+      <section className="py-20 md:py-32 bg-[#050505] border-t border-white/5 relative overflow-hidden">
         {/* Decorative background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-neon/10 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-neon/10 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
-            <motion.p variants={fadeUp} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Client Love</motion.p>
-            <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl font-extrabold tracking-tight">With Love from Our Clients</motion.h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((test, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }} className="bg-[#0a0a0a] border border-white/10 rounded-[2rem] p-8 md:p-12 relative group hover:border-brand-neon/30 transition-all">
-                <Quote className="absolute top-8 right-8 w-12 h-12 text-white/5 group-hover:text-brand-neon/10 transition-colors" />
-                <div className="flex items-center gap-2 mb-6">
-                  {[...Array(5)].map((_, idx) => <Star key={idx} className="w-4 h-4 fill-brand-neon text-brand-neon" />)}
-                </div>
-                <p className="text-white/80 text-base md:text-lg leading-relaxed mb-8 relative z-10 italic">"{test.text}"</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-brand-neon/20 flex items-center justify-center font-bold text-brand-neon border border-brand-neon/30">
-                    {test.name.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white">{test.name}</h4>
-                    <p className="text-white/50 text-xs tracking-widest uppercase">{test.role}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── EXPLORE EVENTS ── */}
-      <section className="py-20 bg-[#050505] border-t border-white/5">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-12">
-            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Explore our events</motion.h2>
+            <motion.p variants={fadeUp} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Case Studies</motion.p>
+            <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Explore our events</motion.h2>
           </motion.div>
           
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {caseStudies.map((study, i) => (
-              <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }} className="bg-white/5 border border-white/10 rounded-full px-6 py-3 flex items-center gap-2 hover:bg-brand-neon/10 hover:border-brand-neon/30 transition-all cursor-pointer">
-                <span className="font-bold text-sm">{study.brand}</span>
-                <span className="text-white/30 text-xs">|</span>
-                <span className="text-brand-neon text-xs tracking-widest uppercase">{study.type}</span>
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group relative bg-black border border-white/10 hover:border-brand-neon/40 rounded-[2rem] p-8 overflow-hidden flex flex-col items-center justify-center text-center h-40 transition-all shadow-[0_0_0_rgba(247,54,168,0)] hover:shadow-[0_0_30px_rgba(247,54,168,0.15)] cursor-pointer">
+                <div className="absolute inset-0 bg-gradient-to-tr from-brand-neon/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <h3 className="text-xl md:text-2xl font-extrabold text-white mb-2 relative z-10 group-hover:scale-105 transition-transform duration-300">{study.brand}</h3>
+                <p className="text-brand-neon text-[10px] md:text-xs font-bold tracking-widest uppercase relative z-10">{study.type}</p>
+                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <ArrowRight className="w-4 h-4 text-brand-neon" />
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* ── TESTIMONIALS ── */}
+      <Testimonials />
 
       {/* ── FAQ ── */}
       <section className="py-20 md:py-32 bg-black border-t border-white/5">
