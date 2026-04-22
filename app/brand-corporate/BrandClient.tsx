@@ -138,7 +138,7 @@ export default function BrandClient() {
       <BrandLogos />
 
       {/* ── INTRO / ENGAGE ── */}
-      <section className="py-20 md:py-32 bg-[#050505] relative overflow-hidden border-t border-white/5">
+      <section className="py-16 md:py-20 bg-[#050505] relative overflow-hidden border-t border-white/5">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-neon/10 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-900/10 blur-[150px] rounded-full pointer-events-none" />
         
@@ -189,7 +189,7 @@ export default function BrandClient() {
       </section>
 
       {/* ── PHOTO BOOTH COLLECTION ── */}
-      <section className="py-20 md:py-32 bg-[#050505] border-t border-white/5 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-[#050505] border-t border-white/5 relative overflow-hidden">
         {/* Subtle background effects */}
         <div className="absolute top-0 right-0 w-full h-[500px] bg-gradient-to-b from-brand-neon/5 to-transparent pointer-events-none" />
         
@@ -236,7 +236,7 @@ export default function BrandClient() {
       </section>
 
       {/* ── WHY CHOOSE US ── */}
-      <section className="py-20 md:py-32 bg-black border-t border-white/5">
+      <section className="py-16 md:py-20 bg-black border-t border-white/5">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
@@ -286,7 +286,7 @@ export default function BrandClient() {
       </section>
 
       {/* ── EXPLORE EVENTS ── */}
-      <section className="py-20 md:py-32 bg-[#050505] border-t border-white/5 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-[#050505] border-t border-white/5 relative overflow-hidden">
         {/* Decorative background glow */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-neon/10 blur-[120px] rounded-full pointer-events-none" />
 
@@ -315,7 +315,7 @@ export default function BrandClient() {
       <Testimonials />
 
       {/* ── FAQ ── */}
-      <section className="py-20 md:py-32 bg-black border-t border-white/5">
+      <section className="py-16 md:py-20 bg-black border-t border-white/5">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
             <motion.p variants={fadeUp} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Support</motion.p>

@@ -145,7 +145,7 @@ export default function PartiesClient() {
       </section>
 
       {/* ── SNAP. PRINT. SHARE. ── */}
-      <section className="py-20 md:py-32 bg-[#050505] relative overflow-hidden border-t border-white/5">
+      <section className="py-16 md:py-20 bg-[#050505] relative overflow-hidden border-t border-white/5">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-neon/10 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-900/10 blur-[150px] rounded-full pointer-events-none" />
         
@@ -192,7 +192,7 @@ export default function PartiesClient() {
       </section>
 
       {/* ── WHY CHOOSE US ── */}
-      <section className="py-20 md:py-32 bg-black border-t border-white/5 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-black border-t border-white/5 relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
             <motion.p variants={fadeUp} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Our Guarantee</motion.p>
@@ -214,7 +214,7 @@ export default function PartiesClient() {
       </section>
 
       {/* ── BOOTH OPTIONS ── */}
-      <section className="py-20 md:py-32 bg-[#050505] border-t border-white/5">
+      <section className="py-16 md:py-20 bg-[#050505] border-t border-white/5">
         <div className="container mx-auto px-6 max-w-7xl">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
             <motion.p variants={fadeUp} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Our Services</motion.p>
@@ -253,7 +253,7 @@ export default function PartiesClient() {
       </section>
 
       {/* ── HIGHLIGHTS GALLERY ── */}
-      <section className="py-20 md:py-32 bg-black border-t border-white/5 overflow-hidden">
+      <section className="py-16 md:py-20 bg-black border-t border-white/5 overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
             <motion.p variants={fadeUp} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Portfolio</motion.p>
@@ -285,7 +285,7 @@ export default function PartiesClient() {
       <Testimonials />
 
       {/* ── EXPLORE EVENTS ── */}
-      <section className="py-20 md:py-32 bg-[#050505] border-t border-white/5 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-[#050505] border-t border-white/5 relative overflow-hidden">
         {/* Decorative background glow */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-neon/10 blur-[120px] rounded-full pointer-events-none" />
 
@@ -311,7 +311,7 @@ export default function PartiesClient() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-20 md:py-32 bg-black border-t border-white/5">
+      <section className="py-16 md:py-20 bg-black border-t border-white/5">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
             <motion.p variants={fadeUp} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Support</motion.p>
