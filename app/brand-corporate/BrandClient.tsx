@@ -17,30 +17,34 @@ const fadeUp = {
 
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } };
 
-const boothOptions = [
+const collectionOptions = [
   {
-    title: "ORIGINAL BOOTH",
-    desc: "The original selfie booth experience — perfect for capturing groups of all sizes!",
-    features: ["High-quality photos & unlimited prints", "Instant digital sharing & live gallery", "A choice of 50+ backdrops and more"],
-    image: "/wedding-photo-booth-rental-usa.png",
+    title: "Photo Booth Rental With Prints",
+    desc: "Our open-air booth delivers unlimited prints, branded templates, premium backdrops, and pro lighting to create memorable moments at any corporate event.",
+    image: "/open-air-photo-booth-rental-usa.png",
     icon: Camera,
     link: "/open-air-photo-booth-rental"
   },
   {
-    title: "Selfie Station",
-    desc: "Self-operated digital photobooth with fully customized experience.",
-    features: ["Unlimited digital experience", "Data collection, analytics, sharing", "Full vinyl wrapping"],
-    image: "/gallery-1.png",
+    title: "360 Booth Rental With Videos",
+    desc: "Capture slow-motion videos with branded overlays, music integration, and instant sharing to deliver a high-energy experience your guests will love.",
+    image: "/photo-booth-rental-360-cover.png",
+    icon: Video,
+    link: "/360-photo-booth-rental"
+  },
+  {
+    title: "Digital Photo Booth With GIF's",
+    desc: "Create branded GIFs, boomerangs, and still shots with instant sharing to keep guests engaged and your brand visible long after the event ends.",
+    image: "/gallery-2.png",
     icon: MonitorSmartphone,
     link: "/digital-photo-booth-rental"
   },
   {
-    title: "360 BOOTH",
-    desc: "Impress your guests with 360 unique video booth experience.",
-    features: ["Unlimited 360 videos", "Music, effects and design overlays", "Instant digital sharing and more"],
-    image: "/premium-photobooth.png",
-    icon: Video,
-    link: "/360-photo-booth-rental"
+    title: "Magazine Photo Booth Box",
+    desc: "Guests pose inside a life-sized magazine cover for high-impact branded event photos that create buzz, fun, and lasting memories at corporate events.",
+    image: "/magazine-booth.png",
+    icon: Star,
+    link: "/vogue-magazine-photo-booth-box"
   }
 ];
 
@@ -196,37 +200,45 @@ export default function BrandClient() {
         </div>
       </section>
 
-      {/* ── BOOTH OPTIONS ── */}
-      <section className="py-20 bg-[#050505] border-t border-white/5">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
-            <motion.p variants={fadeUp} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Our Services</motion.p>
-            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-extrabold tracking-tight">Choose your Photo Booth Experience</motion.h2>
+      {/* ── PHOTO BOOTH COLLECTION ── */}
+      <section className="py-20 md:py-32 bg-[#050505] border-t border-white/5 relative overflow-hidden">
+        {/* Subtle background effects */}
+        <div className="absolute top-0 right-0 w-full h-[500px] bg-gradient-to-b from-brand-neon/5 to-transparent pointer-events-none" />
+        
+        <div className="container mx-auto px-6 max-w-[90rem]">
+          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16 md:mb-24">
+            <motion.p variants={fadeUp} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-4">Our Collection</motion.p>
+            <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">View Our Photo Booth Rental Collection</motion.h2>
+            <motion.p variants={fadeUp} className="text-white/60 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+              For the best corporate photo booth rentals contact Peek-A-Booth Rentals today and make your event an unforgettable celebration!
+            </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {boothOptions.map((booth, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }} className="group rounded-[2rem] bg-[#0a0a0a] border border-white/10 hover:border-brand-neon/40 transition-all overflow-hidden flex flex-col">
-                <div className="relative h-64 w-full overflow-hidden">
-                  <Image src={booth.image} alt={booth.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent opacity-90" />
-                  <div className="absolute bottom-6 left-6 w-14 h-14 rounded-2xl bg-brand-neon/20 border border-brand-neon/50 flex items-center justify-center backdrop-blur-md">
-                    <booth.icon className="w-7 h-7 text-brand-neon" />
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
+            {collectionOptions.map((booth, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: i * 0.1 }} className="group relative rounded-[2.5rem] bg-black border border-white/10 hover:border-brand-neon/50 transition-all duration-500 overflow-hidden flex flex-col h-full">
+                
+                {/* Image Section */}
+                <div className="relative h-64 md:h-72 w-full overflow-hidden">
+                  <div className="absolute inset-0 bg-brand-neon/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <Image src={booth.image} alt={booth.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
+                  
+                  {/* Icon floating badge */}
+                  <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center z-20 group-hover:bg-brand-neon group-hover:border-brand-neon group-hover:text-black transition-colors duration-300 shadow-xl">
+                    <booth.icon className="w-5 h-5" />
                   </div>
                 </div>
-                <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-bold mb-3 uppercase tracking-wide">{booth.title}</h3>
-                  <p className="text-white/60 mb-6 text-sm leading-relaxed">{booth.desc}</p>
-                  <ul className="space-y-3 mb-8 flex-grow">
-                    {booth.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <Check className="w-4 h-4 text-brand-neon mt-1 shrink-0" />
-                        <span className="text-white/80 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href={booth.link} className="inline-flex items-center gap-2 text-brand-neon font-bold text-sm tracking-widest uppercase hover:text-white transition-colors group/link">
-                    Explore More <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+
+                {/* Content Section */}
+                <div className="p-8 md:p-10 flex flex-col flex-grow relative z-20 bg-black">
+                  <div className="absolute top-0 left-10 right-10 h-px bg-gradient-to-r from-transparent via-brand-neon/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <h3 className="text-xl md:text-2xl font-extrabold mb-4 leading-tight group-hover:text-brand-neon transition-colors duration-300">{booth.title}</h3>
+                  <p className="text-white/60 mb-8 text-sm leading-relaxed flex-grow">{booth.desc}</p>
+                  
+                  <Link href={`${booth.link}#pricing`} className="inline-flex items-center justify-center w-full gap-2 py-4 rounded-full font-bold text-sm tracking-widest uppercase transition-all border border-brand-neon/30 text-brand-neon hover:bg-brand-neon hover:text-white shadow-[0_0_20px_rgba(247,54,168,0)] hover:shadow-[0_0_20px_rgba(247,54,168,0.4)] group/btn">
+                    View Pricing <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </motion.div>
