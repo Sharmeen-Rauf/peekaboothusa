@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-
+import Link from "next/link";
 export default function WhyChooseUs() {
   return (
     <section className="py-16 md:py-20 relative bg-surface overflow-hidden">
@@ -37,10 +37,12 @@ export default function WhyChooseUs() {
             </div>
             
             <div className="mt-10">
-              <Button size="md" variant="glass" className="px-8 py-6 text-base rounded-full border-white/20 hover:border-brand-neon/50 group">
-                View Pricing
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <Link href="/pricing" className="inline-block">
+                <Button size="md" variant="glass" className="px-8 py-6 text-base rounded-full border-white/20 hover:border-brand-neon/50 group">
+                  View Pricing
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
           </motion.div>
 
