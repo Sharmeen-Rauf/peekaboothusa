@@ -151,7 +151,7 @@ export default function StudioClient() {
       const nums = transcript.match(/\d+/g);
       if (nums && nums.length > 0) {
         // Simple heuristic: if it's a huge number, it's budget. If smaller, guests.
-        const sorted = nums.map(Number).sort((a,b) => b-a);
+        const sorted = nums.map(Number).sort((a: number, b: number) => b - a);
         if (sorted[0] > 1000) {
           setPackBudget(sorted[0].toString());
           if (sorted[1]) setPackGuests(sorted[1].toString());
