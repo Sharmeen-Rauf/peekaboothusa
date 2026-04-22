@@ -66,7 +66,7 @@ export default function EventsClient() {
     <div className="bg-black text-white selection:bg-brand-neon/30">
       
       {/* ── HERO ── */}
-      <section className="relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden pt-24 pb-12">
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-20">
         <div className="absolute inset-0 z-0">
           <Image src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2000&auto=format&fit=crop" alt="Unforgettable Events Crowd" fill priority sizes="100vw" className="object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black" />
