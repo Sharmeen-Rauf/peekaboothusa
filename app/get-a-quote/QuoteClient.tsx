@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Check, ArrowRight, ChevronLeft, Sparkles, Star, Plus, Minus, Send, Phone } from "lucide-react";
+import { Check, ArrowRight, ChevronLeft, Sparkles, Star, Plus, Minus, Send, Phone, MapPin } from "lucide-react";
 
 /* ─── DATA & CONFIG ───────────────────────────────────────────────────────── */
 
@@ -16,28 +16,33 @@ const eventTypes = [
   { id: "luxury", name: "Luxury Event", icon: "✨", theme: "from-emerald-900/60 via-[#050505] to-black" },
 ];
 
+const cities = [
+  { id: "LHE", name: "Lahore" },
+  { id: "ISB", name: "Islamabad" },
+  { id: "MUX", name: "Multan" },
+  { id: "KHI", name: "Karachi" }
+];
+
 const booths = [
-  { id: "360", name: "360 Video Booth", basePrice: 400, img: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop", desc: "Viral slow-motion 360° videos." },
-  { id: "glam", name: "Glam Booth", basePrice: 350, img: "https://images.unsplash.com/photo-1561489413-985b06da5bee?q=80&w=800&auto=format&fit=crop", desc: "Kardashian style skin-smoothing." },
-  { id: "digital", name: "Digital Booth", basePrice: 250, img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop", desc: "Instant GIFs & Boomerangs." },
-  { id: "magazine", name: "Magazine Box", basePrice: 600, img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop", desc: "Life-size Vogue cover experience." },
-  { id: "openair", name: "Open Air Booth", basePrice: 300, img: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop", desc: "Classic high-quality prints." },
+  { id: "party", name: "Party Box", baseHours: 4, extraRate: 5000, img: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop", desc: "Birthday & weddings", prices: { LHE: 40000, MUX: 40000, ISB: 45000, KHI: 45000 } },
+  { id: "vintage", name: "Vintage Booth", baseHours: 4, extraRate: 5000, img: "https://images.unsplash.com/photo-1561489413-985b06da5bee?q=80&w=800&auto=format&fit=crop", desc: "Birthday & weddings", prices: { LHE: 40000, MUX: 40000, ISB: 45000, KHI: 45000 } },
+  { id: "classic", name: "Classic Booth", baseHours: 4, extraRate: 5000, img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop", desc: "Corporate & office", prices: { LHE: 50000, MUX: 50000, ISB: 55000, KHI: 55000 } },
+  { id: "mirror", name: "Mirror Booth", baseHours: 4, extraRate: 5000, img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop", desc: "Premium events", prices: { LHE: 60000, MUX: 70000, ISB: 65000, KHI: 65000 } },
+  { id: "360", name: "360 Video Booth", baseHours: 4, extraRate: 5000, img: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop", desc: "Viral slow-motion 360° videos", prices: { LHE: 45000, MUX: 45000, ISB: 50000, KHI: 50000 } },
+  { id: "registration", name: "Registration Booth", baseHours: 8, extraRate: 5000, img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop", desc: "Corporate registrations", prices: { LHE: 45000, MUX: 45000, ISB: 55000, KHI: 55000 } },
 ];
 
 const addonsList = [
-  { id: "prints", name: "Instant Prints", price: 100, icon: "🖨️" },
-  { id: "backdrop", name: "Premium Backdrop", price: 50, icon: "✨" },
-  { id: "props", name: "Neon/Custom Props", price: 40, icon: "🎭" },
-  { id: "guestbook", name: "Guest Book", price: 75, icon: "📖" },
-  { id: "branding", name: "Custom Branding", price: 150, icon: "🏢" },
-  { id: "redcarpet", name: "Red Carpet Setup", price: 120, icon: "📸" },
+  { id: "guestbook", name: "Guest Book", price: 10000, icon: "📖" },
+  { id: "props", name: "Premium Neon Props", price: 5000, icon: "🎭" },
+  { id: "redcarpet", name: "Red Carpet Setup", price: 15000, icon: "📸" },
 ];
 
 const steps = [
-  { id: 1, title: "Event Type" },
+  { id: 1, title: "Event Info" },
   { id: 2, title: "Choose Booth" },
   { id: 3, title: "Customize" },
-  { id: 4, title: "Event Details" },
+  { id: 4, title: "Final Details" },
 ];
 
 /* ─── MAIN COMPONENT ──────────────────────────────────────────────────────── */
@@ -45,8 +50,9 @@ const steps = [
 export default function QuoteClient() {
   const [step, setStep] = useState(1);
   const [eventType, setEventType] = useState<string | null>(null);
+  const [city, setCity] = useState<string>("LHE");
   const [selectedBooth, setSelectedBooth] = useState<string | null>(null);
-  const [hours, setHours] = useState(2);
+  const [hours, setHours] = useState(4);
   const [addons, setAddons] = useState<string[]>([]);
   
   const [details, setDetails] = useState({
@@ -59,24 +65,42 @@ export default function QuoteClient() {
   const currentEvent = eventTypes.find(e => e.id === eventType);
   const currentBooth = booths.find(b => b.id === selectedBooth);
   
+  // When a booth changes, set default hours to its baseHours
+  useEffect(() => {
+    if (currentBooth) {
+      if (hours < currentBooth.baseHours) {
+        setHours(currentBooth.baseHours);
+      }
+    }
+  }, [currentBooth]);
+
   const estimatedTotal = useMemo(() => {
     let total = 0;
-    if (currentBooth) total += currentBooth.basePrice * hours;
+    if (currentBooth) {
+      // Get base price for the selected city
+      const basePrice = currentBooth.prices[city as keyof typeof currentBooth.prices] || currentBooth.prices.LHE;
+      total += basePrice;
+
+      // Add extra hours
+      if (hours > currentBooth.baseHours) {
+        const extra = hours - currentBooth.baseHours;
+        total += extra * currentBooth.extraRate;
+      }
+    }
     addons.forEach(addId => {
       const a = addonsList.find(x => x.id === addId);
       if (a) total += a.price;
     });
     return total;
-  }, [currentBooth, hours, addons]);
+  }, [currentBooth, hours, addons, city]);
 
   const aiRecommendation = useMemo(() => {
     if (!eventType) return null;
     if (eventType === "wedding" && !addons.includes("guestbook")) return "Most wedding clients add a Guest Book for lifelong memories!";
-    if (eventType === "corporate" && !addons.includes("branding")) return "Custom Branding is highly recommended for corporate activations.";
+    if (eventType === "corporate" && !addons.includes("redcarpet")) return "A Red Carpet Setup makes corporate events feel premium.";
     if (eventType === "birthday" && !addons.includes("props")) return "Level up the fun with Custom Neon Props!";
-    if (hours < 3) return "Did you know? 3+ hours is recommended to ensure all guests get a turn.";
     return "Your package looks amazing! ✨";
-  }, [eventType, addons, hours]);
+  }, [eventType, addons]);
 
   // Handlers
   const nextStep = () => {
@@ -96,12 +120,16 @@ export default function QuoteClient() {
     setAddons(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
   };
 
-  const handleDetailChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleDetailChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setDetails({ ...details, [e.target.name]: e.target.value });
   };
 
+  const formatPKR = (num: number) => {
+    return new Intl.NumberFormat('en-PK').format(num);
+  };
+
   const generateWhatsAppLink = () => {
-    const text = `Hi Peekabooth 👋\n\nI'd like a quote for:\nEvent: ${currentEvent?.name}\nBooth: ${currentBooth?.name}\nHours: ${hours}\nAdd-ons: ${addons.length > 0 ? addons.map(a => addonsList.find(x => x.id === a)?.name).join(", ") : "None"}\nVenue: ${details.venue}\nDate: ${details.date}\n\nEstimated Budget: $${estimatedTotal}\n\nMy name is ${details.firstName} ${details.lastName}. Please contact me with more details!`;
+    const text = `Hi Peekabooth 👋\n\nI'd like a quote for:\nEvent: ${currentEvent?.name}\nCity: ${cities.find(c => c.id === city)?.name}\nBooth: ${currentBooth?.name}\nHours: ${hours}\nAdd-ons: ${addons.length > 0 ? addons.map(a => addonsList.find(x => x.id === a)?.name).join(", ") : "None"}\nVenue: ${details.venue}\nDate: ${details.date}\n\nEstimated Budget: PKR ${formatPKR(estimatedTotal)}\n\nMy name is ${details.firstName} ${details.lastName}. Please contact me with more details!`;
     return `https://wa.me/18007098579?text=${encodeURIComponent(text)}`;
   };
 
@@ -116,7 +144,6 @@ export default function QuoteClient() {
   if (isSuccess) {
     return (
       <div className="min-h-screen bg-[#050505] flex items-center justify-center pt-24 px-6 text-white text-center relative overflow-hidden">
-        {/* Confetti / Particle effect */}
         {[...Array(20)].map((_, i) => (
           <motion.div key={i} className="absolute w-2 h-2 rounded-full bg-brand-neon z-0"
             initial={{ top: "50%", left: "50%", opacity: 1, scale: 0 }}
@@ -178,24 +205,50 @@ export default function QuoteClient() {
           <div className="mt-16 bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl overflow-hidden relative min-h-[500px]">
             <AnimatePresence mode="wait">
               
-              {/* STEP 1: EVENT SELECTION */}
+              {/* STEP 1: EVENT SELECTION & CITY */}
               {step === 1 && (
-                <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8">
+                <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-10">
                   <div className="text-center md:text-left">
-                    <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">What are we celebrating?</h2>
-                    <p className="text-white/50">Select your event type to customize the vibe.</p>
+                    <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">Event Basics</h2>
+                    <p className="text-white/50">Where is the event and what are we celebrating?</p>
                   </div>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {eventTypes.map(ev => (
-                      <motion.div 
-                        key={ev.id} whileHover={{ scale: 1.03, y: -5 }} whileTap={{ scale: 0.98 }}
-                        onClick={() => { setEventType(ev.id); setTimeout(nextStep, 400); }}
-                        className={`cursor-pointer rounded-2xl p-6 border-2 transition-all duration-300 flex flex-col items-center justify-center text-center gap-3 ${eventType === ev.id ? "border-brand-neon bg-brand-neon/10 shadow-[0_0_30px_rgba(247,54,168,0.3)]" : "border-white/5 bg-white/5 hover:border-white/20 hover:bg-white/10"}`}
-                      >
-                        <span className="text-4xl drop-shadow-lg">{ev.icon}</span>
-                        <span className="font-bold tracking-wide">{ev.name}</span>
-                      </motion.div>
-                    ))}
+                  
+                  {/* City Selector */}
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 relative">
+                    <h3 className="text-sm font-bold tracking-widest uppercase text-brand-neon mb-4 flex items-center gap-2"><MapPin className="w-4 h-4" /> Select City</h3>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                      {cities.map(c => (
+                        <button 
+                          key={c.id} onClick={() => setCity(c.id)}
+                          className={`py-3 px-2 rounded-xl text-sm font-bold transition-all border ${city === c.id ? "bg-brand-neon border-brand-neon text-white shadow-[0_0_20px_rgba(247,54,168,0.4)]" : "bg-[#111] border-white/10 text-white/60 hover:bg-white/5 hover:border-white/30"}`}
+                        >
+                          {c.name}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Event Selector */}
+                  <div>
+                    <h3 className="text-sm font-bold tracking-widest uppercase text-brand-neon mb-4">Event Type</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                      {eventTypes.map(ev => (
+                        <motion.div 
+                          key={ev.id} whileHover={{ scale: 1.03, y: -5 }} whileTap={{ scale: 0.98 }}
+                          onClick={() => { setEventType(ev.id); }}
+                          className={`cursor-pointer rounded-2xl p-6 border-2 transition-all duration-300 flex flex-col items-center justify-center text-center gap-3 ${eventType === ev.id ? "border-brand-neon bg-brand-neon/10 shadow-[0_0_30px_rgba(247,54,168,0.3)]" : "border-white/5 bg-white/5 hover:border-white/20 hover:bg-white/10"}`}
+                        >
+                          <span className="text-4xl drop-shadow-lg">{ev.icon}</span>
+                          <span className="font-bold tracking-wide">{ev.name}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex justify-end pt-4">
+                    <button onClick={nextStep} disabled={!eventType} className="bg-brand-neon hover:bg-white text-white hover:text-brand-neon px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all shadow-[0_0_20px_rgba(247,54,168,0.4)] disabled:opacity-50 flex items-center gap-2 group">
+                      Continue <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </button>
                   </div>
                 </motion.div>
               )}
@@ -210,26 +263,33 @@ export default function QuoteClient() {
                     </div>
                     <button onClick={prevStep} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors"><ChevronLeft className="w-5 h-5" /></button>
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    {booths.map(booth => (
-                      <div 
-                        key={booth.id} onClick={() => setSelectedBooth(booth.id)}
-                        className={`relative aspect-[4/3] rounded-3xl overflow-hidden cursor-pointer group transition-all duration-500 transform ${selectedBooth === booth.id ? "ring-2 ring-brand-neon ring-offset-4 ring-offset-black scale-[1.02]" : "hover:scale-[1.02]"}`}
-                      >
-                        <Image src={booth.img} alt={booth.name} fill className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-                        <div className={`absolute inset-0 bg-gradient-to-t transition-colors duration-500 ${selectedBooth === booth.id ? "from-brand-neon/90 via-black/40 to-transparent" : "from-black/90 via-black/40 to-transparent group-hover:from-brand-neon/60"}`} />
-                        
-                        <div className="absolute bottom-5 left-5 right-5">
-                          <h3 className="text-xl font-extrabold text-white mb-1 drop-shadow-md">{booth.name}</h3>
-                          <p className="text-white/70 text-sm font-medium">{booth.desc}</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 h-[500px] overflow-y-auto pr-2 pb-4 scrollbar-thin scrollbar-thumb-brand-neon scrollbar-track-white/5">
+                    {booths.map(booth => {
+                      const basePrice = booth.prices[city as keyof typeof booth.prices] || booth.prices.LHE;
+                      return (
+                        <div 
+                          key={booth.id} onClick={() => setSelectedBooth(booth.id)}
+                          className={`relative aspect-[4/3] rounded-3xl overflow-hidden cursor-pointer group transition-all duration-500 transform ${selectedBooth === booth.id ? "ring-2 ring-brand-neon ring-offset-4 ring-offset-black scale-[1.02]" : "hover:scale-[1.02]"}`}
+                        >
+                          <Image src={booth.img} alt={booth.name} fill className="object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-500" />
+                          <div className={`absolute inset-0 bg-gradient-to-t transition-colors duration-500 ${selectedBooth === booth.id ? "from-brand-neon/90 via-black/40 to-transparent" : "from-black/90 via-black/40 to-transparent group-hover:from-brand-neon/60"}`} />
+                          
+                          <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
+                            <span className="text-xs font-bold text-white uppercase tracking-wider">Base: PKR {formatPKR(basePrice)}</span>
+                          </div>
+
+                          <div className="absolute bottom-5 left-5 right-5">
+                            <h3 className="text-xl font-extrabold text-white mb-1 drop-shadow-md">{booth.name}</h3>
+                            <p className="text-white/70 text-sm font-medium">{booth.desc}</p>
+                          </div>
+                          {selectedBooth === booth.id && (
+                            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-brand-neon flex items-center justify-center shadow-[0_0_15px_rgba(247,54,168,0.8)]">
+                              <Check className="w-4 h-4 text-white font-bold" />
+                            </motion.div>
+                          )}
                         </div>
-                        {selectedBooth === booth.id && (
-                          <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-brand-neon flex items-center justify-center shadow-[0_0_15px_rgba(247,54,168,0.8)]">
-                            <Check className="w-4 h-4 text-white font-bold" />
-                          </motion.div>
-                        )}
-                      </div>
-                    ))}
+                      )
+                    })}
                   </div>
                   <div className="flex justify-end pt-4">
                     <button onClick={nextStep} disabled={!selectedBooth} className="bg-brand-neon hover:bg-white text-white hover:text-brand-neon px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all shadow-[0_0_20px_rgba(247,54,168,0.4)] disabled:opacity-50 flex items-center gap-2 group">
@@ -258,14 +318,14 @@ export default function QuoteClient() {
                     <div className="flex items-center justify-between mb-6">
                       <div>
                         <h3 className="text-lg font-bold">Rental Duration</h3>
-                        <p className="text-white/50 text-xs">How long do you need the booth?</p>
+                        <p className="text-white/50 text-xs">Included: {currentBooth?.baseHours} hours. Extra hour: PKR {formatPKR(currentBooth?.extraRate || 5000)}</p>
                       </div>
                       <div className="text-3xl font-extrabold text-brand-neon">{hours} <span className="text-lg text-white/50 font-medium">hrs</span></div>
                     </div>
                     <div className="flex items-center gap-6">
-                      <button onClick={() => hours > 2 && setHours(h => h - 1)} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-brand-neon text-white transition-all disabled:opacity-30"><Minus className="w-5 h-5" /></button>
-                      <input type="range" min="2" max="8" value={hours} onChange={(e) => setHours(parseInt(e.target.value))} className="w-full accent-brand-neon h-2 bg-white/10 rounded-full appearance-none cursor-pointer" />
-                      <button onClick={() => hours < 8 && setHours(h => h + 1)} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-brand-neon text-white transition-all"><Plus className="w-5 h-5" /></button>
+                      <button onClick={() => hours > (currentBooth?.baseHours || 4) && setHours(h => h - 1)} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-brand-neon text-white transition-all disabled:opacity-30"><Minus className="w-5 h-5" /></button>
+                      <input type="range" min={currentBooth?.baseHours || 4} max="12" value={hours} onChange={(e) => setHours(parseInt(e.target.value))} className="w-full accent-brand-neon h-2 bg-white/10 rounded-full appearance-none cursor-pointer" />
+                      <button onClick={() => hours < 12 && setHours(h => h + 1)} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-brand-neon text-white transition-all"><Plus className="w-5 h-5" /></button>
                     </div>
                   </div>
 
@@ -282,7 +342,7 @@ export default function QuoteClient() {
                           >
                             <span className="text-2xl mb-1">{addon.icon}</span>
                             <span className="text-xs font-bold leading-tight">{addon.name}</span>
-                            <span className={`text-[10px] font-bold ${isSelected ? "text-brand-neon" : "text-white/40"}`}>+${addon.price}</span>
+                            <span className={`text-[10px] font-bold ${isSelected ? "text-brand-neon" : "text-white/40"}`}>+PKR {formatPKR(addon.price)}</span>
                           </div>
                         );
                       })}
@@ -334,7 +394,7 @@ export default function QuoteClient() {
                       </div>
                     </div>
                     <div className="relative group">
-                      <input required type="text" name="venue" value={details.venue} onChange={handleDetailChange} placeholder="Venue Name & City *" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon focus:bg-white/10 transition-colors" />
+                      <input required type="text" name="venue" value={details.venue} onChange={handleDetailChange} placeholder="Venue Name & Address *" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon focus:bg-white/10 transition-colors" />
                     </div>
                     <div className="relative group">
                       <textarea name="notes" rows={3} value={details.notes} onChange={handleDetailChange} placeholder="Any special requests or details..." className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon focus:bg-white/10 transition-colors resize-y" />
@@ -360,10 +420,13 @@ export default function QuoteClient() {
               <h3 className="text-xs font-bold tracking-[0.3em] uppercase text-brand-neon mb-6 flex items-center gap-2"><Star className="w-3 h-3" /> Live Estimate</h3>
               
               <div className="space-y-4 mb-8">
-                {/* Event Type */}
+                {/* Event Type & City */}
                 <div className="flex justify-between items-center pb-4 border-b border-white/5">
-                  <span className="text-white/60 text-sm">Event Type</span>
-                  <span className="font-bold text-sm text-right">{currentEvent ? currentEvent.name : "Not selected"}</span>
+                  <span className="text-white/60 text-sm">Event & City</span>
+                  <div className="text-right">
+                    <div className="font-bold text-sm">{currentEvent ? currentEvent.name : "Not selected"}</div>
+                    <div className="text-xs text-brand-neon mt-0.5">{cities.find(c => c.id === city)?.name}</div>
+                  </div>
                 </div>
                 
                 {/* Booth Selection */}
@@ -371,7 +434,7 @@ export default function QuoteClient() {
                   <span className="text-white/60 text-sm">Booth</span>
                   <div className="text-right">
                     <div className="font-bold text-sm">{currentBooth ? currentBooth.name : "Not selected"}</div>
-                    {currentBooth && <div className="text-xs text-brand-neon mt-0.5">${currentBooth.basePrice} / hr</div>}
+                    {currentBooth && <div className="text-xs text-white/50 mt-0.5">Base: PKR {formatPKR(currentBooth.prices[city as keyof typeof currentBooth.prices] || currentBooth.prices.LHE)}</div>}
                   </div>
                 </div>
 
@@ -379,7 +442,12 @@ export default function QuoteClient() {
                 {currentBooth && (
                   <div className="flex justify-between items-center pb-4 border-b border-white/5">
                     <span className="text-white/60 text-sm">Duration</span>
-                    <span className="font-bold text-sm">{hours} Hours</span>
+                    <div className="text-right">
+                      <div className="font-bold text-sm">{hours} Hours</div>
+                      {hours > currentBooth.baseHours && (
+                        <div className="text-xs text-brand-neon mt-0.5">+{hours - currentBooth.baseHours} Extra (PKR {formatPKR((hours - currentBooth.baseHours) * currentBooth.extraRate)})</div>
+                      )}
+                    </div>
                   </div>
                 )}
 
@@ -393,7 +461,7 @@ export default function QuoteClient() {
                         return a ? (
                           <div key={id} className="flex justify-between items-center text-sm">
                             <span className="text-white/80 flex items-center gap-1.5"><Check className="w-3 h-3 text-brand-neon" /> {a.name}</span>
-                            <span className="font-medium">+${a.price}</span>
+                            <span className="font-medium">+PKR {formatPKR(a.price)}</span>
                           </div>
                         ) : null;
                       })}
@@ -407,16 +475,16 @@ export default function QuoteClient() {
                 <div className="absolute inset-0 bg-gradient-to-r from-brand-neon/0 via-brand-neon/5 to-brand-neon/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <span className="block text-white/50 text-xs font-bold tracking-widest uppercase mb-1">Estimated Total</span>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-2xl text-brand-neon font-bold">$</span>
+                  <span className="text-xl text-brand-neon font-bold">PKR</span>
                   <motion.span 
                     key={estimatedTotal}
                     initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
                     className="text-4xl font-extrabold text-white"
                   >
-                    {estimatedTotal}
+                    {formatPKR(estimatedTotal)}
                   </motion.span>
                 </div>
-                <p className="text-[10px] text-white/30 mt-2">*Final quote may vary based on travel & date.</p>
+                <p className="text-[10px] text-white/30 mt-2">*Exclusive of GST. Final quote may vary.</p>
               </div>
 
               {/* Submit Button */}
