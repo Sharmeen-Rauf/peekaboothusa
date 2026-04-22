@@ -66,11 +66,11 @@ export default function EventsClient() {
     <div className="bg-black text-white selection:bg-brand-neon/30">
       
       {/* ── HERO ── */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden pt-24 pb-12">
         <div className="absolute inset-0 z-0">
-          <Image src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?q=80&w=2000&auto=format&fit=crop" alt="Unforgettable Events" fill priority sizes="100vw" className="object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black" />
-          <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
+          <Image src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2000&auto=format&fit=crop" alt="Unforgettable Events Crowd" fill priority sizes="100vw" className="object-cover opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black" />
+          <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(247,54,168,0.15) 0%, transparent 70%)" }}
             animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} />
         </div>
@@ -79,22 +79,22 @@ export default function EventsClient() {
         <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.03]"
           style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")", backgroundSize: "128px" }} />
 
-        <div className="container mx-auto px-6 max-w-4xl relative z-20 text-center pt-10 pb-20">
+        <div className="container mx-auto px-6 max-w-4xl relative z-20 flex flex-col items-center justify-center text-center">
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-4 flex items-center justify-center gap-2">
             <Sparkles className="w-4 h-4 text-brand-neon" /> MEMORIES FOR EVERY OCCASION
           </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }} className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }} className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
             Unforgettable <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon">Events</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.7 }} className="text-base md:text-lg text-white/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.7 }} className="text-base md:text-lg text-white/80 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
             From luxury weddings and private parties to high-impact corporate activations, we provide premium photo booth experiences tailored to your specific event needs.
           </motion.p>
         </div>
 
         {/* Scroll indicator */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 1 }} className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 1 }} className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20">
           <span className="text-[10px] tracking-[0.4em] text-white/30 uppercase">Scroll</span>
-          <motion.div className="w-px h-10 bg-gradient-to-b from-brand-neon/60 to-transparent" animate={{ scaleY: [0, 1, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }} />
+          <motion.div className="w-px h-8 bg-gradient-to-b from-brand-neon/60 to-transparent" animate={{ scaleY: [0, 1, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }} />
         </motion.div>
       </section>
 
