@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Check, ArrowRight, ChevronLeft, Sparkles, Star, Plus, Minus, Send, Phone, MapPin } from "lucide-react";
+import { saveBooking } from "@/lib/bookingStore";
 
 /* ─── DATA & CONFIG ───────────────────────────────────────────────────────── */
 
@@ -135,6 +136,23 @@ export default function QuoteClient() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Save to the booking store (localStorage) so admin can see it
+    saveBooking({
+      firstName: details.firstName,
+      lastName: details.lastName,
+      email: details.email,
+      phone: details.phone,
+      date: details.date,
+      startTime: details.startTime,
+      venue: details.venue,
+      notes: details.notes,
+      eventType: currentEvent?.name || eventType || "",
+      city: cities.find(c => c.id === city)?.name || city,
+      booth: currentBooth?.name || selectedBooth || "",
+      hours,
+      addons: addons.map(id => addonsList.find(a => a.id === id)?.name || id),
+      estimatedTotal,
+    });
     setIsSuccess(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

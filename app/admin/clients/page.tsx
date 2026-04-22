@@ -1,17 +1,54 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Search, Mail, Phone, ExternalLink } from "lucide-react";
-
-const clients = [
-  { id: "C-001", name: "Ayesha Malik", email: "ayesha.m@example.com", phone: "0300-1234567", events: 1, totalSpent: "PKR 65,000", lastActive: "Oct 24, 2024" },
-  { id: "C-002", name: "TechCorp Inc.", email: "events@techcorp.pk", phone: "042-9876543", events: 3, totalSpent: "PKR 250,000", lastActive: "Nov 02, 2024" },
-  { id: "C-003", name: "Zain Ali", email: "zainali88@gmail.com", phone: "0321-7654321", events: 1, totalSpent: "PKR 45,000", lastActive: "Oct 28, 2024" },
-  { id: "C-004", name: "Fatima Noor", email: "fatima.noor@hotmail.com", phone: "0333-1122334", events: 2, totalSpent: "PKR 90,000", lastActive: "Nov 15, 2024" },
-  { id: "C-005", name: "Hassan Raza", email: "hassan.r@yahoo.com", phone: "0301-9988776", events: 1, totalSpent: "PKR 50,000", lastActive: "Oct 29, 2024" },
-];
+import { getBookings, BookingSubmission, formatPKR } from "@/lib/bookingStore";
 
 export default function ClientsCRM() {
+  const [bookings, setBookings] = useState<BookingSubmission[]>([]);
+
+  useEffect(() => {
+    setBookings(getBookings());
+    const interval = setInterval(() => setBookings(getBookings()), 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Group bookings by email to create "Clients"
+  const clientsMap = new Map<string, {
+    name: string;
+    email: string;
+    phone: string;
+    events: number;
+    totalSpent: number;
+    lastActive: string;
+  }>();
+
+  bookings.forEach(b => {
+    if (!clientsMap.has(b.email)) {
+      clientsMap.set(b.email, {
+        name: `${b.firstName} ${b.lastName}`,
+        email: b.email,
+        phone: b.phone,
+        events: 0,
+        totalSpent: 0,
+        lastActive: b.date || b.submittedAt
+      });
+    }
+    const client = clientsMap.get(b.email)!;
+    client.events += 1;
+    // Only count confirmed or completed towards lifetime value for CRM
+    if (b.status === "confirmed" || b.status === "completed") {
+      client.totalSpent += b.estimatedTotal;
+    }
+    // Update last active if this booking is newer (simple string comparison works for ISO dates/YYYY-MM-DD)
+    if (b.date && b.date > client.lastActive) {
+      client.lastActive = b.date;
+    }
+  });
+
+  const clients = Array.from(clientsMap.values());
+
   return (
     <div className="space-y-8">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
@@ -44,38 +81,45 @@ export default function ClientsCRM() {
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5">
-              {clients.map((client, i) => (
-                <motion.tr 
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                  key={client.id} 
-                  className="hover:bg-white/5 transition-colors group"
-                >
-                  <td className="px-6 py-4">
-                    <div className="font-bold text-white">{client.name}</div>
-                    <div className="text-[10px] text-white/30">{client.id}</div>
+              {clients.length === 0 ? (
+                <tr>
+                  <td colSpan={6} className="px-6 py-12 text-center text-white/40">
+                    No clients yet. Bookings from the website will appear here.
                   </td>
-                  <td className="px-6 py-4 space-y-1">
-                    <div className="flex items-center gap-2 text-xs"><Mail className="w-3 h-3 text-brand-neon" /> {client.email}</div>
-                    <div className="flex items-center gap-2 text-xs"><Phone className="w-3 h-3 text-brand-neon" /> {client.phone}</div>
-                  </td>
-                  <td className="px-6 py-4 font-medium">
-                    <span className="bg-white/10 px-2 py-1 rounded text-white">{client.events}</span>
-                  </td>
-                  <td className="px-6 py-4 font-bold text-emerald-400">
-                    {client.totalSpent}
-                  </td>
-                  <td className="px-6 py-4 text-xs">
-                    {client.lastActive}
-                  </td>
-                  <td className="px-6 py-4 text-right">
-                    <button className="text-white/40 hover:text-brand-neon transition-colors p-2">
-                      <ExternalLink className="w-4 h-4" />
-                    </button>
-                  </td>
-                </motion.tr>
-              ))}
+                </tr>
+              ) : (
+                clients.map((client, i) => (
+                  <motion.tr 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    key={client.email} 
+                    className="hover:bg-white/5 transition-colors group"
+                  >
+                    <td className="px-6 py-4">
+                      <div className="font-bold text-white">{client.name}</div>
+                    </td>
+                    <td className="px-6 py-4 space-y-1">
+                      <div className="flex items-center gap-2 text-xs"><Mail className="w-3 h-3 text-brand-neon" /> {client.email}</div>
+                      <div className="flex items-center gap-2 text-xs"><Phone className="w-3 h-3 text-brand-neon" /> {client.phone}</div>
+                    </td>
+                    <td className="px-6 py-4 font-medium">
+                      <span className="bg-white/10 px-2 py-1 rounded text-white">{client.events}</span>
+                    </td>
+                    <td className="px-6 py-4 font-bold text-emerald-400">
+                      PKR {formatPKR(client.totalSpent)}
+                    </td>
+                    <td className="px-6 py-4 text-xs">
+                      {client.lastActive ? new Date(client.lastActive).toLocaleDateString() : "Unknown"}
+                    </td>
+                    <td className="px-6 py-4 text-right">
+                      <button className="text-white/40 hover:text-brand-neon transition-colors p-2" title="View details">
+                        <ExternalLink className="w-4 h-4" />
+                      </button>
+                    </td>
+                  </motion.tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>
