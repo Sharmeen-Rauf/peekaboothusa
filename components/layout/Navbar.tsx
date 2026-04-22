@@ -34,7 +34,7 @@ const boothDropdown = [
 ];
 
 const eventsDropdown = [
-  { name: "Weddings",         href: "#contact",  desc: "Elegant setups for your perfect day." },
+  { name: "Weddings",         href: "/weddings", desc: "Elegant setups for your perfect day." },
   { name: "Birthdays",        href: "#contact",  desc: "Fun-packed booths for any age celebration." },
   { name: "Parties",          href: "/parties",  desc: "Energise any gathering with a photo booth." },
 ];

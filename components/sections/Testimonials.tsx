@@ -26,8 +26,15 @@ const initialTestimonials = [
   },
 ];
 
-export default function Testimonials() {
-  const [items, setItems] = useState(initialTestimonials);
+export interface TestimonialItem {
+  id: number;
+  name: string;
+  avatar: string;
+  text: string;
+}
+
+export default function Testimonials({ testimonialsData = initialTestimonials }: { testimonialsData?: TestimonialItem[] }) {
+  const [items, setItems] = useState(testimonialsData);
 
   const next = () => {
     setItems((prev) => {
