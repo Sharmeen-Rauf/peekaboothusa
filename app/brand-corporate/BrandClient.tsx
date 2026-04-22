@@ -119,11 +119,10 @@ export default function BrandClient() {
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-4">
             WOW YOUR GUESTS!
           </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }} className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
-            Corporate Photo Booth Rental:<br className="hidden md:block" />
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }} className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon">Enhance Brand Engagement</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.7 }} className="text-base md:text-xl text-white/80 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.7 }} className="text-base md:text-lg text-white/80 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
             Elevate your brand activations with our original booth, digital selfie station, or 360 video booth. Each option offers customizable branding features to showcase your brand and engage your audience.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="flex flex-wrap gap-4 justify-center">
@@ -147,17 +146,53 @@ export default function BrandClient() {
       <BrandLogos />
 
       {/* ── INTRO / ENGAGE ── */}
-      <section className="py-20 md:py-32 bg-black relative">
-        <div className="container mx-auto px-6 max-w-5xl text-center">
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}>
-            <motion.p variants={fadeUp} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-4">Brand Activations</motion.p>
-            <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 leading-tight">
-              Engage your audience with <br className="hidden md:block" />branded photo booth experience
-            </motion.h2>
-            <motion.p variants={fadeUp} className="text-white/60 text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
-              With our branded booth options, your attendees will be able to engage with your company while creating lasting memories. We offer Digital Selfie Booths, which are fully customizable to your brand, as well as our Print Selfie Booths, which have customizable back panels, backdrops, and prints. Learn more below on which booth is right for your event. In terms of corporate event photography pricing, we are the best value.
-            </motion.p>
-          </motion.div>
+      <section className="py-20 md:py-32 bg-[#050505] relative overflow-hidden border-t border-white/5">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-neon/10 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-900/10 blur-[150px] rounded-full pointer-events-none" />
+        
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-neon/10 border border-brand-neon/30 text-brand-neon text-[10px] font-bold tracking-widest uppercase mb-6">
+                <Star className="w-3 h-3" /> Brand Activations
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+                Engage your audience with <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-glow">branded photo booth</span> experience
+              </h2>
+              <div className="w-20 h-1 bg-brand-neon rounded-full mb-8" />
+              <p className="text-white/70 text-base md:text-lg leading-relaxed mb-6">
+                With our branded booth options, your attendees will be able to engage with your company while creating lasting memories. We offer <strong className="text-white">Digital Selfie Booths</strong>, which are fully customizable to your brand, as well as our <strong className="text-white">Print Selfie Booths</strong>, which have customizable back panels, backdrops, and prints.
+              </p>
+              <p className="text-white/70 text-base md:text-lg leading-relaxed">
+                Learn more below on which booth is right for your event. In terms of corporate event photography pricing, we are the best value.
+              </p>
+            </motion.div>
+            
+            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="relative h-[500px] w-full">
+              {/* Main Image */}
+              <div className="absolute top-0 right-0 w-[80%] h-[80%] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(247,54,168,0.1)] z-10">
+                <Image src="/afterlogofourimage.png" alt="Corporate Activation" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+                <div className="absolute inset-0 bg-brand-neon/10 mix-blend-overlay" />
+              </div>
+              
+              {/* Overlapping Image */}
+              <div className="absolute bottom-0 left-0 w-[60%] h-[60%] rounded-[2rem] overflow-hidden border-4 border-[#050505] shadow-2xl z-20 transform -translate-y-4 translate-x-4">
+                <Image src="/gallery-1.png" alt="Engaged Guests" fill sizes="(max-width: 768px) 100vw, 30vw" className="object-cover" />
+              </div>
+              
+              {/* Floating Stat card */}
+              <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute top-10 -left-6 z-30 bg-[#0a0a0a]/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-xl flex items-center gap-4 hidden sm:flex">
+                <div className="w-12 h-12 rounded-full bg-brand-neon/20 flex items-center justify-center">
+                  <Star className="w-6 h-6 text-brand-neon" />
+                </div>
+                <div>
+                  <p className="text-xl font-bold text-white">100%</p>
+                  <p className="text-[10px] text-white/50 tracking-widest uppercase">Customizable</p>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
