@@ -21,18 +21,18 @@ interface GalleryItem {
 }
 
 const items: GalleryItem[] = [
-  { id: 1,  src: "/wedding-photo-booth-rental-usa.png", alt: "Wedding Photo Booth Rental USA",       category: "Weddings",  location: "Philadelphia, PA", span: "md:col-span-2 md:row-span-2" },
-  { id: 2,  src: "/gallery-1.png",                      alt: "Photo Booth Event Gallery 1",          category: "Parties",   location: "Chicago, IL" },
-  { id: 3,  src: "/magazine-booth.png",                 alt: "Vogue Magazine Box Rental",            category: "Corporate", location: "Houston, TX" },
-  { id: 4,  src: "/gallery-2.png",                      alt: "Photo Booth Event Gallery 2",          category: "Birthdays", location: "Atlanta, GA" },
-  { id: 5,  src: "/corporate-gala.png",                 alt: "Corporate Gala Photo Booth",           category: "Corporate", location: "Los Angeles, CA",  span: "md:col-span-2" },
-  { id: 6,  src: "/premium-photobooth.png",             alt: "Premium Photo Booth Setup",            category: "Weddings",  location: "New York, NY" },
-  { id: 7,  src: "/private-party.png",                  alt: "Private Party Photo Booth",            category: "Parties",   location: "Newark, NJ",       span: "md:row-span-2" },
-  { id: 8,  src: "/gallery-3.png",                      alt: "Photo Booth Event Gallery 3",          category: "Birthdays", location: "Washington, DC" },
-  { id: 9,  src: "/afterlogofourimage.png",             alt: "Magazine Photo Booth Event",           category: "Corporate", location: "Philadelphia, PA" },
-  { id: 10, src: "/chicago-three.png",                  alt: "Magazine Photo Box Chicago",           category: "Parties",   location: "Chicago, IL",      span: "md:col-span-2" },
-  { id: 11, src: "/atlanta-four.png",                   alt: "Magazine Photo Box Atlanta",           category: "Weddings",  location: "Atlanta, GA" },
-  { id: 12, src: "/gallery-1.png",                      alt: "Birthday Celebration Photo Booth",     category: "Birthdays", location: "Houston, TX" },
+  { id: 1,  src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop", alt: "Wedding Photo Booth Rental USA",       category: "Weddings",  location: "Philadelphia, PA", span: "md:col-span-2 md:row-span-2" },
+  { id: 2,  src: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop",                      alt: "Photo Booth Event Gallery 1",          category: "Parties",   location: "Chicago, IL" },
+  { id: 3,  src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",                 alt: "Vogue Magazine Box Rental",            category: "Corporate", location: "Houston, TX" },
+  { id: 4,  src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop",                      alt: "Photo Booth Event Gallery 2",          category: "Birthdays", location: "Atlanta, GA" },
+  { id: 5,  src: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop",                 alt: "Corporate Gala Photo Booth",           category: "Corporate", location: "Los Angeles, CA",  span: "md:col-span-2" },
+  { id: 6,  src: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop",             alt: "Premium Photo Booth Setup",            category: "Weddings",  location: "New York, NY" },
+  { id: 7,  src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop",                  alt: "Private Party Photo Booth",            category: "Parties",   location: "Newark, NJ",       span: "md:row-span-2" },
+  { id: 8,  src: "https://images.unsplash.com/photo-1530103862676-de8892bc952f?q=80&w=800&auto=format&fit=crop",                      alt: "Photo Booth Event Gallery 3",          category: "Birthdays", location: "Washington, DC" },
+  { id: 9,  src: "https://images.unsplash.com/photo-1561489413-985b06da5bee?q=80&w=800&auto=format&fit=crop",             alt: "Magazine Photo Booth Event",           category: "Corporate", location: "Philadelphia, PA" },
+  { id: 10, src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop",                  alt: "Magazine Photo Box Chicago",           category: "Parties",   location: "Chicago, IL",      span: "md:col-span-2" },
+  { id: 11, src: "https://images.unsplash.com/photo-1563241527-3004b7be89db?q=80&w=800&auto=format&fit=crop",                   alt: "Magazine Photo Box Atlanta",           category: "Weddings",  location: "Atlanta, GA" },
+  { id: 12, src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800&auto=format&fit=crop",                      alt: "Birthday Celebration Photo Booth",     category: "Birthdays", location: "Houston, TX" },
 ];
 
 const TABS: Category[] = ["All", "Weddings", "Birthdays", "Corporate", "Parties"];
@@ -160,8 +160,8 @@ export default function GalleryClient() {
       {/* ── HERO ── */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/gallery-1.png" alt="Photo Booth Gallery" fill priority sizes="100vw" className="object-cover opacity-35" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black" />
+          <Image src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?q=80&w=2000&auto=format&fit=crop" alt="Photo Booth Gallery" fill priority sizes="100vw" className="object-cover opacity-35" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/80 to-[#050505]" />
           <motion.div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(247,54,168,0.12) 0%, transparent 70%)" }}
             animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} />
@@ -286,7 +286,7 @@ export default function GalleryClient() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="relative rounded-[2rem] overflow-hidden border border-brand-neon/20 shadow-[0_0_60px_rgba(247,54,168,0.08)]">
             <div className="absolute inset-0">
-              <Image src="/corporate-gala.png" alt="Premium Photo Booth" fill sizes="100vw" className="object-cover opacity-20" />
+              <Image src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000&auto=format&fit=crop" alt="Premium Photo Booth" fill sizes="100vw" className="object-cover opacity-20" />
               <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
             </div>
             <div className="relative z-10 p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8">
@@ -300,12 +300,12 @@ export default function GalleryClient() {
                   Peek-A-Booth is the #1 choice for customers across America. 16,500+ events completed. Established 2014. Nationwide service.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 shrink-0">
-                <Link href="#contact" className="inline-flex items-center justify-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
-                  Book Your Booth <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <div className="flex flex-col gap-4 shrink-0 w-full md:w-auto">
+                <Link href="#contact" className="inline-flex items-center justify-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group">
+                  Get A Free Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:1-800-709-8579" className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-brand-neon/40 text-white px-8 py-4 rounded-full font-bold text-sm transition-all hover:bg-brand-neon/10">
-                  1-800-709-8579
+                <a href="tel:1-800-709-8579" className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-brand-neon/50 text-white px-8 py-4 rounded-full font-bold text-sm transition-all hover:bg-brand-neon/10 backdrop-blur-sm">
+                  <Phone className="w-4 h-4" /> 1-800-709-8579
                 </a>
               </div>
             </div>
