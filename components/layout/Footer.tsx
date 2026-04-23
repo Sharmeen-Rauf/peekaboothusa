@@ -31,7 +31,7 @@ export default function Footer() {
         {/* Links & Socials Grid/Row */}
         <div className="w-full max-w-6xl border border-white/10 rounded-xl overflow-hidden flex flex-col lg:flex-row items-stretch justify-center bg-[#0a0a0a] mb-12 shadow-2xl">
           
-          <Link href="#" className="flex items-center justify-center px-8 py-5 md:py-6 text-white/80 hover:text-white hover:bg-white/5 transition-colors border-b lg:border-b-0 lg:border-r border-white/10 w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
+          <Link href="/privacy-policy" className="flex items-center justify-center px-8 py-5 md:py-6 text-white/80 hover:text-white hover:bg-white/5 transition-colors border-b lg:border-b-0 lg:border-r border-white/10 w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
             Privacy Policy
           </Link>
 
