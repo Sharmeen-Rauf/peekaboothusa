@@ -68,7 +68,7 @@ export default function OpenAirPage() {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/booth-setup-16.jpg"
+            src="/premium-photobooth.png"
             alt="Open Air Photo Booth Rental With Prints"
             fill
             priority

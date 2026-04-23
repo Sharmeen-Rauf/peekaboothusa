@@ -23,7 +23,7 @@ export default function Hero() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/wedding-photo-booth-rental-usa.png" 
+            src="/photo-booth-rental-herro.png" 
             alt="Wedding Photo Booth"
             fill
             priority

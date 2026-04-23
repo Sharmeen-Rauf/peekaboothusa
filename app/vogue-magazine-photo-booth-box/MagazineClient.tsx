@@ -60,7 +60,7 @@ export default function MagazineClient() {
       {/* ── HERO ── */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/booth-setup-22.jpg" alt="Vogue Magazine Photo Booth Rental" fill priority sizes="100vw" className="object-cover opacity-40" />
+          <Image src="/magazine-booth.png" alt="Vogue Magazine Photo Booth Rental" fill priority sizes="100vw" className="object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" />
         </div>

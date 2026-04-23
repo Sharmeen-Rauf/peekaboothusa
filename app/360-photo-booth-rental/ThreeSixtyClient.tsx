@@ -47,7 +47,7 @@ function Scene1Hero() {
       {/* Background with parallax + real image */}
       <motion.div className="absolute inset-0 z-0" style={{ scale }}>
         <Image
-          src="/booth-setup-1.jpg"
+          src="/photo-booth-rental-360-cover.png"
           alt="360 Photo Booth Rental USA"
           fill
           priority

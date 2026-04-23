@@ -113,7 +113,7 @@ export default function WeddingsClient() {
       {/* ── HERO ── */}
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <Image src="/booth-setup-21.jpg" alt="Desi Wedding Hands Mehndi" fill priority sizes="100vw" className="object-cover opacity-30" />
+          <Image src="/wedding-photo-booth-rental-usa.png" alt="Desi Wedding Hands Mehndi" fill priority sizes="100vw" className="object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black" />
           <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(247,54,168,0.15) 0%, transparent 70%)" }}
