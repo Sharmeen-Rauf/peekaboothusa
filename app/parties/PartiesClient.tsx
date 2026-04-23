@@ -22,7 +22,7 @@ const boothOptions = [
     title: "ORIGINAL BOOTH",
     desc: "The original selfie booth experience — perfect for capturing groups of all sizes!",
     features: ["High-quality photos & unlimited prints", "Instant digital sharing & live gallery", "A choice of 50+ backdrops and more"],
-    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop",
+    image: "/booth-setup-18.jpg",
     icon: Camera,
     link: "/open-air-photo-booth-rental"
   },
@@ -30,7 +30,7 @@ const boothOptions = [
     title: "Selfie Station",
     desc: "Self-operated digital photobooth with fully customized experience.",
     features: ["Unlimited digital experience", "Data collection, analytics", "Instant Digital Sharing and more"],
-    image: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop",
+    image: "/booth-setup-19.jpg",
     icon: MonitorSmartphone,
     link: "/digital-photo-booth-rental"
   },
@@ -38,7 +38,7 @@ const boothOptions = [
     title: "360 BOOTH",
     desc: "Impress your guests with 360 unique video booth experience.",
     features: ["Unlimited 360 videos", "Music, effects and design overlays", "Instant digital sharing and more"],
-    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop",
+    image: "/booth-setup-20.jpg",
     icon: Video,
     link: "/360-photo-booth-rental"
   },
@@ -46,7 +46,7 @@ const boothOptions = [
     title: "GLAM BOOTH",
     desc: "The modern photo booth experience – featuring the iconic Kardashian-style filter.",
     features: ["All original booth features", "Beauty filter + black and white effect", "Premium white backdrop"],
-    image: "https://images.unsplash.com/photo-1505934333218-8fe21ff88269?q=80&w=800&auto=format&fit=crop",
+    image: "/booth-setup-21.jpg",
     icon: Sparkles,
     link: "#contact" // Fallback since there isn't a dedicated glam booth page yet
   }
@@ -60,25 +60,25 @@ const reasons = [
 ];
 
 const galleryImages = [
-  "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1530103862676-de8892bc952f?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1511556820780-d912e42b4980?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1478146896981-b80fe463b330?q=80&w=800&auto=format&fit=crop"
+  "/booth-setup-22.jpg",
+  "/booth-setup-19.jpg",
+  "/booth-setup-1.jpg",
+  "/booth-setup-2.jpg",
+  "/booth-setup-3.jpg",
+  "/booth-setup-4.jpg",
+  "/booth-setup-5.jpg"
 ];
 
 const caseStudies = [
-  { brand: "GRAND OPENING", type: "Original Booth", image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Holiday Party", type: "Glam Booth", image: "https://images.unsplash.com/photo-1496337589254-7e19d01cec44?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Baby Shower", type: "Original Booth", image: "https://images.unsplash.com/photo-1519671482749-fd098f3ec29a?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Party", type: "Selfie Station", image: "https://images.unsplash.com/photo-1533174000273-d1c8f85f8384?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Crew Party", type: "Original Booth", image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Lauren Tetef’s Camp", type: "Selfie Station", image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Graduation Party", type: "Original Booth", image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Eva Longoria Foundation", type: "Original Booth", image: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Montalban Party", type: "Glam Booth", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop" }
+  { brand: "GRAND OPENING", type: "Original Booth", image: "/booth-setup-20.jpg" },
+  { brand: "Holiday Party", type: "Glam Booth", image: "/booth-setup-7.jpg" },
+  { brand: "Baby Shower", type: "Original Booth", image: "/booth-setup-8.jpg" },
+  { brand: "Party", type: "Selfie Station", image: "/booth-setup-9.jpg" },
+  { brand: "Crew Party", type: "Original Booth", image: "/booth-setup-10.jpg" },
+  { brand: "Lauren Tetef’s Camp", type: "Selfie Station", image: "/booth-setup-11.jpg" },
+  { brand: "Graduation Party", type: "Original Booth", image: "/booth-setup-12.jpg" },
+  { brand: "Eva Longoria Foundation", type: "Original Booth", image: "/booth-setup-13.jpg" },
+  { brand: "Montalban Party", type: "Glam Booth", image: "/booth-setup-14.jpg" }
 ];
 
 const faqs = [
@@ -103,7 +103,7 @@ export default function PartiesClient() {
       {/* ── HERO ── */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <Image src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2000&auto=format&fit=crop" alt="Party Photo Booth Event" fill priority sizes="100vw" className="object-cover opacity-30" />
+          <Image src="/booth-setup-15.jpg" alt="Party Photo Booth Event" fill priority sizes="100vw" className="object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black" />
           <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(247,54,168,0.15) 0%, transparent 70%)" }}
@@ -165,13 +165,13 @@ export default function PartiesClient() {
             <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="relative h-[500px] w-full">
               {/* Main Image */}
               <div className="absolute top-0 right-0 w-[80%] h-[80%] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(247,54,168,0.1)] z-10">
-                <Image src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop" alt="Party Photo Booth" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+                <Image src="/booth-setup-20.jpg" alt="Party Photo Booth" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
                 <div className="absolute inset-0 bg-brand-neon/10 mix-blend-overlay" />
               </div>
               
               {/* Overlapping Image */}
               <div className="absolute bottom-0 left-0 w-[60%] h-[60%] rounded-[2rem] overflow-hidden border-4 border-[#050505] shadow-2xl z-20 transform -translate-y-4 translate-x-4">
-                <Image src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop" alt="Guests Having Fun" fill sizes="(max-width: 768px) 100vw, 30vw" className="object-cover" />
+                <Image src="/booth-setup-19.jpg" alt="Guests Having Fun" fill sizes="(max-width: 768px) 100vw, 30vw" className="object-cover" />
               </div>
               
               {/* Floating Stat card */}

@@ -84,7 +84,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <div className="flex items-center gap-3 pl-5 border-l border-white/10">
               <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-neon to-brand-glow p-[2px]">
                 <div className="w-full h-full bg-[#111] rounded-full overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=32&h=32" alt="Admin" className="w-full h-full object-cover" />
+                  <img src="/booth-setup-2.jpg" alt="Admin" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="hidden sm:block">

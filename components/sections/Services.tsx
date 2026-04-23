@@ -9,19 +9,19 @@ const services = [
   {
     title: "The Glam Booth",
     description: "Our signature black and white experience with skin-smoothing beauty filters. Perfect for luxury weddings and high-end galas.",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop",
+    image: "/booth-setup-13.jpg",
     features: ["Studio lighting", "B&W Beauty Filter", "Instant Prints", "Live Gallery"],
   },
   {
     title: "The 360 Experience",
     description: "Capture every angle with our premium 360 video booth. Slow-motion, reverse, and custom overlays included.",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop",
+    image: "/booth-setup-14.jpg",
     features: ["Slow-Mo Video", "Custom Overlays", "Instant AirDrop", "Dedicated Director"],
   },
   {
     title: "The Digital Roamer",
     description: "We bring the booth to the dance floor. A fully mobile, ring-light ring capturing candid moments all night.",
-    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop",
+    image: "/booth-setup-15.jpg",
     features: ["Mobile Setup", "GIFs & Boomerangs", "Text to Phone", "High Energy"],
   },
   {

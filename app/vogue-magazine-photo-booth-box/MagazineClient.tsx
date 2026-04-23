@@ -29,10 +29,10 @@ const cities = [
 ];
 
 const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",       alt: "Magazine Booth Chicago" },
-  { src: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop",        alt: "Magazine Photo Box Chicago" },
-  { src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop",         alt: "Magazine Photo Box Atlanta" },
-  { src: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop",   alt: "Magazine Photo Box Los Angeles" },
+  { src: "/booth-setup-18.jpg",       alt: "Magazine Booth Chicago" },
+  { src: "/booth-setup-19.jpg",        alt: "Magazine Photo Box Chicago" },
+  { src: "/booth-setup-20.jpg",         alt: "Magazine Photo Box Atlanta" },
+  { src: "/booth-setup-21.jpg",   alt: "Magazine Photo Box Los Angeles" },
 ];
 
 const galleryVideos = [
@@ -60,7 +60,7 @@ export default function MagazineClient() {
       {/* ── HERO ── */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000&auto=format&fit=crop" alt="Vogue Magazine Photo Booth Rental" fill priority sizes="100vw" className="object-cover opacity-40" />
+          <Image src="/booth-setup-22.jpg" alt="Vogue Magazine Photo Booth Rental" fill priority sizes="100vw" className="object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" />
         </div>
@@ -115,7 +115,7 @@ export default function MagazineClient() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity:0,x:30 }} whileInView={{ opacity:1,x:0 }} viewport={{ once:true }} transition={{ duration:0.8,delay:0.15 }} className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1561489413-985b06da5bee?q=80&w=800&auto=format&fit=crop" alt="Vogue Magazine Photo Booth Experience" fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover" />
+              <Image src="/booth-setup-23.jpg" alt="Vogue Magazine Photo Booth Experience" fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <div className="absolute -bottom-4 -right-4 md:-right-6 bg-brand-neon px-5 py-4 rounded-2xl shadow-[0_0_30px_rgba(247,54,168,0.5)]">
                 <p className="text-white text-2xl font-extrabold leading-none">500+</p>
@@ -222,7 +222,7 @@ export default function MagazineClient() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity:0,x:30 }} whileInView={{ opacity:1,x:0 }} viewport={{ once:true }} transition={{ duration:0.8,delay:0.15 }} className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop" alt="Reserve Vogue Magazine Photo Booth" fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover" />
+              <Image src="/booth-setup-1.jpg" alt="Reserve Vogue Magazine Photo Booth" fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </motion.div>
           </div>

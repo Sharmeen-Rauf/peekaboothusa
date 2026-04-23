@@ -25,12 +25,12 @@ const cities = [
 ];
 
 const booths = [
-  { id: "party", name: "Party Box", baseHours: 4, extraRate: 5000, img: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop", desc: "Birthday & weddings", prices: { LHE: 40000, MUX: 40000, ISB: 45000, KHI: 45000 } },
-  { id: "vintage", name: "Vintage Booth", baseHours: 4, extraRate: 5000, img: "https://images.unsplash.com/photo-1561489413-985b06da5bee?q=80&w=800&auto=format&fit=crop", desc: "Birthday & weddings", prices: { LHE: 40000, MUX: 40000, ISB: 45000, KHI: 45000 } },
-  { id: "classic", name: "Classic Booth", baseHours: 4, extraRate: 5000, img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop", desc: "Corporate & office", prices: { LHE: 50000, MUX: 50000, ISB: 55000, KHI: 55000 } },
-  { id: "mirror", name: "Mirror Booth", baseHours: 4, extraRate: 5000, img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop", desc: "Premium events", prices: { LHE: 60000, MUX: 70000, ISB: 65000, KHI: 65000 } },
-  { id: "360", name: "360 Video Booth", baseHours: 4, extraRate: 5000, img: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop", desc: "Viral slow-motion 360° videos", prices: { LHE: 45000, MUX: 45000, ISB: 50000, KHI: 50000 } },
-  { id: "registration", name: "Registration Booth", baseHours: 8, extraRate: 5000, img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop", desc: "Corporate registrations", prices: { LHE: 45000, MUX: 45000, ISB: 55000, KHI: 55000 } },
+  { id: "party", name: "Party Box", baseHours: 4, extraRate: 5000, img: "/booth-setup-6.jpg", desc: "Birthday & weddings", prices: { LHE: 40000, MUX: 40000, ISB: 45000, KHI: 45000 } },
+  { id: "vintage", name: "Vintage Booth", baseHours: 4, extraRate: 5000, img: "/booth-setup-7.jpg", desc: "Birthday & weddings", prices: { LHE: 40000, MUX: 40000, ISB: 45000, KHI: 45000 } },
+  { id: "classic", name: "Classic Booth", baseHours: 4, extraRate: 5000, img: "/booth-setup-8.jpg", desc: "Corporate & office", prices: { LHE: 50000, MUX: 50000, ISB: 55000, KHI: 55000 } },
+  { id: "mirror", name: "Mirror Booth", baseHours: 4, extraRate: 5000, img: "/booth-setup-9.jpg", desc: "Premium events", prices: { LHE: 60000, MUX: 70000, ISB: 65000, KHI: 65000 } },
+  { id: "360", name: "360 Video Booth", baseHours: 4, extraRate: 5000, img: "/booth-setup-10.jpg", desc: "Viral slow-motion 360° videos", prices: { LHE: 45000, MUX: 45000, ISB: 50000, KHI: 50000 } },
+  { id: "registration", name: "Registration Booth", baseHours: 8, extraRate: 5000, img: "/booth-setup-11.jpg", desc: "Corporate registrations", prices: { LHE: 45000, MUX: 45000, ISB: 55000, KHI: 55000 } },
 ];
 
 const addonsList = [

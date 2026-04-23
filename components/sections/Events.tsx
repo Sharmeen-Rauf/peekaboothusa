@@ -12,42 +12,42 @@ const allEvents = [
     title: "Corporate Event", 
     desc: "Boost engagement and brand visibility with our photo booths for corporate gatherings.", 
     alt: "Corporate Event Photo Booth Rental",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop" 
+    image: "/booth-setup-7.jpg" 
   },
   { 
     id: "wedding",
     title: "Wedding", 
     desc: "Capture timeless memories with our photo booth rentals, perfect for weddings and receptions.", 
     alt: "Photo Booth Rental Manayunk PA",
-    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop" 
+    image: "/booth-setup-8.jpg" 
   },
   { 
     id: "graduation",
     title: "Graduation", 
     desc: "Celebrate milestones with a photo booth, creating lasting keepsakes for your big day.", 
     alt: "photo booth rental",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop" 
+    image: "/booth-setup-9.jpg" 
   },
   { 
     id: "babyshower",
     title: "Baby Shower", 
     desc: "Add a unique touch to baby showers with themed backdrops and digital photo booth fun.", 
     alt: "Baby Shower Photo Booth Rental Schaumburg IL",
-    image: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=800&auto=format&fit=crop" 
+    image: "/booth-setup-10.jpg" 
   },
   { 
     id: "quince",
     title: "Quinceañera", 
     desc: "Celebrate in style with vibrant 360 and digital photo booths for quinceañeras.", 
     alt: "Photo Booth Rental Devon PA",
-    image: "https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?q=80&w=800&auto=format&fit=crop" 
+    image: "/booth-setup-11.jpg" 
   },
   { 
     id: "birthday",
     title: "Birthday", 
     desc: "Make every birthday unforgettable with fun props and unlimited photo booth prints.", 
     alt: "Photo Booth Rental Chicago",
-    image: "https://images.unsplash.com/photo-1530105832477-df30d324b8e2?q=80&w=800&auto=format&fit=crop" 
+    image: "/booth-setup-12.jpg" 
   },
 ];
 

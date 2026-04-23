@@ -56,7 +56,7 @@ export default function DigitalClient() {
       {/* HERO */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000&auto=format&fit=crop" alt="Digital Photo Booth Rental" fill priority sizes="100vw" className="object-cover opacity-35" />
+          <Image src="/booth-setup-20.jpg" alt="Digital Photo Booth Rental" fill priority sizes="100vw" className="object-cover opacity-35" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black" />
           {/* Neon ambient glow */}
           <motion.div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
@@ -123,7 +123,7 @@ export default function DigitalClient() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.15 }} className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop" alt="Digital Photo Booth Experience" fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover" />
+              <Image src="/booth-setup-21.jpg" alt="Digital Photo Booth Experience" fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <div className="absolute -bottom-4 -right-4 md:-right-6 bg-brand-neon px-5 py-4 rounded-2xl shadow-[0_0_30px_rgba(247,54,168,0.5)]">
                 <p className="text-white text-2xl font-extrabold leading-none">500+</p>

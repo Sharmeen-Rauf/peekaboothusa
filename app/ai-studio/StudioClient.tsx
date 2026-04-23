@@ -20,8 +20,8 @@ const lightingColors = [
 const backdrops = [
   { id: "sequin-silver", name: "Silver Sequin", bg: "bg-gradient-to-br from-gray-300 via-gray-100 to-gray-400" },
   { id: "velvet-black", name: "Black Velvet", bg: "bg-gradient-to-br from-[#111] to-[#000]" },
-  { id: "floral-white", name: "White Floral", bg: "bg-[url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center" },
-  { id: "neon-wall", name: "Neon Grid", bg: "bg-[url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center" },
+  { id: "floral-white", name: "White Floral", bg: "bg-[url('/booth-setup-3.jpg')]" },
+  { id: "neon-wall", name: "Neon Grid", bg: "bg-[url('/booth-setup-4.jpg')]" },
 ];
 
 export default function StudioClient() {
@@ -81,9 +81,9 @@ export default function StudioClient() {
           name: "Ethereal Romance",
           palette: ["#ffffff", "#fdfbf7", "#e5e7eb", "#d1d5db", "#fbbf24"],
           moodImages: [
-            "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=400&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=400&auto=format&fit=crop"
+            "/booth-setup-5.jpg",
+            "/booth-setup-6.jpg",
+            "/booth-setup-7.jpg"
           ],
           suggestion: "Pair the Mirror Booth with a White Floral backdrop and warm gold LED lighting for a cinematic, luxurious feel."
         };
@@ -92,9 +92,9 @@ export default function StudioClient() {
           name: "Cyber Professional",
           palette: ["#000000", "#111827", "#3b82f6", "#00f0ff", "#ffffff"],
           moodImages: [
-            "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=400&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=400&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=400&auto=format&fit=crop"
+            "/booth-setup-8.jpg",
+            "/booth-setup-9.jpg",
+            "/booth-setup-10.jpg"
           ],
           suggestion: "The 360 Video Booth with a Neon Grid backdrop and Cyber Blue lighting will make your brand pop!"
         };
@@ -103,9 +103,9 @@ export default function StudioClient() {
           name: "Neon Party Vibes",
           palette: ["#050505", "#f736a8", "#8b5cf6", "#ec4899", "#fcd34d"],
           moodImages: [
-            "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=400&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1470229722913-7c092db62220?q=80&w=400&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=400&auto=format&fit=crop"
+            "/booth-setup-11.jpg",
+            "/booth-setup-12.jpg",
+            "/booth-setup-13.jpg"
           ],
           suggestion: "Use the Party Box with Neon Pink lighting and a Black Velvet backdrop so the neon props really glow!"
         };
@@ -510,9 +510,9 @@ export default function StudioClient() {
                      // 3-Photo Strip Preview
                      <motion.div layout className="w-40 shadow-2xl p-2 pb-6 relative transition-colors duration-500" style={{ backgroundColor: tmplBg, color: tmplBg === "#000000" ? "white" : "black" }}>
                        <div className="space-y-2 mb-4">
-                         <div className="aspect-[4/3] bg-gray-300 relative overflow-hidden"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=200&auto=format&fit=crop" className="opacity-80 object-cover w-full h-full" alt="1" /></div>
-                         <div className="aspect-[4/3] bg-gray-300 relative overflow-hidden"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=200&auto=format&fit=crop" className="opacity-80 object-cover w-full h-full" alt="2" /></div>
-                         <div className="aspect-[4/3] bg-gray-300 relative overflow-hidden"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=200&auto=format&fit=crop" className="opacity-80 object-cover w-full h-full" alt="3" /></div>
+                         <div className="aspect-[4/3] bg-gray-300 relative overflow-hidden"><img src="/booth-setup-14.jpg" className="opacity-80 object-cover w-full h-full" alt="1" /></div>
+                         <div className="aspect-[4/3] bg-gray-300 relative overflow-hidden"><img src="/booth-setup-15.jpg" className="opacity-80 object-cover w-full h-full" alt="2" /></div>
+                         <div className="aspect-[4/3] bg-gray-300 relative overflow-hidden"><img src="/booth-setup-16.jpg" className="opacity-80 object-cover w-full h-full" alt="3" /></div>
                        </div>
                        <div className="text-center">
                          <h4 className="font-serif text-sm font-bold leading-tight" style={{ fontFamily: "Georgia, serif" }}>{tmplText1}</h4>
@@ -523,7 +523,7 @@ export default function StudioClient() {
                      // 1-Photo Polaroid Preview
                      <motion.div layout className="w-64 shadow-2xl p-4 pb-12 relative transition-colors duration-500" style={{ backgroundColor: tmplBg, color: tmplBg === "#000000" ? "white" : "black" }}>
                        <div className="aspect-square bg-gray-300 mb-6 relative overflow-hidden">
-                         <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=400&auto=format&fit=crop" className="opacity-80 object-cover w-full h-full" alt="main" />
+                         <img src="/booth-setup-11.jpg" className="opacity-80 object-cover w-full h-full" alt="main" />
                        </div>
                        <div className="text-center">
                          <h4 className="font-serif text-xl font-bold leading-tight" style={{ fontFamily: "Georgia, serif" }}>{tmplText1}</h4>

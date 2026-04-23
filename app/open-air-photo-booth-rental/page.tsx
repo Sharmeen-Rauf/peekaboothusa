@@ -54,10 +54,10 @@ const pricingPlans = [
 ];
 
 const highlights = [
-  "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1530105832477-df30d324b8e2?q=80&w=600&auto=format&fit=crop",
+  "/booth-setup-12.jpg",
+  "/booth-setup-13.jpg",
+  "/booth-setup-14.jpg",
+  "/booth-setup-15.jpg",
 ];
 
 export default function OpenAirPage() {
@@ -68,7 +68,7 @@ export default function OpenAirPage() {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop"
+            src="/booth-setup-16.jpg"
             alt="Open Air Photo Booth Rental With Prints"
             fill
             priority
@@ -112,7 +112,7 @@ export default function OpenAirPage() {
             <div className="relative">
               <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop"
+                  src="/booth-setup-17.jpg"
                   alt="Open Air Photo Booth"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

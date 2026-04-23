@@ -22,7 +22,7 @@ const boothOptions = [
     title: "ORIGINAL BOOTH",
     desc: "The original selfie booth experience — perfect for capturing groups of all sizes!",
     features: ["High-quality photos & unlimited prints", "Instant digital sharing & live gallery", "A choice of 50+ backdrops and more"],
-    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop",
+    image: "/booth-setup-2.jpg",
     icon: Camera,
     link: "/open-air-photo-booth-rental"
   },
@@ -30,7 +30,7 @@ const boothOptions = [
     title: "GLAM BOOTH",
     desc: "The modern photo booth experience – featuring the iconic Kardashian-style filter.",
     features: ["All original booth features", "Beauty filter + black and white effect", "Premium white backdrop"],
-    image: "https://images.unsplash.com/photo-1505934333218-8fe21ff88269?q=80&w=800&auto=format&fit=crop",
+    image: "/booth-setup-3.jpg",
     icon: Sparkles,
     link: "#contact" // Fallback since there isn't a dedicated glam booth page yet
   },
@@ -38,32 +38,32 @@ const boothOptions = [
     title: "360 BOOTH",
     desc: "Impress your guests with 360 unique video booth experience.",
     features: ["Unlimited 360 videos", "Music, effects and design overlays", "Instant digital sharing and more"],
-    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop",
+    image: "/booth-setup-4.jpg",
     icon: Video,
     link: "/360-photo-booth-rental"
   }
 ];
 
 const galleryImages = [
-  "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800&auto=format&fit=crop", // Desi wedding hands/mehndi
-  "https://images.unsplash.com/photo-1590076215667-876e5be30db6?q=80&w=800&auto=format&fit=crop", // Couple
-  "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=800&auto=format&fit=crop", // Wedding setup
-  "https://images.unsplash.com/photo-1622312674828-5ce43ab0f5d0?q=80&w=800&auto=format&fit=crop", // Portrait
-  "https://images.unsplash.com/photo-1587271407850-8d438ca9fdf4?q=80&w=800&auto=format&fit=crop", // Details
-  "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=800&auto=format&fit=crop", // Celebration
-  "https://images.unsplash.com/photo-1616165510617-640a2cb705fa?q=80&w=800&auto=format&fit=crop", // Stage decor
-  "https://images.unsplash.com/photo-1610174075510-410a514d0263?q=80&w=800&auto=format&fit=crop", // Bridal jewelry
-  "https://images.unsplash.com/photo-1532712938730-4e1b0ed615c5?q=80&w=800&auto=format&fit=crop", // Mehndi
-  "https://images.unsplash.com/photo-1563241527-3004b7be89db?q=80&w=800&auto=format&fit=crop"  // More details
+  "/booth-setup-5.jpg", // Desi wedding hands/mehndi
+  "/booth-setup-6.jpg", // Couple
+  "/booth-setup-7.jpg", // Wedding setup
+  "/booth-setup-8.jpg", // Portrait
+  "/booth-setup-9.jpg", // Details
+  "/booth-setup-10.jpg", // Celebration
+  "/booth-setup-11.jpg", // Stage decor
+  "/booth-setup-12.jpg", // Bridal jewelry
+  "/booth-setup-13.jpg", // Mehndi
+  "/booth-setup-14.jpg"  // More details
 ];
 
 const caseStudies = [
-  { brand: "Rachelle & Michael", type: "Original Booth", image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop" },
-  { brand: "HAPPILY EVER ASTE", type: "Glam Booth", image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Tamra & Kyle", type: "Original Booth", image: "https://images.unsplash.com/photo-1505934333218-8fe21ff88269?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Christian & Sharen", type: "Original Booth", image: "https://images.unsplash.com/photo-1532712938730-4e1b0ed615c5?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Kenthe & Chrlier", type: "Original Booth", image: "https://images.unsplash.com/photo-1622312674828-5ce43ab0f5d0?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Ty & Bri", type: "Glam Booth", image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=800&auto=format&fit=crop" }
+  { brand: "Rachelle & Michael", type: "Original Booth", image: "/booth-setup-15.jpg" },
+  { brand: "HAPPILY EVER ASTE", type: "Glam Booth", image: "/booth-setup-4.jpg" },
+  { brand: "Tamra & Kyle", type: "Original Booth", image: "/booth-setup-3.jpg" },
+  { brand: "Christian & Sharen", type: "Original Booth", image: "/booth-setup-13.jpg" },
+  { brand: "Kenthe & Chrlier", type: "Original Booth", image: "/booth-setup-8.jpg" },
+  { brand: "Ty & Bri", type: "Glam Booth", image: "/booth-setup-10.jpg" }
 ];
 
 const customTestimonials: TestimonialItem[] = [
@@ -113,7 +113,7 @@ export default function WeddingsClient() {
       {/* ── HERO ── */}
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <Image src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=2000&auto=format&fit=crop" alt="Desi Wedding Hands Mehndi" fill priority sizes="100vw" className="object-cover opacity-30" />
+          <Image src="/booth-setup-21.jpg" alt="Desi Wedding Hands Mehndi" fill priority sizes="100vw" className="object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black" />
           <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(247,54,168,0.15) 0%, transparent 70%)" }}
@@ -159,7 +159,7 @@ export default function WeddingsClient() {
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative h-[400px] md:h-[600px] w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(247,54,168,0.1)]">
-              <Image src="https://images.unsplash.com/photo-1622312674828-5ce43ab0f5d0?q=80&w=1000&auto=format&fit=crop" alt="Desi Wedding Reception" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+              <Image src="/booth-setup-22.jpg" alt="Desi Wedding Reception" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
               <div className="absolute inset-0 bg-brand-neon/10 mix-blend-overlay" />
               <div className="absolute bottom-6 left-6 right-6 p-6 bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl">
                 <p className="text-white/90 text-sm font-medium">"A one-of-a-kind interactive experience for cocktail hours and receptions."</p>
@@ -202,14 +202,14 @@ export default function WeddingsClient() {
               </Link>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="order-1 lg:order-2 relative h-[350px] w-full rounded-[2rem] overflow-hidden border border-white/10">
-              <Image src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop" alt="Hollywood Style Photo Booth" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+              <Image src="/booth-setup-4.jpg" alt="Hollywood Style Photo Booth" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
             </motion.div>
           </div>
 
           {/* Customize your Experience */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative h-[350px] w-full rounded-[2rem] overflow-hidden border border-white/10">
-              <Image src="https://images.unsplash.com/photo-1563241527-3004b7be89db?q=80&w=800&auto=format&fit=crop" alt="Customize Wedding Templates" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+              <Image src="/booth-setup-14.jpg" alt="Customize Wedding Templates" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1]">
@@ -230,7 +230,7 @@ export default function WeddingsClient() {
       {/* ── GLAM BOOTH HIGHLIGHT ── */}
       <section className="py-16 md:py-24 bg-[#050505] relative overflow-hidden border-t border-white/5">
         <div className="absolute inset-0 z-0">
-          <Image src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2000&auto=format&fit=crop" alt="Glam Booth" fill sizes="100vw" className="object-cover opacity-10 blur-sm" />
+          <Image src="/booth-setup-2.jpg" alt="Glam Booth" fill sizes="100vw" className="object-cover opacity-10 blur-sm" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/90 to-[#050505]" />
         </div>
         

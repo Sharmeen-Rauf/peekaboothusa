@@ -11,25 +11,25 @@ const boothDropdown = [
     name: "Open Air Photo Booth",
     href: "/open-air-photo-booth-rental",
     desc: "Sleek, modern, open-concept booth for any event.",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=400&auto=format&fit=crop",
+    image: "/booth-setup-3.jpg",
   },
   {
     name: "360° Photo Booth",
     href: "/360-photo-booth-rental",
     desc: "Viral slow-motion 360° video experience.",
-    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=400&auto=format&fit=crop",
+    image: "/booth-setup-4.jpg",
   },
   {
     name: "Vogue Magazine Box",
     href: "/vogue-magazine-photo-booth-box",
     desc: "Life-size magazine cover — the ultimate showstopper.",
-    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400&auto=format&fit=crop",
+    image: "/booth-setup-5.jpg",
   },
   {
     name: "Digital Photo Booth",
     href: "/digital-photo-booth-rental",
     desc: "Instant GIFs, boomerangs & digital delivery.",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=400&auto=format&fit=crop",
+    image: "/booth-setup-6.jpg",
   },
 ];
 

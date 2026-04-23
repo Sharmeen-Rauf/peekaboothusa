@@ -23,7 +23,7 @@ const eventTypes = [
     subtitle: "Say 'I Do' to Selfie Booth Memories",
     desc: "Rent the original selfie booth or Glam Booth for your wedding! With elegant backdrops, beautiful print designs, and high-quality photos, it adds extra fun for your guests.",
     link: "/weddings",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
+    image: "/booth-setup-22.jpg",
     icon: Heart,
     features: ["Kardashian Glam Booth", "Custom Wedding Templates", "Guestbook Prints"]
   },
@@ -33,7 +33,7 @@ const eventTypes = [
     subtitle: "Snap. Print. Share.",
     desc: "Our state-of-the-art photo booths are the life of every party! Create joyful memories with customizable photo frames, unlimited prints, and instant sharing options.",
     link: "/parties",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop",
+    image: "/booth-setup-23.jpg",
     icon: PartyPopper,
     features: ["Digital Selfie Station", "Boomerangs & GIFs", "Fun Props & Neon Signs"]
   },
@@ -43,7 +43,7 @@ const eventTypes = [
     subtitle: "Enhance Brand Engagement",
     desc: "Elevate your brand activations with our original booth, digital selfie station, or 360 video booth. Each option offers customizable branding features to showcase your brand.",
     link: "/brand-corporate",
-    image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1200&auto=format&fit=crop",
+    image: "/booth-setup-1.jpg",
     icon: Building2,
     features: ["Data Capture & Analytics", "Custom Branded Booth Wraps", "Lead Generation"]
   },
@@ -53,7 +53,7 @@ const eventTypes = [
     subtitle: "Celebrate in Style",
     desc: "Whether it's a Sweet 16, a 30th bash, or a milestone anniversary, our booths capture the fun and excitement of your special day with custom themes and unlimited prints.",
     link: "#contact", // Contact anchor since we don't have a specific page yet
-    image: "https://images.unsplash.com/photo-1530103862676-de8892bc952f?q=80&w=1200&auto=format&fit=crop",
+    image: "/booth-setup-2.jpg",
     icon: Cake,
     features: ["Themed Props", "Custom Birthday Overlays", "360 Video Booth"]
   }
@@ -68,7 +68,7 @@ export default function EventsClient() {
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-20">
         <div className="absolute inset-0 z-0">
-          <Image src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2000&auto=format&fit=crop" alt="Unforgettable Events Crowd" fill priority sizes="100vw" className="object-cover opacity-30" />
+          <Image src="/booth-setup-3.jpg" alt="Unforgettable Events Crowd" fill priority sizes="100vw" className="object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black" />
           <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(247,54,168,0.15) 0%, transparent 70%)" }}

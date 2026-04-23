@@ -22,28 +22,28 @@ const collectionOptions = [
   {
     title: "Photo Booth Rental With Prints",
     desc: "Our open-air booth delivers unlimited prints, branded templates, premium backdrops, and pro lighting to create memorable moments at any corporate event.",
-    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop",
+    image: "/booth-setup-18.jpg",
     icon: Camera,
     link: "/open-air-photo-booth-rental"
   },
   {
     title: "360 Booth Rental With Videos",
     desc: "Capture slow-motion videos with branded overlays, music integration, and instant sharing to deliver a high-energy experience your guests will love.",
-    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop",
+    image: "/booth-setup-19.jpg",
     icon: Video,
     link: "/360-photo-booth-rental"
   },
   {
     title: "Digital Photo Booth With GIF's",
     desc: "Create branded GIFs, boomerangs, and still shots with instant sharing to keep guests engaged and your brand visible long after the event ends.",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop",
+    image: "/booth-setup-20.jpg",
     icon: MonitorSmartphone,
     link: "/digital-photo-booth-rental"
   },
   {
     title: "Magazine Photo Booth Box",
     desc: "Guests pose inside a life-sized magazine cover for high-impact branded event photos that create buzz, fun, and lasting memories at corporate events.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
+    image: "/booth-setup-21.jpg",
     icon: Star,
     link: "/vogue-magazine-photo-booth-box"
   }
@@ -57,15 +57,15 @@ const reasons = [
 ];
 
 const caseStudies = [
-  { brand: "Tik-Tok", type: "Original Booth", image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Hugo Boss", type: "Selfie Station", image: "https://images.unsplash.com/photo-1496337589254-7e19d01cec44?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Fortunata Cuomos", type: "360 Booth", image: "https://images.unsplash.com/photo-1519671482749-fd098f3ec29a?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Kylie Cosmetics", type: "Selfie Station", image: "https://images.unsplash.com/photo-1533174000273-d1c8f85f8384?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Ali El Wardanis", type: "360 Booth", image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Lacoste", type: "Original Booth", image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Crew Party", type: "Selfie Station", image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Dyson", type: "Selfie Station", image: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=800&auto=format&fit=crop" },
-  { brand: "Nancy Trans", type: "360 Booth", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop" }
+  { brand: "Tik-Tok", type: "Original Booth", image: "/booth-setup-19.jpg" },
+  { brand: "Hugo Boss", type: "Selfie Station", image: "/booth-setup-23.jpg" },
+  { brand: "Fortunata Cuomos", type: "360 Booth", image: "/booth-setup-1.jpg" },
+  { brand: "Kylie Cosmetics", type: "Selfie Station", image: "/booth-setup-2.jpg" },
+  { brand: "Ali El Wardanis", type: "360 Booth", image: "/booth-setup-3.jpg" },
+  { brand: "Lacoste", type: "Original Booth", image: "/booth-setup-4.jpg" },
+  { brand: "Crew Party", type: "Selfie Station", image: "/booth-setup-5.jpg" },
+  { brand: "Dyson", type: "Selfie Station", image: "/booth-setup-6.jpg" },
+  { brand: "Nancy Trans", type: "360 Booth", image: "/booth-setup-7.jpg" }
 ];
 
 const faqs = [
@@ -77,14 +77,14 @@ const faqs = [
 ];
 
 const galleryImages = [
-  "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1530103862676-de8892bc952f?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1511556820780-d912e42b4980?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1478146896981-b80fe463b330?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1522158637959-30385a09e01a?q=80&w=800&auto=format&fit=crop"
+  "/booth-setup-8.jpg",
+  "/booth-setup-9.jpg",
+  "/booth-setup-10.jpg",
+  "/booth-setup-11.jpg",
+  "/booth-setup-12.jpg",
+  "/booth-setup-13.jpg",
+  "/booth-setup-14.jpg",
+  "/booth-setup-15.jpg"
 ];
 
 /* ─── MAIN COMPONENT ──────────────────────────────────────────────────────── */
@@ -98,7 +98,7 @@ export default function BrandClient() {
       {/* ── HERO ── */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <Image src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2000&auto=format&fit=crop" alt="Corporate Photo Booth Event" fill priority sizes="100vw" className="object-cover opacity-30" />
+          <Image src="/booth-setup-16.jpg" alt="Corporate Photo Booth Event" fill priority sizes="100vw" className="object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black" />
           <motion.div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(247,54,168,0.15) 0%, transparent 70%)" }}
@@ -166,13 +166,13 @@ export default function BrandClient() {
             <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="relative h-[500px] w-full">
               {/* Main Image */}
               <div className="absolute top-0 right-0 w-[80%] h-[80%] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(247,54,168,0.1)] z-10">
-                <Image src="https://images.unsplash.com/photo-1561489413-985b06da5bee?q=80&w=800&auto=format&fit=crop" alt="Corporate Activation" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+                <Image src="/booth-setup-17.jpg" alt="Corporate Activation" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
                 <div className="absolute inset-0 bg-brand-neon/10 mix-blend-overlay" />
               </div>
               
               {/* Overlapping Image */}
               <div className="absolute bottom-0 left-0 w-[60%] h-[60%] rounded-[2rem] overflow-hidden border-4 border-[#050505] shadow-2xl z-20 transform -translate-y-4 translate-x-4">
-                <Image src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop" alt="Engaged Guests" fill sizes="(max-width: 768px) 100vw, 30vw" className="object-cover" />
+                <Image src="/booth-setup-9.jpg" alt="Engaged Guests" fill sizes="(max-width: 768px) 100vw, 30vw" className="object-cover" />
               </div>
               
               {/* Floating Stat card */}
@@ -257,7 +257,7 @@ export default function BrandClient() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10">
-              <Image src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop" alt="Corporate Event Team" fill className="object-cover" />
+              <Image src="/booth-setup-19.jpg" alt="Corporate Event Team" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-neon/20 to-transparent mix-blend-overlay" />
             </motion.div>
           </div>
