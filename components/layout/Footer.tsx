@@ -77,7 +77,7 @@ export default function Footer() {
           <Link href="/admin" className="flex items-center justify-center px-8 py-5 md:py-6 text-white/80 hover:text-brand-neon hover:bg-white/5 transition-colors border-b lg:border-b-0 lg:border-r border-white/10 w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
             Admin Panel
           </Link>
-          <Link href="#" className="flex items-center justify-center px-8 py-5 md:py-6 text-white/80 hover:text-white hover:bg-white/5 transition-colors w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
+          <Link href="/terms-and-conditions" className="flex items-center justify-center px-8 py-5 md:py-6 text-white/80 hover:text-white hover:bg-white/5 transition-colors w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
             Terms &amp; Conditions
           </Link>
 
@@ -93,7 +93,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <p className="text-white/30 text-[10px] md:text-xs font-medium text-center">
-          Copyright © {new Date().getFullYear()} Peekabooth USA. All rights reserved.
+          Copyright © {new Date().getFullYear()} PeekABooth PK. All rights reserved.
         </p>
 
       </div>
