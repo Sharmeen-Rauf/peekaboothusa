@@ -24,205 +24,146 @@ type BoothPricing = {
 
 const pricingData: BoothPricing[] = [
   {
-    id: "open-air",
-    name: "Open Air Booth",
+    id: "party-box",
+    name: "Party Box",
     plans: [
-      {
-        name: "2 Hour Rental",
-        price: "400",
-        features: [
-          "Unlimited Pictures",
-          "Instant 2x6 Prints",
-          "Personalized Pictures",
-          "Party Themed Props",
-          "Standard Lighting Kit",
-          "Standard Backdrop",
-          "Friendly Attendant"
-        ]
-      },
       {
         name: "3 Hour Rental",
-        price: "550",
+        price: "35,000",
+        features: [
+          "Unlimited Printouts",
+          "Custom frame design",
+          "Friendly Attendant"
+        ]
+      },
+      {
+        name: "4 Hour Rental",
+        price: "40,000",
         isPopular: true,
         features: [
-          "Unlimited Pictures",
-          "Instant 2x6 Prints",
-          "Personalized Pictures",
-          "Party Themed Props",
-          "Standard Lighting Kit",
-          "Standard Backdrop",
+          "Unlimited Printouts",
+          "Custom frame design",
           "Friendly Attendant"
-        ]
-      },
-      {
-        name: "4 Hour Rental",
-        price: "700",
-        features: [
-          "Unlimited Pictures",
-          "Instant 2x6 Prints",
-          "Personalized Pictures",
-          "Party Themed Props",
-          "Standard Lighting Kit",
-          "Standard Backdrop",
-          "Friendly Attendant"
-        ]
-      }
-    ]
-  },
-  {
-    id: "360-booth",
-    name: "360 Photo Booth",
-    plans: [
-      {
-        name: "2 Hour Rental",
-        price: "500",
-        features: [
-          "Unlimited Videos",
-          "Unlimited Spins",
-          "Instant Sharing",
-          "Custom Video Overlay",
-          "Fun Party Props",
-          "Standard Lighting Kit",
-          "Standard Backdrop",
-          "Friendly Attendant"
-        ]
-      },
-      {
-        name: "3 Hour Rental",
-        price: "700",
-        isPopular: true,
-        features: [
-          "Unlimited Videos",
-          "Unlimited Spins",
-          "Instant Sharing",
-          "Custom Video Overlay",
-          "Fun Party Props",
-          "Standard Lighting Kit",
-          "Standard Backdrop",
-          "Friendly Attendant"
-        ]
-      },
-      {
-        name: "4 Hour Rental",
-        price: "900",
-        features: [
-          "Unlimited Videos",
-          "Unlimited Spins",
-          "Instant Sharing",
-          "Custom Video Overlay",
-          "Fun Party Props",
-          "Standard Lighting Kit",
-          "Standard Backdrop",
-          "Friendly Attendant"
-        ]
-      }
-    ]
-  },
-  {
-    id: "vogue-magazine",
-    name: "Vogue Magazine Photo Booth",
-    plans: [
-      {
-        name: "4 Hour Rental",
-        price: "1200",
-        features: [
-          "Custom Cover Design",
-          "Full-Size Frame",
-          "LED Lighting",
-          "Custom Headline",
-          "Setup & Breakdown",
-          "Spacious Interior",
-          "Selfie-Ready",
-          "High-Quality Build"
         ]
       },
       {
         name: "5 Hour Rental",
-        price: "1500",
+        price: "45,000",
         features: [
-          "Custom Cover Design",
-          "Full-Size Frame",
-          "LED Lighting",
-          "Custom Headline",
-          "Setup & Breakdown",
-          "Spacious Interior",
-          "Selfie-Ready",
-          "High-Quality Build"
-        ]
-      },
-      {
-        name: "6 Hour Rental",
-        price: "1800",
-        isPopular: true,
-        features: [
-          "Custom Cover Design",
-          "Full-Size Frame",
-          "LED Lighting",
-          "Custom Headline",
-          "Setup & Breakdown",
-          "Spacious Interior",
-          "Selfie-Ready",
-          "High-Quality Build"
-        ]
-      },
-      {
-        name: "8 Hour Rental",
-        price: "2400",
-        features: [
-          "Custom Cover Design",
-          "Full-Size Frame",
-          "LED Lighting",
-          "Custom Headline",
-          "Setup & Breakdown",
-          "Spacious Interior",
-          "Selfie-Ready",
-          "High-Quality Build"
+          "Unlimited Printouts",
+          "Custom frame design",
+          "Friendly Attendant"
         ]
       }
     ]
   },
   {
-    id: "digital-booth",
-    name: "Digital Photo Booth",
+    id: "classic-booth",
+    name: "Classic Booth",
     plans: [
       {
-        name: "2 Hour Rental",
-        price: "300",
-        features: [
-          "Unlimited Pictures",
-          "Instant Sharing",
-          "Personalized Pictures",
-          "Party Themed Props",
-          "Standard Backdrop",
-          "Standard Lighting Kit",
-          "Friendly Attendant"
-        ]
-      },
-      {
         name: "3 Hour Rental",
-        price: "400",
-        isPopular: true,
+        price: "45,000",
         features: [
-          "Unlimited Pictures",
-          "Instant Sharing",
-          "Personalized Pictures",
-          "Party Themed Props",
-          "Standard Backdrop",
-          "Standard Lighting Kit",
+          "Booth Branding & designing",
+          "Unlimited Printouts",
+          "Custom frame design",
           "Friendly Attendant"
         ]
       },
       {
         name: "4 Hour Rental",
-        price: "500",
+        price: "50,000",
+        isPopular: true,
         features: [
-          "Unlimited Pictures",
-          "Instant Sharing",
-          "Personalized Pictures",
-          "Party Themed Props",
-          "Standard Backdrop",
-          "Standard Lighting Kit",
+          "Booth Branding & designing",
+          "Unlimited Printouts",
+          "Custom frame design",
           "Friendly Attendant"
+        ]
+      },
+      {
+        name: "5 Hour Rental",
+        price: "55,000",
+        features: [
+          "Booth Branding & designing",
+          "Unlimited Printouts",
+          "Custom frame design",
+          "Friendly Attendant"
+        ]
+      }
+    ]
+  },
+  {
+    id: "360-video",
+    name: "360 Video Booth",
+    plans: [
+      {
+        name: "3 Hour Rental",
+        price: "40,000",
+        features: [
+          "Custom video filters (overlay & music)",
+          "Unlimited video shoots",
+          "QR based video delivery",
+          "Friendly Attendant"
+        ]
+      },
+      {
+        name: "4 Hour Rental",
+        price: "45,000",
+        isPopular: true,
+        features: [
+          "Custom video filters (overlay & music)",
+          "Unlimited video shoots",
+          "QR based video delivery",
+          "Friendly Attendant"
+        ]
+      },
+      {
+        name: "5 Hour Rental",
+        price: "50,000",
+        features: [
+          "Custom video filters (overlay & music)",
+          "Unlimited video shoots",
+          "QR based video delivery",
+          "Friendly Attendant"
+        ]
+      }
+    ]
+  },
+  {
+    id: "registration-booth",
+    name: "Registration Booth",
+    plans: [
+      {
+        name: "6 Hour Rental",
+        price: "40,000",
+        features: [
+          "Booth Branding & designing",
+          "Pre-event online registration",
+          "Onspot registration & verification",
+          "Realtime data tracking"
+        ]
+      },
+      {
+        name: "8 Hour Rental",
+        price: "45,000",
+        isPopular: true,
+        features: [
+          "Booth Branding & designing",
+          "Pre-event online registration",
+          "Onspot registration & verification",
+          "Realtime data tracking"
+        ]
+      },
+      {
+        name: "10 Hour Rental",
+        price: "55,000",
+        features: [
+          "Booth Branding & designing",
+          "Pre-event online registration",
+          "Onspot registration & verification",
+          "Realtime data tracking"
         ]
       }
     ]
@@ -313,8 +254,9 @@ export default function PricingClient() {
                     </h3>
                     
                     <div className="flex items-end gap-1 mb-8">
+                      <span className="text-sm font-bold text-brand-neon mb-2">PKR</span>
                       <span className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
-                        ${plan.price}
+                        {plan.price}
                       </span>
                     </div>
 

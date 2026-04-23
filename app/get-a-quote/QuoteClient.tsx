@@ -25,12 +25,10 @@ const cities = [
 ];
 
 const booths = [
-  { id: "party", name: "Party Box", baseHours: 4, extraRate: 5000, img: "/booth-setup-6.jpg", desc: "Birthday & weddings", prices: { LHE: 40000, MUX: 40000, ISB: 45000, KHI: 45000 } },
-  { id: "vintage", name: "Vintage Booth", baseHours: 4, extraRate: 5000, img: "/booth-setup-7.jpg", desc: "Birthday & weddings", prices: { LHE: 40000, MUX: 40000, ISB: 45000, KHI: 45000 } },
-  { id: "classic", name: "Classic Booth", baseHours: 4, extraRate: 5000, img: "/booth-setup-8.jpg", desc: "Corporate & office", prices: { LHE: 50000, MUX: 50000, ISB: 55000, KHI: 55000 } },
-  { id: "mirror", name: "Mirror Booth", baseHours: 4, extraRate: 5000, img: "/booth-setup-9.jpg", desc: "Premium events", prices: { LHE: 60000, MUX: 70000, ISB: 65000, KHI: 65000 } },
-  { id: "360", name: "360 Video Booth", baseHours: 4, extraRate: 5000, img: "/booth-setup-10.jpg", desc: "Viral slow-motion 360° videos", prices: { LHE: 45000, MUX: 45000, ISB: 50000, KHI: 50000 } },
-  { id: "registration", name: "Registration Booth", baseHours: 8, extraRate: 5000, img: "/booth-setup-11.jpg", desc: "Corporate registrations", prices: { LHE: 45000, MUX: 45000, ISB: 55000, KHI: 55000 } },
+  { id: "party", name: "Party Box", baseHours: 3, extraRate: 5000, img: "/booth-setup-1.jpg", desc: "Birthday & weddings", prices: { LHE: 35000, MUX: 35000, ISB: 40000, KHI: 40000 } },
+  { id: "classic", name: "Classic Booth", baseHours: 3, extraRate: 5000, img: "/booth-setup-2.jpg", desc: "Corporate & office", prices: { LHE: 45000, MUX: 45000, ISB: 50000, KHI: 50000 } },
+  { id: "360", name: "360 Video Booth", baseHours: 3, extraRate: 5000, img: "/booth-setup-3.jpg", desc: "Viral slow-motion 360° videos", prices: { LHE: 40000, MUX: 40000, ISB: 45000, KHI: 45000 } },
+  { id: "registration", name: "Registration Booth", baseHours: 8, extraRate: 5000, img: "/booth-setup-4.jpg", desc: "Corporate registrations", prices: { LHE: 45000, MUX: 45000, ISB: 55000, KHI: 55000 } },
 ];
 
 const addonsList = [
@@ -341,8 +339,8 @@ export default function QuoteClient() {
                       <div className="text-3xl font-extrabold text-brand-neon">{hours} <span className="text-lg text-white/50 font-medium">hrs</span></div>
                     </div>
                     <div className="flex items-center gap-6">
-                      <button onClick={() => hours > (currentBooth?.baseHours || 4) && setHours(h => h - 1)} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-brand-neon text-white transition-all disabled:opacity-30"><Minus className="w-5 h-5" /></button>
-                      <input type="range" min={currentBooth?.baseHours || 4} max="12" value={hours} onChange={(e) => setHours(parseInt(e.target.value))} className="w-full accent-brand-neon h-2 bg-white/10 rounded-full appearance-none cursor-pointer" />
+                      <button onClick={() => hours > (currentBooth?.baseHours || 3) && setHours(h => h - 1)} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-brand-neon text-white transition-all disabled:opacity-30"><Minus className="w-5 h-5" /></button>
+                      <input type="range" min={currentBooth?.baseHours || 3} max="12" value={hours} onChange={(e) => setHours(parseInt(e.target.value))} className="w-full accent-brand-neon h-2 bg-white/10 rounded-full appearance-none cursor-pointer" />
                       <button onClick={() => hours < 12 && setHours(h => h + 1)} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-brand-neon text-white transition-all"><Plus className="w-5 h-5" /></button>
                     </div>
                   </div>
