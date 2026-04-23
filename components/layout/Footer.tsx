@@ -38,11 +38,11 @@ export default function Footer() {
           {/* Social Icons Row */}
           <div className="flex flex-wrap md:flex-nowrap items-stretch justify-center border-b lg:border-b-0 lg:border-r border-white/10 w-full lg:w-auto grid grid-cols-3 md:flex">
             
-            <a href="#" className="flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-[#1877F2] hover:bg-white/5 transition-colors border-r border-b md:border-b-0 border-white/10 min-w-[60px]">
+            <a href="https://www.facebook.com/peekaboothpk" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-[#1877F2] hover:bg-white/5 transition-colors border-r border-b md:border-b-0 border-white/10 min-w-[60px]">
               <Facebook className="w-5 h-5" />
             </a>
             
-            <a href="#" className="flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-[#E4405F] hover:bg-white/5 transition-colors border-r border-b md:border-b-0 border-white/10 min-w-[60px]">
+            <a href="https://www.instagram.com/peekaboothpk" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-[#E4405F] hover:bg-white/5 transition-colors border-r border-b md:border-b-0 border-white/10 min-w-[60px]">
               <Instagram className="w-5 h-5" />
             </a>
             

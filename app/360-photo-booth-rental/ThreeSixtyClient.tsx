@@ -126,8 +126,8 @@ function Scene1Hero() {
           <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_40px_rgba(247,54,168,0.5)] hover:shadow-[0_0_60px_rgba(247,54,168,0.7)] group">
             Book Your 360 Experience <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
-          <a href="tel:1-800-709-8579" className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-sm transition-all backdrop-blur-sm">
-            <Phone className="w-4 h-4" /> +1-800-709-8579
+          <a href="tel:+923260760786" className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-sm transition-all backdrop-blur-sm">
+            <Phone className="w-4 h-4" /> +92 326 0760786
           </a>
         </motion.div>
       </motion.div>
@@ -443,7 +443,7 @@ function Scene6CTA() {
               Book Your Booth <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
-              href="tel:1-800-709-8579"
+              href="tel:+923260760786"
               className="inline-flex items-center gap-3 border border-white/20 hover:border-brand-neon/50 text-white px-10 py-5 rounded-full font-bold text-base transition-all hover:bg-brand-neon/10"
             >
               <Phone className="w-5 h-5" /> Call Us Now
@@ -539,10 +539,10 @@ function SceneAbout() {
                 Get A Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
-                href="tel:1-800-709-8579"
+                href="tel:+923260760786"
                 className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-brand-neon/40 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all hover:bg-brand-neon/5"
               >
-                <Phone className="w-4 h-4" /> +1-800-709-8579
+                <Phone className="w-4 h-4" /> +92 326 0760786
               </a>
             </div>
           </motion.div>
@@ -589,7 +589,7 @@ const faqs360 = [
   },
   {
     q: "Can I Book Online?",
-    a: "Absolutely! Submit a quote request through our contact form below, or call us at 1-800-709-8579. We'll confirm your date and send a booking agreement within 24 hours.",
+    a: "Absolutely! Submit a quote request through our contact form below, or call us at +92 326 0760786. We'll confirm your date and send a booking agreement within 24 hours.",
   },
   {
     q: "How Do I Pick My Template?",

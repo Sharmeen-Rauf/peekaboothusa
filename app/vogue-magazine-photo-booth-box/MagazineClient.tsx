@@ -46,7 +46,7 @@ const faqs = [
   { q: "How much deposit is needed?", a: "We require a $150 deposit to secure your booking. The remaining balance is due 7 days before your event. We accept all major credit cards and PayPal." },
   { q: "How much space is needed for setup?", a: "The Vogue Magazine Photo Booth Box requires a minimum of 10ft x 10ft of floor space with at least 9ft of ceiling clearance. We recommend a flat, hard surface indoors." },
   { q: "Does Peek-A-Booth have insurance?", a: "Yes! We are fully insured with general liability coverage. A Certificate of Insurance (COI) can be provided upon request — many venues require this." },
-  { q: "Can I book online?", a: "Absolutely! Fill out our contact form below or call 1-800-709-8579. We'll confirm your date and send a booking agreement within 24 hours." },
+  { q: "Can I book online?", a: "Absolutely! Fill out our contact form below or call +92 326 0760786. We'll confirm your date and send a booking agreement within 24 hours." },
   { q: "How do I customize my magazine cover?", a: "After booking, our design team contacts you to discuss your event theme, colors, headline text, and any personalization. You'll receive a digital proof for approval before your event." },
   { q: "Can I use this magazine box outdoors?", a: "The Magazine Photo Booth Box is designed for indoor use. Outdoor setups may be possible under a tent or covered patio — contact us to discuss your venue details." },
 ];
@@ -77,8 +77,8 @@ export default function MagazineClient() {
             <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group">
               Get A Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <a href="tel:1-800-709-8579" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all backdrop-blur-sm">
-              <Phone className="w-4 h-4" /> +1-800-709-8579
+            <a href="tel:+923260760786" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all backdrop-blur-sm">
+              <Phone className="w-4 h-4" /> +92 326 0760786
             </a>
           </motion.div>
         </div>
@@ -195,8 +195,8 @@ export default function MagazineClient() {
               <h3 className="text-xl md:text-2xl font-extrabold text-white mb-1">Need More Hours?</h3>
               <p className="text-white/60 text-sm max-w-lg">Peek-A-Booth can add more hours and more fun for you! Contact us today to get your booking started!</p>
             </div>
-            <a href="tel:1-800-709-8579" className="relative z-10 shrink-0 flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] whitespace-nowrap">
-              <Phone className="w-4 h-4" /> 1-800-709-8579
+            <a href="tel:+923260760786" className="relative z-10 shrink-0 flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] whitespace-nowrap">
+              <Phone className="w-4 h-4" /> +92 326 0760786
             </a>
           </motion.div>
         </div>
@@ -216,7 +216,7 @@ export default function MagazineClient() {
                 <Link href="/get-a-quote" className="inline-flex items-center justify-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group">
                   Check Availability <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:1-800-709-8579" className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-brand-neon/50 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all hover:bg-brand-neon/10">
+                <a href="tel:+923260760786" className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-brand-neon/50 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all hover:bg-brand-neon/10">
                   <Phone className="w-4 h-4" /> Call to Reserve
                 </a>
               </div>

@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: "Can I Book Online?",
-    a: "Absolutely! You can submit a quote request directly through our website's contact form, or call us at 1-800-709-8579. We'll confirm your date and send you a booking agreement within 24 hours.",
+    a: "Absolutely! You can submit a quote request directly through our website's contact form, or call us at +92 326 0760786. We'll confirm your date and send you a booking agreement within 24 hours.",
   },
   {
     q: "How Do I Pick My Template?",

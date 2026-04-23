@@ -125,7 +125,7 @@ export default function StudioClient() {
     } else if (type === "template") {
       msg = `Hi Peekabooth! I designed a custom template in the AI Studio:\nLayout: ${tmplLayout}\nText: ${tmplText1} - ${tmplText2}\n\nCan we use this for my event?`;
     }
-    return `https://wa.me/18007098579?text=${encodeURIComponent(msg)}`;
+    return `https://wa.me/923260760786?text=${encodeURIComponent(msg)}`;
   };
 
   const handleVoiceInput = () => {

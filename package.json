@@ -9,8 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
+=======
+    "@react-three/drei": "^9.96.1",
+    "@react-three/fiber": "^8.15.12",
+>>>>>>> e9674533c523d88888f94c5a4feb255bfafdcdb9
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.8",
     "lucide-react": "^0.364.0",
@@ -18,7 +23,11 @@
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.2.2",
+<<<<<<< HEAD
     "three": "^0.160.1"
+=======
+    "three": "^0.160.0"
+>>>>>>> e9674533c523d88888f94c5a4feb255bfafdcdb9
   },
   "devDependencies": {
     "@types/node": "^20",

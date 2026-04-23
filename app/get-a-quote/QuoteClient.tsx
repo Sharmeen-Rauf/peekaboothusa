@@ -131,7 +131,7 @@ export default function QuoteClient() {
 
   const generateWhatsAppLink = () => {
     const text = `Hi Peekabooth 👋\n\nI'd like a quote for:\nEvent: ${currentEvent?.name}\nCity: ${cities.find(c => c.id === city)?.name}\nBooth: ${currentBooth?.name}\nHours: ${hours}\nAdd-ons: ${addons.length > 0 ? addons.map(a => addonsList.find(x => x.id === a)?.name).join(", ") : "None"}\nVenue: ${details.venue}\nDate: ${details.date}\n\nEstimated Budget: PKR ${formatPKR(estimatedTotal)}\n\nMy name is ${details.firstName} ${details.lastName}. Please contact me with more details!`;
-    return `https://wa.me/18007098579?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/923260760786?text=${encodeURIComponent(text)}`;
   };
 
   const handleSubmit = (e: React.FormEvent) => {

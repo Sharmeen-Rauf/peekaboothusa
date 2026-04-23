@@ -38,21 +38,21 @@ export default function Contact() {
                   <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 shrink-0 group-hover:border-brand-neon/50 transition-colors">
                     <Phone className="w-4 h-4 text-white group-hover:text-brand-neon transition-colors" />
                   </div>
-                  <span className="text-white font-medium text-sm md:text-base tracking-wide">+1-800-709-8579</span>
+                  <span className="text-white font-medium text-sm md:text-base tracking-wide">+92 326 0760786</span>
                 </div>
                 
                 <div className="flex items-center gap-4 group">
                   <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 shrink-0 group-hover:border-brand-neon/50 transition-colors">
                     <Mail className="w-4 h-4 text-white group-hover:text-brand-neon transition-colors" />
                   </div>
-                  <span className="text-white font-medium text-sm md:text-base tracking-wide">hello@peekaboothusa.com</span>
+                  <span className="text-white font-medium text-sm md:text-base tracking-wide">info@peekaboothpk.com</span>
                 </div>
                 
                 <div className="flex items-center gap-4 group">
                   <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 shrink-0 group-hover:border-brand-neon/50 transition-colors">
                     <MapPin className="w-4 h-4 text-white group-hover:text-brand-neon transition-colors" />
                   </div>
-                  <span className="text-white font-medium text-sm md:text-base tracking-wide">Los Angeles, CA, United States</span>
+                  <span className="text-white font-medium text-sm md:text-base tracking-wide">Lahore, Pakistan</span>
                 </div>
               </div>
             </div>

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Shield, ArrowLeft } from "lucide-react";
 
 export default function AdminSettings() {
-  const [whatsapp, setWhatsapp] = useState("18007098579");
+  const [whatsapp, setWhatsapp] = useState("923260760786");
   const [businessName, setBusinessName] = useState("Peekabooth");
   const [bookingSlots, setBookingSlots] = useState(["Oct 24", "Oct 28", "Nov 02"]);
   const [saved, setSaved] = useState(false);

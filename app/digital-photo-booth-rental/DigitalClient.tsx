@@ -43,7 +43,7 @@ const faqs = [
   { q: "How Much Deposit is Needed?", a: "We require a $150 deposit to secure your booking. The remaining balance is due 7 days before your event." },
   { q: "How Much Space is Needed?", a: "Our digital photo booth requires a minimum of 8ft x 8ft with at least 7ft of ceiling clearance. It works indoors and outdoors." },
   { q: "Does Peek-A-Booth Have Insurance?", a: "Yes! We are fully insured with general liability coverage. A Certificate of Insurance (COI) can be provided upon request." },
-  { q: "Can I Book Online?", a: "Absolutely! Fill out our contact form below or call 1-800-709-8579. We'll confirm your date within 24 hours." },
+  { q: "Can I Book Online?", a: "Absolutely! Fill out our contact form below or call +92 326 0760786. We'll confirm your date within 24 hours." },
   { q: "How Do I Pick My Template?", a: "After booking, our design team reaches out to finalize your custom overlay, colors, and branding. You'll receive a proof for approval." },
 ];
 
@@ -85,8 +85,8 @@ export default function DigitalClient() {
             <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
               Get A Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <a href="tel:1-800-709-8579" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all backdrop-blur-sm">
-              <Phone className="w-4 h-4" /> +1-800-709-8579
+            <a href="tel:+923260760786" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all backdrop-blur-sm">
+              <Phone className="w-4 h-4" /> +92 326 0760786
             </a>
           </motion.div>
         </div>
@@ -201,8 +201,8 @@ export default function DigitalClient() {
               <h3 className="text-xl md:text-2xl font-extrabold text-white mb-1">Need More Hours?</h3>
               <p className="text-white/60 text-sm max-w-lg">Peek-A-Booth can add more hours and more fun for you! Contact us today!</p>
             </div>
-            <a href="tel:1-800-709-8579" className="relative z-10 shrink-0 flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] whitespace-nowrap">
-              <Phone className="w-4 h-4" /> 1-800-709-8579
+            <a href="tel:+923260760786" className="relative z-10 shrink-0 flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] whitespace-nowrap">
+              <Phone className="w-4 h-4" /> +92 326 0760786
             </a>
           </motion.div>
         </div>
@@ -222,7 +222,7 @@ export default function DigitalClient() {
                 <Link href="/get-a-quote" className="inline-flex items-center justify-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group">
                   Check Availability <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:1-800-709-8579" className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-brand-neon/50 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all hover:bg-brand-neon/10">
+                <a href="tel:+923260760786" className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-brand-neon/50 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all hover:bg-brand-neon/10">
                   <Phone className="w-4 h-4" /> Call to Reserve
                 </a>
               </div>

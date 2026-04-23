@@ -65,21 +65,21 @@ export default function Navbar() {
       >
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center h-full">
           <div className="flex items-center gap-6 text-[11px] md:text-xs text-white/80 font-medium tracking-wide">
-            <a href="tel:1-800-709-8579" className="flex items-center gap-2 hover:text-brand-neon transition-colors">
+            <a href="tel:+923260760786" className="flex items-center gap-2 hover:text-brand-neon transition-colors">
               <Phone size={12} className="text-brand-neon" />
-              +1-800-709-8579
+              +92 326 0760786
             </a>
-            <a href="mailto:hello@peekaboothusa.com" className="hidden sm:flex items-center gap-2 hover:text-brand-neon transition-colors">
+            <a href="mailto:info@peekaboothpk.com" className="hidden sm:flex items-center gap-2 hover:text-brand-neon transition-colors">
               <Mail size={12} className="text-brand-neon" />
-              hello@peekaboothusa.com
+              info@peekaboothpk.com
             </a>
           </div>
           <div className="flex items-center h-full">
             <div className="flex items-center gap-2 mr-4">
-              <a href="#" className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-brand-neon text-white flex items-center justify-center hover:bg-white hover:text-brand-neon transition-colors">
+              <a href="https://www.facebook.com/peekaboothpk" target="_blank" rel="noopener noreferrer" className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-brand-neon text-white flex items-center justify-center hover:bg-white hover:text-brand-neon transition-colors">
                 <Facebook size={10} className="md:w-3 md:h-3" />
               </a>
-              <a href="#" className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-brand-neon text-white flex items-center justify-center hover:bg-white hover:text-brand-neon transition-colors">
+              <a href="https://www.instagram.com/peekaboothpk" target="_blank" rel="noopener noreferrer" className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-brand-neon text-white flex items-center justify-center hover:bg-white hover:text-brand-neon transition-colors">
                 <Instagram size={10} className="md:w-3 md:h-3" />
               </a>
               <a href="#" className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-brand-neon text-white flex items-center justify-center hover:bg-white hover:text-brand-neon transition-colors">
@@ -248,15 +248,15 @@ export default function Navbar() {
         >
           <div className="flex flex-col text-center leading-tight">
             <span className="text-sm font-medium text-white/60 mb-2 uppercase tracking-widest">Call Us Today</span>
-            <a href="tel:1-800-709-8579" className="text-brand-neon font-bold text-2xl tracking-wide">
-              1-800-709-8579
+            <a href="tel:+923260760786" className="text-brand-neon font-bold text-2xl tracking-wide">
+              +92 326 0760786
             </a>
           </div>
           <div className="flex items-center gap-4 mt-4">
-             <a href="#" className="w-10 h-10 rounded-full bg-white/5 text-white flex items-center justify-center hover:bg-brand-neon hover:text-white transition-colors">
+             <a href="https://www.facebook.com/peekaboothpk" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 text-white flex items-center justify-center hover:bg-brand-neon hover:text-white transition-colors">
                <Facebook size={18} />
              </a>
-             <a href="#" className="w-10 h-10 rounded-full bg-white/5 text-white flex items-center justify-center hover:bg-brand-neon hover:text-white transition-colors">
+             <a href="https://www.instagram.com/peekaboothpk" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 text-white flex items-center justify-center hover:bg-brand-neon hover:text-white transition-colors">
                <Instagram size={18} />
              </a>
              <a href="#" className="w-10 h-10 rounded-full bg-white/5 text-white flex items-center justify-center hover:bg-brand-neon hover:text-white transition-colors">

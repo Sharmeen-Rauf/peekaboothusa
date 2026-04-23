@@ -120,7 +120,7 @@ export default function FloatingWidgets() {
 
         {/* WhatsApp Button */}
         <motion.a
-          href="https://wa.me/18007098579"
+          href="https://wa.me/923260760786"
           target="_blank"
           rel="noreferrer"
           whileHover={{ scale: 1.1 }}

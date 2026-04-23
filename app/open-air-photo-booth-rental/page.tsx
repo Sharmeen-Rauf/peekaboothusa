@@ -95,10 +95,10 @@ export default function OpenAirPage() {
               Get A Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
-              href="tel:1-800-709-8579"
+              href="tel:+923260760786"
               className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all backdrop-blur-sm"
             >
-              <Phone className="w-4 h-4" /> +1-800-709-8579
+              <Phone className="w-4 h-4" /> +92 326 0760786
             </a>
           </div>
         </div>
@@ -219,10 +219,10 @@ export default function OpenAirPage() {
               </p>
             </div>
             <a
-              href="tel:1-800-709-8579"
+              href="tel:+923260760786"
               className="relative z-10 shrink-0 flex items-center gap-3 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.4)] whitespace-nowrap"
             >
-              <Phone className="w-4 h-4" /> 1-800-709-8579
+              <Phone className="w-4 h-4" /> +92 326 0760786
             </a>
           </div>
         </div>
@@ -246,7 +246,7 @@ export default function OpenAirPage() {
                   Check Availability <Calendar className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 </Link>
                 <a
-                  href="tel:1-800-709-8579"
+                  href="tel:+923260760786"
                   className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-brand-neon/50 text-white px-8 py-4 rounded-full font-bold text-sm transition-all hover:bg-brand-neon/10"
                 >
                   <Phone className="w-4 h-4" /> Call to Reserve
