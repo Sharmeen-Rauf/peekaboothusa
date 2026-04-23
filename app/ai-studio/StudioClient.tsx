@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import dynamic from "next/dynamic";
+
+const ThreeDVisualizer = dynamic(() => import("./ThreeDVisualizer"), { ssr: false });
 import { Sparkles, Palette, MonitorPlay, Zap, ArrowRight, CheckCircle2, ChevronRight, MessageSquare, Phone, Mic, Image as ImageIcon } from "lucide-react";
 
 // --- Data ---
@@ -428,50 +431,19 @@ export default function StudioClient() {
 
                 {/* Preview Window (Right) */}
                 <div className="lg:col-span-8 relative rounded-3xl overflow-hidden border border-white/10 bg-[#111] flex flex-col">
-                  {/* Dynamic Stage */}
-                  <div className={`flex-1 relative transition-colors duration-1000 ${prevBackdrop.bg}`}>
-                    {/* Lighting Overlay */}
-                    <div className="absolute inset-0 opacity-60 mix-blend-overlay transition-colors duration-1000" style={{ backgroundColor: prevLight.hex }} />
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-[100px] transition-all duration-1000 opacity-50" style={{ backgroundColor: prevLight.hex }} />
-                    
-                    {/* Floor */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
-                    <div className="absolute bottom-0 left-0 right-0 h-1/4" style={{ background: `linear-gradient(to top, ${prevLight.shadow}, transparent)`, opacity: 0.3 }} />
-
-                    {/* Booth Mockup (Abstract representation) with 3D Effect */}
-                    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center" style={{ perspective: "1000px" }}>
-                      <motion.div 
-                        key={prevBooth} initial={{ y: 20, opacity: 0, rotateY: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring" }}
-                        drag="x" dragConstraints={{ left: -50, right: 50 }}
-                        whileDrag={{ scale: 1.05 }}
-                        className="w-32 h-64 bg-gradient-to-b from-gray-800 to-black border border-white/20 rounded-xl relative shadow-2xl flex flex-col items-center justify-start pt-6 cursor-grab active:cursor-grabbing"
-                        style={{ transformStyle: "preserve-3d" }}
-                      >
-                        {/* 3D Side panels for depth */}
-                        <div className="absolute top-0 bottom-0 -left-4 w-4 bg-gray-900 border-y border-l border-white/10 rounded-l-md origin-right" style={{ transform: "rotateY(-90deg)" }} />
-                        <div className="absolute top-0 bottom-0 -right-4 w-4 bg-gray-900 border-y border-r border-white/10 rounded-r-md origin-left" style={{ transform: "rotateY(90deg)" }} />
-                        
-                        {/* Screen/Lens glow */}
-                        <div className="w-20 h-32 bg-white/5 border border-white/10 rounded-lg relative overflow-hidden" style={{ transform: "translateZ(10px)" }}>
-                           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full blur-[20px] transition-colors duration-500" style={{ backgroundColor: prevLight.hex, opacity: 0.4 }} />
-                           <div className="absolute top-4 left-1/2 -translate-x-1/2 w-4 h-4 bg-black rounded-full border border-white/20 flex items-center justify-center">
-                             <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_5px_blue]" />
-                           </div>
-                        </div>
-                        <p className="mt-8 text-[10px] font-bold text-white/50 uppercase tracking-widest text-center px-2" style={{ transform: "translateZ(5px)" }}>{prevBooth}</p>
-                        
-                        {/* Drag hint */}
-                        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[8px] text-white/30 uppercase tracking-widest whitespace-nowrap animate-bounce">
-                          Drag to Rotate
-                        </div>
-                      </motion.div>
-                    </div>
+                  {/* Dynamic 3D Stage */}
+                  <div className="flex-1 relative bg-black">
+                    <ThreeDVisualizer 
+                      booth={prevBooth} 
+                      backdrop={{ name: prevBackdrop.name }} 
+                      lightingHex={prevLight.hex} 
+                    />
 
                     {/* Live Preview Text Overlay */}
-                    <div className="absolute top-6 left-6 z-30">
+                    <div className="absolute top-6 left-6 z-30 pointer-events-none">
                        <div className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full">
                          <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: prevLight.hex, boxShadow: `0 0 10px ${prevLight.hex}` }} />
-                         <span className="text-xs font-bold uppercase tracking-widest">Live Visualizer</span>
+                         <span className="text-xs font-bold uppercase tracking-widest text-white">3D Live Simulation</span>
                        </div>
                     </div>
                   </div>
