@@ -3,8 +3,8 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Check, ArrowRight, ChevronLeft, Sparkles, Star, Plus, Minus, Send, Phone, MapPin } from "lucide-react";
-import { saveBooking } from "@/lib/bookingStore";
+import { Check, ArrowRight, ChevronLeft, Sparkles, Star, Plus, Minus, Send, Phone, MapPin, AlertCircle } from "lucide-react";
+import { createBooking } from "@/lib/actions/booking";
 
 /* ─── DATA & CONFIG ───────────────────────────────────────────────────────── */
 
@@ -59,6 +59,8 @@ export default function QuoteClient() {
   });
 
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Derived State
   const currentEvent = eventTypes.find(e => e.id === eventType);
@@ -132,27 +134,32 @@ export default function QuoteClient() {
     return `https://wa.me/923260760786?text=${encodeURIComponent(text)}`;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Save to the booking store (localStorage) so admin can see it
-    saveBooking({
-      firstName: details.firstName,
-      lastName: details.lastName,
-      email: details.email,
-      phone: details.phone,
-      date: details.date,
-      startTime: details.startTime,
-      venue: details.venue,
-      notes: details.notes,
+    setIsSubmitting(true);
+    setError(null);
+
+    const result = await createBooking({
+      ...details,
       eventType: currentEvent?.name || eventType || "",
       city: cities.find(c => c.id === city)?.name || city,
-      booth: currentBooth?.name || selectedBooth || "",
+      boothId: selectedBooth,
       hours,
-      addons: addons.map(id => addonsList.find(a => a.id === id)?.name || id),
-      estimatedTotal,
+      addons
     });
-    setIsSuccess(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    setIsSubmitting(false);
+
+    if (result.success) {
+      setIsSuccess(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Optional: Open WhatsApp after a short delay
+      setTimeout(() => {
+        window.open(generateWhatsAppLink(), "_blank");
+      }, 2000);
+    } else {
+      setError(result.error || "Failed to submit quote. Please try again.");
+    }
   };
 
   // ─── VIEWS ─── //
@@ -507,10 +514,27 @@ export default function QuoteClient() {
                 <p className="text-[10px] text-white/30 mt-2">*Exclusive of GST. Final quote may vary.</p>
               </div>
 
+              {/* Error Message */}
+              {error && (
+                <div className="bg-red-500/10 border border-red-500/20 text-red-400 p-4 rounded-xl mb-6 text-sm flex items-center gap-2">
+                  <AlertCircle className="w-4 h-4 shrink-0" />
+                  {error}
+                </div>
+              )}
+
               {/* Submit Button */}
               {step === 4 ? (
-                <button form="quote-form" type="submit" className="w-full bg-brand-neon hover:bg-white text-white hover:text-brand-neon px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.4)] flex items-center justify-center gap-2 group">
-                  Submit Request <Send className="w-4 h-4 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
+                <button 
+                  form="quote-form" 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full bg-brand-neon hover:bg-white text-white hover:text-brand-neon px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.4)] flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? (
+                    <div className="w-5 h-5 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+                  ) : (
+                    <>Submit Request <Send className="w-4 h-4 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" /></>
+                  )}
                 </button>
               ) : (
                 <button onClick={nextStep} className="w-full bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all backdrop-blur-sm">

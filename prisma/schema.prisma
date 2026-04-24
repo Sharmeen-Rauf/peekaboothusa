@@ -1,0 +1,121 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  STAFF
+  CLIENT
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  role          Role      @default(CLIENT)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  // Relations
+  bookings      Booking[] @relation("ClientBookings")
+  assignments   StaffAssignment[]
+}
+
+model Booth {
+  id            String    @id @default(cuid())
+  name          String
+  description   String?
+  basePrice     Float
+  baseHours     Int       @default(3)
+  extraHourRate Float     @default(5000)
+  imageUrl      String?
+  isActive      Boolean   @default(true)
+  
+  bookings      Booking[]
+}
+
+model Addon {
+  id            String    @id @default(cuid())
+  name          String
+  price         Float
+  icon          String?
+  
+  bookings      Booking[] @relation("BookingAddons")
+}
+
+model Booking {
+  id            String        @id @default(cuid())
+  bookingId     String        @unique // e.g., BKG-001
+  status        BookingStatus @default(PENDING)
+  
+  // Event Details
+  eventType     String
+  city          String
+  date          DateTime
+  startTime     String
+  hours         Int
+  venue         String
+  notes         String?
+  
+  // Pricing
+  basePrice     Float
+  addonsPrice   Float
+  extraHoursPrice Float
+  totalPrice    Float
+  
+  // Relations
+  clientId      String
+  client        User          @relation("ClientBookings", fields: [clientId], references: [id])
+  
+  boothId       String
+  booth         Booth         @relation(fields: [boothId], references: [id])
+  
+  addons        Addon[]       @relation("BookingAddons")
+  assignments   StaffAssignment[]
+  invoice       Invoice?
+  
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model StaffAssignment {
+  id            String    @id @default(cuid())
+  bookingId     String
+  booking       Booking   @relation(fields: [bookingId], references: [id])
+  
+  staffId       String
+  staff         User      @relation(fields: [staffId], references: [id])
+  
+  assignedAt    DateTime  @default(now())
+  status        String    @default("ASSIGNED") // ASSIGNED, ARRIVED, COMPLETED
+}
+
+model Invoice {
+  id            String    @id @default(cuid())
+  bookingId     String    @unique
+  booking       Booking   @relation(fields: [bookingId], references: [id])
+  
+  amount        Float
+  status        String    @default("UNPAID") // UNPAID, PARTIAL, PAID
+  stripeId      String?   @unique
+  pdfUrl        String?
+  
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
