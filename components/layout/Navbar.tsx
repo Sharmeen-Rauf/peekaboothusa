@@ -117,7 +117,7 @@ export default function Navbar() {
                   id="navbar-logo"
                 />
               </Link>
-              <div className="hidden sm:block">
+              <div>
                 <ThemeToggle />
               </div>
             </div>
@@ -200,6 +200,11 @@ export default function Navbar() {
         className="absolute top-0 left-0 w-full h-screen bg-black/98 backdrop-blur-2xl z-40 flex flex-col overflow-y-auto pt-28 pb-12 px-8 lg:hidden"
         style={{ pointerEvents: isMobileOpen ? "auto" : "none" }}
       >
+        <div className="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
+          <span className="text-white/60 text-sm font-bold tracking-widest uppercase">Theme</span>
+          <ThemeToggle />
+        </div>
+
         {navLinks.map((link) => (
           <motion.div
             key={link.name}
