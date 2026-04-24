@@ -23,25 +23,22 @@ const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
 const isStaffRoute = createRouteMatcher(["/staff(.*)"]);
 
 export default clerkMiddleware((auth, req) => {
-  const { userId, sessionClaims } = auth();
+  // 1. Skip check for public routes
+  if (isPublicRoute(req)) return;
 
-  // 1. Protect non-public routes
-  if (!isPublicRoute(req)) {
-    auth().protect();
+  // 2. Protect protected routes
+  const { sessionClaims } = auth().protect();
+  
+  // 3. Role-based logic
+  const role = (sessionClaims?.metadata as any)?.role || "CLIENT";
+  const { pathname } = req.nextUrl;
+
+  if (isAdminRoute(req) && role !== "ADMIN" && role !== "SUPER_ADMIN") {
+    return Response.redirect(new URL("/", req.url));
   }
 
-  // 2. If signed in, check roles for specific paths
-  if (userId) {
-    const role = (sessionClaims?.metadata as any)?.role || "CLIENT";
-    const { pathname } = req.nextUrl;
-
-    if (pathname.startsWith("/admin") && role !== "ADMIN" && role !== "SUPER_ADMIN") {
-      return Response.redirect(new URL("/", req.url));
-    }
-
-    if (pathname.startsWith("/staff") && role !== "STAFF" && role !== "ADMIN" && role !== "SUPER_ADMIN") {
-      return Response.redirect(new URL("/", req.url));
-    }
+  if (isStaffRoute(req) && role !== "STAFF" && role !== "ADMIN" && role !== "SUPER_ADMIN") {
+    return Response.redirect(new URL("/", req.url));
   }
 });
 
