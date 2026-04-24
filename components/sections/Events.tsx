@@ -41,7 +41,7 @@ export default function Events() {
   const [activeItem, setActiveItem] = useState(allEvents[0].id); // Default to Wedding
 
   return (
-    <section className="py-20 md:py-28 relative bg-black overflow-hidden border-y border-white/5">
+    <section className="py-20 md:py-28 relative bg-background overflow-hidden border-y border-border">
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeader 
           title="The Perfect Photo Booth for Every Pakistani Event" 
@@ -63,7 +63,7 @@ export default function Events() {
                   opacity: isActive ? 1 : 0.5,
                 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className={`relative h-full rounded-3xl overflow-hidden cursor-pointer group border border-white/10 ${isActive ? 'shadow-2xl shadow-brand-neon/20' : ''}`}
+                className={`relative h-full rounded-3xl overflow-hidden cursor-pointer group border border-border ${isActive ? 'shadow-2xl shadow-brand-neon/20' : ''}`}
               >
                 {/* Background Image */}
                 <Image 

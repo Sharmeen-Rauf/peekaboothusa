@@ -85,7 +85,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="text-base md:text-xl text-white/80 mb-10 max-w-3xl mx-auto font-light leading-relaxed"
+          className="text-base md:text-xl text-foreground/80 mb-10 max-w-3xl mx-auto font-light leading-relaxed"
         >
           Turn Your Event Into an Unforgettable Experience — From Shaadi Nights to Corporate Galas, We Deliver the Perfect Photo Booth for Every Occasion.
         </motion.p>
@@ -117,8 +117,8 @@ export default function Hero() {
         transition={{ delay: 3.0, duration: 1.5 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-xs uppercase tracking-widest text-white/40">Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-white/40 to-transparent"></div>
+        <span className="text-xs uppercase tracking-widest text-foreground/40">Scroll</span>
+        <div className="w-[1px] h-12 bg-gradient-to-b from-foreground/40 to-transparent"></div>
       </motion.div>
     </section>
   );

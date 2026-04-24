@@ -5,6 +5,7 @@ import { motion, useMotionValueEvent, useScroll, AnimatePresence } from "framer-
 import { Menu, X, Facebook, Instagram, ChevronDown, Phone, Mail, Youtube, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const boothDropdown = [
   {
@@ -59,12 +60,12 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 flex flex-col">
       {/* TOP BAR */}
       <div 
-        className={`w-full bg-[#111] transition-all duration-300 overflow-hidden flex items-center border-b border-white/5 ${
+        className={`w-full bg-surface transition-all duration-300 overflow-hidden flex items-center border-b border-white/5 ${
           isScrolled ? "h-0 opacity-0 pointer-events-none" : "h-10 opacity-100"
         }`}
       >
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center h-full">
-          <div className="flex items-center gap-6 text-[11px] md:text-xs text-white/80 font-medium tracking-wide">
+          <div className="flex items-center gap-6 text-[11px] md:text-xs text-foreground/80 font-medium tracking-wide">
             <a href="tel:+923260760786" className="flex items-center gap-2 hover:text-brand-neon transition-colors">
               <Phone size={12} className="text-brand-neon" />
               +92 326 0760786
@@ -99,21 +100,27 @@ export default function Navbar() {
       {/* MAIN NAVBAR */}
       <div 
         className={`w-full transition-all duration-300 ${
-          isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg py-2 md:py-3 border-b border-white/5" : "bg-transparent py-4 md:py-5"
+          isScrolled ? "bg-background/95 backdrop-blur-md shadow-lg py-2 md:py-3 border-b border-border" : "bg-transparent py-4 md:py-5"
         }`}
       >
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link href="/" className="relative z-10 flex items-center hover:scale-105 transition-transform duration-300">
-              <Image 
-                src="/PeekABooth-LOGO-2025-600x212.png" 
-                alt="Peekabooth USA Logo" 
-                width={300}
-                height={106}
-                className="h-9 md:h-12 lg:h-14 w-auto object-contain transition-all duration-300"
-              />
-            </Link>
+            {/* Logo & Toggle */}
+            <div className="flex items-center gap-4 relative z-10">
+              <Link href="/" className="flex items-center hover:scale-105 transition-transform duration-300">
+                <Image 
+                  src="/PeekABooth-LOGO-2025-600x212.png" 
+                  alt="Peekabooth USA Logo" 
+                  width={300}
+                  height={106}
+                  className="h-9 md:h-12 lg:h-14 w-auto object-contain transition-all duration-300 dark:invert-0 light:invert"
+                  id="navbar-logo"
+                />
+              </Link>
+              <div className="hidden sm:block">
+                <ThemeToggle />
+              </div>
+            </div>
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
@@ -125,7 +132,7 @@ export default function Navbar() {
                     onMouseEnter={() => setDropdownOpen(true)}
                     onMouseLeave={() => setDropdownOpen(false)}
                   >
-                    <button className="text-xs xl:text-sm font-bold tracking-widest text-white hover:text-brand-neon transition-colors flex items-center gap-1 group relative py-2">
+                    <button className="text-xs xl:text-sm font-bold tracking-widest text-foreground hover:text-brand-neon transition-colors flex items-center gap-1 group relative py-2">
                       {link.name}
                       <ChevronDown size={14} className={`mt-0.5 transition-transform duration-300 ${dropdownOpen ? "rotate-180 text-brand-neon" : ""}`} />
                       <span className={`absolute bottom-0 left-0 h-[2px] bg-brand-neon transition-all duration-300 ${dropdownOpen ? "w-full" : "w-0 group-hover:w-full"}`}></span>
@@ -154,7 +161,7 @@ export default function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="text-xs xl:text-sm font-bold tracking-widest text-white hover:text-brand-neon transition-colors flex items-center gap-1 group relative py-2"
+                    className="text-xs xl:text-sm font-bold tracking-widest text-foreground hover:text-brand-neon transition-colors flex items-center gap-1 group relative py-2"
                   >
                     {link.name}
                     <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-neon transition-all duration-300 group-hover:w-full"></span>
@@ -165,7 +172,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Toggle */}
             <button
-              className="lg:hidden relative z-10 text-white hover:text-brand-neon transition-colors p-2 -mr-2"
+              className="lg:hidden relative z-10 text-foreground hover:text-brand-neon transition-colors p-2 -mr-2"
               onClick={() => setIsMobileOpen(!isMobileOpen)}
             >
               {isMobileOpen ? <X size={28} /> : <Menu size={28} />}

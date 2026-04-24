@@ -6,14 +6,26 @@
   :root {
     --background: #000000;
     --foreground: #FAFAF9;
+    --surface: #2b2b2b;
+    --card: #0a0a0a;
+    --border: rgba(255, 255, 255, 0.1);
+  }
+
+  .light {
+    --background: #ffffff;
+    --foreground: #0a0a0a;
+    --surface: #f3f4f6;
+    --card: #ffffff;
+    --border: rgba(0, 0, 0, 0.1);
   }
   
   body {
     color: var(--foreground);
     background: var(--background);
-    background-image: radial-gradient(circle at 50% 0%, #2b2b2b 0%, transparent 70%);
+    background-image: radial-gradient(circle at 50% 0%, var(--surface) 0%, transparent 70%);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
@@ -32,6 +44,18 @@
   
   .neon-border {
     @apply border border-brand-neon/50 shadow-[0_0_15px_rgba(247,54,168,0.3)];
+  }
+
+  .light #navbar-logo {
+    filter: invert(1);
+  }
+
+  .light .glass-panel {
+    @apply bg-white/80 border-black/10;
+  }
+
+  .light .glass {
+    @apply bg-white/60 border-black/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
   }
 }
 

@@ -63,10 +63,10 @@ export default function Stats() {
                 key={i}
                 className="flex flex-col items-center justify-center"
               >
-                <div className="text-3xl md:text-4xl font-bold mb-2 text-white">
+                <div className="text-3xl md:text-4xl font-bold mb-2 text-foreground">
                   {stat.prefix}<Counter from={0} to={stat.value} />{stat.suffix}
                 </div>
-                <div className="text-white/70 font-medium text-xs md:text-sm tracking-wide">
+                <div className="text-foreground/70 font-medium text-xs md:text-sm tracking-wide">
                   {stat.label}
                 </div>
               </div>
