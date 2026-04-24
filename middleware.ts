@@ -1,6 +1,4 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
-import { currentUser } from "@clerk/nextjs/server";
-import prisma from "@/lib/prisma";
 
 const isPublicRoute = createRouteMatcher([
   "/",
