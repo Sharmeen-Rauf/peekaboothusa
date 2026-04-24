@@ -64,7 +64,7 @@ export default function OverviewContent({
           ) : (
             <div className="space-y-4">
               {Object.entries(boothRevenue).sort((a, b) => b[1] - a[1]).map(([booth, rev]) => {
-                const pct = Math.round((rev / totalRevenue) * 100);
+                const pct = totalRevenue > 0 ? Math.round((rev / totalRevenue) * 100) : 0;
                 return (
                   <div key={booth}>
                     <div className="flex justify-between text-sm mb-1">
@@ -81,7 +81,7 @@ export default function OverviewContent({
             </div>
           )}
         </motion.div>
-
+ 
         {/* Recent Submissions */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
           className="lg:col-span-2 bg-[#0a0a0a] border border-white/10 rounded-2xl p-6">
@@ -89,7 +89,7 @@ export default function OverviewContent({
             <h2 className="text-lg font-bold">Recent Submissions</h2>
             <Link href="/admin/bookings" className="text-brand-neon text-sm hover:underline">View All →</Link>
           </div>
-
+ 
           {recentBookings.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-white/40 text-sm">No bookings yet.</p>
@@ -99,12 +99,12 @@ export default function OverviewContent({
               {recentBookings.map(bkg => (
                 <div key={bkg.id} className="flex items-start justify-between pb-4 border-b border-white/5 last:border-0 last:pb-0 gap-4">
                   <div className="min-w-0">
-                    <p className="font-bold text-sm">{bkg.client.name}</p>
-                    <p className="text-white/40 text-xs mt-0.5 truncate">{bkg.booth.name} • {bkg.eventType} • {bkg.city}</p>
-                    <p className="text-white/30 text-[10px] mt-0.5">{new Date(bkg.date).toLocaleDateString()} — {bkg.venue}</p>
+                    <p className="font-bold text-sm">{bkg.client?.name || "Guest"}</p>
+                    <p className="text-white/40 text-xs mt-0.5 truncate">{bkg.booth?.name || "General"} • {bkg.eventType || "Event"} • {bkg.city || "Pakistan"}</p>
+                    <p className="text-white/30 text-[10px] mt-0.5">{bkg.date ? new Date(bkg.date).toLocaleDateString() : "No Date"} — {bkg.venue || "TBD"}</p>
                   </div>
                   <div className="text-right shrink-0">
-                    <p className="font-bold text-sm text-brand-neon">PKR {formatPKR(bkg.totalPrice)}</p>
+                    <p className="font-bold text-sm text-brand-neon">PKR {formatPKR(bkg.totalPrice || 0)}</p>
                     <span className={`inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase mt-1 ${
                       bkg.status === "CONFIRMED" ? "bg-emerald-500/10 text-emerald-400" :
                       bkg.status === "PENDING" ? "bg-yellow-500/10 text-yellow-400" :
