@@ -17,7 +17,7 @@ const services = [
   {
     title: "360 Photo Booth",
     description: "Experience Pakistan's most exciting trend! Captures slow-motion video from every angle — perfect for weddings and brand launches.",
-    image: "/booth-setup-14.jpg",
+    image: "/photo-booth-rental-360-cover.png",
     features: ["Slow-Mo Video Capture", "Branded Video Overlays", "Instant WhatsApp Sharing", "On-site Director"],
     href: "/360-photo-booth-rental"
   },
