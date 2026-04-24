@@ -71,35 +71,40 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]"
+          transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]"
         >
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon">
-            #1 Rated
+            Pakistan's #1
           </span>{" "}
           Photo Booth <br className="hidden md:block" />
-          Rental Company!
+          Rental Company
         </motion.h1>
         
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 2.0, ease: [0.16, 1, 0.3, 1] }}
-          className="text-base md:text-lg text-white/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed"
+          transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="text-base md:text-xl text-white/80 mb-10 max-w-3xl mx-auto font-light leading-relaxed"
         >
-          Trusted by hundreds of happy clients for delivering fun, stylish, and unforgettable photo booth experiences.
+          Turn Your Event Into an Unforgettable Experience — From Shaadi Nights to Corporate Galas, We Deliver the Perfect Photo Booth for Every Occasion.
         </motion.p>
         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 2.2, ease: [0.16, 1, 0.3, 1] }}
-          className="flex justify-center"
+          transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col sm:flex-row justify-center gap-4"
         >
           <Link href="/get-a-quote" className="w-full sm:w-auto">
             <Button size="md" variant="primary" className="w-full text-base group px-8 py-3 md:px-10 md:py-4">
-              Book Now
+              Book Your Photo Booth Now
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
+          <Link href="/pricing" className="w-full sm:w-auto">
+            <Button size="md" variant="outline" className="w-full text-base px-8 py-3 md:px-10 md:py-4 border-white/20 text-white hover:bg-white/10">
+              View Our Packages
             </Button>
           </Link>
         </motion.div>

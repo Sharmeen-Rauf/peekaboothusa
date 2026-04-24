@@ -8,58 +8,44 @@ import { ArrowRight } from "lucide-react";
 
 const allEvents = [
   { 
-    id: "corporate",
-    title: "Corporate Event", 
-    desc: "Boost engagement and brand visibility with our photo booths for corporate gatherings.", 
-    alt: "Corporate Event Photo Booth Rental",
-    image: "/booth-setup-7.jpg" 
-  },
-  { 
     id: "wedding",
-    title: "Wedding", 
-    desc: "Capture timeless memories with our photo booth rentals, perfect for weddings and receptions.", 
-    alt: "Photo Booth Rental Manayunk PA",
+    title: "Weddings & Shaadi", 
+    desc: "From Mehndi to Walima, our photo booths are the most popular addition to Pakistani weddings.", 
+    alt: "Pakistani Wedding Photo Booth Rental",
     image: "/booth-setup-8.jpg" 
   },
   { 
-    id: "graduation",
-    title: "Graduation", 
-    desc: "Celebrate milestones with a photo booth, creating lasting keepsakes for your big day.", 
-    alt: "photo booth rental",
-    image: "/booth-setup-9.jpg" 
-  },
-  { 
-    id: "babyshower",
-    title: "Baby Shower", 
-    desc: "Add a unique touch to baby showers with themed backdrops and digital photo booth fun.", 
-    alt: "Baby Shower Photo Booth Rental Schaumburg IL",
-    image: "/booth-setup-10.jpg" 
-  },
-  { 
-    id: "quince",
-    title: "Quinceañera", 
-    desc: "Celebrate in style with vibrant 360 and digital photo booths for quinceañeras.", 
-    alt: "Photo Booth Rental Devon PA",
-    image: "/booth-setup-11.jpg" 
-  },
-  { 
     id: "birthday",
-    title: "Birthday", 
-    desc: "Make every birthday unforgettable with fun props and unlimited photo booth prints.", 
-    alt: "Photo Booth Rental Chicago",
+    title: "Birthday Parties", 
+    desc: "Add a splash of fun to any birthday. From kids' parties to glamorous adult celebrations.", 
+    alt: "Birthday Party Photo Booth Pakistan",
     image: "/booth-setup-12.jpg" 
+  },
+  { 
+    id: "corporate",
+    title: "Corporate & Brand", 
+    desc: "Elevate your next brand activation, product launch, or office party with branded experiences.", 
+    alt: "Corporate Photo Booth Rental Karachi Lahore",
+    image: "/booth-setup-7.jpg" 
+  },
+  { 
+    id: "parties",
+    title: "Parties & Gatherings", 
+    desc: "Eid, farewell parties, university events, house parties — instant entertainment for all gatherings.", 
+    alt: "Party Photo Booth Rental Pakistan",
+    image: "/booth-setup-10.jpg" 
   },
 ];
 
 export default function Events() {
-  const [activeItem, setActiveItem] = useState(allEvents[1].id); // Default to Wedding
+  const [activeItem, setActiveItem] = useState(allEvents[0].id); // Default to Wedding
 
   return (
     <section className="py-20 md:py-28 relative bg-black overflow-hidden border-y border-white/5">
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeader 
-          title="Photo Booth Rental For All Events" 
-          subtitle="Peek-A-Booth Photo Booth Rentals covers all events! We have the perfect set up for your next event!"
+          title="The Perfect Photo Booth for Every Pakistani Event" 
+          subtitle="From intimate family gatherings to large-scale corporate events, Peek-A-Booth PK brings professional experiences to every celebration."
         />
 
         {/* Desktop Flex Accordion */}

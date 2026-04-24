@@ -7,28 +7,32 @@ import Image from "next/image";
 
 const services = [
   {
-    title: "The Glam Booth",
-    description: "Our signature black and white experience with skin-smoothing beauty filters. Perfect for luxury weddings and high-end galas.",
+    title: "Open Air Photo Booth",
+    description: "A spacious, elegant setup perfect for large groups. Ideal for wedding receptions, corporate dinners, and Eid gatherings.",
     image: "/booth-setup-13.jpg",
-    features: ["Studio lighting", "B&W Beauty Filter", "Instant Prints", "Live Gallery"],
+    features: ["DSLR Camera & Studio Lighting", "Custom Backdrop & Props", "Unlimited Instant Prints", "WhatsApp Sharing"],
+    href: "/open-air-photo-booth-rental"
   },
   {
-    title: "The 360 Experience",
-    description: "Capture every angle with our premium 360 video booth. Slow-motion, reverse, and custom overlays included.",
+    title: "360 Photo Booth",
+    description: "Experience Pakistan's most exciting trend! Captures slow-motion video from every angle — perfect for weddings and brand launches.",
     image: "/booth-setup-14.jpg",
-    features: ["Slow-Mo Video", "Custom Overlays", "Instant AirDrop", "Dedicated Director"],
+    features: ["Slow-Mo Video Capture", "Branded Video Overlays", "Instant WhatsApp Sharing", "On-site Director"],
+    href: "/360-photo-booth-rental"
   },
   {
-    title: "The Digital Roamer",
-    description: "We bring the booth to the dance floor. A fully mobile, ring-light ring capturing candid moments all night.",
-    image: "/booth-setup-15.jpg",
-    features: ["Mobile Setup", "GIFs & Boomerangs", "Text to Phone", "High Energy"],
-  },
-  {
-    title: "Magazine Photo Booth Box",
-    description: "Book our magazine photo booth for your next event. Includes custom frame, personalized headings, and much more.",
+    title: "Vogue Magazine Photo Booth",
+    description: "Make your guests feel like they're on a magazine cover. Life-sized, custom magazine covers — a show-stopping addition to any event.",
     image: "/magazine-booth.png",
-    features: ["Life-Sized Box", "Custom Headings", "Instant Prints", "Red Carpet Vibe"],
+    features: ["Life-sized Custom Box", "Personalized Headings", "Red Carpet Experience", "High-Resolution Prints"],
+    href: "/vogue-magazine-photo-booth-box"
+  },
+  {
+    title: "Digital Photo Booth",
+    description: "Sleek, modern, and incredibly fun. GIFs, boomerangs, and instant digital sharing — perfect for birthdays and corporate activations.",
+    image: "/booth-setup-15.jpg",
+    features: ["GIFs & Boomerangs", "Instant Digital Filters", "SMS & Email Delivery", "Modern Portable Setup"],
+    href: "/digital-photo-booth-rental"
   },
 ];
 
@@ -39,8 +43,8 @@ export default function Services() {
       
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeader 
-          title="Curated Experiences" 
-          subtitle="Choose the perfect setup for your event. All packages include a professional attendant and custom branding."
+          title="Choose the Perfect Booth for Your Event" 
+          subtitle="Every event is unique — and so is every Peek-A-Booth experience. Explore our premium options curated for Pakistan."
         />
 
         <div className="flex flex-col gap-12 lg:gap-24">
@@ -87,9 +91,11 @@ export default function Services() {
                   ))}
                 </ul>
                 
-                <Button variant={index === 0 ? "secondary" : "outline"}>
-                  Explore Package
-                </Button>
+                <Link href={service.href}>
+                  <Button variant={index === 0 ? "secondary" : "outline"}>
+                    Explore {service.title}
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           ))}

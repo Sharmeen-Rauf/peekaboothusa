@@ -26,11 +26,11 @@ export default function Contact() {
               </div>
 
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 leading-[1.15]">
-                We&apos;d love to hear <br className="hidden sm:block" /> about your event.
+                Tell Us About <br className="hidden sm:block" /> Your Event.
               </h2>
               
               <p className="text-white/60 text-sm md:text-base mb-12 max-w-md leading-relaxed">
-                Tell us about your event, and we&apos;ll map out the perfect premium photo booth experience for you.
+                Ready to make your event unforgettable? Fill in your details and we&apos;ll get back to you within 24 hours with a custom quote.
               </p>
 
               <div className="space-y-6">
@@ -45,14 +45,14 @@ export default function Contact() {
                   <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 shrink-0 group-hover:border-brand-neon/50 transition-colors">
                     <Mail className="w-4 h-4 text-white group-hover:text-brand-neon transition-colors" />
                   </div>
-                  <span className="text-white font-medium text-sm md:text-base tracking-wide">info@peekaboothpk.com</span>
+                  <span className="text-white font-medium text-sm md:text-base tracking-wide">hello@peekaboothpk.com</span>
                 </div>
                 
                 <div className="flex items-center gap-4 group">
                   <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 shrink-0 group-hover:border-brand-neon/50 transition-colors">
                     <MapPin className="w-4 h-4 text-white group-hover:text-brand-neon transition-colors" />
                   </div>
-                  <span className="text-white font-medium text-sm md:text-base tracking-wide">Lahore, Pakistan</span>
+                  <span className="text-white font-medium text-sm md:text-base tracking-wide">Karachi, Lahore, Islamabad, Multan</span>
                 </div>
               </div>
             </div>
@@ -71,14 +71,14 @@ export default function Contact() {
                 <div className="relative">
                   <input 
                     type="text" 
-                    placeholder="First Name"
+                    placeholder="Full Name"
                     className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
                   />
                 </div>
                 <div className="relative">
                   <input 
-                    type="text" 
-                    placeholder="Last Name"
+                    type="tel" 
+                    placeholder="Phone Number"
                     className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
                   />
                 </div>
@@ -88,49 +88,50 @@ export default function Contact() {
                 <div className="relative">
                   <input 
                     type="email" 
-                    placeholder="Email"
+                    placeholder="Email Address"
                     className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
                   />
                 </div>
                 <div className="relative">
                   <input 
-                    type="tel" 
-                    placeholder="Phone number"
+                    type="text" 
+                    placeholder="Event Type (e.g. Wedding)"
                     className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
                   />
                 </div>
               </div>
 
-              <div className="relative">
-                <select className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white/40 focus:text-white focus:outline-none focus:border-brand-neon transition-colors appearance-none cursor-pointer text-sm">
-                  <option value="" disabled selected hidden>Select services</option>
-                  <option value="glam" className="bg-[#111] text-white">The Glam Booth</option>
-                  <option value="360" className="bg-[#111] text-white">The 360 Experience</option>
-                  <option value="roamer" className="bg-[#111] text-white">The Digital Roamer</option>
-                  <option value="magazine" className="bg-[#111] text-white">Magazine Photo Booth Box</option>
-                  <option value="other" className="bg-[#111] text-white">Other</option>
-                </select>
-              </div>
-
-              <div className="relative">
-                <input 
-                  type="text" 
-                  placeholder="Subject"
-                  className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="relative">
+                  <input 
+                    type="date" 
+                    placeholder="Event Date"
+                    className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
+                  />
+                </div>
+                <div className="relative">
+                  <select className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white/40 focus:text-white focus:outline-none focus:border-brand-neon transition-colors appearance-none cursor-pointer text-sm">
+                    <option value="" disabled selected hidden>City</option>
+                    <option value="karachi" className="bg-[#111] text-white">Karachi</option>
+                    <option value="lahore" className="bg-[#111] text-white">Lahore</option>
+                    <option value="islamabad" className="bg-[#111] text-white">Islamabad</option>
+                    <option value="multan" className="bg-[#111] text-white">Multan</option>
+                    <option value="other" className="bg-[#111] text-white">Other</option>
+                  </select>
+                </div>
               </div>
 
               <div className="relative">
                 <textarea 
                   rows={3}
-                  placeholder="Details"
+                  placeholder="Message / Event Details"
                   className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon transition-colors resize-none text-sm"
                 ></textarea>
               </div>
 
               <div className="pt-2">
-                <button type="submit" className="inline-flex items-center gap-2 bg-[#1a1a1a] hover:bg-[#2a2a2a] border border-white/10 px-8 py-3 rounded-full text-white text-sm font-medium transition-colors shadow-lg group">
-                  Submit <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform text-white/70" />
+                <button type="submit" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow px-10 py-4 rounded-full text-white text-sm font-bold transition-all shadow-[0_0_20px_rgba(247,54,168,0.3)] group">
+                  Get My Free Quote <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             </form>

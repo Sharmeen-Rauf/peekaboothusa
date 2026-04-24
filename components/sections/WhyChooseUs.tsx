@@ -20,26 +20,41 @@ export default function WhyChooseUs() {
             className="w-full lg:w-1/2 flex flex-col items-start"
           >
             <h3 className="text-xl md:text-2xl font-bold text-brand-neon mb-2">
-              Why Choose Us
+              Why Choose Peek-A-Booth PK
             </h3>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
-              For Your Photo Booth <br className="hidden md:block"/> Experience
+              Pakistan's Most Loved <br className="hidden md:block"/> Photo Booth Experience
             </h2>
             
             <div className="space-y-4 text-sm md:text-base text-white/70 leading-relaxed max-w-xl">
               <p>
-                We go beyond just taking pictures — we deliver unforgettable moments. With modern booth options, high-quality prints, instant digital sharing, fun props, and unbeatable customer service, we make every event stand out.
+                At Peek-A-Booth PK, we don't just set up a camera — we create memories that last a lifetime. Whether it's a grand baraat, a milestone birthday, a mehndi night, or a brand activation, our photo booths are designed to be the highlight of your event.
               </p>
               <p>
-                Our competitive pricing, custom branding, and seamless setup make us the top choice for photo booth rentals. <span className="text-white font-medium">Rent a Photo Booth Now!</span>
+                We combine premium technology, creative setups, and on-the-ground professional attendants to deliver an experience your guests will talk about for years.
               </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mt-6">
+                {[
+                  "Premium DSLR setups",
+                  "Custom branded overlays",
+                  "Professional attendants",
+                  "Instant digital sharing",
+                  "Available in 4 major cities",
+                  "100% satisfaction guarantee"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2 text-white/90 text-sm">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-neon"></div>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
             
             <div className="mt-10">
               <Link href="/pricing" className="inline-block">
                 <Button size="md" variant="glass" className="px-8 py-6 text-base rounded-full border-white/20 hover:border-brand-neon/50 group">
-                  View Pricing
+                  See All Packages
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>

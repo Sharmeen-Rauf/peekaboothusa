@@ -4,10 +4,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 const stats = [
-  { prefix: "", value: 1890, suffix: "+", label: "Events Hosted" },
-  { prefix: "", value: 102, suffix: "k+", label: "Pictures Taken" },
-  { prefix: "", value: 10, suffix: "M+", label: "Reached Online" },
-  { prefix: "", value: 14, suffix: "+", label: "Years Experience" },
+  { prefix: "", value: 500, suffix: "+", label: "Events Hosted" },
+  { prefix: "", value: 50, suffix: "k+", label: "Pictures Taken" },
+  { prefix: "", value: 4, suffix: "", label: "Cities Covered" },
+  { prefix: "", value: 5, suffix: "-Star", label: "Rated Service" },
 ];
 
 function Counter({ from, to, duration = 2 }: { from: number; to: number; duration?: number }) {
