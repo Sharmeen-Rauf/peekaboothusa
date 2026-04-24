@@ -32,7 +32,15 @@ export default clerkMiddleware((auth, req) => {
   const { sessionClaims } = auth().protect();
   
   // 3. Role-based logic
-  const role = (sessionClaims?.metadata as any)?.role || "CLIENT";
+  const metadata = sessionClaims?.metadata as any;
+  let role = metadata?.role || "CLIENT";
+  
+  // DEMO BYPASS: If email matches user, grant ADMIN
+  const email = (sessionClaims as any)?.email;
+  if (email === "sharmeenrauf1941@gmail.com") {
+    role = "ADMIN";
+  }
+
   const { pathname } = req.nextUrl;
 
   if (isAdminRoute(req) && role !== "ADMIN" && role !== "SUPER_ADMIN") {
