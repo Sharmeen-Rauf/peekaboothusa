@@ -1,5 +1,5 @@
 import prisma from "@/lib/prisma";
-import { currentUser } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { Calendar, MapPin, Clock, CheckCircle2, AlertCircle } from "lucide-react";
 import { formatPKR } from "@/lib/bookingStore";

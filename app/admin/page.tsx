@@ -14,7 +14,7 @@ export default async function AdminOverview() {
     }
   });
 
-  const totalRevenue = bookings.reduce((sum, b) => sum + b.totalPrice, 0);
+  const totalRevenue = bookings.reduce((sum: number, b) => sum + b.totalPrice, 0);
   const pendingCount = bookings.filter(b => b.status === "PENDING").length;
   const confirmedCount = bookings.filter(b => b.status === "CONFIRMED").length;
   const conversionRate = bookings.length ? Math.round((confirmedCount / bookings.length) * 100) : 0;
