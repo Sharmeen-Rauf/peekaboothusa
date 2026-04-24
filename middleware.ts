@@ -26,8 +26,8 @@ export default clerkMiddleware((auth, req) => {
   const { userId, sessionClaims } = auth();
 
   // 1. Protect non-public routes
-  if (!userId && !isPublicRoute(req)) {
-    return auth().protect();
+  if (!isPublicRoute(req)) {
+    auth().protect();
   }
 
   // 2. If signed in, check roles for specific paths
