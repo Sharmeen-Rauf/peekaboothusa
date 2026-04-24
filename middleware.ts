@@ -16,6 +16,8 @@ const isPublicRoute = createRouteMatcher([
   "/get-a-quote",
   "/terms-and-conditions",
   "/privacy-policy",
+  "/sign-in(.*)",
+  "/sign-up(.*)",
   "/api/webhooks(.*)"
 ]);
 
