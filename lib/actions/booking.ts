@@ -2,7 +2,6 @@
 
 import prisma from "@/lib/prisma";
 import { calculatePrice } from "@/lib/pricing";
-import { BookingStatus } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 
 import { sendBookingConfirmationEmail } from "@/lib/resend";
