@@ -49,7 +49,7 @@ export default async function StaffDashboard() {
           </div>
         ) : (
           <div className="grid gap-6">
-            {assignments.map((assignment) => {
+            {assignments.map((assignment: any) => {
               const b = assignment.booking;
               return (
                 <div key={assignment.id} className="bg-[#0a0a0a] border border-white/10 rounded-3xl p-8 hover:border-brand-neon/30 transition-all group">

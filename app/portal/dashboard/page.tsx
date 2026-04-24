@@ -49,7 +49,7 @@ export default async function ClientDashboard() {
           </div>
         ) : (
           <div className="grid gap-8">
-            {bookings.map((b) => (
+            {bookings.map((b: any) => (
               <div key={b.id} className="bg-[#0a0a0a] border border-white/10 rounded-[2rem] p-8 md:p-10 hover:border-brand-neon/30 transition-all group overflow-hidden relative">
                 {/* Background glow */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-brand-neon/5 blur-[100px] pointer-events-none" />
