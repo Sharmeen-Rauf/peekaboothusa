@@ -14,14 +14,14 @@ export default async function AdminOverview() {
     }
   });
 
-  const totalRevenue = bookings.reduce((sum: number, b) => sum + b.totalPrice, 0);
-  const pendingCount = bookings.filter(b => b.status === "PENDING").length;
-  const confirmedCount = bookings.filter(b => b.status === "CONFIRMED").length;
+  const totalRevenue = bookings.reduce((sum: number, b: any) => sum + b.totalPrice, 0);
+  const pendingCount = bookings.filter((b: any) => b.status === "PENDING").length;
+  const confirmedCount = bookings.filter((b: any) => b.status === "CONFIRMED").length;
   const conversionRate = bookings.length ? Math.round((confirmedCount / bookings.length) * 100) : 0;
 
   // Revenue by booth
   const boothRevenue: Record<string, number> = {};
-  bookings.forEach(b => {
+  bookings.forEach((b: any) => {
     boothRevenue[b.booth.name] = (boothRevenue[b.booth.name] || 0) + b.totalPrice;
   });
 
