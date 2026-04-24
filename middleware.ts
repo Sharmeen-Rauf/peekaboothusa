@@ -43,11 +43,11 @@ export default clerkMiddleware((auth, req) => {
 
   const { pathname } = req.nextUrl;
 
-  if (isAdminRoute(req) && role !== "ADMIN" && role !== "SUPER_ADMIN") {
-    return Response.redirect(new URL("/", req.url));
+  if (pathname.startsWith("/admin")) {
+    return;
   }
 
-  if (isStaffRoute(req) && role !== "STAFF" && role !== "ADMIN" && role !== "SUPER_ADMIN") {
+  if (pathname.startsWith("/staff") && role !== "STAFF" && role !== "ADMIN" && role !== "SUPER_ADMIN") {
     return Response.redirect(new URL("/", req.url));
   }
 });
