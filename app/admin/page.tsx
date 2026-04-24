@@ -12,9 +12,9 @@ export default async function AdminOverview() {
     orderBy: {
       createdAt: "desc"
     }
-  });
+  }).catch(() => []);
 
-  const totalRevenue = bookings.reduce((sum: number, b: any) => sum + b.totalPrice, 0);
+  const totalRevenue = bookings.reduce((sum: number, b: any) => sum + (b.totalPrice || 0), 0);
   const pendingCount = bookings.filter((b: any) => b.status === "PENDING").length;
   const confirmedCount = bookings.filter((b: any) => b.status === "CONFIRMED").length;
   const conversionRate = bookings.length ? Math.round((confirmedCount / bookings.length) * 100) : 0;
@@ -22,7 +22,8 @@ export default async function AdminOverview() {
   // Revenue by booth
   const boothRevenue: Record<string, number> = {};
   bookings.forEach((b: any) => {
-    boothRevenue[b.booth.name] = (boothRevenue[b.booth.name] || 0) + b.totalPrice;
+    const name = b.booth?.name || "Unknown Booth";
+    boothRevenue[name] = (boothRevenue[name] || 0) + (b.totalPrice || 0);
   });
 
   const stats = [
