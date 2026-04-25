@@ -27,13 +27,13 @@ export default function Gallery() {
             className="mb-0"
           />
           <a
-            href="https://instagram.com/peekaboothusa"
+            href="https://instagram.com/peekaboothpk"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-surface border border-white/10 hover:border-brand-neon hover:bg-white/5 transition-all shrink-0"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-border hover:border-brand-neon hover:bg-foreground/5 transition-all shrink-0 text-foreground"
           >
             <Instagram className="w-5 h-5" />
-            <span>@peekaboothusa</span>
+            <span>@peekaboothpk</span>
           </a>
         </div>
 

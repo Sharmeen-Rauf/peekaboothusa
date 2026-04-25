@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, ArrowRight, NotebookPen } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 md:py-20 relative bg-black">
+    <section id="contact" className="py-16 md:py-20 relative bg-background">
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           
@@ -15,7 +15,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative bg-[#0a0a0a] rounded-[2rem] p-10 lg:p-12 border border-brand-neon/20 shadow-[0_0_50px_rgba(247,54,168,0.05)] overflow-hidden flex flex-col justify-between h-full"
+            className="relative bg-card rounded-[2rem] p-10 lg:p-12 border border-brand-neon/20 shadow-[0_0_50px_rgba(247,54,168,0.05)] overflow-hidden flex flex-col justify-between h-full"
           >
             {/* Subtle glow inside card */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-neon/10 rounded-full blur-[80px] pointer-events-none"></div>
@@ -25,34 +25,34 @@ export default function Contact() {
                 <NotebookPen className="w-6 h-6 text-brand-neon" />
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 leading-[1.15]">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4 leading-[1.15]">
                 Tell Us About <br className="hidden sm:block" /> Your Event.
               </h2>
               
-              <p className="text-white/60 text-sm md:text-base mb-12 max-w-md leading-relaxed">
+              <p className="text-foreground/60 text-sm md:text-base mb-12 max-w-md leading-relaxed">
                 Ready to make your event unforgettable? Fill in your details and we&apos;ll get back to you within 24 hours with a custom quote.
               </p>
 
               <div className="space-y-6">
                 <div className="flex items-center gap-4 group">
-                  <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 shrink-0 group-hover:border-brand-neon/50 transition-colors">
-                    <Phone className="w-4 h-4 text-white group-hover:text-brand-neon transition-colors" />
+                  <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center bg-foreground/5 shrink-0 group-hover:border-brand-neon/50 transition-colors">
+                    <Phone className="w-4 h-4 text-foreground group-hover:text-brand-neon transition-colors" />
                   </div>
-                  <span className="text-white font-medium text-sm md:text-base tracking-wide">+92 326 0760786</span>
+                  <span className="text-foreground font-medium text-sm md:text-base tracking-wide">+92 326 0760786</span>
                 </div>
                 
                 <div className="flex items-center gap-4 group">
-                  <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 shrink-0 group-hover:border-brand-neon/50 transition-colors">
-                    <Mail className="w-4 h-4 text-white group-hover:text-brand-neon transition-colors" />
+                  <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center bg-foreground/5 shrink-0 group-hover:border-brand-neon/50 transition-colors">
+                    <Mail className="w-4 h-4 text-foreground group-hover:text-brand-neon transition-colors" />
                   </div>
-                  <span className="text-white font-medium text-sm md:text-base tracking-wide">hello@peekaboothpk.com</span>
+                  <span className="text-foreground font-medium text-sm md:text-base tracking-wide">hello@peekaboothpk.com</span>
                 </div>
                 
                 <div className="flex items-center gap-4 group">
-                  <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 shrink-0 group-hover:border-brand-neon/50 transition-colors">
-                    <MapPin className="w-4 h-4 text-white group-hover:text-brand-neon transition-colors" />
+                  <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center bg-foreground/5 shrink-0 group-hover:border-brand-neon/50 transition-colors">
+                    <MapPin className="w-4 h-4 text-foreground group-hover:text-brand-neon transition-colors" />
                   </div>
-                  <span className="text-white font-medium text-sm md:text-base tracking-wide">Karachi, Lahore, Islamabad, Multan</span>
+                  <span className="text-foreground font-medium text-sm md:text-base tracking-wide">Karachi, Lahore, Islamabad, Multan</span>
                 </div>
               </div>
             </div>
@@ -72,14 +72,14 @@ export default function Contact() {
                   <input 
                     type="text" 
                     placeholder="Full Name"
-                    className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
+                    className="w-full bg-transparent border-b border-border px-0 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
                   />
                 </div>
                 <div className="relative">
                   <input 
                     type="tel" 
                     placeholder="Phone Number"
-                    className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
+                    className="w-full bg-transparent border-b border-border px-0 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
                   />
                 </div>
               </div>
@@ -89,14 +89,14 @@ export default function Contact() {
                   <input 
                     type="email" 
                     placeholder="Email Address"
-                    className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
+                    className="w-full bg-transparent border-b border-border px-0 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
                   />
                 </div>
                 <div className="relative">
                   <input 
                     type="text" 
                     placeholder="Event Type (e.g. Wedding)"
-                    className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
+                    className="w-full bg-transparent border-b border-border px-0 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
                   />
                 </div>
               </div>
@@ -106,17 +106,17 @@ export default function Contact() {
                   <input 
                     type="date" 
                     placeholder="Event Date"
-                    className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
+                    className="w-full bg-transparent border-b border-border px-0 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:border-brand-neon transition-colors text-sm"
                   />
                 </div>
                 <div className="relative">
-                  <select className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white/40 focus:text-white focus:outline-none focus:border-brand-neon transition-colors appearance-none cursor-pointer text-sm">
+                  <select className="w-full bg-transparent border-b border-border px-0 py-3 text-foreground/40 focus:text-foreground focus:outline-none focus:border-brand-neon transition-colors appearance-none cursor-pointer text-sm">
                     <option value="" disabled selected hidden>City</option>
-                    <option value="karachi" className="bg-[#111] text-white">Karachi</option>
-                    <option value="lahore" className="bg-[#111] text-white">Lahore</option>
-                    <option value="islamabad" className="bg-[#111] text-white">Islamabad</option>
-                    <option value="multan" className="bg-[#111] text-white">Multan</option>
-                    <option value="other" className="bg-[#111] text-white">Other</option>
+                    <option value="karachi" className="bg-card text-foreground">Karachi</option>
+                    <option value="lahore" className="bg-card text-foreground">Lahore</option>
+                    <option value="islamabad" className="bg-card text-foreground">Islamabad</option>
+                    <option value="multan" className="bg-card text-foreground">Multan</option>
+                    <option value="other" className="bg-card text-foreground">Other</option>
                   </select>
                 </div>
               </div>
@@ -125,7 +125,7 @@ export default function Contact() {
                 <textarea 
                   rows={3}
                   placeholder="Message / Event Details"
-                  className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white placeholder-white/40 focus:outline-none focus:border-brand-neon transition-colors resize-none text-sm"
+                  className="w-full bg-transparent border-b border-border px-0 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:border-brand-neon transition-colors resize-none text-sm"
                 ></textarea>
               </div>
 

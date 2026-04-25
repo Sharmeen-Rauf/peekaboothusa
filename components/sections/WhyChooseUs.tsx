@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 export default function WhyChooseUs() {
   return (
-    <section className="py-16 md:py-20 relative bg-surface overflow-hidden">
+    <section className="py-16 md:py-20 relative bg-background overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
@@ -23,11 +23,11 @@ export default function WhyChooseUs() {
               Why Choose Peek-A-Booth PK
             </h3>
             
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground mb-6 leading-[1.1]">
               Pakistan's Most Loved <br className="hidden md:block"/> Photo Booth Experience
             </h2>
             
-            <div className="space-y-4 text-sm md:text-base text-white/70 leading-relaxed max-w-xl">
+            <div className="space-y-4 text-sm md:text-base text-foreground/70 leading-relaxed max-w-xl">
               <p>
                 At Peek-A-Booth PK, we don't just set up a camera — we create memories that last a lifetime. Whether it's a grand baraat, a milestone birthday, a mehndi night, or a brand activation, our photo booths are designed to be the highlight of your event.
               </p>
@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
                   "Available in 4 major cities",
                   "100% satisfaction guarantee"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-2 text-white/90 text-sm">
+                  <li key={i} className="flex items-center gap-2 text-foreground/90 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-brand-neon"></div>
                     {item}
                   </li>
@@ -53,7 +53,7 @@ export default function WhyChooseUs() {
             
             <div className="mt-10">
               <Link href="/pricing" className="inline-block">
-                <Button size="md" variant="glass" className="px-8 py-6 text-base rounded-full border-white/20 hover:border-brand-neon/50 group">
+                <Button size="md" variant="outline" className="px-8 py-6 text-base rounded-full border-border hover:border-brand-neon/50 group text-foreground">
                   See All Packages
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>

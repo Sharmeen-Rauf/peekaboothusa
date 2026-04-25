@@ -6,6 +6,7 @@
   :root {
     --background: #000000;
     --foreground: #FAFAF9;
+    --muted-foreground: rgba(255, 255, 255, 0.6);
     --surface: #2b2b2b;
     --card: #0a0a0a;
     --border: rgba(255, 255, 255, 0.1);
@@ -14,8 +15,9 @@
   .light {
     --background: #ffffff;
     --foreground: #0a0a0a;
+    --muted-foreground: rgba(0, 0, 0, 0.6);
     --surface: #f3f4f6;
-    --card: #ffffff;
+    --card: #f9fafb;
     --border: rgba(0, 0, 0, 0.1);
   }
   
