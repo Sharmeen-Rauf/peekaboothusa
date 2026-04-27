@@ -7,7 +7,7 @@ import { Check, ArrowRight, ChevronLeft, Sparkles, Star, Plus, Minus, Send, Phon
 import { useRouter } from "next/navigation";
 import { createBooking } from "@/lib/actions/booking";
 
-/* ΓöÇΓöÇΓöÇ DATA & CONFIG ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
+/* --- DATA & CONFIG --- */
 
 const eventTypes = [
   { id: "wedding", name: "Wedding", icon: "💍", theme: "from-purple-900/60 via-[#050505] to-black" },
@@ -33,9 +33,9 @@ const booths = [
 ];
 
 const addonsList = [
-  { id: "guestbook", name: "Guest Book", price: 10000, icon: "≡ƒôû" },
-  { id: "props", name: "Premium Neon Props", price: 5000, icon: "≡ƒÄ¡" },
-  { id: "redcarpet", name: "Red Carpet Setup", price: 15000, icon: "≡ƒô╕" },
+  { id: "guestbook", name: "Guest Book", price: 10000, icon: "📖" },
+  { id: "props", name: "Premium Neon Props", price: 5000, icon: "🎭" },
+  { id: "redcarpet", name: "Red Carpet Setup", price: 15000, icon: "📸" },
 ];
 
 const steps = [
@@ -45,7 +45,7 @@ const steps = [
   { id: 4, title: "Final Details" },
 ];
 
-/* ΓöÇΓöÇΓöÇ MAIN COMPONENT ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
+/* --- MAIN COMPONENT --- */
 
 export default function QuoteClient() {
   const router = useRouter();
@@ -132,7 +132,7 @@ export default function QuoteClient() {
   };
 
   const generateWhatsAppLink = () => {
-    const text = `Hi Peekabooth ≡ƒæï\n\nI'd like a quote for:\nEvent: ${currentEvent?.name}\nCity: ${cities.find(c => c.id === city)?.name}\nBooth: ${currentBooth?.name}\nHours: ${hours}\nAdd-ons: ${addons.length > 0 ? addons.map(a => addonsList.find(x => x.id === a)?.name).join(", ") : "None"}\nVenue: ${details.venue}\nDate: ${details.date}\n\nEstimated Budget: PKR ${formatPKR(estimatedTotal)}\n\nMy name is ${details.firstName} ${details.lastName}. Please contact me with more details!`;
+    const text = `Hi Peekabooth 👋\n\nI'd like a quote for:\nEvent: ${currentEvent?.name}\nCity: ${cities.find(c => c.id === city)?.name}\nBooth: ${currentBooth?.name}\nHours: ${hours}\nAdd-ons: ${addons.length > 0 ? addons.map(a => addonsList.find(x => x.id === a)?.name).join(", ") : "None"}\nVenue: ${details.venue}\nDate: ${details.date}\n\nEstimated Budget: PKR ${formatPKR(estimatedTotal)}\n\nMy name is ${details.firstName} ${details.lastName}. Please contact me with more details!`;
     return `https://wa.me/923260760786?text=${encodeURIComponent(text)}`;
   };
 
@@ -162,41 +162,7 @@ export default function QuoteClient() {
     }
   };
 
-  // ΓöÇΓöÇΓöÇ VIEWS ΓöÇΓöÇΓöÇ //
-
-  if (isSuccess) {
-    return (
-      <div className="min-h-screen bg-[#050505] flex items-center justify-center pt-24 px-6 text-white text-center relative overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <motion.div key={i} className="absolute w-2 h-2 rounded-full bg-brand-neon z-0"
-            initial={{ top: "50%", left: "50%", opacity: 1, scale: 0 }}
-            animate={{ 
-              top: `${Math.random() * 100}%`, left: `${Math.random() * 100}%`, 
-              opacity: [1, 1, 0], scale: [0, Math.random() * 2 + 1, 0] 
-            }}
-            transition={{ duration: 2 + Math.random() * 2, ease: "easeOut" }}
-          />
-        ))}
-
-        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="max-w-md relative z-10">
-          <div className="w-24 h-24 rounded-full bg-brand-neon/20 border-2 border-brand-neon flex items-center justify-center mx-auto mb-8 shadow-[0_0_50px_rgba(247,54,168,0.5)]">
-            <Check className="w-12 h-12 text-brand-neon" />
-          </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">You&apos;re All Set!</h1>
-          <p className="text-white/70 mb-10 text-lg">Your cinematic photo booth experience is being prepared. We&apos;ll be in touch shortly.</p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={generateWhatsAppLink()} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] text-white px-8 py-4 rounded-full font-bold transition-all shadow-[0_0_25px_rgba(37,211,102,0.4)] hover:scale-105">
-              <Phone className="w-5 h-5" /> Send via WhatsApp
-            </a>
-            <button onClick={() => window.location.href = '/'} className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold transition-all backdrop-blur-sm">
-              Return Home
-            </button>
-          </div>
-        </motion.div>
-      </div>
-    );
-  }
+  // --- VIEWS --- //
 
   return (
     <div className={`min-h-screen text-white selection:bg-brand-neon/30 pt-28 pb-32 transition-colors duration-1000 bg-gradient-to-br ${currentEvent?.theme || "from-[#0a0a0a] via-black to-[#050505]"}`}>
@@ -212,7 +178,7 @@ export default function QuoteClient() {
             className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight"
           >
             Get a Free Photo Booth Rental Quote <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon">ΓÇö Tell Us About Your Event</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon">- Tell Us About Your Event</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-white/70 text-lg max-w-3xl mx-auto font-light leading-relaxed">
             Ready to make your event unforgettable? Fill out our quick quote form below and we&apos;ll prepare a custom photo booth rental quote tailored to your event, venue, and budget.
@@ -221,7 +187,7 @@ export default function QuoteClient() {
 
         <div className="flex flex-col lg:flex-row gap-12 items-start">
         
-        {/* ΓöÇΓöÇ LEFT: FORM WIZARD ΓöÇΓöÇ */}
+        {/* --- LEFT: FORM WIZARD --- */}
         <div className="w-full lg:w-2/3">
           
           {/* Progress Bar */}
@@ -449,7 +415,7 @@ export default function QuoteClient() {
           </div>
         </div>
 
-        {/* ΓöÇΓöÇ RIGHT: LIVE ESTIMATE PANEL ΓöÇΓöÇ */}
+        {/* --- RIGHT: LIVE ESTIMATE PANEL --- */}
         <div className="w-full lg:w-1/3 lg:sticky lg:top-32">
           <motion.div 
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
@@ -563,7 +529,7 @@ export default function QuoteClient() {
 
       </div>
 
-      {/* ΓöÇΓöÇ WHAT HAPPENS NEXT & TRUST SIGNALS ΓöÇΓöÇ */}
+      {/* --- WHAT HAPPENS NEXT & TRUST SIGNALS --- */}
       <section className="container mx-auto px-6 max-w-7xl mt-32 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
@@ -575,7 +541,7 @@ export default function QuoteClient() {
                 { s: "Step 1", t: "Our team reviews your event details within 24 hours" },
                 { s: "Step 2", t: "We prepare a custom, itemised quote for your event" },
                 { s: "Step 3", t: "We reach out via WhatsApp or phone to discuss your requirements" },
-                { s: "Step 4", t: "You confirm your booking with a deposit ΓÇö and we handle the rest!" }
+                { s: "Step 4", t: "You confirm your booking with a deposit - and we handle the rest!" }
               ].map((step, i) => (
                 <div key={i} className="flex gap-4 items-start">
                   <div className="w-12 h-12 rounded-xl bg-brand-neon/20 border border-brand-neon/30 flex items-center justify-center shrink-0 font-bold text-brand-neon text-xs">
