@@ -8,7 +8,7 @@ import Contact from "@/components/sections/Contact";
 import Testimonials, { TestimonialItem } from "@/components/sections/Testimonials";
 import { ArrowRight, Play, Check, Sparkles, Heart, Video, MonitorSmartphone, Camera, Plus, Minus } from "lucide-react";
 
-/* ─── DATA ────────────────────────────────────────────────────────────────── */
+/* ΓöÇΓöÇΓöÇ DATA ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -19,28 +19,36 @@ const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } };
 
 const boothOptions = [
   {
-    title: "ORIGINAL BOOTH",
-    desc: "The original selfie booth experience — perfect for capturing groups of all sizes!",
-    features: ["High-quality photos & unlimited prints", "Instant digital sharing & live gallery", "A choice of 50+ backdrops and more"],
+    title: "360 PHOTO BOOTH",
+    desc: "The most sought-after addition to Pakistani weddings — cinematic slow-motion videos.",
+    features: ["Slow-motion video capture", "Custom wedding overlays", "Instant WhatsApp sharing", "Dedicated on-site director"],
+    image: "/booth-setup-4.jpg",
+    icon: Video,
+    link: "/360-photo-booth-rental"
+  },
+  {
+    title: "VOGUE MAGAZINE BOOTH",
+    desc: "Create full-length magazine cover photos — the dream addition to any mehndi night.",
+    features: ["Life-sized magazine box", "Custom bridal cover design", "High-quality instant prints", "Instagram-worthy experience"],
+    image: "/booth-setup-13.jpg",
+    icon: Sparkles,
+    link: "/vogue-magazine-photo-booth-rental"
+  },
+  {
+    title: "OPEN AIR BOOTH",
+    desc: "A timeless choice for walima celebrations — spacious enough for large family groups.",
+    features: ["Custom wedding backdrops", "Personalised wedding monogram", "Unlimited instant prints", "Professional DSLR setup"],
     image: "/booth-setup-2.jpg",
     icon: Camera,
     link: "/open-air-photo-booth-rental"
   },
   {
-    title: "GLAM BOOTH",
-    desc: "The modern photo booth experience – featuring the iconic Kardashian-style filter.",
-    features: ["All original booth features", "Beauty filter + black and white effect", "Premium white backdrop"],
+    title: "DIGITAL PHOTO BOOTH",
+    desc: "A sleek, modern, and print-free digital experience delivered directly to phones.",
+    features: ["GIFs, boomerangs & photos", "Instant WhatsApp delivery", "Custom digital overlays", "Modern & sleek setup"],
     image: "/booth-setup-3.jpg",
-    icon: Sparkles,
-    link: "#contact" // Fallback since there isn't a dedicated glam booth page yet
-  },
-  {
-    title: "360 BOOTH",
-    desc: "Impress your guests with 360 unique video booth experience.",
-    features: ["Unlimited 360 videos", "Music, effects and design overlays", "Instant digital sharing and more"],
-    image: "/booth-setup-4.jpg",
-    icon: Video,
-    link: "/360-photo-booth-rental"
+    icon: MonitorSmartphone,
+    link: "/digital-photo-booth-rental"
   }
 ];
 
@@ -69,40 +77,26 @@ const caseStudies = [
 const customTestimonials: TestimonialItem[] = [
   {
     id: 1,
-    name: "Erin Gilmore",
-    avatar: "https://i.pravatar.cc/150?u=erin",
-    text: "I hired Selfie Booth for a firm holiday party and couldn’t be more pleased with the whole experience... I loved all the customization options we could add to make our event special."
+    name: "Anum & Faisal",
+    avatar: "https://i.pravatar.cc/150?u=anum",
+    text: "The 360 booth was the star of our baraat! Every single guest used it and the slow-motion videos were absolutely stunning. Best wedding decision we made!"
   },
   {
     id: 2,
-    name: "Yosepha Greenfield",
-    avatar: "https://i.pravatar.cc/150?u=yosepha",
-    text: "Highly recommend. We hired Selfie Booth Co for our wedding. They were professional and easy to work with from beginning to end... The booth itself was a HUGE hit at the wedding."
-  },
-  {
-    id: 3,
-    name: "Caroline",
-    avatar: "https://i.pravatar.cc/150?u=caroline",
-    text: "We rented a photo booth for our wedding reception from Selfie Booth, and we loved it. Our guests had a bunch of fun taking pictures and now we have some more fun memories!"
-  },
-  {
-    id: 4,
-    name: "Maria Flores",
-    avatar: "https://i.pravatar.cc/150?u=maria",
-    text: "WOW WOW!!! The selfie booth was an absolute hit at our bash! Our guests loved the fun props, the high-quality photos, and the overall experience. Your staff was incredibly friendly."
+    name: "Rabia M.",
+    avatar: "https://i.pravatar.cc/150?u=rabia",
+    text: "The Vogue Magazine booth at my mehndi night was breathtaking. Every girl wanted to be on the cover and the prints were so beautiful. 100% recommend!"
   }
 ];
 
 const faqs = [
-  { q: "What photo booths do we offer?", a: "We offer Original Print Booths, Digital Selfie Stations, 360 Video Booths, Glam Booths, and the Vogue Magazine Box to fit your wedding style." },
-  { q: "What is included in the Original Selfie Booth package?", a: "High-quality photos, unlimited prints, instant digital sharing, a live gallery, and a choice of 50+ backdrops." },
-  { q: "What is included in the Glam Selfie Booth package?", a: "The classic Kardashian-style black & white smoothing beauty filter, premium white backdrop, and unlimited prints. It's the ultimate luxury choice for weddings." },
-  { q: "How much space do you need to set up?", a: "We typically request an 8x8 ft space, but we can accommodate smaller footprints depending on the specific booth you choose." },
-  { q: "What are the backdrop options?", a: "We offer over 50 premium backdrop options ranging from solid colors, sequin walls, and custom-printed step-and-repeats." },
-  { q: "What kind of props do you offer?", a: "We bring a carefully curated trunk of high-quality PVC signs, oversized glasses, stylish hats, and themed wedding props." }
+  { q: "What is the cost of a wedding photo booth rental in Pakistan?", a: "Wedding photo booth rental pricing varies based on your chosen booth type, number of hours, location, and customisation requirements. Contact us for a custom wedding quote tailored to your budget and vision." },
+  { q: "Can you cover multiple wedding functions?", a: "Yes! We offer multi-function packages for couples who want a photo booth at their mehndi, baraat, and walima. Contact us for bundled pricing." },
+  { q: "How early should I book for my wedding?", a: "We recommend booking at least 4—6 weeks before your wedding, especially during peak wedding seasons. Popular dates book out fast ΓÇö get in touch as early as possible!" },
+  { q: "Do you travel for destination weddings?", a: "Yes! We travel across Pakistan and can arrange coverage for events in cities beyond our standard service areas. Contact us for travel arrangements." }
 ];
 
-/* ─── MAIN COMPONENT ──────────────────────────────────────────────────────── */
+/* ΓöÇΓöÇΓöÇ MAIN COMPONENT ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 
 export default function WeddingsClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -110,7 +104,7 @@ export default function WeddingsClient() {
   return (
     <div className="bg-black text-white selection:bg-brand-neon/30">
       
-      {/* ── HERO ── */}
+      {/* ΓöÇΓöÇ HERO ΓöÇΓöÇ */}
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image src="/wedding-photo-booth-rental-usa.png" alt="Desi Wedding Hands Mehndi" fill priority sizes="100vw" className="object-cover opacity-30" />
@@ -129,11 +123,11 @@ export default function WeddingsClient() {
             <Heart className="w-4 h-4 fill-brand-neon" /> WOW YOUR GUESTS
           </motion.p>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }} className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
-            Say 'I Do' to<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon">Selfie Booth Memories</span>
+            Wedding Photo Booth<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon">Rental in Pakistan</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.7 }} className="text-base md:text-lg text-white/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-            Rent the original selfie booth for your wedding! With elegant backdrops, beautiful print designs, and high-quality photos, it adds extra fun for your guests to remember—making your special day even more special!
+            Your wedding is the most important event of your life ΓÇö and every moment deserves to be captured beautifully. At Peek-A-Booth PK, we specialise in wedding photo booth rental for Pakistani weddings.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="flex flex-wrap gap-4 justify-center">
             <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
@@ -152,7 +146,7 @@ export default function WeddingsClient() {
         </motion.div>
       </section>
 
-      {/* ── CREATE MEMORIES ── */}
+      {/* ΓöÇΓöÇ CREATE MEMORIES ΓöÇΓöÇ */}
       <section className="py-16 md:py-24 bg-[#050505] relative overflow-hidden border-t border-white/5">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-neon/10 blur-[150px] rounded-full pointer-events-none" />
         
@@ -168,11 +162,11 @@ export default function WeddingsClient() {
             
             <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
-                Create memories with your <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-glow">family and friends</span>
+                Why Every Pakistani <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-glow">Wedding Needs</span> a Photo Booth
               </h2>
               <div className="w-20 h-1 bg-brand-neon rounded-full mb-8" />
               <p className="text-white/70 text-base md:text-lg leading-relaxed mb-6">
-                Whether your party is in the city or at a vineyard, Selfie Booth Co. brings the celebration to life with a one-of-a-kind interactive experience. For cocktail hours, receptions, or any other special gathering, this luxury photo booth creates experiences guests will remember and cherish forever.
+                From intimate mehndi nights to grand baraat receptions, our photo booths keep guests entertained, capture candid moments formal photography misses, and generate instant social media content. Fully customisable to match your shaadi theme and colour palette.
               </p>
               <Link href="/get-a-quote" className="inline-flex items-center gap-2 text-brand-neon font-bold uppercase tracking-widest text-sm hover:text-white transition-colors group">
                 Reserve your date <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -182,7 +176,7 @@ export default function WeddingsClient() {
         </div>
       </section>
 
-      {/* ── HOLLYWOOD MOMENT & CUSTOMIZE ── */}
+      {/* ΓöÇΓöÇ HOLLYWOOD MOMENT & CUSTOMIZE ΓöÇΓöÇ */}
       <section className="py-16 md:py-24 bg-black relative overflow-hidden border-t border-white/5">
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-neon/5 blur-[150px] rounded-full pointer-events-none" />
 
@@ -216,7 +210,7 @@ export default function WeddingsClient() {
                 Customize your <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-glow">Experience</span>
               </h2>
               <p className="text-white/70 text-base md:text-lg leading-relaxed mb-8">
-                Design a template that fits with your wedding’s style. Choose from our pre-set templates, or create something entirely new. Either way, you’ll be able to create an instant print that guests will love from their experience with your photo booth!
+                Design a template that fits with your wedding—s style. Choose from our pre-set templates, or create something entirely new. Either way, you—ll be able to create an instant print that guests will love from their experience with your photo booth!
               </p>
               <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#222] border border-white/10 text-white px-8 py-4 rounded-full font-bold text-sm transition-all group">
                 Get a Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -227,7 +221,7 @@ export default function WeddingsClient() {
         </div>
       </section>
 
-      {/* ── GLAM BOOTH HIGHLIGHT ── */}
+      {/* ΓöÇΓöÇ GLAM BOOTH HIGHLIGHT ΓöÇΓöÇ */}
       <section className="py-16 md:py-24 bg-[#050505] relative overflow-hidden border-t border-white/5">
         <div className="absolute inset-0 z-0">
           <Image src="/booth-setup-2.jpg" alt="Glam Booth" fill sizes="100vw" className="object-cover opacity-10 blur-sm" />
@@ -241,7 +235,7 @@ export default function WeddingsClient() {
               Kardashian Style <br/><span className="text-brand-neon">Photo Booth</span>
             </h2>
             <p className="text-white/70 text-base md:text-lg leading-relaxed mb-10 max-w-3xl mx-auto">
-              Introducing the one-of-a-kind ‘Kardashian-style’ photo booth, featuring a skin-smoothing effect available in B&W or Color. Indulge in our luxurious skin smooth filter, designed to reduce fine lines and wrinkles while enhancing your skin’s overall appearance. Experience a soft, airbrushed quality that ensures stunning photos from every angle.
+              Introducing the one-of-a-kind ΓÇÿKardashian-style— photo booth, featuring a skin-smoothing effect available in B&W or Color. Indulge in our luxurious skin smooth filter, designed to reduce fine lines and wrinkles while enhancing your skin—s overall appearance. Experience a soft, airbrushed quality that ensures stunning photos from every angle.
             </p>
             <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
               Explore Glam Booth <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -250,7 +244,7 @@ export default function WeddingsClient() {
         </div>
       </section>
 
-      {/* ── BOOTH OPTIONS ── */}
+      {/* ΓöÇΓöÇ BOOTH OPTIONS ΓöÇΓöÇ */}
       <section className="py-16 md:py-24 bg-black border-t border-white/5">
         <div className="container mx-auto px-6 max-w-7xl">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
@@ -258,7 +252,7 @@ export default function WeddingsClient() {
             <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl font-extrabold tracking-tight">Choose your Photo Booth Experience</motion.h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {boothOptions.map((booth, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }} className="group rounded-[2rem] bg-[#0a0a0a] border border-white/10 hover:border-brand-neon/40 transition-all overflow-hidden flex flex-col shadow-[0_0_0_rgba(247,54,168,0)] hover:shadow-[0_0_30px_rgba(247,54,168,0.15)] h-full">
                 <div className="relative h-64 w-full overflow-hidden">
@@ -289,7 +283,7 @@ export default function WeddingsClient() {
         </div>
       </section>
 
-      {/* ── HIGHLIGHTS GALLERY ── */}
+      {/* ΓöÇΓöÇ HIGHLIGHTS GALLERY ΓöÇΓöÇ */}
       <section className="py-16 md:py-24 bg-[#050505] border-t border-white/5 overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
@@ -316,10 +310,10 @@ export default function WeddingsClient() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ── */}
+      {/* ΓöÇΓöÇ TESTIMONIALS ΓöÇΓöÇ */}
       <Testimonials testimonialsData={customTestimonials} />
 
-      {/* ── EXPLORE WEDDINGS ── */}
+      {/* ΓöÇΓöÇ EXPLORE WEDDINGS ΓöÇΓöÇ */}
       <section className="py-16 md:py-24 bg-[#050505] border-t border-white/5 relative overflow-hidden">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-neon/10 blur-[120px] rounded-full pointer-events-none" />
 
@@ -329,25 +323,24 @@ export default function WeddingsClient() {
             <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Explore our last weddings</motion.h2>
           </motion.div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {caseStudies.map((study, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group relative border border-white/10 hover:border-brand-neon/40 rounded-[2rem] overflow-hidden flex flex-col items-center justify-center text-center h-48 transition-all shadow-[0_0_0_rgba(247,54,168,0)] hover:shadow-[0_0_30px_rgba(247,54,168,0.15)] cursor-pointer">
-                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-10" />
-                <Image src={study.image} alt={study.brand} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover scale-100 group-hover:scale-110 transition-transform duration-700 z-0 opacity-50 group-hover:opacity-100" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
-                
-                <h3 className="text-xl md:text-2xl font-extrabold text-white mb-2 relative z-20 group-hover:scale-105 group-hover:text-brand-neon transition-all duration-300">{study.brand}</h3>
-                <p className="text-brand-neon text-[10px] md:text-xs font-bold tracking-widest uppercase relative z-20 bg-black/50 px-3 py-1 rounded-full border border-brand-neon/30 backdrop-blur-md">{study.type}</p>
-                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                  <ArrowRight className="w-5 h-5 text-brand-neon" />
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { city: "Karachi", label: "Available for all events", icon: "🏙️" },
+              { city: "Lahore", label: "Pakistan's party capital", icon: "✨" },
+              { city: "Islamabad", label: "Corporate & private events", icon: "🏢" },
+              { city: "Multan", label: "Now available!", icon: "🎉" }
+            ].map((study, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group relative border border-white/10 hover:border-brand-neon/40 rounded-[2rem] overflow-hidden flex flex-col items-center justify-center text-center h-48 transition-all shadow-[0_0_0_rgba(247,54,168,0)] hover:shadow-[0_0_30px_rgba(247,54,168,0.15)] cursor-pointer bg-[#0a0a0a]">
+                <h3 className="text-xl md:text-2xl font-extrabold text-white mb-2 relative z-20 group-hover:scale-105 group-hover:text-brand-neon transition-all duration-300">{study.city}</h3>
+                <p className="text-brand-neon text-[10px] md:text-xs font-bold tracking-widest uppercase relative z-20 bg-black/50 px-3 py-1 rounded-full border border-brand-neon/30 backdrop-blur-md">{study.label}</p>
+                <div className="absolute top-4 right-4 text-2xl z-20 opacity-40 group-hover:opacity-100 transition-opacity">{study.icon}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* ΓöÇΓöÇ FAQ ΓöÇΓöÇ */}
       <section className="py-16 md:py-24 bg-black border-t border-white/5">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
@@ -380,9 +373,10 @@ export default function WeddingsClient() {
         </div>
       </section>
 
-      {/* ── CONTACT ── */}
+      {/* ΓöÇΓöÇ CONTACT ΓöÇΓöÇ */}
       <Contact />
 
     </div>
   );
 }
+

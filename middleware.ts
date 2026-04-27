@@ -5,7 +5,7 @@ const isPublicRoute = createRouteMatcher([
   "/pricing",
   "/gallery",
   "/events",
-  "/weddings",
+  "/wedding-photo-booth-rental",
   "/brand-corporate",
   "/parties",
   "/open-air-photo-booth-rental",

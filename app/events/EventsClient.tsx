@@ -22,7 +22,7 @@ const eventTypes = [
     title: "Weddings",
     subtitle: "Say 'I Do' to Selfie Booth Memories",
     desc: "Rent the original selfie booth or Glam Booth for your wedding! With elegant backdrops, beautiful print designs, and high-quality photos, it adds extra fun for your guests.",
-    link: "/weddings",
+    link: "/wedding-photo-booth-rental",
     image: "/booth-setup-22.jpg",
     icon: Heart,
     features: ["Kardashian Glam Booth", "Custom Wedding Templates", "Guestbook Prints"]
