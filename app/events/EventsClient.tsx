@@ -32,7 +32,7 @@ const eventTypes = [
     title: "Private Parties",
     subtitle: "Snap. Print. Share.",
     desc: "Our state-of-the-art photo booths are the life of every party! Create joyful memories with customizable photo frames, unlimited prints, and instant sharing options.",
-    link: "/parties",
+    link: "/party-photo-booth-rental",
     image: "/booth-setup-23.jpg",
     icon: PartyPopper,
     features: ["Digital Selfie Station", "Boomerangs & GIFs", "Fun Props & Neon Signs"]
@@ -52,7 +52,7 @@ const eventTypes = [
     title: "Birthdays & Milestones",
     subtitle: "Celebrate in Style",
     desc: "Whether it's a Sweet 16, a 30th bash, or a milestone anniversary, our booths capture the fun and excitement of your special day with custom themes and unlimited prints.",
-    link: "#contact", // Contact anchor since we don't have a specific page yet
+    link: "/birthday-photo-booth-rental",
     image: "/booth-setup-2.jpg",
     icon: Cake,
     features: ["Themed Props", "Custom Birthday Overlays", "360 Video Booth"]
