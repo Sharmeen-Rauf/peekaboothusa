@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
@@ -25,9 +25,9 @@ const features = [
 ];
 
 const pricing = [
-  { hours: "2 Hour", price: "$500", features: ["360° Video Capture", "Slow-Motion Effect", "LED Platform Lighting", "Custom Music Overlay", "Instant Sharing", "On-Site Technician"] },
-  { hours: "3 Hour", price: "$700", popular: true, features: ["360° Video Capture", "Slow-Motion Effect", "LED Platform Lighting", "Custom Music Overlay", "Instant Sharing", "On-Site Technician"] },
-  { hours: "4 Hour", price: "$900", features: ["360° Video Capture", "Slow-Motion Effect", "LED Platform Lighting", "Custom Music Overlay", "Instant Sharing", "On-Site Technician"] },
+  { hours: "2 Hour", price: "35,000 PKR", features: ["360° Video Capture", "Slow-Motion Effect", "LED Platform Lighting", "Custom Music Overlay", "Instant Sharing", "On-Site Technician"] },
+  { hours: "3 Hour", price: "45,000 PKR", popular: true, features: ["360° Video Capture", "Slow-Motion Effect", "LED Platform Lighting", "Custom Music Overlay", "Instant Sharing", "On-Site Technician"] },
+  { hours: "4 Hour", price: "60,000 PKR", features: ["360° Video Capture", "Slow-Motion Effect", "LED Platform Lighting", "Custom Music Overlay", "Instant Sharing", "On-Site Technician"] },
 ];
 
 function Scene1Hero() {

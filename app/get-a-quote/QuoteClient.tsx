@@ -6,14 +6,14 @@ import Image from "next/image";
 import { Check, ArrowRight, ChevronLeft, Sparkles, Star, Plus, Minus, Send, Phone, MapPin, AlertCircle } from "lucide-react";
 import { createBooking } from "@/lib/actions/booking";
 
-/* ─── DATA & CONFIG ───────────────────────────────────────────────────────── */
+/* ΓöÇΓöÇΓöÇ DATA & CONFIG ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 
 const eventTypes = [
   { id: "wedding", name: "Wedding", icon: "💍", theme: "from-purple-900/60 via-[#050505] to-black" },
   { id: "birthday", name: "Birthday", icon: "🎉", theme: "from-pink-900/60 via-[#050505] to-black" },
   { id: "corporate", name: "Corporate", icon: "🏢", theme: "from-blue-900/60 via-[#050505] to-black" },
   { id: "graduation", name: "Graduation", icon: "🎓", theme: "from-yellow-900/60 via-[#050505] to-black" },
-  { id: "baby-shower", name: "Baby Shower", icon: "👶", theme: "from-teal-900/60 via-[#050505] to-black" },
+  { id: "party", name: "Party", icon: "🎈", theme: "from-teal-900/60 via-[#050505] to-black" },
   { id: "luxury", name: "Luxury Event", icon: "✨", theme: "from-emerald-900/60 via-[#050505] to-black" },
 ];
 
@@ -32,9 +32,9 @@ const booths = [
 ];
 
 const addonsList = [
-  { id: "guestbook", name: "Guest Book", price: 10000, icon: "📖" },
-  { id: "props", name: "Premium Neon Props", price: 5000, icon: "🎭" },
-  { id: "redcarpet", name: "Red Carpet Setup", price: 15000, icon: "📸" },
+  { id: "guestbook", name: "Guest Book", price: 10000, icon: "≡ƒôû" },
+  { id: "props", name: "Premium Neon Props", price: 5000, icon: "≡ƒÄ¡" },
+  { id: "redcarpet", name: "Red Carpet Setup", price: 15000, icon: "≡ƒô╕" },
 ];
 
 const steps = [
@@ -44,7 +44,7 @@ const steps = [
   { id: 4, title: "Final Details" },
 ];
 
-/* ─── MAIN COMPONENT ──────────────────────────────────────────────────────── */
+/* ΓöÇΓöÇΓöÇ MAIN COMPONENT ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 
 export default function QuoteClient() {
   const [step, setStep] = useState(1);
@@ -100,7 +100,7 @@ export default function QuoteClient() {
     if (eventType === "wedding" && !addons.includes("guestbook")) return "Most wedding clients add a Guest Book for lifelong memories!";
     if (eventType === "corporate" && !addons.includes("redcarpet")) return "A Red Carpet Setup makes corporate events feel premium.";
     if (eventType === "birthday" && !addons.includes("props")) return "Level up the fun with Custom Neon Props!";
-    return "Your package looks amazing! ✨";
+    return "Your package looks amazing! Γ£¿";
   }, [eventType, addons]);
 
   // Handlers
@@ -130,7 +130,7 @@ export default function QuoteClient() {
   };
 
   const generateWhatsAppLink = () => {
-    const text = `Hi Peekabooth 👋\n\nI'd like a quote for:\nEvent: ${currentEvent?.name}\nCity: ${cities.find(c => c.id === city)?.name}\nBooth: ${currentBooth?.name}\nHours: ${hours}\nAdd-ons: ${addons.length > 0 ? addons.map(a => addonsList.find(x => x.id === a)?.name).join(", ") : "None"}\nVenue: ${details.venue}\nDate: ${details.date}\n\nEstimated Budget: PKR ${formatPKR(estimatedTotal)}\n\nMy name is ${details.firstName} ${details.lastName}. Please contact me with more details!`;
+    const text = `Hi Peekabooth ≡ƒæï\n\nI'd like a quote for:\nEvent: ${currentEvent?.name}\nCity: ${cities.find(c => c.id === city)?.name}\nBooth: ${currentBooth?.name}\nHours: ${hours}\nAdd-ons: ${addons.length > 0 ? addons.map(a => addonsList.find(x => x.id === a)?.name).join(", ") : "None"}\nVenue: ${details.venue}\nDate: ${details.date}\n\nEstimated Budget: PKR ${formatPKR(estimatedTotal)}\n\nMy name is ${details.firstName} ${details.lastName}. Please contact me with more details!`;
     return `https://wa.me/923260760786?text=${encodeURIComponent(text)}`;
   };
 
@@ -162,7 +162,7 @@ export default function QuoteClient() {
     }
   };
 
-  // ─── VIEWS ─── //
+  // ΓöÇΓöÇΓöÇ VIEWS ΓöÇΓöÇΓöÇ //
 
   if (isSuccess) {
     return (
@@ -204,9 +204,24 @@ export default function QuoteClient() {
       {/* Film Grain */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")", backgroundSize: "128px" }} />
 
-      <div className="container mx-auto px-6 max-w-7xl relative z-10 flex flex-col lg:flex-row gap-12 items-start">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        {/* Hero Header */}
+        <div className="text-center mb-16">
+          <motion.h1 
+            initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight"
+          >
+            Get a Free Photo Booth Rental Quote <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon">ΓÇö Tell Us About Your Event</span>
+          </motion.h1>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-white/70 text-lg max-w-3xl mx-auto font-light leading-relaxed">
+            Ready to make your event unforgettable? Fill out our quick quote form below and we&apos;ll prepare a custom photo booth rental quote tailored to your event, venue, and budget.
+          </motion.p>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-12 items-start">
         
-        {/* ── LEFT: FORM WIZARD ── */}
+        {/* ΓöÇΓöÇ LEFT: FORM WIZARD ΓöÇΓöÇ */}
         <div className="w-full lg:w-2/3">
           
           {/* Progress Bar */}
@@ -434,7 +449,7 @@ export default function QuoteClient() {
           </div>
         </div>
 
-        {/* ── RIGHT: LIVE ESTIMATE PANEL ── */}
+        {/* ΓöÇΓöÇ RIGHT: LIVE ESTIMATE PANEL ΓöÇΓöÇ */}
         <div className="w-full lg:w-1/3 lg:sticky lg:top-32">
           <motion.div 
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
@@ -547,6 +562,64 @@ export default function QuoteClient() {
         </div>
 
       </div>
+
+      {/* ΓöÇΓöÇ WHAT HAPPENS NEXT & TRUST SIGNALS ΓöÇΓöÇ */}
+      <section className="container mx-auto px-6 max-w-7xl mt-32 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          
+          {/* What Happens Next */}
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="bg-black/40 border border-white/10 rounded-[2.5rem] p-10">
+            <h2 className="text-3xl font-extrabold mb-8 uppercase tracking-tight">What Happens <span className="text-brand-neon">Next?</span></h2>
+            <div className="space-y-6">
+              {[
+                { s: "Step 1", t: "Our team reviews your event details within 24 hours" },
+                { s: "Step 2", t: "We prepare a custom, itemised quote for your event" },
+                { s: "Step 3", t: "We reach out via WhatsApp or phone to discuss your requirements" },
+                { s: "Step 4", t: "You confirm your booking with a deposit ΓÇö and we handle the rest!" }
+              ].map((step, i) => (
+                <div key={i} className="flex gap-4 items-start">
+                  <div className="w-12 h-12 rounded-xl bg-brand-neon/20 border border-brand-neon/30 flex items-center justify-center shrink-0 font-bold text-brand-neon text-xs">
+                    {step.s}
+                  </div>
+                  <p className="text-white/70 text-sm leading-relaxed pt-2">{step.t}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Why Trust Us */}
+          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="bg-black/40 border border-white/10 rounded-[2.5rem] p-10">
+            <h2 className="text-3xl font-extrabold mb-8 uppercase tracking-tight">Why Choose <span className="text-brand-neon">Us?</span></h2>
+            <div className="space-y-4">
+              {[
+                "500+ successful events across Pakistan",
+                "5-star rated service in Karachi, Lahore, Islamabad & Multan",
+                "Professional, punctual, and fully equipped team",
+                "Fully customisable setups for every budget",
+                "100% satisfaction guarantee"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3 text-white/70">
+                  <div className="w-1.5 h-1.5 rounded-full bg-brand-neon shadow-[0_0_10px_rgba(247,54,168,0.8)]" />
+                  <span className="text-sm">{item}</span>
+                </div>
+              ))}
+            </div>
+            
+            {/* WhatsApp CTA */}
+            <div className="mt-12 p-6 bg-white/5 border border-white/10 rounded-2xl relative overflow-hidden">
+              <div className="relative z-10">
+                <h3 className="font-bold text-white mb-2">Prefer a Faster Response?</h3>
+                <p className="text-white/50 text-xs mb-4 leading-relaxed">For same-day responses and immediate booking assistance, send us a WhatsApp message.</p>
+                <a href="https://wa.me/923260760786" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] text-white px-6 py-3 rounded-full font-bold text-xs transition-all">
+                  <Phone className="w-4 h-4" /> Chat on WhatsApp
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
     </div>
   );
 }
+

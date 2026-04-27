@@ -20,9 +20,9 @@ const highlights = [
 const planFeatures = ["Unlimited Pictures", "Instant Sharing", "Personalized Pictures", "Party Themed Props", "Standard Backdrop", "Standard Lighting Kit", "Friendly Attendant"];
 
 const pricing = [
-  { hours: "2 Hour", price: "$300" },
-  { hours: "3 Hour", price: "$400", popular: true },
-  { hours: "4 Hour", price: "$500" },
+  { hours: "2 Hour", price: "25,000 PKR" },
+  { hours: "3 Hour", price: "35,000 PKR", popular: true },
+  { hours: "4 Hour", price: "45,000 PKR" },
 ];
 
 const videos = [

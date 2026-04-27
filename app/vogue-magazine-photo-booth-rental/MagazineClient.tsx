@@ -14,10 +14,10 @@ const fadeUp = {
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } };
 
 const pricing = [
-  { hours: "4 Hour", price: "$1,200" },
-  { hours: "5 Hour", price: "$1,500", popular: true },
-  { hours: "6 Hour", price: "$1,800" },
-  { hours: "8 Hour", price: "$2,400" },
+  { hours: "4 Hour", price: "55,000 PKR" },
+  { hours: "5 Hour", price: "70,000 PKR", popular: true },
+  { hours: "6 Hour", price: "85,000 PKR" },
+  { hours: "8 Hour", price: "110,000 PKR" },
 ];
 const planFeatures = ["Illuminated Magazine Box", "Custom Cover Design", "High-Def DSLR Photos", "Instant Prints", "Digital Sharing", "Props & Attendant", "Setup & Breakdown"];
 

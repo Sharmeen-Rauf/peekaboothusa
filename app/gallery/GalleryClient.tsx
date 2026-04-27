@@ -7,9 +7,9 @@ import Link from "next/link";
 import Contact from "@/components/sections/Contact";
 import { X, ChevronLeft, ChevronRight, ArrowRight, Star, MapPin, Phone } from "lucide-react";
 
-/* ─── DATA ────────────────────────────────────────────────────────────────── */
+/* ΓöÇΓöÇΓöÇ DATA ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 
-type Category = "All" | "Weddings" | "Birthdays" | "Corporate" | "Parties";
+type Category = "All" | "Weddings" | "Birthdays" | "Corporate" | "Parties" | "360 Booth" | "Open Air" | "Vogue" | "Digital";
 
 interface GalleryItem {
   id: number;
@@ -35,7 +35,7 @@ const items: GalleryItem[] = [
   { id: 12, src: "/booth-setup-12.jpg",                      alt: "Birthday Celebration Photo Booth",     category: "Birthdays", location: "Houston, TX" },
 ];
 
-const TABS: Category[] = ["All", "Weddings", "Birthdays", "Corporate", "Parties"];
+const TABS: Category[] = ["All", "Weddings", "Birthdays", "Corporate", "Parties", "360 Booth", "Open Air", "Vogue", "Digital"];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -43,7 +43,7 @@ const fadeUp = {
 };
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
-/* ─── MODAL ───────────────────────────────────────────────────────────────── */
+/* ΓöÇΓöÇΓöÇ MODAL ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 
 function Modal({ items, index, onClose, onPrev, onNext }: {
   items: GalleryItem[];
@@ -99,7 +99,7 @@ function Modal({ items, index, onClose, onPrev, onNext }: {
   );
 }
 
-/* ─── GALLERY ITEM ────────────────────────────────────────────────────────── */
+/* ΓöÇΓöÇΓöÇ GALLERY ITEM ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 
 function GalleryCard({ item, onClick }: { item: GalleryItem; onClick: () => void }) {
   return (
@@ -141,7 +141,7 @@ function GalleryCard({ item, onClick }: { item: GalleryItem; onClick: () => void
   );
 }
 
-/* ─── MAIN ────────────────────────────────────────────────────────────────── */
+/* ΓöÇΓöÇΓöÇ MAIN ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 
 export default function GalleryClient() {
   const [activeTab, setActiveTab] = useState<Category>("All");
@@ -157,7 +157,7 @@ export default function GalleryClient() {
   return (
     <div className="bg-black text-white">
 
-      {/* ── HERO ── */}
+      {/* ΓöÇΓöÇ HERO ΓöÇΓöÇ */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="/booth-setup-4.jpg" alt="Photo Booth Gallery" fill priority sizes="100vw" className="object-cover opacity-35" />
@@ -182,24 +182,21 @@ export default function GalleryClient() {
         <div className="container mx-auto px-6 max-w-3xl relative z-20 text-center pt-32 pb-20">
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
             <div className="inline-flex items-center gap-2 bg-brand-neon/10 border border-brand-neon/30 text-brand-neon text-xs font-bold tracking-[0.4em] uppercase px-5 py-2 rounded-full mb-6">
-              <Star className="w-3 h-3" /> Top Rated Photo Booth Rentals
+              <Star className="w-3 h-3" /> Real Events, Real Moments
             </div>
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5">
-            View Peek A Booth&apos;s{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-glow">Photo Booth Gallery</span>
+            Our Photo Booth Gallery ΓÇö <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon">Real Smiles Captured</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.7 }}
-            className="text-base md:text-lg text-white/70 mb-10 max-w-xl mx-auto font-light leading-relaxed">
-            Browse our gallery to see photo booths in action at weddings, birthdays, and events — creating unforgettable memories nationwide.
+            className="text-base md:text-lg text-white/70 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+            Scroll through hundreds of stunning photos and videos captured at our photo booth events across Pakistan. From grand wedding celebrations to intimate birthday parties, corporate events to Eid gatherings ΓÇö every image tells a story.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="flex flex-wrap gap-4 justify-center">
-            <Link href="#gallery" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
-              View Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all backdrop-blur-sm">
-              Get A Quote
+            <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
+              Book Your Photo Booth Now <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>
@@ -211,7 +208,7 @@ export default function GalleryClient() {
         </motion.div>
       </section>
 
-      {/* ── SPOTLIGHT STATS ── */}
+      {/* ΓöÇΓöÇ SPOTLIGHT STATS ΓöÇΓöÇ */}
       <section className="py-10 bg-[#050505] border-y border-white/5">
         <div className="container mx-auto px-6 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -230,19 +227,16 @@ export default function GalleryClient() {
         </div>
       </section>
 
-      {/* ── GALLERY ── */}
+      {/* ΓöÇΓöÇ GALLERY ΓöÇΓöÇ */}
       <section id="gallery" className="py-16 md:py-20 bg-black">
         <div className="container mx-auto px-6 max-w-7xl">
 
           {/* Header */}
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-12">
-            <motion.p variants={fadeUp} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Our Work</motion.p>
+            <motion.p variants={fadeUp} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Browse by Event Type</motion.p>
             <motion.h2 variants={fadeUp} className="text-2xl md:text-4xl font-extrabold tracking-tight mb-4">
-              Discover Our Photo Booth Gallery
+              Explore Our Event Highlights
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-white/50 text-sm max-w-xl mx-auto leading-relaxed">
-              Showcasing photo booth rentals at weddings, parties, and events nationwide. See how we create unforgettable memories!
-            </motion.p>
           </motion.div>
 
           {/* Filter tabs */}
@@ -281,7 +275,7 @@ export default function GalleryClient() {
         </div>
       </section>
 
-      {/* ── FEATURED CTA BAND ── */}
+      {/* ΓöÇΓöÇ FEATURED CTA BAND ΓöÇΓöÇ */}
       <section className="py-16 md:py-20 bg-[#050505] border-t border-white/5">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="relative rounded-[2rem] overflow-hidden border border-brand-neon/20 shadow-[0_0_60px_rgba(247,54,168,0.08)]">
@@ -291,32 +285,45 @@ export default function GalleryClient() {
             </div>
             <div className="relative z-10 p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-center md:text-left">
-                <p className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Top Rated Nationwide</p>
+                <p className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Love What You See?</p>
                 <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight leading-tight mb-3">
-                  Get Your Photo Booth Rental<br className="hidden md:block" />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-glow"> With No Regrets</span>
+                  Book Your Photo Booth Today!
                 </h2>
                 <p className="text-white/60 text-sm max-w-md leading-relaxed">
-                  Peek-A-Booth is the #1 choice for customers across America. 16,500+ events completed. Established 2014. Nationwide service.
+                  Every photo in our gallery represents a real event where Peek-A-Booth PK delivered an unforgettable experience. Your event could be next!
                 </p>
               </div>
               <div className="flex flex-col gap-4 shrink-0 w-full md:w-auto">
                 <Link href="/get-a-quote" className="inline-flex items-center justify-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group">
                   Get A Free Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:+923260760786" className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-brand-neon/50 text-white px-8 py-4 rounded-full font-bold text-sm transition-all hover:bg-brand-neon/10 backdrop-blur-sm">
-                  <Phone className="w-4 h-4" /> +92 326 0760786
-                </a>
+                <Link href="/pricing" className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-brand-neon/50 text-white px-8 py-4 rounded-full font-bold text-sm transition-all hover:bg-brand-neon/10 backdrop-blur-sm">
+                   View Our Packages
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── CONTACT ── */}
+      {/* ΓöÇΓöÇ SOCIAL MEDIA ΓöÇΓöÇ */}
+      <section className="py-24 bg-black border-t border-white/5 text-center">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <Instagram className="w-12 h-12 text-brand-neon mx-auto mb-6" />
+          <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight mb-6">Follow Us on Instagram for More</h2>
+          <p className="text-white/60 mb-10 leading-relaxed">
+            See even more from our events ΓÇö behind-the-scenes setups, 360 booth videos, guest moments, and more ΓÇö on our Instagram page.
+          </p>
+          <a href="https://instagram.com/peekaboothpk" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold transition-all border border-white/10">
+            @peekaboothpk
+          </a>
+        </div>
+      </section>
+
+      {/* ΓöÇΓöÇ CONTACT ΓöÇΓöÇ */}
       <Contact />
 
-      {/* ── MODAL ── */}
+      {/* ΓöÇΓöÇ MODAL ΓöÇΓöÇ */}
       <AnimatePresence>
         {modalIndex !== null && (
           <Modal
@@ -331,3 +338,4 @@ export default function GalleryClient() {
     </div>
   );
 }
+

@@ -9,77 +9,57 @@ export default function PrivacyPage() {
     {
       title: "1. Information We Collect",
       content: [
-        "Personal Details: Name, phone number, email address.",
-        "Booking Information: Event details (date, location, type of event).",
-        "Payment Information: Transaction details (processed securely via third-party providers).",
-        "Technical Data: IP address, browser type, device information, cookies.",
-        "We only collect information that is necessary to provide our services effectively."
+        "Personal Information You Provide: Name, phone number, and email address (submitted via contact forms or quote requests).",
+        "Event details including date, type, and location.",
+        "Payment information (processed securely through our payment partners).",
+        "Information Collected Automatically: Device type, browser, and IP address.",
+        "Pages visited and time spent on our website.",
+        "Referral source (how you found our website)."
       ]
     },
     {
-      title: "2. How We Collect Information",
+      title: "2. How We Use Your Information",
       content: [
-        "Fill out a contact or booking form.",
-        "Communicate with us via WhatsApp, phone, or email.",
-        "Make a booking or payment.",
-        "Browse our website."
+        "Process and manage your photo booth rental booking.",
+        "Respond to your enquiries and provide customer support.",
+        "Send you booking confirmations and event reminders.",
+        "Improve our website and services based on user behaviour.",
+        "Send marketing communications (only if you have opted in)."
       ]
     },
     {
-      title: "3. How We Use Your Information",
+      title: "3. Sharing Your Information",
       content: [
-        "Process bookings and manage events.",
-        "Communicate with you regarding your event.",
-        "Improve our services and customer experience.",
-        "Send updates, promotions, or offers (if you opt-in).",
-        "Comply with legal and regulatory requirements."
+        "We do not sell, rent, or trade your personal information to third parties.",
+        "We may share information with service providers who assist in delivering our services (e.g., payment processors).",
+        "Legal authorities if required by law.",
+        "All third parties are required to handle your information securely and only use it for the specified purpose."
       ]
     },
     {
-      title: "4. Sharing of Information",
+      title: "4. Photo & Video Data",
+      content: "Photos and videos captured at events using our photo booths are shared with event clients and their guests as agreed during the booking process. We may use select event photos for marketing purposes (website, social media) unless you explicitly request otherwise in writing."
+    },
+    {
+      title: "5. Data Security",
+      content: "We implement appropriate technical and organisational measures to protect your personal information from unauthorised access, disclosure, or misuse. However, no internet transmission is 100% secure, and we cannot guarantee absolute security."
+    },
+    {
+      title: "6. Cookies",
+      content: "Our website uses cookies to enhance user experience and analyse site traffic. You can control cookie settings through your browser. By continuing to use our website, you consent to our use of cookies."
+    },
+    {
+      title: "7. Your Rights",
       content: [
-        "We do not sell or rent your personal data.",
-        "We may share your information with payment service providers and event partners if required.",
-        "Under Pakistani regulations, information may be disclosed if required by courts or government authorities."
+        "Request access to the personal information we hold about you.",
+        "Request correction of inaccurate information.",
+        "Request deletion of your personal data (subject to legal obligations).",
+        "Opt out of marketing communications at any time."
       ]
     },
     {
-      title: "5. Data Protection & Security",
-      content: [
-        "We take reasonable measures to protect your data, including secure storage and limited access.",
-        "However, no online system is 100% secure, and we cannot guarantee absolute security."
-      ]
-    },
-    {
-      title: "6. Cookies & Tracking Technologies",
-      content: [
-        "Our website may use cookies to improve performance, analyze behavior, and enhance experience.",
-        "You can disable cookies through your browser settings."
-      ]
-    },
-    {
-      title: "7. Data Retention",
-      content: "We retain your information only as long as necessary to fulfill service obligations, comply with legal requirements, or resolve disputes."
-    },
-    {
-      title: "8. Your Rights",
-      content: [
-        "Request access to your personal data.",
-        "Request correction or deletion of your data.",
-        "Opt-out of marketing communications."
-      ]
-    },
-    {
-      title: "9. Third-Party Links",
-      content: "Our website may contain links to third-party websites. We are not responsible for their privacy practices or content."
-    },
-    {
-      title: "10. Children’s Privacy",
-      content: "Our services are not directed toward individuals under the age of 13. We do not knowingly collect personal data from children."
-    },
-    {
-      title: "11. Changes to This Privacy Policy",
-      content: "We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date."
+      title: "8. Changes to This Policy",
+      content: "We may update this Privacy Policy from time to time. The updated version will be posted on this page with a revised date. We encourage you to review this policy periodically."
     }
   ];
 
@@ -95,10 +75,10 @@ export default function PrivacyPage() {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-neon/10 border border-brand-neon/20 mb-6">
             <Lock className="w-8 h-8 text-brand-neon" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 uppercase">
             Privacy <span className="text-brand-neon">Policy</span>
           </h1>
-          <p className="text-white/50">Last updated: April 23, 2026 • PeekABooth PK</p>
+          <p className="text-white/50">Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} ΓÇó Peek-A-Booth PK</p>
         </motion.div>
 
         {/* Content */}
@@ -110,8 +90,7 @@ export default function PrivacyPage() {
         >
           <div className="prose prose-invert max-w-none">
             <p className="text-lg text-white/70 leading-relaxed bg-white/5 border border-white/10 p-6 rounded-2xl">
-              PeekABooth PK (“we”, “our”, “us”) respects your privacy and is committed to protecting your personal information. 
-              This Privacy Policy explains how we collect, use, store, and protect your data when you use our website or book our services.
+              Welcome to Peek-A-Booth PK. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website (peekaboothpk.com) or use our services.
             </p>
           </div>
 

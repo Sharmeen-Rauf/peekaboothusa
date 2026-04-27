@@ -34,48 +34,25 @@ export default function Footer() {
           <Link href="/privacy-policy" className="flex items-center justify-center px-8 py-5 md:py-6 text-foreground/80 hover:text-foreground hover:bg-foreground/5 transition-colors border-b lg:border-b-0 lg:border-r border-border w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
             Privacy Policy
           </Link>
-
+          
           {/* Social Icons Row */}
-          <div className="flex flex-wrap md:flex-nowrap items-stretch justify-center border-b lg:border-b-0 lg:border-r border-white/10 w-full lg:w-auto grid grid-cols-3 md:flex">
-            
-            <a href="https://www.facebook.com/peekaboothpk" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-[#1877F2] hover:bg-white/5 transition-colors border-r border-b md:border-b-0 border-white/10 min-w-[60px]">
+          <div className="flex flex-wrap md:flex-nowrap items-stretch justify-center border-b lg:border-b-0 lg:border-r border-border w-full lg:w-auto grid grid-cols-3 md:flex">
+            <a href="https://www.facebook.com/peekaboothpk" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-brand-neon hover:bg-white/5 transition-colors border-r border-b md:border-b-0 border-border min-w-[60px]">
               <Facebook className="w-5 h-5" />
             </a>
-            
-            <a href="https://www.instagram.com/peekaboothpk" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-[#E4405F] hover:bg-white/5 transition-colors border-r border-b md:border-b-0 border-white/10 min-w-[60px]">
+            <a href="https://www.instagram.com/peekaboothpk" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-brand-neon hover:bg-white/5 transition-colors border-r border-b md:border-b-0 border-border min-w-[60px]">
               <Instagram className="w-5 h-5" />
             </a>
-            
-            <a href="#" className="flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-brand-neon hover:bg-white/5 transition-colors border-r border-b md:border-b-0 border-white/10 min-w-[60px]">
-              {/* TikTok SVG */}
-              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></svg>
-            </a>
-            
-            <a href="#" className="col-span-3 md:col-span-1 flex items-center justify-center gap-2 p-4 md:p-6 text-white/50 hover:text-[#00B67A] hover:bg-white/5 transition-colors border-b md:border-r md:border-b-0 border-white/10 min-w-[120px]">
-              <Star className="w-5 h-5 fill-current" />
-              <span className="font-bold text-sm tracking-wide">Trustpilot</span>
-            </a>
-            
-            <a href="#" className="flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-[#0A66C2] hover:bg-white/5 transition-colors border-r border-white/10 min-w-[60px]">
-              <Linkedin className="w-5 h-5" />
-            </a>
-            
-            <a href="#" className="flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-[#FF0000] hover:bg-white/5 transition-colors border-r border-white/10 min-w-[60px]">
+            <a href="#" className="flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-brand-neon hover:bg-white/5 transition-colors border-b md:border-b-0 border-border min-w-[60px]">
               <Youtube className="w-5 h-5" />
             </a>
-            
-            <a href="#" className="flex items-center justify-center p-4 md:p-6 text-white/50 hover:text-white hover:bg-white/5 transition-colors min-w-[60px]">
-              {/* X (Twitter) SVG */}
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
-            </a>
-            
           </div>
 
-          <Link href="/portal" className="flex items-center justify-center px-8 py-5 md:py-6 text-foreground/80 hover:text-brand-neon hover:bg-foreground/5 transition-colors border-b lg:border-b-0 lg:border-r border-border w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
-            Client Portal
+          <Link href="/blogs" className="flex items-center justify-center px-8 py-5 md:py-6 text-foreground/80 hover:text-brand-neon hover:bg-foreground/5 transition-colors border-b lg:border-b-0 lg:border-r border-border w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
+            Blog
           </Link>
-          <Link href="/admin" className="flex items-center justify-center px-8 py-5 md:py-6 text-foreground/80 hover:text-brand-neon hover:bg-foreground/5 transition-colors border-b lg:border-b-0 lg:border-r border-border w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
-            Admin Panel
+          <Link href="/get-a-quote" className="flex items-center justify-center px-8 py-5 md:py-6 text-foreground/80 hover:text-brand-neon hover:bg-foreground/5 transition-colors border-b lg:border-b-0 lg:border-r border-border w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
+            Get a Quote
           </Link>
           <Link href="/terms-and-conditions" className="flex items-center justify-center px-8 py-5 md:py-6 text-foreground/80 hover:text-foreground hover:bg-foreground/5 transition-colors w-full lg:w-auto font-semibold whitespace-nowrap text-sm">
             Terms &amp; Conditions
@@ -87,7 +64,7 @@ export default function Footer() {
         {/* Giant Glowing Text */}
         <div className="w-full text-center select-none overflow-hidden flex justify-center mb-6">
           <h1 className="text-[15vw] md:text-[12vw] font-black tracking-tighter leading-none text-foreground/5 md:text-foreground/10 text-foreground md:hover:text-foreground drop-shadow-[0_0_30px_rgba(247,54,168,0.3)] md:drop-shadow-none md:hover:drop-shadow-[0_0_50px_rgba(247,54,168,0.6)] transition-all duration-700 cursor-default">
-            PEEKABOOTH
+            PEEK-A-BOOTH PK
           </h1>
         </div>
 

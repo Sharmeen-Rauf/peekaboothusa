@@ -39,7 +39,8 @@ const boothDropdown = [
 const navLinks = [
   { name: "HOME", href: "/" },
   { name: "PHOTO BOOTHS", href: "#services", hasDropdown: true },
-  { name: "AI STUDIO ✨", href: "/ai-studio" },
+  { name: "ABOUT", href: "/about-us" },
+  { name: "GALLERY", href: "/gallery" },
   { name: "EVENTS", href: "/events" },
   { name: "CORPORATE", href: "/corporate-event-photo-booth-rental" },
   { name: "PRICING", href: "/pricing" },

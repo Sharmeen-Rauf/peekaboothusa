@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import GalleryClient from "./GalleryClient";
 
 export const metadata: Metadata = {
-  title: "Photo Booth Gallery | Peekabooth USA",
+  title: "Photo Booth Gallery | Event Photos & Videos | Peek-A-Booth PK",
   description:
-    "Browse Peek A Booth's photo booth gallery to see our photo booths in action at weddings, birthdays, and events, creating unforgettable memories nationwide.",
+    "Browse Peek-A-Booth PK's gallery of stunning photos and videos from weddings, birthdays, corporate events & parties across Pakistan. See our photo booths in action!",
 };
 
 export default function GalleryPage() {
