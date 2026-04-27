@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ThreeSixtyClient from "./ThreeSixtyClient";
 
 export const metadata: Metadata = {
-  title: "360 Photo Booth Rental | Peekabooth USA",
+  title: "360 Photo Booth Rental in Pakistan | Slow-Motion Video Booth | Peek-A-Booth PK",
   description:
-    "Experience the viral 360 video photo booth! Stunning slow-motion videos for weddings, corporate events and more. Book Peekabooth USA today.",
+    "Rent Pakistan's most exciting 360 photo booth for your wedding, event, or brand activation. Stunning slow-motion video, custom overlays & instant sharing. Book your 360 booth rental today!",
 };
 
 export default function BoothPage360() {
