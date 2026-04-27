@@ -22,7 +22,7 @@ const boothDropdown = [
   },
   {
     name: "Vogue Magazine Box",
-    href: "/vogue-magazine-photo-booth-box",
+    href: "/vogue-magazine-photo-booth-rental",
     desc: "Life-size magazine cover — the ultimate showstopper.",
     image: "/booth-setup-5.jpg",
   },

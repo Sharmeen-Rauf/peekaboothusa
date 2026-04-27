@@ -10,7 +10,7 @@ const isPublicRoute = createRouteMatcher([
   "/parties",
   "/open-air-photo-booth-rental",
   "/360-photo-booth-rental",
-  "/vogue-magazine-photo-booth-box",
+  "/vogue-magazine-photo-booth-rental",
   "/digital-photo-booth-rental",
   "/ai-studio",
   "/get-a-quote",

@@ -45,7 +45,7 @@ const collectionOptions = [
     desc: "Guests pose inside a life-sized magazine cover for high-impact branded event photos that create buzz, fun, and lasting memories at corporate events.",
     image: "/booth-setup-21.jpg",
     icon: Star,
-    link: "/vogue-magazine-photo-booth-box"
+    link: "/vogue-magazine-photo-booth-rental"
   }
 ];
 

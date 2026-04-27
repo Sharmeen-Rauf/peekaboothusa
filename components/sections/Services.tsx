@@ -26,7 +26,7 @@ const services = [
     description: "Make your guests feel like they're on a magazine cover. Life-sized, custom magazine covers — a show-stopping addition to any event.",
     image: "/magazine-booth.png",
     features: ["Life-sized Custom Box", "Personalized Headings", "Red Carpet Experience", "High-Resolution Prints"],
-    href: "/vogue-magazine-photo-booth-box"
+    href: "/vogue-magazine-photo-booth-rental"
   },
   {
     title: "Digital Photo Booth",
