@@ -256,16 +256,16 @@ export default function OpenAirPage() {
             {/* Stats grid */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { val: "Karachi", label: "Available for all events", icon: "🏙️" },
-                { val: "Lahore", label: "Pakistan's party capital", icon: "✨" },
-                { val: "Islamabad", label: "Corporate & private events", icon: "🏢" },
-                { val: "Multan", label: "Now available!", icon: "🎉" },
+                { val: "Karachi", label: "Available for all events", icon: "🏙️", href: "/karachi-photo-booth-rental" },
+                { val: "Lahore", label: "Pakistan's party capital", icon: "✨", href: "/lahore-photo-booth-rental" },
+                { val: "Islamabad", label: "Corporate & private events", icon: "🏢", href: "/islamabad-photo-booth-rental" },
+                { val: "Multan", label: "Now available!", icon: "🎉", href: "/photo-booth-rental-multan" },
               ].map((stat) => (
-                <div key={stat.label} className="bg-[#0a0a0a] border border-white/10 hover:border-brand-neon/30 rounded-2xl p-6 text-center transition-all group">
+                <Link key={stat.label} href={stat.href} className="bg-[#0a0a0a] border border-white/10 hover:border-brand-neon/30 rounded-2xl p-6 text-center transition-all group">
                   <div className="text-3xl mb-2">{stat.icon}</div>
                   <p className="text-xl font-extrabold text-white group-hover:text-brand-neon transition-colors mb-1">{stat.val}</p>
                   <p className="text-white/40 text-xs tracking-wide">{stat.label}</p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

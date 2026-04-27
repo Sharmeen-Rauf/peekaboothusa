@@ -110,7 +110,7 @@ export default function MagazineClient() {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 {cities.map(c => (
-                  <Link key={c.label} href={c.slug === "multan-magazine-photo-booth-rental" ? "#" : `/${c.label.toLowerCase()}-photo-booth-rental`} className="flex items-center gap-2 bg-white/4 border border-white/10 hover:border-brand-neon/40 rounded-xl px-4 py-3 transition-all group cursor-pointer">
+                  <Link key={c.label} href={c.slug === "multan-magazine-photo-booth-rental" ? "/photo-booth-rental-multan" : `/${c.label.toLowerCase()}-photo-booth-rental`} className="flex items-center gap-2 bg-white/4 border border-white/10 hover:border-brand-neon/40 rounded-xl px-4 py-3 transition-all group cursor-pointer">
                     <MapPin className="w-3.5 h-3.5 text-brand-neon shrink-0" />
                     <span className="text-white/70 text-xs font-medium group-hover:text-white transition-colors">Magazine Booth Rental {c.label}</span>
                   </Link>

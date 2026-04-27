@@ -37,7 +37,7 @@ export default function LocationsMap() {
               <Link href="/karachi-photo-booth-rental" className="hover:text-brand-neon transition-colors">Photo Booth Rental Karachi</Link> <span className="text-brand-neon mx-1">|</span> 
               <Link href="/lahore-photo-booth-rental" className="hover:text-brand-neon transition-colors">Photo Booth Rental Lahore</Link> <span className="text-brand-neon mx-1">|</span> 
               <Link href="/islamabad-photo-booth-rental" className="hover:text-brand-neon transition-colors">Photo Booth Rental Islamabad</Link> <span className="text-brand-neon mx-1">|</span> 
-              Photo Booth Rental Multan
+              <Link href="/photo-booth-rental-multan" className="hover:text-brand-neon transition-colors">Photo Booth Rental Multan</Link>
             </p>
           </div>
         </motion.div>

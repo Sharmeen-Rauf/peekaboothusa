@@ -46,8 +46,8 @@ export default function Loader() {
             ></motion.div>
             
             <Image 
-              src="/PeekABooth-LOGO-2025-600x212.png" 
-              alt="Peekabooth USA Loading"
+              src="/2.png" 
+              alt="Peek-A-Booth PK Loading"
               width={300}
               height={106}
               className="relative z-10 w-48 md:w-64 drop-shadow-[0_0_15px_rgba(247,54,168,0.5)]"

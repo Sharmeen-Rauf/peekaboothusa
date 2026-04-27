@@ -292,16 +292,16 @@ export default function BirthdayClient() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { city: "Karachi", label: "Available for all events", icon: "🏙️" },
-              { city: "Lahore", label: "Pakistan's party capital", icon: "✨" },
-              { city: "Islamabad", label: "Corporate & private events", icon: "🏢" },
-              { city: "Multan", label: "Now available!", icon: "🎉" }
+              { city: "Karachi", label: "Available for all events", icon: "🏙️", href: "/karachi-photo-booth-rental" },
+              { city: "Lahore", label: "Pakistan's party capital", icon: "✨", href: "/lahore-photo-booth-rental" },
+              { city: "Islamabad", label: "Corporate & private events", icon: "🏢", href: "/islamabad-photo-booth-rental" },
+              { city: "Multan", label: "Now available!", icon: "🎉", href: "/photo-booth-rental-multan" }
             ].map((study, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group relative border border-white/10 hover:border-brand-neon/40 rounded-[2rem] overflow-hidden flex flex-col items-center justify-center text-center h-48 transition-all shadow-[0_0_0_rgba(247,54,168,0)] hover:shadow-[0_0_30px_rgba(247,54,168,0.15)] cursor-pointer bg-[#0a0a0a]">
+              <Link key={i} href={study.href} className="group relative border border-white/10 hover:border-brand-neon/40 rounded-[2rem] overflow-hidden flex flex-col items-center justify-center text-center h-48 transition-all shadow-[0_0_0_rgba(247,54,168,0)] hover:shadow-[0_0_30px_rgba(247,54,168,0.15)] cursor-pointer bg-[#0a0a0a]">
                 <h3 className="text-xl md:text-2xl font-extrabold text-white mb-2 relative z-20 group-hover:scale-105 group-hover:text-brand-neon transition-all duration-300">{study.city}</h3>
                 <p className="text-brand-neon text-[10px] md:text-xs font-bold tracking-widest uppercase relative z-20 bg-black/50 px-3 py-1 rounded-full border border-brand-neon/30 backdrop-blur-md">{study.label}</p>
                 <div className="absolute top-4 right-4 text-2xl z-20 opacity-40 group-hover:opacity-100 transition-opacity">{study.icon}</div>
-              </motion.div>
+              </Link>
             ))}
           </div>
         </div>

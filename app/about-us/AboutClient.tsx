@@ -104,7 +104,7 @@ export default function AboutClient() {
               { c: "Karachi", d: "Business capital & hub", href: "/karachi-photo-booth-rental" },
               { c: "Lahore", d: "City of celebrations", href: "/lahore-photo-booth-rental" },
               { c: "Islamabad", d: "Corporate & government", href: "/islamabad-photo-booth-rental" },
-              { c: "Multan", d: "The City of Saints", href: "#" }
+              { c: "Multan", d: "The City of Saints", href: "/photo-booth-rental-multan" }
             ].map((city, i) => (
               <Link key={i} href={city.href} className="bg-[#0a0a0a] border border-white/10 p-8 rounded-3xl text-center group hover:border-brand-neon/30 transition-all cursor-pointer">
                 <MapPin className="w-8 h-8 text-brand-neon mx-auto mb-4 group-hover:scale-110 transition-transform" />

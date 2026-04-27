@@ -200,7 +200,7 @@ export default function PricingClient() {
                   { name: "Karachi", href: "/karachi-photo-booth-rental" },
                   { name: "Lahore", href: "/lahore-photo-booth-rental" },
                   { name: "Islamabad", href: "/islamabad-photo-booth-rental" },
-                  { name: "Multan", href: "#" }
+                  { name: "Multan", href: "/photo-booth-rental-multan" }
                 ].map((city) => (
                   <Link key={city.name} href={city.href} className="flex items-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl hover:border-brand-neon/40 transition-all group">
                     <div className="w-2 h-2 rounded-full bg-brand-neon" />

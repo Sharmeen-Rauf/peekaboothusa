@@ -110,8 +110,8 @@ export default function Navbar() {
             <div className="flex items-center gap-4 relative z-10">
               <Link href="/" className="flex items-center hover:scale-105 transition-transform duration-300">
                 <Image 
-                  src="/PeekABooth-LOGO-2025-600x212.png" 
-                  alt="Peekabooth USA Logo" 
+                  src="/2.png" 
+                  alt="Peek-A-Booth PK Logo" 
                   width={300}
                   height={106}
                   className="h-9 md:h-12 lg:h-14 w-auto object-contain transition-all duration-300 dark:invert-0 light:invert"

@@ -557,7 +557,7 @@ function SceneAbout() {
               { val: "Karachi", label: "Available for all events", icon: "🏙️", href: "/karachi-photo-booth-rental" },
               { val: "Lahore", label: "Pakistan's party capital", icon: "✨", href: "/lahore-photo-booth-rental" },
               { val: "Islamabad", label: "Corporate & private events", icon: "🏢", href: "/islamabad-photo-booth-rental" },
-              { val: "Multan", label: "Now available!", icon: "🎉", href: "#" },
+              { val: "Multan", label: "Now available!", icon: "🎉", href: "/photo-booth-rental-multan" },
             ].map((s) => (
               <Link key={s.val} href={s.href} className="bg-[#0a0a0a] border border-white/10 hover:border-brand-neon/30 rounded-2xl p-6 text-center transition-all group">
                 <div className="text-3xl mb-2">{s.icon}</div>

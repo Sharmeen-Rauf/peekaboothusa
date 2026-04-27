@@ -15,8 +15,8 @@ export default function Footer() {
         {/* Logo */}
         <Link href="/" className="mb-6 relative z-10 hover:scale-105 transition-transform duration-300">
           <Image 
-            src="/PeekABooth-LOGO-2025-600x212.png" 
-            alt="Peekabooth USA" 
+            src="/2.png" 
+            alt="Peek-A-Booth PK" 
             width={400}
             height={141}
             className="h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.05)]"
