@@ -6,24 +6,24 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    q: "How Much Deposit is Needed?",
-    a: "We require a 30% deposit at the time of booking to secure your event date. The remaining balance is due 7 days before your event. We accept all major credit cards and PayPal.",
+    q: "What is the difference between an open air photo booth and an enclosed photo booth?",
+    a: "An open air photo booth has no walls or enclosure — it's a freestanding camera and lighting setup with a backdrop. This allows larger groups to participate and creates a more social, visible experience at your event.",
   },
   {
-    q: "How Much Space is Needed?",
-    a: "Our open air photo booth typically requires a minimum of 10ft x 10ft of space with at least 8ft of ceiling height. We recommend a flat, hard surface for the best setup.",
+    q: "How many people can use the open air photo booth at once?",
+    a: "Our open air setup comfortably accommodates groups of 2 to 15+ people, depending on the backdrop width and space available at your venue.",
   },
   {
-    q: "Does Peek-A-Booth Have Insurance?",
-    a: "Yes! Peek-A-Booth is fully insured with general liability coverage. We can provide a Certificate of Insurance (COI) upon request, which many venues require.",
+    q: "Can I customise the backdrop and prints?",
+    a: "Absolutely! You can choose from our range of backdrops or provide your own. Print templates are fully customised with your event name, date, and branding.",
   },
   {
-    q: "Can I Book Online?",
-    a: "Absolutely! You can submit a quote request directly through our website's contact form, or call us at +92 326 0760786. We'll confirm your date and send you a booking agreement within 24 hours.",
+    q: "How long is the rental period?",
+    a: "Our standard rental packages include 3 to 5 hours of active booth operation. Extended hours are available — contact us for custom packages.",
   },
   {
-    q: "How Do I Pick My Template?",
-    a: "After booking, our design team will reach out to discuss your event theme, colors, and any text you'd like on your photo strips. We'll send you a proof for approval before your event date.",
+    q: "Do you offer open air photo booth rental near me?",
+    a: "Yes! We serve Karachi, Lahore, Islamabad, and Multan. Check availability for your city by filling out our quote form.",
   },
 ];
 
