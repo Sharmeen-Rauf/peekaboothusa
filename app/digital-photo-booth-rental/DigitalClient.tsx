@@ -11,10 +11,10 @@ const fadeUp = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transi
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } };
 
 const highlights = [
-  { icon: ImgIcon, label: "GIFs & Boomerangs", desc: "Fun animated content guests love to share instantly" },
-  { icon: Sparkles, label: "Custom Overlays", desc: "Personalized templates, filters & virtual props" },
-  { icon: Share2, label: "Instant Social Sharing", desc: "Delivered via text, email or QR code in seconds" },
-  { icon: Wifi, label: "Green Screen Ready", desc: "Swap backgrounds to match any event theme" },
+  { icon: ImgIcon, label: "GIFs & Boomerangs", desc: "Short videos and GIFs delivered instantly" },
+  { icon: Sparkles, label: "DSLR or iPad Setup", desc: "Choose between professional DSLR or sleek iPad" },
+  { icon: Share2, label: "Instant WhatsApp Sharing", desc: "Delivered via WhatsApp, email, or AirDrop in seconds" },
+  { icon: Wifi, label: "Eco-Friendly", desc: "100% digital media, no paper waste or printing required" },
 ];
 
 const planFeatures = ["Unlimited Pictures", "Instant Sharing", "Personalized Pictures", "Party Themed Props", "Standard Backdrop", "Standard Lighting Kit", "Friendly Attendant"];
@@ -40,11 +40,11 @@ const gallery = [
 ];
 
 const faqs = [
-  { q: "How Much Deposit is Needed?", a: "We require a $150 deposit to secure your booking. The remaining balance is due 7 days before your event." },
-  { q: "How Much Space is Needed?", a: "Our digital photo booth requires a minimum of 8ft x 8ft with at least 7ft of ceiling clearance. It works indoors and outdoors." },
-  { q: "Does Peek-A-Booth Have Insurance?", a: "Yes! We are fully insured with general liability coverage. A Certificate of Insurance (COI) can be provided upon request." },
-  { q: "Can I Book Online?", a: "Absolutely! Fill out our contact form below or call +92 326 0760786. We'll confirm your date within 24 hours." },
-  { q: "How Do I Pick My Template?", a: "After booking, our design team reaches out to finalize your custom overlay, colors, and branding. You'll receive a proof for approval." },
+  { q: "What is the difference between a digital photo booth and a traditional photo booth?", a: "A traditional photo booth prints photos on the spot, while a digital photo booth delivers all media digitally to guests' phones via WhatsApp, email, or AirDrop. Digital booths offer more versatility — including GIFs, boomerangs, and filters — and are more flexible and portable." },
+  { q: "Does the digital photo booth include an attendant?", a: "Yes! Every rental includes a dedicated professional attendant who manages the booth, assists guests, and ensures smooth operation throughout your event." },
+  { q: "Can the digital booth be customised with our branding?", a: "Absolutely. We create custom digital overlays, frames, and templates for every client. Corporate clients can add logos, brand colours, and event messaging to every photo." },
+  { q: "What is an iPad photo booth rental?", a: "An iPad photo booth uses a tablet-based setup that allows guests to interact directly with the screen, choose filters, and receive their photos instantly. It's portable, sleek, and ideal for events where a minimal-footprint setup is preferred." },
+  { q: "Is a digital photo booth cheaper than a traditional booth?", a: "In many cases, yes — because there are no print costs. Contact us for a custom quote based on your event requirements." },
 ];
 
 export default function DigitalClient() {
@@ -75,11 +75,11 @@ export default function DigitalClient() {
         <div className="container mx-auto px-6 max-w-3xl relative z-10 text-center pt-32 pb-20">
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-4">Digital Photo Booth Rental</motion.p>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon"> Digital</span>{" "}
-            Photo Booth<br className="hidden md:block" /> Rental Company!
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon"> Digital Photo Booth</span>{" "}
+            <br className="hidden md:block" /> Rental in Pakistan
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.7 }} className="text-base md:text-lg text-white/80 mb-10 max-w-xl mx-auto font-light leading-relaxed">
-            Get fun, unforgettable GIFs and pictures with our digital photo booth! Instant sharing, custom overlays, and zero wait time.
+            Welcome to the future of photo booth entertainment! Our Digital Photo Booth Rental is the most modern, versatile, and tech-forward photo booth experience available in Pakistan.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="flex flex-wrap gap-4 justify-center">
             <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
@@ -105,14 +105,14 @@ export default function DigitalClient() {
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
               <p className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Modern Fun</p>
               <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight leading-tight mb-5">
-                Modern Fun with Our{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-glow">Digital Photo Booth Rentals</span>
+                What is a{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-glow">Digital Photo Booth?</span>
               </h2>
               <p className="text-white/60 text-sm leading-relaxed mb-8">
-                A digital photo booth rental offers a sleek, modern way to capture and share memories instantly. Features include high-quality photos, GIFs, boomerangs, custom overlays, virtual props, and instant sharing via text, email, or social media. Compact and easy to set up, it&apos;s perfect for events of any size looking for a fun, tech-forward photo experience.
+                A digital photo booth is a modern photo station that captures high-resolution photos, GIFs, boomerangs, and short video clips — all delivered instantly to your guests digitally. Unlike traditional photo booths that print photos on the spot, our digital booth delivers all media directly to guests' phones via WhatsApp, email, or AirDrop. We offer two configurations: a professional DSLR photo booth setup for premium image quality, and a sleek, portable iPad photo booth perfectly suited for social media sharing.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {["Instant GIF & Boomerang", "Custom Branded Overlays", "Virtual Props & Filters", "Green Screen Ready", "Social Media Sharing", "Nationwide Coverage"].map(f => (
+                {["Instant WhatsApp Sharing", "Custom Branded Overlays", "GIFs & Boomerangs", "DSLR or iPad Setup", "Fully Portable", "Eco-Friendly"].map(f => (
                   <div key={f} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-brand-neon/20 border border-brand-neon/50 flex items-center justify-center shrink-0">
                       <Check className="w-3 h-3 text-brand-neon" />
@@ -213,10 +213,10 @@ export default function DigitalClient() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-              <p className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Book Your Event</p>
-              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight mb-4 leading-tight">Reserve Your Date</h2>
+              <p className="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mb-3">Availability</p>
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight mb-4 leading-tight">Digital Photo Booth Rental Near Me</h2>
               <p className="text-white/60 text-sm leading-relaxed mb-8">
-                Choose Peek-A-Booth for modern digital photo booth rentals, exceptional customer service, and nationwide availability. With features like GIFs, green screens, and instant sharing, our booths bring unforgettable fun to your event!
+                Need a digital photo booth in your city? We're available across all major cities in Pakistan including Karachi, Lahore, Islamabad, and Multan. Check availability for your event date today!
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/get-a-quote" className="inline-flex items-center justify-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-[0_0_25px_rgba(247,54,168,0.4)] group">
@@ -228,7 +228,7 @@ export default function DigitalClient() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.15 }} className="grid grid-cols-2 gap-4">
-              {[{ val: "500+", label: "Events Completed", icon: "🎉" }, { val: "50+", label: "Cities Served", icon: "📍" }, { val: "100%", label: "Satisfaction Rate", icon: "⭐" }, { val: "24/7", label: "Customer Support", icon: "💬" }].map(s => (
+              {[{ val: "Karachi", label: "Available for all events", icon: "🏙️" }, { val: "Lahore", label: "Pakistan's party capital", icon: "✨" }, { val: "Islamabad", label: "Corporate & private events", icon: "🏢" }, { val: "Multan", label: "Now available!", icon: "🎉" }].map(s => (
                 <div key={s.label} className="bg-[#0a0a0a] border border-white/10 hover:border-brand-neon/30 rounded-2xl p-6 text-center transition-all group">
                   <div className="text-3xl mb-2">{s.icon}</div>
                   <p className="text-2xl font-extrabold text-white group-hover:text-brand-neon transition-colors mb-1">{s.val}</p>
@@ -314,3 +314,4 @@ export default function DigitalClient() {
     </div>
   );
 }
+
