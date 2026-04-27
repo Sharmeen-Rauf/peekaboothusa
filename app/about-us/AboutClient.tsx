@@ -101,16 +101,16 @@ export default function AboutClient() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { c: "Karachi", d: "Business capital & hub" },
-              { c: "Lahore", d: "City of celebrations" },
-              { c: "Islamabad", d: "Corporate & government" },
-              { c: "Multan", d: "The City of Saints" }
+              { c: "Karachi", d: "Business capital & hub", href: "/karachi-photo-booth-rental" },
+              { c: "Lahore", d: "City of celebrations", href: "/lahore-photo-booth-rental" },
+              { c: "Islamabad", d: "Corporate & government", href: "/islamabad-photo-booth-rental" },
+              { c: "Multan", d: "The City of Saints", href: "#" }
             ].map((city, i) => (
-              <div key={i} className="bg-[#0a0a0a] border border-white/10 p-8 rounded-3xl text-center group hover:border-brand-neon/30 transition-all">
+              <Link key={i} href={city.href} className="bg-[#0a0a0a] border border-white/10 p-8 rounded-3xl text-center group hover:border-brand-neon/30 transition-all cursor-pointer">
                 <MapPin className="w-8 h-8 text-brand-neon mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="text-xl font-bold mb-2">{city.c}</h3>
                 <p className="text-white/40 text-xs tracking-wider uppercase">{city.d}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

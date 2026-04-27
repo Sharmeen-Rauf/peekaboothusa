@@ -228,12 +228,12 @@ export default function DigitalClient() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.15 }} className="grid grid-cols-2 gap-4">
-              {[{ val: "Karachi", label: "Available for all events", icon: "🏙️" }, { val: "Lahore", label: "Pakistan's party capital", icon: "✨" }, { val: "Islamabad", label: "Corporate & private events", icon: "🏢" }, { val: "Multan", label: "Now available!", icon: "🎉" }].map(s => (
-                <div key={s.label} className="bg-[#0a0a0a] border border-white/10 hover:border-brand-neon/30 rounded-2xl p-6 text-center transition-all group">
+              {[{ val: "Karachi", label: "Available for all events", icon: "🏙️", href: "/karachi-photo-booth-rental" }, { val: "Lahore", label: "Pakistan's party capital", icon: "✨", href: "/lahore-photo-booth-rental" }, { val: "Islamabad", label: "Corporate & private events", icon: "🏢", href: "/islamabad-photo-booth-rental" }, { val: "Multan", label: "Now available!", icon: "🎉", href: "#" }].map(s => (
+                <Link key={s.val} href={s.href} className="bg-[#0a0a0a] border border-white/10 hover:border-brand-neon/30 rounded-2xl p-6 text-center transition-all group">
                   <div className="text-3xl mb-2">{s.icon}</div>
                   <p className="text-2xl font-extrabold text-white group-hover:text-brand-neon transition-colors mb-1">{s.val}</p>
                   <p className="text-white/40 text-xs tracking-wide">{s.label}</p>
-                </div>
+                </Link>
               ))}
             </motion.div>
           </div>

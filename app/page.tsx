@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Peek-A-Booth PK | #1 Photo Booth Rental Company in Pakistan",
@@ -38,7 +39,7 @@ export default function Home() {
       <section className="py-12 bg-black border-t border-white/5">
         <div className="container mx-auto px-6 max-w-4xl">
           <p className="text-white/30 text-[10px] md:text-xs leading-relaxed text-center font-medium">
-            Peek-A-Booth PK is Pakistan&apos;s leading photo booth rental company, offering premium photo booth experiences for weddings, birthdays, corporate events, and private parties across Karachi, Lahore, Islamabad, and Multan. Whether you&apos;re looking for a 360 photo booth, open air photo booth, Vogue magazine booth, or digital photo booth — we have the perfect setup for your next event. Book your photo booth rental today and make your event truly unforgettable.
+            Peek-A-Booth PK is Pakistan&apos;s leading photo booth rental company, offering premium photo booth experiences for weddings, birthdays, corporate events, and private parties across <Link href="/karachi-photo-booth-rental" className="hover:text-brand-neon transition-colors">Karachi</Link>, <Link href="/lahore-photo-booth-rental" className="hover:text-brand-neon transition-colors">Lahore</Link>, <Link href="/islamabad-photo-booth-rental" className="hover:text-brand-neon transition-colors">Islamabad</Link>, and Multan. Whether you&apos;re looking for a 360 photo booth, open air photo booth, Vogue magazine booth, or digital photo booth ΓÇö we have the perfect setup for your next event. Book your photo booth rental today and make your event truly unforgettable.
           </p>
         </div>
       </section>

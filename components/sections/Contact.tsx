@@ -2,12 +2,22 @@
 
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, ArrowRight, NotebookPen } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { FormEvent } from "react";
 
 interface ContactProps {
   hideHeader?: boolean;
 }
 
 export default function Contact({ hideHeader = false }: ContactProps) {
+  const router = useRouter();
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    // In a real app, you would handle form data here
+    router.push("/thankyou");
+  };
+
   return (
     <section id="contact" className="py-16 md:py-20 relative bg-background">
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -72,7 +82,7 @@ export default function Contact({ hideHeader = false }: ContactProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className={`flex flex-col justify-center py-6 ${hideHeader ? "max-w-3xl mx-auto w-full" : ""}`}
           >
-            <form className="space-y-8">
+            <form className="space-y-8" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="relative">
                   <input 

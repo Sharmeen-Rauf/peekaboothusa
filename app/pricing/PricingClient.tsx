@@ -196,11 +196,16 @@ export default function PricingClient() {
                 Our pricing may vary slightly based on your event location. We serve all major cities across Pakistan with dedicated teams.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-10">
-                {["Karachi", "Lahore", "Islamabad", "Multan"].map((city) => (
-                  <div key={city} className="flex items-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl">
+                {[
+                  { name: "Karachi", href: "/karachi-photo-booth-rental" },
+                  { name: "Lahore", href: "/lahore-photo-booth-rental" },
+                  { name: "Islamabad", href: "/islamabad-photo-booth-rental" },
+                  { name: "Multan", href: "#" }
+                ].map((city) => (
+                  <Link key={city.name} href={city.href} className="flex items-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl hover:border-brand-neon/40 transition-all group">
                     <div className="w-2 h-2 rounded-full bg-brand-neon" />
-                    <span className="font-bold text-sm tracking-wide uppercase">{city}</span>
-                  </div>
+                    <span className="font-bold text-sm tracking-wide uppercase group-hover:text-white transition-colors">{city.name}</span>
+                  </Link>
                 ))}
               </div>
               <Link href="/contact-us" className="inline-flex items-center gap-2 text-white/60 font-bold text-sm tracking-widest uppercase hover:text-white transition-colors">

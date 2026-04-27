@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function LocationsMap() {
   return (
@@ -33,7 +34,10 @@ export default function LocationsMap() {
             </p>
             
             <p className="text-foreground/50 text-xs md:text-sm leading-loose md:leading-relaxed max-w-3xl mx-auto font-medium">
-              Photo Booth Rental Karachi <span className="text-brand-neon mx-1">|</span> Photo Booth Rental Lahore <span className="text-brand-neon mx-1">|</span> Photo Booth Rental Islamabad <span className="text-brand-neon mx-1">|</span> Photo Booth Rental Multan
+              <Link href="/karachi-photo-booth-rental" className="hover:text-brand-neon transition-colors">Photo Booth Rental Karachi</Link> <span className="text-brand-neon mx-1">|</span> 
+              <Link href="/lahore-photo-booth-rental" className="hover:text-brand-neon transition-colors">Photo Booth Rental Lahore</Link> <span className="text-brand-neon mx-1">|</span> 
+              <Link href="/islamabad-photo-booth-rental" className="hover:text-brand-neon transition-colors">Photo Booth Rental Islamabad</Link> <span className="text-brand-neon mx-1">|</span> 
+              Photo Booth Rental Multan
             </p>
           </div>
         </motion.div>

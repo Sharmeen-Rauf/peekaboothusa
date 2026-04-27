@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Check, ArrowRight, ChevronLeft, Sparkles, Star, Plus, Minus, Send, Phone, MapPin, AlertCircle } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { createBooking } from "@/lib/actions/booking";
 
 /* ΓöÇΓöÇΓöÇ DATA & CONFIG ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
@@ -47,6 +48,7 @@ const steps = [
 /* ΓöÇΓöÇΓöÇ MAIN COMPONENT ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 
 export default function QuoteClient() {
+  const router = useRouter();
   const [step, setStep] = useState(1);
   const [eventType, setEventType] = useState<string | null>(null);
   const [city, setCity] = useState<string>("LHE");
@@ -151,12 +153,10 @@ export default function QuoteClient() {
     setIsSubmitting(false);
 
     if (result.success) {
-      setIsSuccess(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      // Optional: Open WhatsApp after a short delay
-      setTimeout(() => {
-        window.open(generateWhatsAppLink(), "_blank");
-      }, 2000);
+      // Open WhatsApp in a new tab first (optional, but keep per original logic)
+      window.open(generateWhatsAppLink(), "_blank");
+      // Redirect to thank you page
+      router.push("/thankyou");
     } else {
       setError(result.error || "Failed to submit quote. Please try again.");
     }
