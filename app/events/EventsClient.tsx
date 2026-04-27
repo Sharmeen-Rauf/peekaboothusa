@@ -42,7 +42,7 @@ const eventTypes = [
     title: "Corporate & Brand",
     subtitle: "Enhance Brand Engagement",
     desc: "Elevate your brand activations with our original booth, digital selfie station, or 360 video booth. Each option offers customizable branding features to showcase your brand.",
-    link: "/brand-corporate",
+    link: "/corporate-event-photo-booth-rental",
     image: "/booth-setup-1.jpg",
     icon: Building2,
     features: ["Data Capture & Analytics", "Custom Branded Booth Wraps", "Lead Generation"]

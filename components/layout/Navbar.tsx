@@ -41,7 +41,7 @@ const navLinks = [
   { name: "PHOTO BOOTHS", href: "#services", hasDropdown: true },
   { name: "AI STUDIO ✨", href: "/ai-studio" },
   { name: "EVENTS", href: "/events" },
-  { name: "BRAND/CORPORATE", href: "/brand-corporate" },
+  { name: "CORPORATE", href: "/corporate-event-photo-booth-rental" },
   { name: "PRICING", href: "/pricing" },
 ];
 

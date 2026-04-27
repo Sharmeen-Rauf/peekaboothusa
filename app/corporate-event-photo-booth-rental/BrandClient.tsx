@@ -6,10 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Contact from "@/components/sections/Contact";
 import BrandLogos from "@/components/sections/BrandLogos";
-import Testimonials from "@/components/sections/Testimonials";
+import Testimonials, { TestimonialItem } from "@/components/sections/Testimonials";
 import { ArrowRight, Play, Check, ShieldCheck, MapPin, Award, Star, Quote, Plus, Minus, Camera, Video, MonitorSmartphone } from "lucide-react";
 
-/* ─── DATA ────────────────────────────────────────────────────────────────── */
+/* ΓöÇΓöÇΓöÇ DATA ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -45,35 +45,37 @@ const collectionOptions = [
     desc: "Guests pose inside a life-sized magazine cover for high-impact branded event photos that create buzz, fun, and lasting memories at corporate events.",
     image: "/booth-setup-21.jpg",
     icon: Star,
-    link: "/vogue-magazine-photo-booth-rental"
+    link: "/vogue-magazine-photo-booth-box"
   }
 ];
 
 const reasons = [
   { icon: MonitorSmartphone, title: "Fully Customizable Selfie Booths", desc: "Our photo booths are fully customizable to align with your brand identity." },
-  { icon: MapPin, title: "Multi-Event & Location Coverage", desc: "Whether you have multiple events in a day or a single event spanning multiple locations, we’ve got you covered." },
-  { icon: ShieldCheck, title: "Insured & Secured", desc: "Our Selfie Booths come with a “No Oops” guarantee. If there’s a mishap, we’ve got it covered 100%." },
+  { icon: MapPin, title: "Multi-Event & Location Coverage", desc: "Whether you have multiple events in a day or a single event spanning multiple locations, we—ve got you covered." },
+  { icon: ShieldCheck, title: "Insured & Secured", desc: "Our Selfie Booths come with a ΓÇ£No OopsΓÇ¥ guarantee. If there—s a mishap, we—ve got it covered 100%." },
   { icon: Award, title: "7+ years of experience", desc: "We partner with leading brands to guarantee the highest quality of services." }
 ];
 
-const caseStudies = [
-  { brand: "Tik-Tok", type: "Original Booth", image: "/booth-setup-19.jpg" },
-  { brand: "Hugo Boss", type: "Selfie Station", image: "/booth-setup-23.jpg" },
-  { brand: "Fortunata Cuomos", type: "360 Booth", image: "/booth-setup-1.jpg" },
-  { brand: "Kylie Cosmetics", type: "Selfie Station", image: "/booth-setup-2.jpg" },
-  { brand: "Ali El Wardanis", type: "360 Booth", image: "/booth-setup-3.jpg" },
-  { brand: "Lacoste", type: "Original Booth", image: "/booth-setup-4.jpg" },
-  { brand: "Crew Party", type: "Selfie Station", image: "/booth-setup-5.jpg" },
-  { brand: "Dyson", type: "Selfie Station", image: "/booth-setup-6.jpg" },
-  { brand: "Nancy Trans", type: "360 Booth", image: "/booth-setup-7.jpg" }
+const customTestimonials: TestimonialItem[] = [
+  {
+    id: 1,
+    name: "Marketing Team",
+    avatar: "https://i.pravatar.cc/150?u=marketing",
+    text: "Peek-A-Booth PK's branded 360 booth was the centrepiece of our product launch. Every guest was sharing branded content and our social media impressions went through the roof. Exceptional service!"
+  },
+  {
+    id: 2,
+    name: "Corporate Events Manager",
+    avatar: "https://i.pravatar.cc/150?u=manager",
+    text: "The open air photo booth at our annual client dinner in Islamabad was beautifully branded and perfectly managed. Our clients loved it and it really elevated the event experience."
+  }
 ];
 
 const faqs = [
-  { q: "What photo booths do we offer?", a: "We offer Original Print Booths, Digital Selfie Stations, 360 Video Booths, and the Vogue Magazine Box. All can be customized for brand activations." },
-  { q: "What is included in the Original Selfie Booth package?", a: "It includes high-quality photos, unlimited prints, instant digital sharing, a live gallery, and a choice from 50+ premium backdrops." },
-  { q: "What is included in the Digital Selfie Station package?", a: "Unlimited digital captures (GIFs, Boomerangs, Photos), custom overlays, instant sharing via text/email, and full data collection & analytics capabilities." },
-  { q: "How much space do you need to set up?", a: "Our setups typically require an 8x8 ft space, but we can accommodate smaller footprints depending on the specific booth chosen." },
-  { q: "Can It collect phone numbers and emails?", a: "Yes! Our digital stations and sharing kiosks are equipped with data capture features, perfect for lead generation and marketing lists." }
+  { q: "Can the corporate photo booth be fully branded with our company logo?", a: "Yes! Full custom branding is included with every corporate package ΓÇö logos, brand colours, event messaging, and custom print templates." },
+  { q: "What type of photo booth is best for corporate events?", a: "It depends on the event type. The 360 booth is perfect for high-energy product launches. The open air booth is ideal for formal dinners. The digital booth works well for conferences." },
+  { q: "Do you provide corporate photo booths across Pakistan?", a: "Yes ΓÇö we serve corporate clients in Karachi, Lahore, Islamabad, and Multan. We also travel for special events in other cities." },
+  { q: "How do we book a corporate photo booth?", a: "Simply fill out our corporate quote form or contact us directly via phone or WhatsApp. We'll send a custom proposal tailored to your branding requirements." }
 ];
 
 const galleryImages = [
@@ -87,15 +89,15 @@ const galleryImages = [
   "/booth-setup-15.jpg"
 ];
 
-/* ─── MAIN COMPONENT ──────────────────────────────────────────────────────── */
+/* ΓöÇΓöÇΓöÇ MAIN COMPONENT ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 
-export default function BrandClient() {
+export default function CorporateClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
     <div className="bg-black text-white selection:bg-brand-neon/30">
       
-      {/* ── HERO ── */}
+      {/* ΓöÇΓöÇ HERO ΓöÇΓöÇ */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image src="/corporate-gala.png" alt="Corporate Photo Booth Event" fill priority sizes="100vw" className="object-cover opacity-30" />
@@ -114,10 +116,11 @@ export default function BrandClient() {
             WOW YOUR GUESTS!
           </motion.p>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }} className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon">Enhance Brand Engagement</span>
+            Corporate Event Photo Booth<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-glow to-brand-neon">Rental in Pakistan</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.7 }} className="text-base md:text-lg text-white/80 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
-            Elevate your brand activations with our original booth, digital selfie station, or 360 video booth. Each option offers customizable branding features to showcase your brand and engage your audience.
+            In today's competitive business landscape, brand experiences matter more than ever. Peek-A-Booth PK's corporate event photo booth rental service delivers premium, branded experiences that drive engagement and amplify brand visibility.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="flex flex-wrap gap-4 justify-center">
             <Link href="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-neon hover:bg-brand-glow text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-[0_0_30px_rgba(247,54,168,0.5)] group">
@@ -136,10 +139,10 @@ export default function BrandClient() {
         </motion.div>
       </section>
 
-      {/* ── LOGOS ── */}
+      {/* ΓöÇΓöÇ LOGOS ΓöÇΓöÇ */}
       <BrandLogos />
 
-      {/* ── INTRO / ENGAGE ── */}
+      {/* ΓöÇΓöÇ INTRO / ENGAGE ΓöÇΓöÇ */}
       <section className="py-16 md:py-20 bg-[#050505] relative overflow-hidden border-t border-white/5">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-neon/10 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-900/10 blur-[150px] rounded-full pointer-events-none" />
@@ -151,15 +154,12 @@ export default function BrandClient() {
                 <Star className="w-3 h-3" /> Brand Activations
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1]">
-                Engage your audience with <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-glow">branded photo booth</span> experience
+                Elevate Your <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-glow">Brand Experience</span>
               </h2>
               <div className="w-20 h-1 bg-brand-neon rounded-full mb-8" />
               <p className="text-white/70 text-base md:text-lg leading-relaxed mb-6">
-                With our branded booth options, your attendees will be able to engage with your company while creating lasting memories. We offer <strong className="text-white">Digital Selfie Booths</strong>, which are fully customizable to your brand, as well as our <strong className="text-white">Print Selfie Booths</strong>, which have customizable back panels, backdrops, and prints.
-              </p>
-              <p className="text-white/70 text-base md:text-lg leading-relaxed">
-                Learn more below on which booth is right for your event. In terms of corporate event photography pricing, we are the best value.
+                From product launches and brand activations to annual dinners and client entertainment ΓÇö our corporate photo booth rental in Pakistan is the most powerful experiential marketing tool available for businesses.
               </p>
             </motion.div>
             
@@ -190,7 +190,7 @@ export default function BrandClient() {
         </div>
       </section>
 
-      {/* ── PHOTO BOOTH COLLECTION ── */}
+      {/* ΓöÇΓöÇ PHOTO BOOTH COLLECTION ΓöÇΓöÇ */}
       <section className="py-16 md:py-20 bg-[#050505] border-t border-white/5 relative overflow-hidden">
         {/* Subtle background effects */}
         <div className="absolute top-0 right-0 w-full h-[500px] bg-gradient-to-b from-brand-neon/5 to-transparent pointer-events-none" />
@@ -237,7 +237,7 @@ export default function BrandClient() {
         </div>
       </section>
 
-      {/* ── WHY CHOOSE US ── */}
+      {/* ΓöÇΓöÇ WHY CHOOSE US ΓöÇΓöÇ */}
       <section className="py-16 md:py-20 bg-black border-t border-white/5">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -264,7 +264,7 @@ export default function BrandClient() {
         </div>
       </section>
 
-      {/* ── HIGHLIGHTS GALLERY ── */}
+      {/* ΓöÇΓöÇ HIGHLIGHTS GALLERY ΓöÇΓöÇ */}
       <section className="py-20 bg-[#050505] border-t border-white/5 overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-12">
@@ -287,7 +287,7 @@ export default function BrandClient() {
         </div>
       </section>
 
-      {/* ── EXPLORE EVENTS ── */}
+      {/* ΓöÇΓöÇ EXPLORE EVENTS ΓöÇΓöÇ */}
       <section className="py-16 md:py-20 bg-[#050505] border-t border-white/5 relative overflow-hidden">
         {/* Decorative background glow */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-neon/10 blur-[120px] rounded-full pointer-events-none" />
@@ -298,28 +298,27 @@ export default function BrandClient() {
             <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Explore our events</motion.h2>
           </motion.div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {caseStudies.map((study, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group relative border border-white/10 hover:border-brand-neon/40 rounded-[2rem] overflow-hidden flex flex-col items-center justify-center text-center h-48 transition-all shadow-[0_0_0_rgba(247,54,168,0)] hover:shadow-[0_0_30px_rgba(247,54,168,0.15)] cursor-pointer">
-                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-10" />
-                <Image src={study.image} alt={study.brand} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover scale-100 group-hover:scale-110 transition-transform duration-700 z-0 opacity-50 group-hover:opacity-100" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
-                
-                <h3 className="text-xl md:text-2xl font-extrabold text-white mb-2 relative z-20 group-hover:scale-105 group-hover:text-brand-neon transition-all duration-300">{study.brand}</h3>
-                <p className="text-brand-neon text-[10px] md:text-xs font-bold tracking-widest uppercase relative z-20 bg-black/50 px-3 py-1 rounded-full border border-brand-neon/30 backdrop-blur-md">{study.type}</p>
-                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                  <ArrowRight className="w-5 h-5 text-brand-neon" />
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { city: "Karachi", label: "Pakistan's business capital", icon: "🏙️" },
+              { city: "Lahore", label: "Punjab's commercial hub", icon: "✨" },
+              { city: "Islamabad", label: "Government & corporate events", icon: "🏢" },
+              { city: "Multan", label: "Available for all clients", icon: "🎉" }
+            ].map((study, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group relative border border-white/10 hover:border-brand-neon/40 rounded-[2rem] overflow-hidden flex flex-col items-center justify-center text-center h-48 transition-all shadow-[0_0_0_rgba(247,54,168,0)] hover:shadow-[0_0_30px_rgba(247,54,168,0.15)] cursor-pointer bg-[#0a0a0a]">
+                <h3 className="text-xl md:text-2xl font-extrabold text-white mb-2 relative z-20 group-hover:scale-105 group-hover:text-brand-neon transition-all duration-300">{study.city}</h3>
+                <p className="text-brand-neon text-[10px] md:text-xs font-bold tracking-widest uppercase relative z-20 bg-black/50 px-3 py-1 rounded-full border border-brand-neon/30 backdrop-blur-md">{study.label}</p>
+                <div className="absolute top-4 right-4 text-2xl z-20 opacity-40 group-hover:opacity-100 transition-opacity">{study.icon}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ── */}
-      <Testimonials />
+      {/* ΓöÇΓöÇ TESTIMONIALS ΓöÇΓöÇ */}
+      <Testimonials testimonialsData={customTestimonials} />
 
-      {/* ── FAQ ── */}
+      {/* ΓöÇΓöÇ FAQ ΓöÇΓöÇ */}
       <section className="py-16 md:py-20 bg-black border-t border-white/5">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
@@ -352,9 +351,10 @@ export default function BrandClient() {
         </div>
       </section>
 
-      {/* ── CONTACT ── */}
+      {/* ΓöÇΓöÇ CONTACT ΓöÇΓöÇ */}
       <Contact />
 
     </div>
   );
 }
+
